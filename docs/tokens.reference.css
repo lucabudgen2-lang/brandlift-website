@@ -1,0 +1,69 @@
+/* ============================================================
+   BRANDLIFT · DESIGN TOKENS · HUISSTIJL v1.0 (VASTGESTELD · 03 JUL 2026)
+   Bron van waarheid: brandlift-brand/index.html (§09)
+   Alle basiskleuren komen rechtstreeks uit het logobestand.
+   ============================================================ */
+
+:root {
+  /* basis — uit het logo */
+  --bl-blue: #0130FD;        /* alleen als vlak — nooit tekst op donker (2,84:1) */
+  --bl-blue-press: #0124C4;  /* hover / ingedrukt */
+  --bl-blue-deep: #011A8A;   /* onderkant kleurverloop */
+  --bl-blue-text: #5B78FF;   /* links & tekstaccent op donker (AA 5,6:1) */
+  --bl-blue-300: #A3B5FF;
+  --bl-blue-100: #E7ECFF;    /* licht sectievlak */
+  --bl-blue-50: #F3F6FF;
+  --bl-ink: #000000;
+  --bl-white: #FDFDFD;
+
+  /* donkere vlakken */
+  --bl-s0: #000000;
+  --bl-s1: #0A0B10;
+  --bl-s2: #111219;
+  --bl-s3: #1A1C26;
+  --bl-line: rgba(255, 255, 255, .09);
+  --bl-line-strong: rgba(255, 255, 255, .16);
+
+  /* koele neutralen */
+  --bl-g100: #EDEEF2;
+  --bl-g300: #C7C9D3;
+  --bl-g500: #9AA0B5;  /* gedempte tekst op donker (8,07:1) */
+  --bl-g600: #6E7488;
+  --bl-g800: #3A3D4A;
+
+  /* functionele kleuren — alleen UI-feedback, nooit als accent */
+  --bl-ok: #16C784;
+  --bl-warn: #FFB020;
+  --bl-err: #FF5257;
+
+  /* typografie */
+  --bl-font-display: 'Saira', sans-serif;           /* koppen: hoofdletters, 700–800, letterafstand -1% */
+  --bl-font-body: 'Manrope', system-ui, sans-serif; /* tekst & UI: 400–700 */
+  --bl-font-mono: 'JetBrains Mono', monospace;      /* cijfers, labels, specs */
+
+  /* vorm — schuine hoek (één hoek rechtsboven) */
+  --bl-chamfer-sm: 10px;  /* knoppen */
+  --bl-chamfer-md: 14px;  /* kaarten, callouts */
+  --bl-chamfer-lg: 26px;  /* CTA-blokken, hero's */
+  --bl-radius: 3px;       /* al het andere: bijna recht, nooit zacht */
+
+  /* layout */
+  --bl-maxw: 1140px;
+  --bl-gutter: 28px;
+
+  /* beweging */
+  --bl-ease: cubic-bezier(.22, .61, .36, 1);
+  --bl-t-micro: 150ms;   /* hover, klik — ease-out */
+  --bl-t-reveal: 600ms;  /* onthullen bij scrollen — --bl-ease, 16px omhoog, 40ms versprongen */
+}
+
+/* schuine-hoek-utility — het handelsmerk */
+.bl-chamf {
+  clip-path: polygon(
+    0 0,
+    calc(100% - var(--bl-chamfer, var(--bl-chamfer-md))) 0,
+    100% var(--bl-chamfer, var(--bl-chamfer-md)),
+    100% 100%,
+    0 100%
+  );
+}
