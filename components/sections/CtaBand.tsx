@@ -8,7 +8,7 @@ import { ctaBand } from "@/lib/site";
 /* BL-09 · CTA-BAND — the voltage moment. Short, loud, one action. */
 export function CtaBand() {
   return (
-    <section aria-label="Plan een gratis groeigesprek" className="on-light py-14 md:py-20">
+    <section aria-label="Plan een gratis groeigesprek" className="on-light pt-4 pb-14 md:pt-6 md:pb-20">
       <Container>
         <Reveal>
           <div className="chamf chamf-lg relative overflow-hidden bg-blue">

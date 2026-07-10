@@ -1,18 +1,54 @@
 import type { Metadata } from "next";
-import { PageStub } from "@/components/layout/PageStub";
+import { AboutHero } from "@/components/sections/about/AboutHero";
+import { AboutOrigin, AboutLuca } from "@/components/sections/about/AboutStory";
+import { AboutPrinciples, AboutContrast } from "@/components/sections/about/AboutDifference";
+import { AboutProof, AboutProcess, AboutAudience } from "@/components/sections/about/AboutProof";
+import { AboutPractical, AboutFaq, AboutCta } from "@/components/sections/about/AboutClose";
+import { aboutSchema } from "@/lib/schema";
+import { aboutFaqs } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Over Brandlift",
+  title: "Over Brandlift - het bureau achter je website | Den Haag",
   description:
-    "Brandlift is geen anoniem bureau. Achter elke strategie zit Luca Budgen, die ervaring uit de Amerikaanse markt combineert met fotografie, branding en development.",
+    "Geen anoniem bureau, maar Luca die je site zelf ontwerpt en bouwt. Lees wat Brandlift anders maakt en waarom vakbedrijven voor ons kiezen.",
 };
 
+function aboutFaqSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: aboutFaqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+}
+
+/* Over Brandlift · 11 sections, order per about-page content plan:
+   hook → why → who → proof → how → practical → act. */
 export default function Page() {
   return (
-    <PageStub
-      eyebrow="Over Brandlift"
-      title="Geen anoniem bureau. Gewoon Luca - en een obsessie met resultaat."
-      intro="Achter elke strategie zit Luca Budgen: ervaring uit de Amerikaanse markt, gecombineerd met een achtergrond in fotografie, branding en development."
-    />
+    <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema()) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutFaqSchema()) }}
+      />
+      <AboutHero />
+      <AboutOrigin />
+      <AboutLuca />
+      <AboutPrinciples />
+      <AboutContrast />
+      <AboutProof />
+      <AboutProcess />
+      <AboutAudience />
+      <AboutPractical />
+      <AboutFaq />
+      <AboutCta />
+    </main>
   );
 }

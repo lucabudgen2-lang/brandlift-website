@@ -312,6 +312,7 @@ export const cases = [
     href: "/cases/hovenier-eykelenboom",
     logo: "/logos/eykelenboom.png",
     url: "hoveniereykelenboom.nl",
+    photo: "/images/macbook-only-bigger.jpg",
   },
   {
     id: "de-reizende-kwast",
@@ -321,7 +322,7 @@ export const cases = [
     direction: "Merkuitstraling en heldere dienstenstructuur die vertrouwen opbouwt en tot aanvragen leidt.",
     href: "/cases/de-reizende-kwast",
     logo: "/logos/reizende-kwast.png",
-    url: "dereizendekwast.nl",
+    url: "dereizendekwast-schilders.nl",
   },
 ] as const;
 
@@ -336,15 +337,21 @@ export const ctaBand = {
 /* ── 10 Over Brandlift ── */
 export const founder = {
   eyebrow: "Achter Brandlift",
-  h2: "Geen anoniem bureau. Gewoon Luca - en een obsessie met resultaat.",
-  body: "Brandlift is geen bureau met een receptie en tien tussenlagen. Achter elke strategie zit Luca Budgen. Hij leerde het vak in de Amerikaanse markt - waar je online opvalt of verdwijnt - en combineert dat met een achtergrond in fotografie, branding en development. Daardoor kijkt hij niet alleen naar hoe je website eruitziet, maar naar hoe je bedrijf online vertrouwen opbouwt, gevonden wordt en klanten binnenhaalt. Je werkt dus niet met een accountmanager, maar met de persoon die je site ook echt bouwt. Kort lijntje, eerlijk advies, en een partner die net zo graag wil dat het werkt als jij.",
-  quote: "Ik behandel jouw website zoals jij een klus aanpakt: doordacht, opgemeten en gegarandeerd werkend.",
+  h2: "Geen anoniem bureau. Gewoon Luca - die je site zelf bouwt.",
+  body: [
+    "Brandlift is ontstaan uit ergernis. Te veel Nederlandse bureaus behandelen je als klantnummer 147: je praat met een accountmanager, je site verdwijnt in een wachtrij, en \"SEO\" betekent een rapportje met groene vinkjes dat niemand snapt - en dat je geen enkele klant oplevert.",
+    "Bij ons is dat anders. Je praat direct met de persoon die je site ook echt ontwerpt, bouwt en oplevert. We leerden het vak in de Amerikaanse markt, waar je online meteen opvalt of verdwijnt, en combineren dat met een achtergrond in fotografie, branding en development. Geen vinkjes, maar SEO die er echt voor zorgt dat je gevonden wordt door mensen die klaar zijn om te bellen.",
+    "Kort lijntje, eerlijk advies, en iemand die net zo graag wil dat het werkt als jij.",
+  ],
+  proof: "Zo bouwden we onder meer de nieuwe site voor Hovenier Eykelenboom in Den Haag.",
+  quote: "Ik behandel jouw website zoals jij een klus aanpakt: doordacht, opgemeten en werkend opgeleverd.",
   points: [
-    "Ervaring uit de Amerikaanse markt",
-    "Achtergrond in fotografie, branding en development",
-    "Founder-led - je spreekt de bouwer zelf",
+    "Je spreekt de bouwer zelf, geen tussenlagen",
+    "Aanpak uit de veeleisende Amerikaanse markt",
+    "Fotografie, branding én development in één hand",
     "Gevestigd in Den Haag",
   ],
+  ctaLabel: "Vraag een gratis site-check aan",
 } as const;
 
 /* ── 11 Lokale SEO / Den Haag ── */
@@ -419,5 +426,141 @@ export const articles = [
     lead: "Van groeigesprek tot livegang - wat er in welke volgorde gebeurt.",
     href: "/kennisbank/website-laten-maken-stappenplan",
     tag: "Proces",
+  },
+] as const;
+
+/* ── Over Brandlift (about page) ── */
+export const aboutPage = {
+  hero: {
+    eyebrow: "Over Brandlift",
+    h1Lines: ["Geen anoniem bureau.", "Wel het bureau dat je", "site zelf bouwt."],
+    sub: "Achter elke Brandlift-website zit Luca Budgen - die je project persoonlijk ontwerpt, bouwt en oplevert. Kort lijntje, eerlijk advies, en iemand die net zo graag wil dat het werkt als jij.",
+    cta: "Vraag een gratis site-check aan",
+  },
+  origin: {
+    eyebrow: "Waarom we bestaan",
+    h2: "Ontstaan uit ergernis.",
+    paras: [
+      "Te veel Nederlandse bureaus behandelen je als klantnummer 147. Je praat met een accountmanager die je site nooit aanraakt, je project verdwijnt in een wachtrij, en na drie weken krijg je een SEO-rapportje met groene vinkjes dat niemand snapt - en dat geen enkele klant oplevert.",
+      "Wij besloten het tegenovergestelde te bouwen. Geen tussenlagen, geen wachtrijen, geen rapportjes voor de vorm. Gewoon een bureau waar de persoon die je spreekt ook de persoon is die je site ontwerpt, bouwt en oplevert.",
+    ],
+    payoff: "Bij ons praat je direct met de bouwer. Geen vinkjes, wel resultaat.",
+  },
+  luca: {
+    eyebrow: "Dit is Luca",
+    h2: "De bouwer achter elke Brandlift-site.",
+    blocks: [
+      {
+        n: "01",
+        title: "Aangescherpt in de Amerikaanse markt",
+        body: "Luca leerde het vak in een van de meest competitieve online markten ter wereld - waar je meteen opvalt of verdwijnt. Die lat gaat mee naar elk Nederlands project.",
+      },
+      {
+        n: "02",
+        title: "Strategie, beeld en techniek in één hand",
+        body: "Een achtergrond in fotografie, branding én development betekent dat er niets verloren gaat tussen ontwerp en oplevering. Wat bedacht wordt, wordt ook zo gebouwd.",
+      },
+      {
+        n: "03",
+        title: "Founder-led, van begin tot eind",
+        body: "Je spreekt geen accountmanager maar de bouwer zelf. Eén aanspreekpunt dat elk detail van je project kent - van het eerste gesprek tot livegang.",
+      },
+    ],
+  },
+  principles: {
+    eyebrow: "Waar we in geloven",
+    h2: "Vier principes. Eén doel: dat het werkt.",
+    items: [
+      {
+        title: "Strategie voor mooi",
+        believe: "Een site die er goed uitziet maar niets oplevert, is een dure brochure.",
+        get: "Elke pagina begint bij een doel - en levert daaraan af.",
+      },
+      {
+        title: "Eerlijk boven verkopen",
+        believe: "Een lange offerte is geen strategie.",
+        get: "Als iets niet nodig is, zeggen we het. Geen salespitch.",
+      },
+      {
+        title: "Eén aanspreekpunt",
+        believe: "Tussenlagen kosten tijd, geld en kwaliteit.",
+        get: "De persoon die adviseert, bouwt ook. Kort lijntje.",
+      },
+      {
+        title: "Gebouwd om gevonden te worden",
+        believe: "SEO is geen rapportje met vinkjes.",
+        get: "Vindbaarheid die klanten oplevert die klaar zijn om te bellen.",
+      },
+    ],
+  },
+  contrast: {
+    eyebrow: "Wat ons anders maakt",
+    h2: "Een typisch bureau - en hoe wij het doen.",
+    themLabel: "Een typisch bureau",
+    usLabel: "Brandlift",
+    rows: [
+      { them: "Je praat met een accountmanager", us: "Je praat met de bouwer zelf" },
+      { them: "Een template met jouw logo erop", us: "Strategie en ontwerp per pagina" },
+      { them: "Een SEO-rapport met groene vinkjes", us: "SEO die aanvragen oplevert" },
+      { them: "Je project verdwijnt in een wachtrij", us: "Kort lijntje, snel schakelen" },
+    ],
+  },
+  proof: {
+    eyebrow: "Bewijs",
+    h2: "Geen beloftes, maar werk dat het laat zien.",
+    stat: {
+      from: "2",
+      to: "24",
+      unit: "aanvragen p/m",
+      caption: "Hovenier Eykelenboom - na de nieuwe site met lokale SEO-structuur",
+    },
+    ctaLabel: "Bekijk alle cases",
+  },
+  process: {
+    eyebrow: "Zo werken we",
+    line: "Elke site doorloopt dezelfde zeven stappen - van positionering tot groei. Geen improvisatie, wel een methode die zich bewezen heeft.",
+    ctaLabel: "Ontdek de volledige werkwijze",
+  },
+  audience: {
+    eyebrow: "Voor wie we bouwen",
+    line: "Van hoveniers en installateurs tot jachttechniek en interieurdesign - we bouwen voor bedrijven die goed werk leveren en daar online sterker mee willen overkomen.",
+    groups: ["Vakbedrijven & servicebedrijven", "Premium & visuele bedrijven", "Overige bedrijven"],
+    ctaLabel: "Bekijk voor wie",
+  },
+  practical: {
+    eyebrow: "Praktisch",
+    h2: "Gevestigd in Den Haag. Werkt door heel Nederland.",
+    body: "Ons kantoor staat in Den Haag, maar afstand speelt geen rol: de meeste samenwerking verloopt online - snel en zonder reistijd.",
+  },
+  slotCta: {
+    h2: "Benieuwd wat we voor jouw bedrijf kunnen betekenen?",
+    body: "Plan een gratis, vrijblijvend gesprek - je weet daarna precies waar je staat.",
+    ctaLabel: "Vraag een gratis site-check aan",
+    micro: "30 minuten. Geen salespitch.",
+  },
+} as const;
+
+export const aboutFaqs = [
+  {
+    q: "Werk ik echt met Luca zelf, of met een accountmanager?",
+    a: "Met Luca zelf. Brandlift heeft bewust geen tussenlagen: de persoon die je spreekt is ook de persoon die je site ontwerpt, bouwt en oplevert.",
+  },
+  {
+    q: "Waar zit Brandlift?",
+    a: "Ons kantoor staat in Den Haag, maar we bouwen voor bedrijven door heel Nederland. De meeste samenwerking verloopt online - snel en zonder reistijd.",
+  },
+  {
+    q: "Is een klein bureau geen nadeel?",
+    a: "Het is precies waarom klanten voor ons kiezen. Geen wachtrijen, geen ruis tussen afdelingen en niemand die je project half kent. Wel directe communicatie en iemand die elk detail overziet.",
+  },
+  {
+    q: "Hebben jullie ervaring in mijn branche?",
+    a: "We bouwden onder meer voor hoveniers, schilders, jachttechniek en zonne-energie. Belangrijker dan de branche is de aanpak: we verdiepen ons in jouw klant en bouwen daar de strategie omheen.",
+    link: { label: "Bekijk onze cases", href: "/cases" },
+  },
+  {
+    q: "Wat kost het om te starten?",
+    a: "Dat hangt af van je doel en de omvang van het project. In een gratis groeigesprek van 30 minuten geven we een eerlijke indicatie - zonder verplichtingen.",
+    link: { label: "Plan een gratis groeigesprek", href: "/contact" },
   },
 ] as const;

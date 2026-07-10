@@ -12,7 +12,7 @@ export function FinalCta() {
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-50" />
       <div className="animate-glow pointer-events-none absolute bottom-[-20%] left-[-5%] h-[500px] w-[500px] rounded-full bg-blue/20 blur-[150px]" />
 
-      <Container className="relative grid gap-12 lg:grid-cols-[1fr_1.05fr] lg:items-start">
+      <Container className="relative grid gap-12 lg:grid-cols-[1.25fr_0.95fr] lg:items-start">
         <div>
           <Reveal>
             <Eyebrow>{finalCta.eyebrow}</Eyebrow>
@@ -27,7 +27,7 @@ export function FinalCta() {
             ]}
           />
           <Reveal delay={0.15}>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-g300">{finalCta.body}</p>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-g300">{finalCta.body}</p>
           </Reveal>
 
           <ul className="mt-8 space-y-3">

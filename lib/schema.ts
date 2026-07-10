@@ -72,3 +72,49 @@ export function siteSchema() {
     ],
   };
 }
+
+/* AboutPage + full Person node for the founder — the E-E-A-T core:
+   a real, named, credentialed person behind the work. */
+export function aboutSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": `${site.url}/over-brandlift#webpage`,
+        url: `${site.url}/over-brandlift`,
+        name: "Over Brandlift - het bureau achter je website",
+        inLanguage: "nl-NL",
+        isPartOf: { "@id": `${site.url}/#website` },
+        about: { "@id": `${site.url}/#organization` },
+        mainEntity: { "@id": `${site.url}/#founder` },
+      },
+      {
+        "@type": "Person",
+        "@id": `${site.url}/#founder`,
+        name: site.founder,
+        jobTitle: "Oprichter",
+        worksFor: { "@id": `${site.url}/#organization` },
+        image: `${site.url}/images/portrait-luca.png`,
+        email: site.email,
+        knowsAbout: [
+          "Webdesign",
+          "Lokale SEO",
+          "Branding",
+          "Conversie-optimalisatie",
+          "Fotografie",
+          "Webdevelopment",
+        ],
+        sameAs: [site.socials.instagram, site.socials.facebook],
+        workLocation: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: site.city,
+            addressCountry: site.country,
+          },
+        },
+      },
+    ],
+  };
+}

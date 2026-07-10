@@ -5,7 +5,16 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LineReveal } from "@/components/ui/LineReveal";
 import { site, denHaag } from "@/lib/site";
 
-/* BL-11 · DEN HAAG — radar sheet: pinned at the real coordinates,
+function PinIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z" />
+      <circle cx="12" cy="10" r="2.5" />
+    </svg>
+  );
+}
+
+/* BL-11 · DEN HAAG — pinned at the real Google-profiel location,
    serving the whole country. */
 export function LocalDenHaag() {
   return (
@@ -57,39 +66,37 @@ export function LocalDenHaag() {
           </Reveal>
         </div>
 
-        {/* radar */}
+        {/* Google-profiel kaart */}
         <Reveal delay={0.1}>
-          <div className="relative mx-auto flex aspect-square w-full max-w-[420px] items-center justify-center">
-            <svg viewBox="0 0 420 420" fill="none" className="absolute inset-0 h-full w-full" aria-hidden>
-              {[70, 125, 180].map((r) => (
-                <circle key={r} cx="210" cy="210" r={r} stroke="rgba(255,255,255,0.16)" strokeWidth="1" />
-              ))}
-              <line x1="210" y1="20" x2="210" y2="400" stroke="rgba(255,255,255,0.07)" />
-              <line x1="20" y1="210" x2="400" y2="210" stroke="rgba(255,255,255,0.07)" />
-              {/* reach: elsewhere in NL */}
-              <circle cx="300" cy="128" r="3.5" fill="#5B78FF" opacity="0.8" />
-              <circle cx="140" cy="290" r="3.5" fill="#5B78FF" opacity="0.55" />
-              <circle cx="310" cy="278" r="3.5" fill="#5B78FF" opacity="0.4" />
-              <circle cx="128" cy="140" r="3.5" fill="#5B78FF" opacity="0.35" />
-            </svg>
-            {/* sweep */}
-            <div className="absolute left-1/2 top-1/2 h-[360px] w-[360px] max-w-full -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full">
-              <div
-                className="animate-sweep h-full w-full rounded-full"
-                style={{
-                  background:
-                    "conic-gradient(from 0deg, rgba(1,48,253,0.4) 0deg, rgba(1,48,253,0.08) 60deg, transparent 95deg)",
-                }}
-              />
+          <div className="relative mx-auto w-full max-w-[460px]">
+            <div className="animate-glow pointer-events-none absolute -inset-4 -z-10 rounded-[32px] bg-blue/20 blur-[70px]" />
+            <div className="relative overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 shadow-[0_44px_100px_-45px_rgba(0,0,0,0.75)]">
+              <div className="relative aspect-square">
+                <iframe
+                  title={`${site.name} op Google Maps - ${site.street}, ${site.city}`}
+                  src="https://www.google.com/maps?q=Brandlift,%20Guirlande%20118,%202496%20WT%20Den%20Haag&z=16&hl=nl&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10"
+                />
+              </div>
+              {/* address bar */}
+              <div className="flex items-center gap-3 border-t border-[var(--color-line)] bg-s0 px-5 py-3.5">
+                <span className="grid h-8 w-8 shrink-0 place-items-center chamf-sm bg-blue/15 text-blue-text">
+                  <PinIcon />
+                </span>
+                <div className="leading-tight">
+                  <span className="block text-sm font-semibold text-paper">{site.name}</span>
+                  <span className="block text-xs text-g500">
+                    {site.street}, {site.postalCode} {site.city}
+                  </span>
+                </div>
+              </div>
             </div>
-            {/* HQ node */}
-            <div className="relative z-10 flex flex-col items-center">
-              <span className="animate-ping-slow absolute -inset-5 rounded-full border-2 border-blue-text" />
-              <span className="block h-4 w-4 chamf-sm bg-blue shadow-[0_0_28px_rgba(1,48,253,0.9)]" />
-            </div>
-            <span className="absolute bottom-9 left-1/2 -translate-x-1/2 whitespace-nowrap text-sm font-medium italic text-g500">
-              Thuisbasis: Den Haag
-            </span>
           </div>
         </Reveal>
       </Container>
