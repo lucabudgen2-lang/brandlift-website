@@ -9,6 +9,7 @@ import { Cases } from "@/components/sections/Cases";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Founder } from "@/components/sections/Founder";
 import { LocalDenHaag } from "@/components/sections/LocalDenHaag";
+import { Reviews } from "@/components/sections/Reviews";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { faqs } from "@/lib/site";
@@ -25,7 +26,7 @@ function faqSchema() {
   };
 }
 
-/* Homepage · 13 sheets, order locked in homepage-blueprint-v1.md */
+/* Homepage · 14 sheets, order locked in homepage-blueprint-v1.md */
 export default function Home() {
   return (
     <main>
@@ -39,6 +40,11 @@ export default function Home() {
       <VoorWie />
       <Services />
       <Waarom />
+      <Reviews
+        tone="dark"
+        heading={["Klanten aan het woord.", "Stuk voor stuk vijf sterren."]}
+        intro="Van bedrijven die hetzelfde zochten als jij: een website die opvalt, gevonden wordt en klanten oplevert."
+      />
       <Methode />
       <Cases />
       <CtaBand />

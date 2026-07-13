@@ -664,7 +664,7 @@ export const cityPages = {
   "den-haag": {
     city: "Den Haag",
     slug: "website-laten-maken-den-haag",
-    updated: "2026-07-10",
+    updated: "2026-07-13",
     metaTitle: "Website laten maken Den Haag | Strategisch + lokale SEO - Brandlift",
     metaDescription:
       "Website laten maken in Den Haag? Brandlift bouwt strategische websites met lokale SEO en conversie voor Haagse bedrijven die meer aanvragen willen. Plan een gratis groeigesprek.",
@@ -739,20 +739,24 @@ export const cityPages = {
     faqs: [
       {
         q: "Werken jullie alleen voor bedrijven in Den Haag?",
-        a: "Nee. Ons kantoor staat in Den Haag, maar we bouwen voor bedrijven door heel Nederland - en uiteraard in de hele regio, van Delft en Rijswijk tot Zoetermeer en het Westland. De meeste samenwerking verloopt online, snel en zonder reistijd, dus afstand speelt zelden een rol.",
+        a: "Nee. Ons team zit in Den Haag, maar we bouwen voor bedrijven door heel Nederland - en uiteraard in de hele regio, van Delft en Rijswijk tot Zoetermeer en het Westland. De meeste samenwerking verloopt online, snel en zonder reistijd, dus afstand speelt zelden een rol.",
       },
       {
         q: "Wat kost een website laten maken in Den Haag?",
-        a: "Dat hangt af van je doel, de omvang van de site en de mate van maatwerk. Een eenvoudige, sterke website kost minder dan een uitgebreid platform met veel dienst- en locatiepagina's. In een gratis groeigesprek van 30 minuten geven we een eerlijke indicatie die bij jouw situatie past - zonder verplichtingen en zonder salespitch.",
+        a: "Een website bij ons begint vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk - van een sterke, compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent. In een gratis groeigesprek geven we een eerlijke indicatie die bij jouw situatie past.",
         link: { label: "Lees wat een website kost", href: "/kennisbank/wat-kost-een-website-laten-maken" },
       },
       {
-        q: "Is lokale SEO inbegrepen?",
-        a: "Ja. Elke Haagse website bouwen we met een lokale SEO-basis: de juiste structuur, dienst- en locatiepagina's, techniek, schema en de aansluiting op je Google Bedrijfsprofiel. Zo ben je vanaf livegang gebouwd om lokaal gevonden te worden, in plaats van dat SEO er achteraf nog bij moet.",
+        q: "Wat valt er onder lokale SEO?",
+        a: "Zo goed als alles wat nodig is om lokaal gevonden te worden. Elke Haagse website bouwen we met een complete lokale basis: de juiste structuur, dienst- en locatiepagina's, gestructureerde data (schema), lokale vermeldingen (citaties) en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo ben je vanaf livegang gebouwd om gevonden te worden door klanten in Den Haag - en niet pas nadat SEO er achteraf nog bij moet.",
       },
       {
         q: "Hoe lang duurt het om een website te laten maken?",
-        a: "Een gemiddeld traject loopt van enkele weken tot een paar maanden, afhankelijk van omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een realistische planning aan jouw project, zodat je precies weet waar je aan toe bent.",
+        a: "Een website staat er meestal binnen 3 tot 4 weken, afhankelijk van de omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een concrete planning aan jouw project, zodat je precies weet waar je aan toe bent.",
+      },
+      {
+        q: "Werken jullie ook voor Engelstalige of internationale bedrijven in Den Haag?",
+        a: "Ja. We werken in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Handig in een internationale stad als Den Haag: je website kan meertalig, met dezelfde sterke lokale SEO-basis per taal.",
       },
       {
         q: "Hebben jullie ervaring met Haagse bedrijven?",

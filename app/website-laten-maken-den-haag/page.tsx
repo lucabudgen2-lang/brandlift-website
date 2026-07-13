@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Byline, FaqBlock, CtaBlock } from "@/components/page/blocks";
 import { Reviews } from "@/components/sections/Reviews";
+import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { cityPages, caseEykelenboom, reviews, site } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
@@ -29,9 +30,18 @@ const crumbs = [
 
 /* hero trust signals */
 const heroChips = [
+  "Sinds 2021 in Den Haag",
   "Lokale SEO inbegrepen",
   city.responsePromise,
   `${reviews.rating.toString().replace(".", ",")} op Google`,
+];
+
+/* who-we-are rail on the local-roots block */
+const localPoints = [
+  "Sinds 2021 in Den Haag",
+  "Vast team, korte lijnen",
+  "Nederlands, Engels en meer talen",
+  "Direct plek, geen wachtlijst",
 ];
 
 /* ── Pillar icons (reused from the homepage icon set) ── */
@@ -96,7 +106,7 @@ const pillars = [
   {
     icon: "search",
     title: "Lokale SEO die Haagse klanten vindt",
-    body: "Aparte dienst- en locatiepagina's, interne links, gestructureerde data en een scherp Google Bedrijfsprofiel. Zo word je gevonden op 'website laten maken Den Haag' tot de specifieke dienst in de wijk.",
+    body: "Wij regelen alles wat lokale vindbaarheid vraagt: aparte dienst- en locatiepagina's, interne links, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo word je gevonden op 'website laten maken Den Haag' tot de specifieke dienst in de wijk.",
     link: { label: "Meer over lokale SEO", href: "/diensten/lokale-seo" },
   },
 ];
@@ -461,10 +471,13 @@ export default function Page() {
         </Container>
       </section>
 
+      {/* ═══════════ MEER WERK — projecten-carousel (Cases design) ═══════════ */}
+      <CasesCarousel tone="light" heading={["Meer werk voor", "vakbedrijven zoals dat van jou."]} />
+
       {/* ═══════════ KOSTEN — honest price framing → calculator (dark) ═══════════ */}
       <section className="relative overflow-hidden bg-s0 py-20 md:py-28">
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-25" />
-        <Container className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-14">
+        <Container className="relative grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-14">
           <div>
             <Reveal>
               <Eyebrow>Investering</Eyebrow>
@@ -476,11 +489,31 @@ export default function Page() {
             />
             <Reveal delay={0.14}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-g300">
-                Er is geen vaste prijs - en dat is maar goed ook. Wat je website kost hangt af van je doel,
-                de omvang en de mate van maatwerk. Een sterke, eenvoudige site kost minder dan een uitgebreid
-                platform met veel dienst- en locatiepagina's. Wat er altijd in zit: strategie, een lokale
-                SEO-basis en een ontwerp dat vertrouwen wekt.
+                Een website bij ons begint <span className="font-semibold text-paper">vanaf &euro;2.000</span>. Wat
+                het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een sterke,
+                compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website
+                zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen
+                apart via een voordelig maandbedrag.
               </p>
+            </Reveal>
+
+            {/* de garantie */}
+            <Reveal delay={0.2}>
+              <div className="mt-8 flex items-start gap-4 chamf chamf-lg border border-blue/30 bg-blue/[0.07] p-5">
+                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center chamf-sm bg-blue text-white">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="m5 12 4.5 4.5L19 7" />
+                  </svg>
+                </span>
+                <div>
+                  <p className="font-display text-base font-extrabold text-paper">
+                    We werken door totdat je tevreden bent.
+                  </p>
+                  <p className="mt-1 text-sm leading-relaxed text-g400">
+                    Nog niet tevreden met het resultaat? Dan werken we door - zonder extra kosten - tot het wel klopt.
+                  </p>
+                </div>
+              </div>
             </Reveal>
           </div>
 
@@ -506,6 +539,89 @@ export default function Page() {
                 Of lees wat een website kost
                 <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
               </Link>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* ═══════════ ECHT LOKAAL — founder / Bomenbuurt roots ═══════════ */}
+      <section className="on-light relative py-20 md:py-28">
+        <Container className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+          <div>
+            <Reveal>
+              <Eyebrow>Echt lokaal</Eyebrow>
+            </Reveal>
+            <LineReveal
+              as="h2"
+              className="mt-5 text-3xl leading-[1.06] sm:text-4xl lg:text-[2.7rem]"
+              lines={[{ text: "Opgegroeid in de Bomenbuurt." }, { text: "Gebouwd voor Den Haag.", className: "text-g600" }]}
+            />
+            <Reveal delay={0.12}>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">
+                Brandlift ziet Den Haag niet als een marktje op de kaart. Onze oprichter Luca groeide op in de
+                Bomenbuurt - hij kent de stad, de wijken en de ondernemers die er hun bedrijf runnen. Sinds 2021
+                bouwen we vanuit die stad strategische websites voor Haagse en Nederlandse vakbedrijven.
+              </p>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-g600">
+                We werken met een vast team en korte lijnen: je praat direct met de mensen die je site ontwerpen
+                en bouwen. In het Nederlands en Engels - en via professionele vertalers ook in andere talen,
+                handig in een internationale stad als Den Haag.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.24}>
+              <div className="mt-9 grid gap-px overflow-hidden rounded-xl border border-ink/10 bg-ink/10 sm:grid-cols-2">
+                {localPoints.map((p) => (
+                  <div key={p} className="flex items-center gap-3 bg-white px-5 py-4">
+                    <span className="grid h-7 w-7 shrink-0 place-items-center chamf-sm bg-blue/10 text-blue">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="m5 12 4.5 4.5L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-sm font-medium leading-tight text-g800">{p}</span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          {/* portret op donkere kaart */}
+          <Reveal delay={0.1}>
+            <div className="relative mx-auto w-full max-w-[420px]">
+              <div className="animate-glow pointer-events-none absolute -inset-4 -z-10 rounded-[32px] bg-blue/15 blur-[70px]" />
+              <div className="relative overflow-hidden chamf chamf-lg border border-ink/10 shadow-[0_44px_100px_-45px_rgba(0,0,0,0.5)]">
+                <div className="relative aspect-[4/5]">
+                  <div className="absolute inset-0 bg-gradient-to-b from-s2 to-s0" />
+                  <div className="pointer-events-none absolute inset-0 grid-lines opacity-20" />
+                  <div className="pointer-events-none absolute bottom-0 left-1/2 h-72 w-72 -translate-x-1/2 translate-y-1/4 rounded-full bg-blue/30 blur-[90px]" />
+                  <div className="absolute inset-x-8 bottom-0 top-8">
+                    <Image
+                      src="/images/portrait-luca-soft.png"
+                      alt="Luca Budgen, oprichter van Brandlift, opgegroeid in de Bomenbuurt in Den Haag"
+                      fill
+                      sizes="(max-width: 1024px) 92vw, 40vw"
+                      className="object-contain object-bottom"
+                    />
+                  </div>
+                  <span className="absolute left-4 top-4 inline-flex items-center gap-2 chamf-sm bg-s0/70 px-3 py-1.5 text-xs font-medium text-g100 backdrop-blur-sm">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                      <path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z" />
+                      <circle cx="12" cy="10" r="2.5" />
+                    </svg>
+                    Bomenbuurt, Den Haag
+                  </span>
+                  <div className="absolute bottom-5 left-5 chamf-sm bg-blue px-4 py-2 shadow-[0_10px_30px_-10px_rgba(1,48,253,0.9)]">
+                    <span className="block font-display text-sm font-extrabold tracking-tight text-white">
+                      {site.founder}
+                    </span>
+                    <span className="block text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-white/80">
+                      Oprichter
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </Reveal>
         </Container>
