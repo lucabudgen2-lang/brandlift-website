@@ -26,13 +26,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/diensten/lokale-seo", 0.8),
     entry("/diensten/branding", 0.7),
     entry("/diensten/conversie-optimalisatie", 0.7),
-    // local commercial
+    entry("/website-kosten-calculator", 0.7),
+    // local commercial — steden
     entry("/website-laten-maken-den-haag", 0.9),
+    entry("/website-laten-maken-rotterdam", 0.9),
+    entry("/website-laten-maken-eindhoven", 0.8),
+    entry("/website-laten-maken-utrecht", 0.8),
+    entry("/website-laten-maken-amsterdam", 0.8),
+    entry("/website-laten-maken-delft", 0.7),
+    entry("/seo-den-haag", 0.8),
     // proof + audience
     entry("/cases", 0.7),
     entry("/cases/hovenier-eykelenboom", 0.7),
     entry("/cases/rotorswing", 0.6),
     entry("/cases/de-reizende-kwast", 0.6),
+    entry("/voorbeelden", 0.7),
     entry("/voor-wie", 0.7),
     entry("/voor-wie/vakbedrijven", 0.7),
     // trust + method

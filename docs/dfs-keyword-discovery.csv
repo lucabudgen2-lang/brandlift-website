@@ -1,0 +1,413 @@
+keyword,volume,kd,cpc,competition,intent,seed_cluster
+utrecht centraal,673000,,0.17,LOW,navigational,branding
+amsterdam,550000,55,0.91,LOW,informational,denhaag
+weer amsterdam,550000,17,0.04,LOW,informational,denhaag
+amsterdam cs,450000,41,0.21,LOW,navigational,denhaag
+den haag centraal,450000,8,0.22,LOW,navigational,denhaag
+weer den haag,368000,9,0.04,LOW,informational,denhaag
+utrecht,368000,100,0.71,LOW,informational,branding
+rotterdam,368000,82,0.8,LOW,informational,branding
+weer rotterdam,368000,17,0.31,LOW,informational,branding
+rotterdam centraal,368000,2,0.23,LOW,navigational,branding
+leiden,246000,87,0.74,LOW,informational,seo
+amsterdam zuid,246000,25,0.37,LOW,navigational,denhaag
+rai amsterdam,246000,19,0.42,LOW,navigational,denhaag
+weer utrecht,246000,11,0.04,LOW,informational,branding
+amsterdam veer centraal station,201000,1,0.21,LOW,navigational,denhaag
+amsterdam bijlmer arena,165000,,0.35,LOW,navigational,denhaag
+ado den haag,165000,21,0.37,LOW,informational,denhaag
+ikea amsterdam,165000,9,0.82,LOW,navigational,denhaag
+nemo amsterdam,165000,13,0.96,MEDIUM,navigational,denhaag
+ahoy rotterdam,165000,25,1.62,LOW,navigational,branding
+rtv utrecht,165000,27,0.44,LOW,navigational,branding
+alphen aan den rijn,135000,21,0.88,LOW,navigational,denhaag
+ikea utrecht,135000,11,0.67,LOW,navigational,branding
+buienradar amsterdam,110000,9,0.4,LOW,informational,denhaag
+vrije universiteit amsterdam,110000,53,0.66,LOW,navigational,denhaag
+weer leiden,90500,,0.02,LOW,informational,seo
+action amsterdam,90500,11,0.1,LOW,informational,denhaag
+den helder,90500,54,0.47,LOW,informational,denhaag
+kunsthal rotterdam,90500,12,1.19,MEDIUM,navigational,branding
+umc utrecht,90500,87,1.01,LOW,navigational,branding
+rekenmachine online,74000,8,1.27,LOW,transactional,seo
+stedelijk museum amsterdam,74000,12,0.24,LOW,navigational,denhaag
+rijksmuseum amsterdam,74000,48,0.3,LOW,navigational,denhaag
+den bosch,74000,39,0.78,LOW,navigational,denhaag
+primark amsterdam,74000,,0.29,LOW,navigational,denhaag
+amsterdam zuid station,74000,,0.44,LOW,navigational,denhaag
+woningnet amsterdam,74000,22,1.65,LOW,navigational,denhaag
+buienradar den haag,74000,7,0.42,LOW,informational,denhaag
+weer den bosch,74000,,0.01,LOW,informational,denhaag
+nederlands online casino,74000,75,21.01,LOW,commercial,branding
+het weer rotterdam,74000,17,0.12,LOW,informational,branding
+online casino nederland,74000,78,21.01,LOW,commercial,branding
+action rotterdam,74000,,0.09,LOW,informational,branding
+buienradar rotterdam,74000,,2.3,LOW,informational,branding
+google ads,60500,57,1.89,MEDIUM,informational,seo
+weer gouda,60500,,0.03,LOW,informational,seo
+den haag laan van noi,60500,,0.32,LOW,navigational,denhaag
+den haag laan v noi,60500,,0.32,LOW,navigational,denhaag
+gemeente den haag,60500,73,0.37,LOW,navigational,denhaag
+de wallen red light district amsterdam,60500,8,0.14,LOW,navigational,denhaag
+fc den bosch,60500,41,0.02,LOW,informational,denhaag
+gratis spelletjes,60500,78,0.06,LOW,informational,denhaag
+amsterdam amstel,60500,7,0.66,LOW,navigational,denhaag
+laan van noi den haag,60500,,0.32,LOW,navigational,denhaag
+amsterdam centrum,60500,14,0.4,LOW,navigational,denhaag
+het weer den haag,60500,9,0.03,LOW,informational,denhaag
+kunstmuseum den haag,60500,23,9.65,LOW,navigational,denhaag
+gemeente amsterdam,60500,28,0.25,LOW,navigational,denhaag
+feyenoord utrecht,60500,1,0,LOW,informational,branding
+buienradar utrecht,60500,17,0.5,LOW,informational,branding
+ss rotterdam,60500,17,0.62,LOW,informational,branding
+gemeenten rotterdam,60500,37,0.22,LOW,informational,branding
+diakonessenhuis utrecht,60500,5,0.39,LOW,navigational,branding
+temu nl,49500,6,0.25,HIGH,navigational,seo
+google tra,49500,96,0.94,LOW,navigational,seo
+afas online,49500,8,0.23,LOW,navigational,seo
+online bibliotheek,49500,29,3.4,LOW,informational,seo
+transport online,49500,52,5.34,LOW,informational,seo
+amsterdam arena,49500,35,0.37,LOW,navigational,denhaag
+olympisch stadion amsterdam,49500,20,0.2,LOW,navigational,denhaag
+amsterdam umc locatie vumc,49500,30,0.51,LOW,navigational,denhaag
+cafe restaurant amsterdam,49500,40,1.14,LOW,navigational,denhaag
+hagaziekenhuis den haag,49500,,0.59,LOW,navigational,denhaag
+blond amsterdam,49500,,0.12,HIGH,informational,denhaag
+red light district amsterdam,49500,10,0.48,LOW,navigational,denhaag
+funda amsterdam,49500,,1.3,LOW,navigational,denhaag
+funda den haag,49500,,1.67,LOW,informational,denhaag
+p r rai amsterdam,49500,9,0.37,LOW,navigational,denhaag
+van der valk utrecht,49500,34,0.45,MEDIUM,navigational,branding
+centraal station rotterdam,49500,1,0.22,LOW,navigational,branding
+online radio luisteren,49500,99,0.04,LOW,informational,branding
+woningnet utrecht,49500,27,1.46,LOW,navigational,branding
+rotterdam blaak,49500,,0.24,LOW,informational,branding
+medisch meander centrum,49500,17,0.54,LOW,navigational,conversie
+medisch centrum meander,49500,10,0.72,LOW,navigational,conversie
+xtracold icebar amsterdam,40500,,0.79,LOW,navigational,denhaag
+nieuwerkerk aan den ijssel,40500,3,0.65,LOW,informational,denhaag
+filmhuis den haag,40500,9,1,LOW,navigational,denhaag
+gebedstijden amsterdam,40500,,2.21,LOW,informational,denhaag
+madame tussauds amsterdam,40500,6,0.73,MEDIUM,navigational,denhaag
+bijenkorf amsterdam,40500,42,0.14,HIGH,navigational,denhaag
+stand ado den haag,40500,,0,LOW,informational,denhaag
+hotel amsterdam,40500,21,1.78,HIGH,navigational,denhaag
+pathe amsterdam noord,40500,,0.81,LOW,navigational,denhaag
+weersverwachting amsterdam,40500,19,0.03,LOW,informational,denhaag
+action den haag,40500,3,0.08,LOW,informational,denhaag
+meteo amsterdam,40500,29,0.11,LOW,informational,denhaag
+pancakes amsterdam,40500,12,0.31,LOW,navigational,denhaag
+hoxton amsterdam,40500,,1.2,LOW,navigational,denhaag
+body worlds amsterdam,40500,,0.98,LOW,navigational,denhaag
+amsterdam noord,40500,4,0.73,LOW,navigational,denhaag
+centraal station den haag,40500,,0.2,LOW,navigational,denhaag
+rotterdam centrum,40500,34,1.17,LOW,navigational,branding
+utrecht overvecht utrecht,40500,,0.24,LOW,informational,branding
+hoogvliet rotterdam,40500,9,0.41,LOW,navigational,branding
+fc utrecht wedstrijden,40500,18,0,LOW,informational,branding
+utrecht overvecht,40500,3,0.24,LOW,informational,branding
+restaurant rotterdam,40500,16,0.64,LOW,navigational,branding
+restaurant utrecht,40500,28,0.7,MEDIUM,navigational,branding
+primark rotterdam,40500,,1.4,LOW,navigational,branding
+schaatsbaan rotterdam,40500,3,0.2,LOW,navigational,branding
+gebedstijden rotterdam,40500,,1.32,LOW,informational,branding
+funda rotterdam,40500,,1.48,LOW,navigational,branding
+word online,33100,11,1.46,LOW,informational,seo
+buienradar leiden,33100,,0.48,LOW,informational,seo
+hotel casa amsterdam,33100,,0.91,LOW,navigational,denhaag
+restaurant amsterdam,33100,27,0.88,MEDIUM,navigational,denhaag
+de bijenkorf den haag,33100,17,0.14,LOW,navigational,denhaag
+weer alphen aan den rijn,33100,,0.03,LOW,informational,denhaag
+holendrecht amsterdam,33100,4,0.6,LOW,navigational,denhaag
+margo's amsterdam,33100,,0.16,LOW,navigational,denhaag
+soho house amsterdam,33100,,0.43,LOW,navigational,denhaag
+trainmore amsterdam,33100,22,0.34,LOW,navigational,denhaag
+parkeren amsterdam,33100,31,0.82,LOW,navigational,denhaag
+dam amsterdam,33100,10,0.57,LOW,navigational,denhaag
+oude kerk amsterdam,33100,21,0.65,LOW,navigational,denhaag
+icon amsterdam,33100,13,0.41,HIGH,navigational,denhaag
+mediamarkt den bosch,33100,17,0.15,MEDIUM,navigational,denhaag
+betekenis,33100,25,0,LOW,informational,conversie
+wordpress,27100,56,5.84,MEDIUM,informational,website
+funda leiden,27100,,1.26,LOW,navigational,seo
+rekenen nl,27100,45,1.54,LOW,informational,seo
+buienradar deventer,27100,,0.09,LOW,informational,seo
+action leiden,27100,,0.07,LOW,informational,seo
+google documenten,27100,26,0.27,LOW,navigational,seo
+buienradar gouda,27100,,0.03,LOW,informational,seo
+gebedstijden den haag,27100,,2.29,LOW,informational,denhaag
+den haag 112 meldingen,27100,1,0,LOW,informational,denhaag
+112 amsterdam meldingen,27100,,0,LOW,informational,denhaag
+via amsterdam,27100,26,1.27,LOW,navigational,denhaag
+meldingen 112 amsterdam,27100,,0,LOW,informational,denhaag
+amazing oriental den haag-ypenburg,27100,,0.38,LOW,navigational,denhaag
+112 meldingen amsterdam,27100,,0,LOW,informational,denhaag
+112 meldingen den haag,27100,,0,LOW,informational,denhaag
+fletcher hotel amsterdam,27100,,0.96,MEDIUM,navigational,denhaag
+weer den helder,27100,1,0.02,LOW,informational,denhaag
+rosewood amsterdam,27100,4,0.65,LOW,navigational,denhaag
+tulip experience amsterdam,27100,16,0.99,LOW,navigational,denhaag
+harry styles amsterdam,27100,,0.17,LOW,navigational,denhaag
+amsterdam tulip museum,27100,12,0.44,LOW,navigational,denhaag
+dak amsterdam,27100,66,2.64,LOW,navigational,denhaag
+wetterwarnung amsterdam,27100,5,0.02,LOW,,denhaag
+pluk amsterdam,27100,,0.46,LOW,navigational,denhaag
+weeronline amsterdam,27100,24,0.02,LOW,informational,denhaag
+generator amsterdam,27100,,2.06,LOW,navigational,denhaag
+melding 112 amsterdam,27100,,0,LOW,informational,denhaag
+sissi's amsterdam,27100,9,0.15,LOW,informational,denhaag
+weersverwachting den haag,27100,5,0.06,LOW,informational,denhaag
+112 den haag meldingen,27100,,0,LOW,informational,denhaag
+schilderen op nummer,27100,10,1.61,HIGH,informational,conversie
+zilveren kruis inloggen,27100,38,0.02,LOW,navigational,conversie
+mijn bedrijf,27100,18,14.85,LOW,navigational,conversie
+t-online,22200,45,0.02,LOW,navigational,seo
+lakenhal leiden,22200,,1.16,MEDIUM,navigational,seo
+spelletjes online,22200,78,0.21,LOW,informational,seo
+online,22200,18,0.83,LOW,informational,seo
+leiden lammenschans,22200,,0.2,LOW,informational,seo
+kvk nummer zoeken,22200,48,0.08,LOW,informational,conversie
+nl eng,18100,23,1.2,LOW,informational,seo
+beste zangers,18100,18,0.15,LOW,informational,seo
+112 leiden,18100,,0,LOW,informational,seo
+nummer zoeken,18100,,1.12,LOW,informational,conversie
+zilveren kruis contact,18100,36,5.13,LOW,navigational,conversie
+medisch centrum spijkenisse,18100,,1.11,LOW,informational,conversie
+koran nl,14800,16,0.22,LOW,informational,seo
+vrijbuiter gouda,14800,,0.09,HIGH,transactional,seo
+het weer leiden,14800,,0.02,LOW,informational,seo
+staatsloterij inloggen,14800,28,0.03,LOW,navigational,conversie
+van wie is dit nummer,14800,3,0.91,LOW,informational,conversie
+van wie is dit 06-nummer,14800,27,0.78,LOW,informational,conversie
+nationale nederlanden inloggen,14800,5,0.2,LOW,navigational,conversie
+bureau utrecht,14800,2,1.28,LOW,navigational,conversie
+pinksteren betekenis,14800,,0.85,LOW,informational,conversie
+uw zorg online,12100,32,1.4,LOW,navigational,seo
+de scheg deventer,12100,15,0,LOW,navigational,seo
+ai foto bewerken,12100,,0.89,MEDIUM,informational,seo
+zimbra online,12100,27,4.93,LOW,navigational,seo
+website marktplaats,12100,58,0.07,LOW,navigational,conversie
+06 nummer zoeken,12100,5,0.97,LOW,informational,conversie
+medisch centrum maxima,12100,12,0.43,LOW,navigational,conversie
+zit sta bureau,12100,27,5.31,HIGH,navigational,conversie
+polarisatie betekenis,12100,,2.67,LOW,informational,conversie
+het weer gouda,9900,,0.05,LOW,informational,seo
+zorg online,9900,40,4.09,LOW,informational,seo
+naturalis leiden,9900,23,1.8,MEDIUM,informational,seo
+leiden p2000,9900,,0,LOW,informational,seo
+babypark gouda,9900,10,0.45,LOW,navigational,seo
+foto bewerken met ai,9900,,1.31,MEDIUM,informational,seo
+kadaster online,9900,29,0.54,MEDIUM,informational,seo
+ep online,9900,38,2.28,LOW,informational,seo
+queers betekenis,9900,12,1.53,LOW,informational,conversie
+vriendenloterij inloggen,9900,12,0,LOW,navigational,conversie
+zionisme betekenis,9900,18,1.9,LOW,informational,conversie
+huren in holland rijnland inloggen,9900,3,2.11,LOW,navigational,conversie
+medisch pedicure,9900,,1.13,LOW,commercial,conversie
+inloggen vriendenloterij,9900,12,0,LOW,navigational,conversie
+website maken,8100,57,23.75,HIGH,informational,website
+snapchat website support,8100,99,0,LOW,navigational,website
+112 meldingen gouda,8100,,0,LOW,informational,seo
+pe online,8100,34,8.33,LOW,informational,seo
+bente beste zangers,8100,,0,LOW,informational,seo
+eng nl vertalen,8100,22,0.74,LOW,informational,seo
+marketing,8100,17,5.56,LOW,informational,seo
+gebedstijden gouda,8100,,0,LOW,informational,seo
+nieuws leiden,8100,18,0,LOW,informational,seo
+kompas online,8100,26,0.23,LOW,navigational,seo
+ah online,8100,27,0.12,LOW,navigational,seo
+ballorig gouda,8100,3,4.04,LOW,transactional,seo
+online dobbelsteen,8100,4,1.11,LOW,informational,seo
+112 gouda meldingen,8100,,0,LOW,navigational,seo
+nobel leiden,8100,8,0.35,LOW,informational,seo
+pragmatiek betekenis,8100,,0,LOW,informational,conversie
+sodomie betekenis,8100,,0.4,LOW,informational,conversie
+pragmatische betekenis,8100,,0,LOW,informational,conversie
+dromen betekenis,8100,2,1.77,LOW,informational,conversie
+67 betekenis,8100,,4.03,LOW,informational,conversie
+kleuren op nummer,8100,,0.62,HIGH,informational,conversie
+betekenis van pragmatisch,8100,,0,LOW,informational,conversie
+inloggen mijn catharina,8100,,0,LOW,navigational,conversie
+google mijn bedrijf,8100,9,8.78,LOW,navigational,conversie
+postcodeloterij inloggen,8100,35,0.05,LOW,navigational,conversie
+betekenis emoticons,8100,,0,LOW,informational,conversie
+pragmatisch betekenis,8100,,0,LOW,informational,conversie
+pragmatisme betekenis,8100,,0,LOW,informational,conversie
+woke betekenis,8100,3,1.54,LOW,informational,conversie
+1111 betekenis,8100,,0,LOW,informational,conversie
+volkskrant inloggen,8100,32,0.93,LOW,navigational,conversie
+radio garden website,6600,27,0,LOW,navigational,website
+temu website,6600,19,0.16,HIGH,navigational,website
+wachtwoorden google,6600,19,4.46,LOW,informational,seo
+112 melding gouda,6600,,0,LOW,navigational,seo
+beste stofzuiger,6600,,1.26,HIGH,commercial,seo
+affiliate marketing,6600,33,8.52,LOW,commercial,seo
+ai google,6600,100,0.16,LOW,navigational,seo
+privé leiden,6600,,0,LOW,transactional,seo
+google de,6600,68,0,LOW,navigational,seo
+blokker online,6600,8,0.41,HIGH,informational,seo
+salon leiden,6600,,0.71,LOW,navigational,seo
+leiden prive,6600,,0,LOW,informational,seo
+usis leiden,6600,22,0,LOW,informational,seo
+corpus leiden,6600,18,0.94,HIGH,informational,seo
+warmtepomp kosten,6600,25,2.55,HIGH,commercial,seo
+beste,6600,16,2.2,LOW,informational,seo
+inburgering online,6600,41,0.21,LOW,navigational,seo
+p2000 online,6600,28,0,LOW,navigational,seo
+lipsius leiden,6600,2,0.57,LOW,informational,seo
+content marketing,6600,1,7.25,LOW,commercial,seo
+mijn politie inloggen,6600,34,0,LOW,navigational,conversie
+mijn rijnstate inloggen,6600,6,0,LOW,navigational,conversie
+betekenis progressie,6600,,0,LOW,informational,conversie
+progressie betekenis,6600,,0,LOW,informational,conversie
+genocide betekenis,6600,,0,LOW,informational,conversie
+narratief betekenis,6600,,0,LOW,informational,conversie
+betekenis genocide,6600,,0,LOW,informational,conversie
+schilderen op nummer volwassenen,6600,6,1.74,HIGH,transactional,conversie
+betekenis progressief,6600,6,0,LOW,informational,conversie
+kpi betekenis,6600,,2.02,LOW,informational,conversie
+progressive betekenis,6600,,0,LOW,informational,conversie
+strijkkralen voorbeelden,6600,,0.05,HIGH,informational,conversie
+centraal beheer contact,6600,,0.15,LOW,navigational,conversie
+zoek op nummer,6600,,1.37,LOW,informational,conversie
+website laten maken,6600,65,17.84,MEDIUM,commercial,conversie
+progressief betekenis,6600,,0,LOW,informational,conversie
+assertief betekenis,6600,13,0.76,LOW,informational,conversie
+progressieve betekenis,6600,1,0,LOW,informational,conversie
+symbaloo website,5400,,0,LOW,navigational,website
+vine website,5400,55,1.16,LOW,navigational,website
+bedrijf,5400,54,3.72,LOW,informational,seo
+ai studio google,5400,43,0.35,LOW,navigational,seo
+lumc leiden,5400,18,1.02,LOW,navigational,seo
+rs online,5400,34,5.32,LOW,navigational,seo
+beste elektrische tandenborstel,5400,,1.67,HIGH,commercial,seo
+kringloop gouda,5400,5,3.36,LOW,commercial,seo
+beste kermis,5400,,0,LOW,informational,seo
+leiden of lijden,5400,,0,LOW,informational,seo
+marketing vacatures,5400,,1.27,MEDIUM,informational,seo
+wat is ai,5400,31,1.7,LOW,informational,seo
+postcode loterij contact,5400,32,0.19,LOW,navigational,conversie
+van lanschot inloggen,5400,12,0.02,LOW,navigational,conversie
+acquisitie betekenis,5400,,0,LOW,informational,conversie
+empathie betekenis,5400,4,0.11,LOW,informational,conversie
+cognitief betekenis,5400,,0.25,LOW,informational,conversie
+hoogslaper met bureau,5400,,0.54,HIGH,transactional,conversie
+simpel contact,5400,72,2.17,LOW,navigational,conversie
+woningnet amsterdam inloggen,5400,22,0.94,LOW,navigational,conversie
+pasen betekenis,5400,4,6.05,LOW,informational,conversie
+rsvp betekenis,5400,,0.61,LOW,informational,conversie
+reaal inloggen,5400,,0,LOW,navigational,conversie
+mijn martini inloggen,5400,,0,LOW,navigational,conversie
+narcist betekenis,5400,13,0.45,LOW,informational,conversie
+rijnstate inloggen,5400,10,0,LOW,navigational,conversie
+slashdot website,4400,33,0,LOW,navigational,website
+tg website,4400,75,0,LOW,navigational,website
+website checker,4400,59,4.95,MEDIUM,informational,website
+free portfolio website,4400,60,4.98,MEDIUM,informational,website
+ai foto maken,4400,,1.24,MEDIUM,informational,seo
+online aangifte doen,4400,33,1.29,LOW,transactional,seo
+dwt online,4400,17,0,LOW,navigational,seo
+tanki online,4400,42,0,LOW,navigational,seo
+mijn gelre nl,4400,,0,LOW,navigational,seo
+hema leiden,4400,15,0.12,LOW,informational,seo
+hm online,4400,10,0.28,HIGH,navigational,seo
+parool nl,4400,48,0,LOW,informational,seo
+hulp nl,4400,40,1.97,LOW,navigational,seo
+agenda google,4400,48,0.42,LOW,navigational,seo
+social media marketing,4400,,7.42,LOW,informational,seo
+online luisteren,4400,92,0.03,LOW,informational,seo
+google ro,4400,11,0,LOW,navigational,seo
+online veiling,4400,39,0.39,MEDIUM,commercial,seo
+radio zet online,4400,32,0.02,LOW,informational,seo
+gratis website maken,3600,43,14.9,HIGH,informational,website
+online veilingen,3600,40,0.51,HIGH,commercial,seo
+webcams gouda,3600,,0,LOW,navigational,seo
+google adsense,3600,53,4.45,LOW,commercial,seo
+website bouwen,2900,60,22.42,HIGH,commercial,website
+website builder,2400,100,15.22,LOW,commercial,website
+website design,2400,27,7.97,MEDIUM,commercial,website
+website hosting,2400,85,18.46,LOW,commercial,website
+wordpress website maken,1900,18,18.01,MEDIUM,commercial,website
+max website,1600,90,0,LOW,navigational,website
+wix website,1600,61,13.61,MEDIUM,navigational,website
+website icon,1600,1,1.02,LOW,informational,website
+wordpress website,1300,71,8.01,MEDIUM,informational,website
+gore website,1300,59,0,LOW,navigational,website
+freelancer website,1300,74,5.09,MEDIUM,commercial,website
+portfolio website,1300,34,5.33,MEDIUM,navigational,website
+google website,1000,72,8.77,LOW,navigational,website
+wordpress hosting,1000,34,16.17,HIGH,commercial,website
+website templates,1000,66,4.8,MEDIUM,informational,website
+eigen website maken,1000,45,19.74,HIGH,commercial,website
+how to create a website,1000,100,11.83,HIGH,informational,website
+website laten maken kosten,1000,4,10.66,MEDIUM,commercial,website
+zelf een website maken,1000,55,15.31,HIGH,informational,website
+proxy website,880,69,2.62,LOW,informational,website
+ns website,880,44,0.66,LOW,navigational,website
+website bouwer,880,44,23.22,HIGH,commercial,website
+hamster website,880,4,0,LOW,navigational,website
+gamma website,880,13,0.14,HIGH,navigational,website
+website laten maken professioneel,880,29,19.84,MEDIUM,transactional,website
+hamsters website,880,31,0,LOW,navigational,website
+website seo checker,720,88,5.92,MEDIUM,commercial,website
+mediatakeout website,720,22,0,LOW,navigational,website
+ajax website,720,74,0.24,LOW,navigational,website
+website time machine,720,28,0,LOW,navigational,website
+webdesign bureau,720,38,13.04,MEDIUM,commercial,website
+time machine website,720,41,0,LOW,navigational,website
+website checken,720,22,4.69,LOW,informational,website
+wix website maken,720,15,13.76,MEDIUM,commercial,website
+website zalo,720,77,0,LOW,navigational,website
+digid website,720,32,0.82,LOW,navigational,website
+free website builder,720,100,9.16,HIGH,informational,website
+website history google,590,92,0,LOW,navigational,website
+maatwerk website,590,11,11.11,LOW,commercial,website
+apa website,590,44,0,LOW,informational,website
+lidl website,590,37,0.05,HIGH,navigational,website
+ah website,590,73,0.05,LOW,navigational,website
+klm website,590,,0.23,MEDIUM,navigational,website
+hoe maak je een website,590,49,9.87,MEDIUM,informational,website
+strato website,590,13,3.03,MEDIUM,navigational,website
+dating website badoo,590,43,2.92,LOW,navigational,website
+vinted website,590,15,0.27,LOW,navigational,website
+framer website,590,22,3.18,MEDIUM,navigational,website
+flipboard website,590,41,1.98,HIGH,navigational,website
+goedkoop website laten maken,590,41,15.44,MEDIUM,commercial,website
+apa format for a website,590,47,0,LOW,informational,website
+ranker website,480,,3.67,LOW,informational,website
+randomness website,480,,0,LOW,informational,website
+picnic website,480,6,1.79,LOW,navigational,website
+dark website,480,22,2.66,LOW,informational,website
+check website,480,51,3.38,LOW,informational,website
+seo website,480,68,10.37,MEDIUM,commercial,website
+website for zara,480,21,0.86,MEDIUM,navigational,website
+apa reference website,480,43,1.93,LOW,informational,website
+shad website,480,22,0,LOW,navigational,website
+apa website referencing,480,,1.93,LOW,informational,website
+blackplanet website,480,27,2.49,LOW,navigational,website
+website kopen,480,31,13.04,HIGH,transactional,website
+website laten maken prijs,480,,11.21,LOW,commercial,website
+website laten maken zzp,480,,18.67,MEDIUM,commercial,website
+website down,480,44,4.16,LOW,informational,website
+klarna website,480,35,2.61,LOW,navigational,website
+anwb website,480,48,0.11,HIGH,navigational,website
+random website,480,27,0,LOW,informational,website
+website voorbeelden,480,9,3.17,MEDIUM,informational,website
+ranking website,480,94,3.67,LOW,informational,website
+hosting website,480,64,14.67,MEDIUM,commercial,website
+wireframe website,480,45,6.21,LOW,informational,website
+kpn website,480,34,0.21,LOW,navigational,website
+website bouwen kosten,390,29,8.38,MEDIUM,commercial,website
+website header,390,5,0.82,LOW,navigational,website
+analyse website traffic,390,40,6.2,LOW,informational,website
+website 8 letters,390,,0,LOW,navigational,website
+chinese website,390,90,1.21,HIGH,informational,website
+professionele webshop laten maken,390,36,21.83,LOW,commercial,website
+goedkope website,390,15,13.96,HIGH,commercial,website
+ing website,390,41,0.36,LOW,navigational,website
+website analyzer,390,100,5.79,MEDIUM,commercial,website
+best website builder,390,40,14.58,HIGH,commercial,website
+website maken kosten,390,,10.34,HIGH,commercial,website
+jumbo website,390,24,0.04,LOW,navigational,website
+gratis website,390,39,12.17,HIGH,informational,website
+werken bij website,390,,3.76,LOW,informational,website
