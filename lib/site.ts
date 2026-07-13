@@ -564,3 +564,249 @@ export const aboutFaqs = [
     link: { label: "Plan een gratis groeigesprek", href: "/contact" },
   },
 ] as const;
+
+/* ── Google-reviews (echt, verbatim overgenomen) ── */
+export const reviews = {
+  source: "Google",
+  rating: 5.0,
+  count: 3,
+  items: [
+    {
+      name: "Alessandro Stinis",
+      role: "",
+      stars: 5,
+      when: "7 weken geleden",
+      text: "Brandlift heeft voor ons een professionele website gemaakt die veel beter laat zien wie we zijn en wat we doen. Luca dacht goed mee over de structuur, uitstraling en teksten, waardoor de website niet alleen mooi is geworden, maar ook duidelijk en overtuigend voor klanten. De communicatie was prettig en alles werd netjes uitgelegd. Zeker een aanrader voor bedrijven die serieus online willen groeien.",
+    },
+    {
+      name: "Marina Kuipers",
+      role: "Local Guide",
+      stars: 5,
+      when: "8 weken geleden",
+      text: "Wat wij sterk vonden aan Brandlift is dat ze niet zomaar een website bouwen, maar echt meedenken over de strategie erachter. Luca keek naar hoe klanten onze diensten beoordelen, welke informatie belangrijk is en hoe de website vertrouwen moet opbouwen. Daardoor voelt de website veel doelgerichter dan wat we hiervoor hadden. Professioneel, duidelijk en prettig samenwerken.",
+    },
+    {
+      name: "Josie Jackson",
+      role: "",
+      stars: 5,
+      when: "8 weken geleden",
+      text: "Wij hebben Brandlift ingeschakeld voor SEO en zijn erg tevreden over de aanpak. Luca keek niet alleen naar zoekwoorden, maar ook naar de volledige structuur van de website, lokale vindbaarheid en hoe klanten online naar ons zoeken. Alles werd helder uitgelegd en praktisch aangepakt. Fijn om met iemand te werken die echt begrijpt hoe je beter zichtbaar wordt in Google.",
+    },
+  ],
+} as const;
+
+/* ── Service-hub: website laten maken (pillar) ── */
+export const websiteHub = {
+  eyebrow: "Website laten maken",
+  h1: "Website laten maken die vertrouwen wekt en aanvragen oplevert",
+  intro:
+    "Een goedkope website is zo gemaakt. Een website die klanten oplevert vraagt om strategie, vindbaarheid en conversie. Wij bouwen websites als groeifundament - voor Nederlandse bedrijven die serieus online willen groeien.",
+  updated: "2026-07-10",
+  sections: [
+    {
+      h2: "Waarom een standaard website vaak niet genoeg is",
+      body: "Veel websites zien er prima uit, maar missen structuur, vertrouwen en vindbaarheid. Bezoekers snappen niet meteen wat je doet, komen niet binnen via Google, en vinden geen duidelijke route naar contact. Het resultaat: een dure digitale brochure die te weinig aanvragen oplevert.",
+    },
+    {
+      h2: "Wat je krijgt bij een website van Brandlift",
+      body: "Geen los ontwerp, maar een compleet groeifundament. Elke pagina is gebouwd op een doel en afgestemd op hoe jouw klant zoekt, twijfelt en beslist.",
+      points: [
+        "Strategie en positionering - eerst het doel, dan het ontwerp",
+        "Webdesign dat past bij de kwaliteit van je werk",
+        "Copy en een heldere paginastructuur",
+        "Lokale SEO-basis vanaf de fundering",
+        "Conversiegerichte pagina's en CTA's",
+        "Snelle, veilige en schaalbare techniek",
+        "Meetbaar gemaakt, zodat je ziet wat werkt",
+      ],
+    },
+    {
+      h2: "Maatwerk website voor jouw bedrijf",
+      body: "Maatwerk gaat bij ons niet alleen over code, maar over structuur, boodschap en de route die je bezoeker aflegt. Een zakelijke website op maat die klopt bij jouw markt, doelgroep en gewenste positie - in plaats van een sjabloon met jouw logo erop.",
+    },
+    {
+      h2: "Lokale SEO vanaf de basis",
+      body: "Beter gevonden worden begint bij je eigen website. We bouwen een sterke lokale basis met dienst- en locatiepagina's, interne links, schema en een scherp Google Bedrijfsprofiel - zodat de juiste klanten je vinden op het moment dat ze zoeken.",
+      link: { label: "Meer over lokale SEO", href: "/diensten/lokale-seo" },
+    },
+    {
+      h2: "Ontworpen voor meer aanvragen",
+      body: "Vertrouwen, duidelijkheid en een logische route naar contact. Met bewijs, heldere diensten en conversiegerichte pagina's zetten we bezoekers om in aanvragen - niet alleen in bezoekers die weer wegklikken.",
+    },
+  ],
+  faqs: [
+    {
+      q: "Wat kost een website laten maken?",
+      a: "Dat hangt af van je doel, omvang en de mate van maatwerk. In een gratis groeigesprek geven we een eerlijke indicatie - zonder verplichtingen.",
+      link: { label: "Lees wat een website kost", href: "/kennisbank/wat-kost-een-website-laten-maken" },
+    },
+    {
+      q: "Hoe lang duurt het om een website te laten maken?",
+      a: "Een gemiddeld traject loopt van enkele weken tot een paar maanden, afhankelijk van omvang en content. In het groeigesprek koppelen we een realistische planning aan jouw project.",
+    },
+    {
+      q: "Is SEO inbegrepen bij een nieuwe website?",
+      a: "Ja. Elke website bouwen we met een sterke lokale SEO-basis: structuur, dienst- en locatiepagina's, techniek en schema. Zo is je site vanaf livegang gebouwd om gevonden te worden.",
+    },
+    {
+      q: "Maken jullie ook maatwerk websites?",
+      a: "Ja. We werken niet met kant-en-klare sjablonen, maar bouwen je website op maat rond jouw strategie, doelgroep en boodschap.",
+    },
+    {
+      q: "Kan Brandlift mijn bestaande website vernieuwen?",
+      a: "Zeker. We kijken naar wat er staat, wat werkt en wat beter kan - en bouwen daarop verder of opnieuw, afhankelijk van wat het meeste oplevert.",
+    },
+  ],
+} as const;
+
+/* ── Lokale pagina's: data-gedreven per stad (Den Haag eerst) ── */
+export const cityPages = {
+  "den-haag": {
+    city: "Den Haag",
+    slug: "website-laten-maken-den-haag",
+    updated: "2026-07-10",
+    metaTitle: "Website laten maken Den Haag | Strategisch + lokale SEO - Brandlift",
+    metaDescription:
+      "Website laten maken in Den Haag? Brandlift bouwt strategische websites met lokale SEO en conversie voor Haagse bedrijven die meer aanvragen willen. Plan een gratis groeigesprek.",
+    h1: "Website laten maken in Den Haag",
+    intro:
+      "Een website die Haagse klanten vindt, overtuigt en omzet in aanvragen. Wij zitten zelf in Den Haag en bouwen strategische websites met lokale SEO en conversie - voor bedrijven in de hele stad en ver daarbuiten.",
+    responsePromise: "Reactie binnen 1 werkdag",
+    areasIntro:
+      "We werken voor bedrijven in heel Den Haag - van het Centrum tot de kust, van Ypenburg tot Loosduinen.",
+    stadsdelen: [
+      "Centrum",
+      "Escamp",
+      "Haagse Hout",
+      "Laak",
+      "Leidschenveen-Ypenburg",
+      "Loosduinen",
+      "Scheveningen",
+      "Segbroek",
+    ],
+    wijken: [
+      "Zeeheldenkwartier",
+      "Benoordenhout",
+      "Bezuidenhout",
+      "Statenkwartier",
+      "Archipelbuurt",
+      "Duinoord",
+      "Bomenbuurt",
+      "Vogelwijk",
+      "Mariahoeve",
+      "Ypenburg",
+      "Leidschenveen",
+      "Wateringse Veld",
+      "Kijkduin",
+    ],
+    sections: [
+      {
+        h2: "Waarom een lokale website loont in Den Haag",
+        body: "Haagse klanten zoeken lokaal. Ze typen niet zomaar 'hovenier' of 'schilder', maar zoeken naar een bedrijf in hun eigen buurt dat betrouwbaar oogt en snel bereikbaar is. Den Haag is bovendien een drukke, competitieve markt: van het Centrum en het Statenkwartier tot Ypenburg en Loosduinen zijn er in elke branche tientallen aanbieders. Wie online niet opvalt, verdwijnt onder de concurrent. Een website die lokaal is opgebouwd - met de juiste structuur, locatiesignalen en vindbaarheid - zorgt dat jij verschijnt op precies het moment dat een klant in Den Haag klaar is om contact op te nemen. Dat is het verschil tussen een site die er staat, en een site die klanten oplevert.",
+      },
+      {
+        h2: "Strategie vóór ontwerp",
+        body: "We beginnen niet bij het uiterlijk, maar bij de vraag: waarom zou een Haagse klant voor jou kiezen in plaats van voor de buurman? Die positionering bepaalt alles - de structuur van je site, de volgorde van je pagina's, de boodschap op je homepage en de route naar contact. We kijken naar je concurrenten in de regio, naar hoe jouw ideale klant zoekt en twijfelt, en naar welk bewijs hem over de streep trekt. Pas als dat scherp is, gaan we ontwerpen. Zo wordt je website niet alleen mooi, maar overtuigend voor de mensen die je echt wilt bereiken.",
+      },
+      {
+        h2: "Design en merk dat vertrouwen wekt",
+        body: "Online lijken veel goede bedrijven kleiner dan ze zijn. Vakwerk dat in het echt indruk maakt, komt op een verouderde of rommelige site zwak over - en dat kost vertrouwen, en dus klussen. Wij vertalen de kwaliteit van je werk naar een uitstraling die klopt: een merk, kleurgebruik en beeldtaal die passen bij je markt en je gewenste positie in Den Haag. Zo kom je op het scherm net zo sterk over als aan de deur.",
+      },
+      {
+        h2: "Techniek: snel, veilig en schaalbaar",
+        body: "Een trage of onveilige website kost je klanten én posities in Google - zeker op mobiel, waar de meeste Haagse klanten zoeken. We bouwen modern, snel en veilig, met aandacht voor laadtijd, mobiele weergave en de technische signalen waar Google op let. De fundering is schaalbaar, zodat je site meegroeit met je bedrijf: extra diensten, nieuwe werkgebieden of een webshop voeg je later moeiteloos toe, zonder opnieuw te hoeven beginnen.",
+      },
+      {
+        h2: "Lokale SEO die Haagse klanten vindt",
+        body: "Beter gevonden worden begint bij je eigen website. We bouwen een sterke lokale basis met aparte dienst- en locatiepagina's, interne links, gestructureerde data (schema) en een scherp Google Bedrijfsprofiel dat op je site aansluit. Zo word je gevonden op de zoekopdrachten die Haagse klanten écht gebruiken - van 'website laten maken Den Haag' tot de specifieke dienst in hun wijk. Geen rapportje met groene vinkjes, maar vindbaarheid die aanvragen oplevert van mensen die klaar zijn om te bellen.",
+        link: { label: "Meer over lokale SEO", href: "/diensten/lokale-seo" },
+      },
+      {
+        h2: "Content die converteert",
+        body: "Gevonden worden is stap één; overtuigen is stap twee. Heldere teksten, duidelijke diensten, echte cases en een logische route naar contact zorgen dat bezoekers niet wegklikken maar de stap naar een aanvraag zetten. We schrijven voor je klant, niet voor de zoekmachine alleen: begrijpelijke taal, sterke call-to-actions en genoeg vertrouwenssignalen op de juiste plek. Elke pagina heeft een doel, en dat doel is meestal simpel - meer aanvragen uit Den Haag en omgeving.",
+      },
+      {
+        h2: "Voor welke Haagse bedrijven we bouwen",
+        body: "We bouwen vooral voor vakbedrijven, servicebedrijven en lokale dienstverleners in Den Haag: hoveniers, schilders, aannemers, installateurs, dakdekkers en elektriciens, maar net zo goed voor praktijken, premium en visuele bedrijven die professioneel willen overkomen. Wat ze delen: ze leveren goed werk en willen dat online eindelijk terugzien in meer zichtbaarheid en meer aanvragen. Val je daar niet precies tussen? Eén groeigesprek geeft snel antwoord of het past.",
+        link: { label: "Bekijk voor wie we bouwen", href: "/voor-wie" },
+      },
+      {
+        h2: "Zo verloopt de samenwerking",
+        body: "Je werkt van begin tot eind direct met Luca - geen accountmanager, geen tussenlagen. We starten met een gratis groeigesprek waarin we je situatie, doel en concurrentie doornemen. Daarna volgen strategie en positionering, een heldere structuur en copy, het ontwerp, de bouw en een lokale SEO-check, tot en met de livegang en meting. Korte lijnen, eerlijk advies en een reactie binnen één werkdag - zodat je altijd weet waar je project staat.",
+        link: { label: "Bekijk de volledige werkwijze", href: "/werkwijze" },
+      },
+    ],
+    faqs: [
+      {
+        q: "Werken jullie alleen voor bedrijven in Den Haag?",
+        a: "Nee. Ons kantoor staat in Den Haag, maar we bouwen voor bedrijven door heel Nederland - en uiteraard in de hele regio, van Delft en Rijswijk tot Zoetermeer en het Westland. De meeste samenwerking verloopt online, snel en zonder reistijd, dus afstand speelt zelden een rol.",
+      },
+      {
+        q: "Wat kost een website laten maken in Den Haag?",
+        a: "Dat hangt af van je doel, de omvang van de site en de mate van maatwerk. Een eenvoudige, sterke website kost minder dan een uitgebreid platform met veel dienst- en locatiepagina's. In een gratis groeigesprek van 30 minuten geven we een eerlijke indicatie die bij jouw situatie past - zonder verplichtingen en zonder salespitch.",
+        link: { label: "Lees wat een website kost", href: "/kennisbank/wat-kost-een-website-laten-maken" },
+      },
+      {
+        q: "Is lokale SEO inbegrepen?",
+        a: "Ja. Elke Haagse website bouwen we met een lokale SEO-basis: de juiste structuur, dienst- en locatiepagina's, techniek, schema en de aansluiting op je Google Bedrijfsprofiel. Zo ben je vanaf livegang gebouwd om lokaal gevonden te worden, in plaats van dat SEO er achteraf nog bij moet.",
+      },
+      {
+        q: "Hoe lang duurt het om een website te laten maken?",
+        a: "Een gemiddeld traject loopt van enkele weken tot een paar maanden, afhankelijk van omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een realistische planning aan jouw project, zodat je precies weet waar je aan toe bent.",
+      },
+      {
+        q: "Hebben jullie ervaring met Haagse bedrijven?",
+        a: "Zeker. We bouwden onder meer de nieuwe website voor Hovenier Eykelenboom in Den Haag, met een lokale SEO-structuur per dienst en werkgebied. Het resultaat: van 2 naar 24 aanvragen per maand sinds livegang.",
+        link: { label: "Bekijk de case", href: "/cases/hovenier-eykelenboom" },
+      },
+      {
+        q: "Kunnen jullie mijn bestaande website vernieuwen?",
+        a: "Ja. We kijken naar wat er staat, wat werkt en wat beter kan, en bouwen daarop verder of opnieuw - afhankelijk van wat het meeste oplevert. Vaak is een strategische herbouw met een sterke lokale basis effectiever dan losse aanpassingen aan een verouderde site.",
+      },
+    ],
+    nearby: [
+      "Delft",
+      "Zoetermeer",
+      "Rijswijk",
+      "Leidschendam-Voorburg",
+      "Westland",
+      "Wassenaar",
+    ],
+  },
+} as const;
+
+/* ── Case: Hovenier Eykelenboom (echte cijfers) ── */
+export const caseEykelenboom = {
+  slug: "hovenier-eykelenboom",
+  client: "Hovenier Eykelenboom",
+  sector: "Hoveniers / groenvoorziening",
+  location: "Den Haag",
+  url: "hoveniereykelenboom.nl",
+  updated: "2026-07-10",
+  metaTitle: "Case: Hovenier Eykelenboom - van 2 naar 24 aanvragen per maand | Brandlift",
+  metaDescription:
+    "Hoe Brandlift Hovenier Eykelenboom uit Den Haag lokaal beter vindbaar maakte met een complete website en lokale SEO-structuur - van 2 naar 24 aanvragen per maand.",
+  h1: "Hovenier Eykelenboom: van 2 naar 24 aanvragen per maand",
+  intro:
+    "Vakwerk dat lokaal te weinig werd gevonden - opnieuw opgebouwd tot een website die per dienst en werkgebied vindbaar is, en het vakmanschap eindelijk laat zien.",
+  image: "/images/macbook-only-bigger.jpg",
+  imageAlt: "De website die Brandlift bouwde voor Hovenier Eykelenboom, getoond op een laptop",
+  stat: { from: "2", to: "24", unit: "aanvragen p/m", label: "sinds livegang" },
+  blocks: [
+    {
+      label: "De uitdaging",
+      title: "Sterk vakwerk, zwakke online vindbaarheid",
+      body: "Hovenier Eykelenboom levert al jaren hoogwaardig hoveniers- en groenwerk in Den Haag en omgeving. Online kwam dat niet terug: de oude website werd lokaal nauwelijks gevonden, liet het vakmanschap onvoldoende zien en leverde te weinig aanvragen op. Klanten die zochten naar een hovenier in hun wijk, kwamen bij de concurrent uit.",
+    },
+    {
+      label: "De aanpak",
+      title: "Complete website met een lokale SEO-structuur per dienst en werkgebied",
+      body: "We bouwden de website opnieuw op als groeifundament. Een heldere structuur met aparte pagina's per dienst en per werkgebied, een scherpe merkuitstraling die past bij de kwaliteit van het werk, en een lokale SEO-basis met locatiesignalen, interne links en schema. Zo werd de site gebouwd om precies die Haagse klanten te bereiken die op zoek zijn naar een hovenier in hun buurt.",
+    },
+    {
+      label: "Het resultaat",
+      title: "Van 2 naar 24 aanvragen per maand",
+      body: "Sinds livegang stroomt het aantal aanvragen structureel binnen: van 2 naar 24 per maand. De website wordt lokaal beter gevonden, oogt professioneler en zet bezoekers om in concrete aanvragen - precies het groeifundament dat het vakwerk verdient.",
+    },
+  ],
+} as const;
