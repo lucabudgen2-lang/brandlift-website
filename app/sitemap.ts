@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/contact", 0.8),
     // knowledge base
     entry("/kennisbank", 0.6),
-    entry("/kennisbank/wat-kost-een-website-laten-maken", 0.7),
+    entry("/kennisbank/wat-kost-een-website-laten-maken", 0.8),
     entry("/kennisbank/wat-is-lokale-seo", 0.6),
     entry("/kennisbank/website-laten-maken-stappenplan", 0.6),
     // legal

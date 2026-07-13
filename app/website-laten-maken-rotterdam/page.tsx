@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { PageStub } from "@/components/layout/PageStub";
+import { CityPage } from "@/components/sections/CityPage";
+import { cities } from "@/lib/cities";
+
+const city = cities.rotterdam;
 
 export const metadata: Metadata = {
-  title: "Website laten maken Rotterdam | Strategisch + lokale SEO - Brandlift",
-  description:
-    "Website laten maken in Rotterdam? Brandlift bouwt strategische websites met lokale SEO en conversie voor Rotterdamse bedrijven die meer aanvragen willen.",
+  title: city.metaTitle,
+  description: city.metaDescription,
+  alternates: { canonical: `/${city.slug}` },
 };
 
 export default function Page() {
-  return (
-    <PageStub
-      eyebrow="Rotterdam · heel Nederland"
-      title="Website laten maken in Rotterdam"
-      intro="Een strategische website met lokale SEO en conversie voor Rotterdamse bedrijven die meer aanvragen willen - gevonden worden op precies het juiste moment."
-    />
-  );
+  return <CityPage city={city} />;
 }

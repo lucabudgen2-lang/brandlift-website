@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { PageStub } from "@/components/layout/PageStub";
+import { CityPage } from "@/components/sections/CityPage";
+import { cities } from "@/lib/cities";
+
+const city = cities.amsterdam;
 
 export const metadata: Metadata = {
-  title: "Website laten maken Amsterdam | Strategisch + lokale SEO - Brandlift",
-  description:
-    "Website laten maken in Amsterdam? Brandlift bouwt strategische websites met lokale SEO en conversie voor Amsterdamse bedrijven die meer aanvragen willen.",
+  title: city.metaTitle,
+  description: city.metaDescription,
+  alternates: { canonical: `/${city.slug}` },
 };
 
 export default function Page() {
-  return (
-    <PageStub
-      eyebrow="Amsterdam · heel Nederland"
-      title="Website laten maken in Amsterdam"
-      intro="Een strategische website met lokale SEO en conversie voor Amsterdamse bedrijven die meer aanvragen willen - gevonden worden op precies het juiste moment."
-    />
-  );
+  return <CityPage city={city} />;
 }

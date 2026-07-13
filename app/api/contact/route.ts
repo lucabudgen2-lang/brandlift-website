@@ -7,6 +7,24 @@ import { NextResponse } from "next/server";
 export async function POST(req: Request) {
   try {
     const data = await req.json();
+
+    /* kosten-calculator lead: alleen e-mail verplicht, config als payload.
+       TODO before launch: wire to Resend (mail de berekening naar de lead +
+       een notificatie naar luca@brandliftagency.nl). */
+    if (data?.type === "calculator") {
+      if (!data?.email || typeof data.email !== "string" || !data.email.includes("@")) {
+        return NextResponse.json({ ok: false, error: "Missing email" }, { status: 400 });
+      }
+      // eslint-disable-next-line no-console
+      console.log("[calculator] nieuwe berekening-aanvraag:", {
+        email: data.email,
+        config: data.config ?? null,
+        indication: data.indication ?? null,
+        at: new Date().toISOString(),
+      });
+      return NextResponse.json({ ok: true });
+    }
+
     const required = ["name", "company", "email", "phone", "focus"];
     for (const key of required) {
       if (!data?.[key] || typeof data[key] !== "string") {
