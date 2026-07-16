@@ -74,7 +74,7 @@ export function GroeigesprekModal() {
       const anchor = (e.target as HTMLElement)?.closest?.("a");
       if (!anchor || anchor.target === "_blank") return;
       const href = anchor.getAttribute("href");
-      if (href !== "/contact") return;
+      if (href !== "/contact" && href !== "#contact") return;
       if (!/groeigesprek/i.test(anchor.textContent ?? "")) return;
       e.preventDefault();
       setOpen(true);
