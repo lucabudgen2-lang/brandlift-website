@@ -9,6 +9,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Byline, FaqBlock, CtaBlock } from "@/components/page/blocks";
 import { Reviews } from "@/components/sections/Reviews";
 import { CasesCarousel } from "@/components/sections/CasesCarousel";
+import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { caseEykelenboom, reviews } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 import type { CityData } from "@/lib/cities";
@@ -210,6 +211,9 @@ export function CityPage({ city }: { city: CityData }) {
         </Container>
       </section>
 
+      {/* ═══════════ TRUST STRIP ═══════════ */}
+      <BenefitMarquee />
+
       {/* ═══════════ WAAROM LOKAAL LOONT ═══════════ */}
       <section className="on-light relative py-20 md:py-28">
         <Container>
@@ -290,7 +294,7 @@ export function CityPage({ city }: { city: CityData }) {
                     </span>
                     <div>
                       <h3 className="font-display text-xl font-extrabold leading-tight tracking-tight text-paper">{p.title}</h3>
-                      <p className="mt-2.5 text-[0.95rem] leading-relaxed text-g400">{p.body}</p>
+                      <p className="mt-2.5 text-[0.95rem] leading-relaxed text-g500">{p.body}</p>
                       {p.link && (
                         <Link href={p.link.href} className="group/l mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-text hover:underline">
                           {p.link.label}
@@ -386,7 +390,7 @@ export function CityPage({ city }: { city: CityData }) {
             />
             <Reveal delay={0.14}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-g300">
-                Een website bij ons begint <span className="font-semibold text-paper">vanaf &euro;2.000</span>. {city.kostenBody}
+                Een website bij ons begint <span className="font-semibold text-paper">vanaf &euro;1.500</span>. {city.kostenBody}
               </p>
             </Reveal>
 
@@ -397,7 +401,7 @@ export function CityPage({ city }: { city: CityData }) {
                 </span>
                 <div>
                   <p className="font-display text-base font-extrabold text-paper">We werken door totdat je tevreden bent.</p>
-                  <p className="mt-1 text-sm leading-relaxed text-g400">
+                  <p className="mt-1 text-sm leading-relaxed text-g500">
                     Nog niet tevreden met het resultaat? Dan werken we door - zonder extra kosten - tot het wel klopt.
                   </p>
                 </div>
@@ -409,7 +413,7 @@ export function CityPage({ city }: { city: CityData }) {
             <div className="relative overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 p-8 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.7)]">
               <div className="animate-glow pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-blue/20 blur-[70px]" />
               <p className="relative font-display text-lg font-extrabold text-paper">Bereken je indicatie</p>
-              <p className="relative mt-2 text-sm leading-relaxed text-g400">
+              <p className="relative mt-2 text-sm leading-relaxed text-g500">
                 Stel in een paar klikken je website samen en zie direct een eerlijke prijsindicatie die past bij jouw bedrijf.
               </p>
               <Link

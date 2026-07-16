@@ -9,6 +9,7 @@ import { Cases } from "@/components/sections/Cases";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { Founder } from "@/components/sections/Founder";
 import { LocalDenHaag } from "@/components/sections/LocalDenHaag";
+import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { Reviews } from "@/components/sections/Reviews";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -35,6 +36,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema()) }}
       />
       <Hero />
+      <BenefitMarquee />
       <TrustStrip />
       <Problem />
       <VoorWie />

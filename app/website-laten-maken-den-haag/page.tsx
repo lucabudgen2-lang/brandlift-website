@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Byline, FaqBlock, CtaBlock } from "@/components/page/blocks";
 import { Reviews } from "@/components/sections/Reviews";
+import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { cityPages, caseEykelenboom, reviews, site } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
@@ -182,6 +183,9 @@ export default function Page() {
           </div>
         </Container>
       </section>
+
+      {/* ═══════════ TRUST STRIP ═══════════ */}
+      <BenefitMarquee />
 
       {/* ═══════════ WAAROM LOKAAL LOONT — diagnostic cards (Problem design) ═══════════ */}
       <section className="on-light relative py-20 md:py-28">
@@ -382,7 +386,7 @@ export default function Page() {
                       <h3 className="font-display text-xl font-extrabold leading-tight tracking-tight text-paper">
                         {p.title}
                       </h3>
-                      <p className="mt-2.5 text-[0.95rem] leading-relaxed text-g400">{p.body}</p>
+                      <p className="mt-2.5 text-[0.95rem] leading-relaxed text-g500">{p.body}</p>
                       {"link" in p && p.link && (
                         <Link
                           href={p.link.href}
@@ -489,7 +493,7 @@ export default function Page() {
             />
             <Reveal delay={0.14}>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-g300">
-                Een website bij ons begint <span className="font-semibold text-paper">vanaf &euro;2.000</span>. Wat
+                Een website bij ons begint <span className="font-semibold text-paper">vanaf &euro;1.500</span>. Wat
                 het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een sterke,
                 compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website
                 zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen
@@ -509,7 +513,7 @@ export default function Page() {
                   <p className="font-display text-base font-extrabold text-paper">
                     We werken door totdat je tevreden bent.
                   </p>
-                  <p className="mt-1 text-sm leading-relaxed text-g400">
+                  <p className="mt-1 text-sm leading-relaxed text-g500">
                     Nog niet tevreden met het resultaat? Dan werken we door - zonder extra kosten - tot het wel klopt.
                   </p>
                 </div>
@@ -521,7 +525,7 @@ export default function Page() {
             <div className="relative overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 p-8 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.7)]">
               <div className="animate-glow pointer-events-none absolute -right-16 -top-16 h-52 w-52 rounded-full bg-blue/20 blur-[70px]" />
               <p className="relative font-display text-lg font-extrabold text-paper">Bereken je indicatie</p>
-              <p className="relative mt-2 text-sm leading-relaxed text-g400">
+              <p className="relative mt-2 text-sm leading-relaxed text-g500">
                 Stel in een paar klikken je website samen en zie direct een eerlijke prijsindicatie die past
                 bij jouw bedrijf.
               </p>

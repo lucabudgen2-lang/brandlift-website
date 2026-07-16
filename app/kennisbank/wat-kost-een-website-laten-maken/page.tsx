@@ -7,6 +7,7 @@ import { LineReveal } from "@/components/ui/LineReveal";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Byline, FaqBlock, CtaBlock } from "@/components/page/blocks";
 import { Reviews } from "@/components/sections/Reviews";
+import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -16,7 +17,7 @@ const PATH = "/kennisbank/wat-kost-een-website-laten-maken";
 export const metadata: Metadata = {
   title: "Wat kost een website laten maken? Eerlijke prijzen uitgelegd - Brandlift",
   description:
-    "Wat kost een website laten maken? In Nederland meestal €2.000 tot €10.000. Bekijk de prijzen per type website, wat de prijs bepaalt en bereken direct je eigen indicatie.",
+    "Wat kost een website laten maken? In Nederland meestal €1.500 tot €8.000. Bekijk de prijzen per type website, wat de prijs bepaalt en bereken direct je eigen indicatie.",
   alternates: { canonical: PATH },
 };
 
@@ -29,10 +30,10 @@ const crumbs = [
 /* ── content data ── */
 
 const priceTable = [
-  { type: "Eenvoudige website", prijs: "€2.000 - €3.500", wie: "zzp'ers en starters die er professioneel op willen staan" },
-  { type: "Website voor vakbedrijven", prijs: "€3.500 - €6.000", wie: "hoveniers, schilders, aannemers en installateurs die aanvragen willen" },
-  { type: "Maatwerk website", prijs: "€6.000 - €10.000+", wie: "bedrijven met complexe wensen of een sterke merkambitie" },
-  { type: "Webshop", prijs: "vanaf €5.000", wie: "bedrijven die online willen verkopen" },
+  { type: "Eenvoudige website", prijs: "€1.500 - €2.500", wie: "zzp'ers en starters die er professioneel op willen staan" },
+  { type: "Website voor vakbedrijven", prijs: "€2.000 - €3.500", wie: "hoveniers, schilders, aannemers en installateurs die aanvragen willen" },
+  { type: "Maatwerk website", prijs: "€5.000 - €8.000+", wie: "bedrijven met complexe wensen of een sterke merkambitie" },
+  { type: "Webshop", prijs: "vanaf €4.000", wie: "bedrijven die online willen verkopen" },
 ];
 
 const factoren = [
@@ -65,7 +66,7 @@ const factoren = [
 const tiers = [
   {
     naam: "Eenvoudige website",
-    prijs: "€2.000 - €3.500",
+    prijs: "€1.500 - €2.500",
     voor: "Voor zzp'ers en starters",
     body: "Een compacte, professionele site die precies vertelt wat je doet en vertrouwen wekt.",
     punten: ["Tot circa 5 pagina's", "Strategie en positionering", "Lokale SEO-basis", "Klaar in 3 - 4 weken"],
@@ -73,7 +74,7 @@ const tiers = [
   },
   {
     naam: "Website voor vakbedrijven",
-    prijs: "€3.500 - €6.000",
+    prijs: "€2.000 - €3.500",
     voor: "Voor hoveniers, schilders, aannemers, installateurs",
     body: "Dienst- en werkgebiedpagina's die per klus en per plaats gevonden worden - gebouwd op aanvragen.",
     punten: ["Dienst- en locatiepagina's", "Lokale SEO-structuur per werkgebied", "Teksten die verkopen", "Conversie-gericht ontwerp"],
@@ -81,7 +82,7 @@ const tiers = [
   },
   {
     naam: "Maatwerk website",
-    prijs: "€6.000 - €10.000+",
+    prijs: "€5.000 - €8.000+",
     voor: "Voor complexe wensen en sterke merken",
     body: "Volledig op maat ontworpen en gebouwd - van merkidentiteit tot koppelingen met je systemen.",
     punten: ["Uniek ontwerp op maat", "Koppelingen en integraties", "Meertaligheid mogelijk", "Schaalbaar fundament"],
@@ -89,7 +90,7 @@ const tiers = [
   },
   {
     naam: "Webshop",
-    prijs: "vanaf €5.000",
+    prijs: "vanaf €4.000",
     voor: "Voor online verkoop",
     body: "Een webshop die niet alleen producten toont, maar ook gevonden wordt en verkoopt.",
     punten: ["Betalingen inbegrepen", "Productstructuur en vindbaarheid", "Veilig en snel", "Uitbreidbaar assortiment"],
@@ -107,7 +108,7 @@ const altijdInbegrepen = [
 ];
 
 const vergelijking: { label: string; zelf: string; budget: string; bureau: string }[] = [
-  { label: "Prijs", zelf: "€0 - €300 per jaar", budget: "€349 - €500 eenmalig", bureau: "vanaf €2.000" },
+  { label: "Prijs", zelf: "€0 - €300 per jaar", budget: "€349 - €500 eenmalig", bureau: "vanaf €1.500" },
   { label: "Jouw tijdsinvestering", zelf: "tientallen uren, elke wijziging zelf", budget: "beperkt", bureau: "beperkt - wij doen het werk" },
   { label: "Strategie en positionering", zelf: "✗", budget: "✗", bureau: "✓" },
   { label: "Uniek ontwerp", zelf: "✗ (template)", budget: "✗ (template)", bureau: "✓" },
@@ -119,15 +120,15 @@ const vergelijking: { label: string; zelf: string; budget: string; bureau: strin
 const faqs = [
   {
     q: "Hoeveel kost het om een website te laten maken?",
-    a: "In Nederland kost een professionele website laten maken meestal tussen de 2.000 en 10.000 euro, afhankelijk van het type, de omvang en de mate van maatwerk. Een eenvoudige website begint rond de 2.000 euro, een website voor vakbedrijven zit meestal tussen de 3.500 en 6.000 euro, en volledig maatwerk loopt tot 10.000 euro of meer.",
+    a: "In Nederland kost een professionele website laten maken meestal tussen de 1.500 en 8.000 euro, afhankelijk van het type en de mate van maatwerk. Een eenvoudige website begint rond de 1.500 euro, een website voor vakbedrijven zit meestal tussen de 2.000 en 3.500 euro, en volledig maatwerk begint vanaf 5.000 euro.",
   },
   {
     q: "Wat kost een eenvoudige website?",
-    a: "Een eenvoudige, professionele website van circa vijf pagina's kost bij ons tussen de 2.000 en 3.500 euro. Daar zit strategie, een lokale SEO-basis en een ontwerp dat vertrouwen wekt al in - het is dus geen kale template, maar een site die klaar is om gevonden te worden.",
+    a: "Een eenvoudige, professionele website kost bij ons tussen de 1.500 en 2.500 euro. Daar zit strategie, een lokale SEO-basis en een ontwerp dat vertrouwen wekt al in - het is dus geen kale template, maar een compacte site die klaar is om gevonden te worden.",
   },
   {
     q: "Wat kost een webshop laten maken?",
-    a: "Een webshop begint bij ons vanaf 5.000 euro, inclusief betalingen, een logische productstructuur en de technische basis om gevonden te worden. De uiteindelijke prijs hangt af van het aantal producten, koppelingen en gewenste functies.",
+    a: "Een webshop begint bij ons vanaf 4.000 euro, inclusief betalingen, een logische productstructuur en de technische basis om gevonden te worden. De uiteindelijke prijs hangt af van het aantal producten, koppelingen en gewenste functies.",
   },
   {
     q: "Kost SEO extra bij een website?",
@@ -159,7 +160,7 @@ function guideSchema() {
         "@id": `${site.url}${PATH}#article`,
         headline: "Wat kost een website laten maken? Eerlijke prijzen en keuzes uitgelegd",
         description:
-          "Een website laten maken kost in Nederland meestal tussen de €2.000 en €10.000. Dit bepaalt de prijs - per type website, eerlijk uitgelegd.",
+          "Een website laten maken kost in Nederland meestal tussen de €1.500 en €8.000. Dit bepaalt de prijs - per type website, eerlijk uitgelegd.",
         image: `${site.url}/images/hero-macbook.png`,
         datePublished: UPDATED,
         dateModified: UPDATED,
@@ -213,7 +214,7 @@ export default function Page() {
               <Reveal delay={0.15}>
                 {/* direct answer — snippet/AI Overview bait, first ~40 words */}
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-g200">
-                  Een website laten maken kost in Nederland meestal tussen de €2.000 en €10.000,
+                  Een website laten maken kost in Nederland meestal tussen de €1.500 en €8.000,
                   afhankelijk van het type website, de omvang en de mate van maatwerk. Op deze pagina
                   lees je precies waar die prijs vandaan komt - en bereken je jouw eigen indicatie.
                 </p>
@@ -241,7 +242,7 @@ export default function Page() {
                   Prijsspectrum in Nederland
                 </p>
                 <p className="relative mt-4 font-display text-[2.6rem] font-extrabold leading-none tracking-tight text-paper sm:text-5xl">
-                  €2.000 <span className="text-g600">-</span> €10.000
+                  €1.500 <span className="text-g600">-</span> €8.000
                 </p>
                 <div className="relative mt-6 h-2.5 overflow-hidden rounded-full bg-white/10">
                   <div className="absolute inset-y-0 left-0 w-full rounded-full bg-gradient-to-r from-blue/40 via-blue to-blue-text shadow-[0_0_18px_rgba(1,48,253,0.6)]" />
@@ -250,7 +251,7 @@ export default function Page() {
                   <span>eenvoudige website</span>
                   <span>volledig maatwerk</span>
                 </div>
-                <p className="relative mt-5 border-t border-[var(--color-line)] pt-4 text-sm leading-relaxed text-g400">
+                <p className="relative mt-5 border-t border-[var(--color-line)] pt-4 text-sm leading-relaxed text-g500">
                   Bij ons altijd inclusief strategie en een lokale SEO-basis - en we werken door totdat
                   je tevreden bent.
                 </p>
@@ -259,6 +260,9 @@ export default function Page() {
           </div>
         </Container>
       </section>
+
+      {/* ═══════════ TRUST STRIP ═══════════ */}
+      <BenefitMarquee />
 
       {/* ═══════════ KORT ANTWOORD — the price table ═══════════ */}
       <section className="on-light relative py-16 md:py-24">
@@ -378,7 +382,7 @@ export default function Page() {
                   </h3>
                   <p className="mt-3 font-display text-2xl font-extrabold tracking-tight text-blue-text">{t.prijs}</p>
                   <p className="mt-1 text-xs font-semibold text-g500">{t.voor}</p>
-                  <p className="mt-3.5 text-sm leading-relaxed text-g400">{t.body}</p>
+                  <p className="mt-3.5 text-sm leading-relaxed text-g500">{t.body}</p>
                   <ul className="mt-5 space-y-2 border-t border-white/10 pt-4">
                     {t.punten.map((p) => (
                       <li key={p} className="flex items-start gap-2.5 text-[0.82rem] leading-snug text-g300">
@@ -478,7 +482,7 @@ export default function Page() {
                   <p className="font-display text-xs font-bold uppercase tracking-[0.1em] text-blue">Eenmalig</p>
                   <h3 className="mt-2 font-display text-xl font-extrabold tracking-tight text-ink">De bouw van je website</h3>
                   <p className="mt-3 text-[0.95rem] leading-relaxed text-g600">
-                    Vanaf €2.000, afhankelijk van type en omvang. Hierin zit alles wat de site sterk
+                    Vanaf €1.500, afhankelijk van type en maatwerk. Hierin zit alles wat de site sterk
                     maakt: strategie, ontwerp, teksten waar nodig, techniek en de lokale SEO-basis.
                     Je betaalt dit één keer.
                   </p>
@@ -579,8 +583,8 @@ export default function Page() {
                       <div className="h-full w-2/3 rounded-full bg-white shadow-[0_0_16px_rgba(255,255,255,0.7)]" />
                     </div>
                     <div className="mt-1.5 flex justify-between text-[0.68rem] font-semibold text-white/70">
-                      <span>€2.000</span>
-                      <span>€10.000+</span>
+                      <span>€1.500</span>
+                      <span>€8.000+</span>
                     </div>
                   </div>
                 </div>

@@ -7,13 +7,14 @@ import { LineReveal } from "@/components/ui/LineReveal";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { CtaBlock } from "@/components/page/blocks";
 import { KostenCalculator } from "@/components/calculator/KostenCalculator";
+import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Website kosten berekenen | Bereken je prijs in 1 minuut - Brandlift",
   description:
-    "Bereken in 1 minuut wat jouw website kost. Stel je website samen en zie direct een eerlijke prijsindicatie vanaf €2.000 - vrijblijvend, zonder verplichtingen.",
+    "Bereken in 1 minuut wat jouw website kost. Stel je website samen en zie direct een eerlijke prijsindicatie vanaf €1.500 - vrijblijvend, zonder verplichtingen.",
   alternates: { canonical: "/website-kosten-calculator" },
 };
 
@@ -34,7 +35,7 @@ function calculatorSchema() {
         name: "Website kosten calculator",
         url: `${site.url}/website-kosten-calculator`,
         description:
-          "Gratis calculator die in 1 minuut een eerlijke prijsindicatie geeft voor het laten maken van een website, vanaf €2.000.",
+          "Gratis calculator die in 1 minuut een eerlijke prijsindicatie geeft voor het laten maken van een website, vanaf €1.500.",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         browserRequirements: "Requires JavaScript",
@@ -56,7 +57,7 @@ const uitleg = [
   },
   {
     title: "Transparant over wat meetelt",
-    body: "Type website, omvang en extra functies bepalen de prijs. Je ziet live wat elke keuze doet - zo weet je precies waar het bedrag vandaan komt.",
+    body: "Het type website, een paar extra functies en of er nog beeld nodig is bepalen de prijs. Je ziet live wat elke keuze doet - zo weet je precies waar het bedrag vandaan komt.",
   },
   {
     title: "Vrijblijvend, geen kleine lettertjes",
@@ -87,13 +88,13 @@ export default function Page() {
             <Reveal delay={0.15}>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-g200">
                 Stel hieronder je website samen en zie direct een eerlijke prijsindicatie - live, terwijl
-                je klikt. Vanaf €2.000, inclusief strategie en een lokale SEO-basis. Vrijblijvend en
+                je klikt. Vanaf €1.500, inclusief strategie en een lokale SEO-basis. Vrijblijvend en
                 zonder kleine lettertjes.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <ul className="mt-7 flex flex-wrap gap-2.5">
-                {["Live prijsindicatie", "Vanaf €2.000", "Geen verplichtingen"].map((chip) => (
+                {["Live prijsindicatie", "Vanaf €1.500", "Geen verplichtingen"].map((chip) => (
                   <li
                     key={chip}
                     className="inline-flex items-center gap-2 chamf-sm border border-[var(--color-line-strong)] bg-s1/70 px-3.5 py-2 text-sm font-medium text-g100 backdrop-blur-sm"
@@ -107,6 +108,9 @@ export default function Page() {
           </div>
         </Container>
       </section>
+
+      {/* ═══════════ TRUST STRIP ═══════════ */}
+      <BenefitMarquee />
 
       {/* ═══════════ THE TOOL ═══════════ */}
       <KostenCalculator />

@@ -9,8 +9,8 @@ import {
   calcPrice,
   formatEuro,
   spectrumPos,
+  SPECTRUM,
   TYPE_OPTIONS,
-  PAGE_OPTIONS,
   EXTRA_OPTIONS,
   type CalcInput,
   type ExtraId,
@@ -116,10 +116,9 @@ function OptionCard({
 export function KostenCalculator() {
   const [input, setInput] = useState<CalcInput>({
     type: "vakbedrijf",
-    pages: "1-5",
     extras: [],
     seoUitgebreid: false,
-    contentKlaar: true,
+    beeldKlaar: true,
   });
   const [email, setEmail] = useState("");
   const [sendState, setSendState] = useState<"idle" | "busy" | "done" | "error">("idle");
@@ -155,8 +154,8 @@ export function KostenCalculator() {
 
   /* spectrum geometry */
   const bandLeft = spectrumPos(result.low) * 100;
-  const bandRight = spectrumPos(Math.min(result.high, 10000)) * 100;
-  const overflow = result.high > 10000;
+  const bandRight = spectrumPos(Math.min(result.high, SPECTRUM.max)) * 100;
+  const overflow = result.high > SPECTRUM.max;
 
   return (
     <section className="relative overflow-hidden bg-s0 pb-20 md:pb-28">
@@ -186,31 +185,9 @@ export function KostenCalculator() {
                   </div>
                 </div>
 
-                {/* 02 · omvang */}
+                {/* 02 · extra's */}
                 <div>
-                  <StepHead n="02" title="Hoeveel pagina's?" hint="diensten, werkgebieden, over, contact ..." />
-                  <div className="mt-4 grid grid-cols-3 gap-2.5">
-                    {PAGE_OPTIONS.map((p) => (
-                      <button
-                        key={p.id}
-                        type="button"
-                        aria-pressed={input.pages === p.id}
-                        onClick={() => setInput((s) => ({ ...s, pages: p.id }))}
-                        className={`chamf-sm border px-3 py-3 text-center text-sm font-semibold transition-all duration-200 ${
-                          input.pages === p.id
-                            ? "border-blue bg-blue/15 text-paper shadow-[0_0_24px_-6px_rgba(1,48,253,0.5)]"
-                            : "border-white/10 bg-white/[0.03] text-g300 hover:border-blue/50"
-                        }`}
-                      >
-                        {p.label}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-                {/* 03 · extra's */}
-                <div>
-                  <StepHead n="03" title="Wat moet er verder in?" hint="meerdere keuzes mogelijk" />
+                  <StepHead n="02" title="Wat moet er verder in?" hint="meerdere keuzes mogelijk" />
                   <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
                     {EXTRA_OPTIONS.map((x) => {
                       const inbegrepen = x.id === "betalingen" && input.type === "webshop";
@@ -228,9 +205,9 @@ export function KostenCalculator() {
                   </div>
                 </div>
 
-                {/* 04 · lokale SEO */}
+                {/* 03 · lokale SEO */}
                 <div>
-                  <StepHead n="04" title="Lokale SEO" />
+                  <StepHead n="03" title="Lokale SEO" />
                   <div className="mt-4 grid gap-2.5 sm:grid-cols-2">
                     <OptionCard
                       on={!input.seoUitgebreid}
@@ -249,19 +226,19 @@ export function KostenCalculator() {
                   </div>
                 </div>
 
-                {/* 05 · content */}
+                {/* 04 · beeld */}
                 <div>
-                  <StepHead n="05" title="Heb je al teksten en beeld?" />
+                  <StepHead n="04" title="Heb je al beeld?" hint="foto's van je werk" />
                   <div className="mt-4 grid grid-cols-2 gap-2.5">
                     <OptionCard
-                      on={input.contentKlaar}
-                      onClick={() => setInput((s) => ({ ...s, contentKlaar: true }))}
-                      label="Ja, grotendeels"
+                      on={input.beeldKlaar}
+                      onClick={() => setInput((s) => ({ ...s, beeldKlaar: true }))}
+                      label="Ja, ik heb foto's"
                     />
                     <OptionCard
-                      on={!input.contentKlaar}
-                      onClick={() => setInput((s) => ({ ...s, contentKlaar: false }))}
-                      label="Nee, hulp nodig"
+                      on={!input.beeldKlaar}
+                      onClick={() => setInput((s) => ({ ...s, beeldKlaar: false }))}
+                      label="Nee, fotografie nodig"
                     />
                   </div>
                 </div>
@@ -289,8 +266,8 @@ export function KostenCalculator() {
                       />
                     </div>
                     <div className="mt-2 flex justify-between text-[0.7rem] font-semibold text-g600">
-                      <span>€2.000</span>
-                      <span className={overflow ? "text-blue-text" : ""}>€10.000+</span>
+                      <span>€1.500</span>
+                      <span className={overflow ? "text-blue-text" : ""}>€8.000+</span>
                     </div>
                   </div>
 
@@ -332,7 +309,7 @@ export function KostenCalculator() {
                         </span>
                         <div>
                           <p className="text-sm font-bold text-paper">Verstuurd</p>
-                          <p className="mt-1 text-[0.82rem] leading-relaxed text-g400">
+                          <p className="mt-1 text-[0.82rem] leading-relaxed text-g500">
                             We sturen je de berekening met een gespecificeerde opzet. Sneller weten waar je
                             staat? Plan direct een groeigesprek.
                           </p>

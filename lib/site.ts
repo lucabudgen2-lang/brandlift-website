@@ -569,8 +569,38 @@ export const aboutFaqs = [
 export const reviews = {
   source: "Google",
   rating: 5.0,
-  count: 3,
+  count: 8,
   items: [
+    {
+      name: "iFinq Finn",
+      role: "",
+      stars: 5,
+      text: "Heel blij met Brandlift! Ze hebben onze nieuwe website en huisstijl opgezet en we zijn super tevreden. Als bedrijf in Den Haag was het fijn om met een lokaal team te werken dat snapt wat er speelt in de regio. De site laadt snel, ziet er professioneel uit en we krijgen nu regelmatig aanvragen via Google. Duidelijke communicatie, snelle levertijd en ze denken echt mee met je business. Aanrader voor iedereen die op zoek is naar een webdesign bureau in Den Haag.",
+    },
+    {
+      name: "Steven de Oude",
+      role: "",
+      stars: 5,
+      text: "Wij hebben Brandlift ingeschakeld voor het vernieuwen van onze website en zijn erg tevreden met het resultaat. Vanaf het eerste contact werd er goed meegedacht over hoe we onze renovatieprojecten professioneel konden presenteren en meer aanvragen uit de regio Rotterdam konden genereren. De communicatie verliep snel en duidelijk, afspraken werden nagekomen en aanpassingen werden netjes verwerkt. De nieuwe website ziet er modern uit, werkt goed op mobiel en past veel beter bij de kwaliteit van ons werk. We merken dat potentiële klanten nu sneller vertrouwen in ons bedrijf hebben. Zeker een aanrader voor ondernemers die hun online uitstraling serieus willen verbeteren.",
+    },
+    {
+      name: "Lo Bo",
+      role: "",
+      stars: 5,
+      text: "We waren al een tijdje toe aan een nieuwe website en zijn via via bij Brandlift terechtgekomen. Vanaf het begin verliep het contact prettig en werd er goed geluisterd naar wat voor ons als dakdekkersbedrijf belangrijk is. De website is duidelijk, professioneel en vooral makkelijk voor klanten om snel contact op te nemen. Ook onze projecten komen nu veel beter naar voren dan op onze oude site. Het is erg mooi geworden. Fijne samenwerking, korte lijntjes en gewoon goed werk. We zijn erg blij met het resultaat.",
+    },
+    {
+      name: "Jonathan Krispijn",
+      role: "",
+      stars: 5,
+      text: "Ongekend goed. Super blij met de service.",
+    },
+    {
+      name: "Duncan Schuller",
+      role: "",
+      stars: 5,
+      text: "Brandlift heeft onze nieuwe website en huisstijl neergezet voor ons bedrijf en we zijn erg tevreden. Fijn dat ze snappen hoe de sector werkt en niet met een standaard template komen aanzetten - de site ziet er professioneel uit, laadt snel en we merken dat potentiële klanten ons makkelijker weten te vinden in Den Haag en omgeving. Duidelijke communicatie en ze denken goed mee. Aanrader voor alle bouwbedrijven die serieus werk willen maken van hun online uitstraling. Luca is een topper!",
+    },
     {
       name: "Alessandro Stinis",
       role: "",
@@ -743,7 +773,7 @@ export const cityPages = {
       },
       {
         q: "Wat kost een website laten maken in Den Haag?",
-        a: "Een website bij ons begint vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk - van een sterke, compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent. In een gratis groeigesprek geven we een eerlijke indicatie die bij jouw situatie past.",
+        a: "Een website bij ons begint vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk - van een sterke, compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent. In een gratis groeigesprek geven we een eerlijke indicatie die bij jouw situatie past.",
         link: { label: "Lees wat een website kost", href: "/kennisbank/wat-kost-een-website-laten-maken" },
       },
       {

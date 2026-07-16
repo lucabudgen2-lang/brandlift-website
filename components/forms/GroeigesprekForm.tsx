@@ -23,12 +23,23 @@ const focusOptions = [
   "Alles / weet ik nog niet",
 ];
 
-const field =
-  "w-full chamf-sm border border-[var(--color-line-strong)] bg-s2 px-4 py-3 text-paper placeholder:text-g600 outline-none transition-colors focus:border-blue-text";
-const label = "mb-1.5 block text-sm font-medium text-g300";
 const errCls = "mt-1 text-xs text-err";
 
-export function GroeigesprekForm() {
+export function GroeigesprekForm({
+  variant = "panel",
+  tone = "dark",
+}: {
+  variant?: "panel" | "bare";
+  tone?: "dark" | "light";
+}) {
+  const bare = variant === "bare";
+  const light = tone === "light";
+  const field = light
+    ? "w-full chamf-sm border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-g500 outline-none transition-colors focus:border-blue"
+    : "w-full chamf-sm border border-[var(--color-line-strong)] bg-s2 px-4 py-3 text-paper placeholder:text-g600 outline-none transition-colors focus:border-blue-text";
+  const label = light
+    ? "mb-1.5 block text-sm font-medium text-g700"
+    : "mb-1.5 block text-sm font-medium text-g300";
   const [sent, setSent] = useState(false);
   const {
     register,
@@ -56,12 +67,12 @@ export function GroeigesprekForm() {
 
   if (sent) {
     return (
-      <div className="chamf chamf-lg border border-[var(--color-line-strong)] bg-s2 p-8 text-center">
+      <div className={bare ? "py-10 text-center" : light ? "chamf chamf-lg border border-ink/10 bg-white p-8 text-center" : "chamf chamf-lg border border-[var(--color-line-strong)] bg-s2 p-8 text-center"}>
         <div className="mx-auto grid h-12 w-12 place-items-center chamf-sm bg-blue text-xl text-white">
           ✓
         </div>
-        <h3 className="mt-5 text-2xl font-bold text-paper">Bedankt - hij staat binnen.</h3>
-        <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-g500">
+        <h3 className={`mt-5 text-2xl font-bold ${light ? "text-ink" : "text-paper"}`}>Bedankt - hij staat binnen.</h3>
+        <p className={`mx-auto mt-3 max-w-sm text-sm leading-relaxed ${light ? "text-g600" : "text-g500"}`}>
           We nemen binnen één werkdag contact op om je gratis groeigesprek in te
           plannen. Geen salespitch, dat beloven we.
         </p>
@@ -73,7 +84,7 @@ export function GroeigesprekForm() {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 p-7 md:p-8"
+      className={bare ? "" : "chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 p-7 md:p-8"}
     >
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
@@ -146,7 +157,7 @@ export function GroeigesprekForm() {
         {isSubmitting ? "Versturen…" : "Plan mijn gratis groeigesprek"}
         {!isSubmitting && <span aria-hidden>→</span>}
       </button>
-      <p className="mt-4 text-sm text-g500">
+      <p className={`mt-4 text-sm ${light ? "text-g600" : "text-g500"}`}>
         30 minuten · geen salespitch · eerst kijken of we waarde toevoegen
       </p>
     </form>

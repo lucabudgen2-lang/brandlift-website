@@ -165,13 +165,13 @@ export function CasesCarousel({
                       {c.client}
                     </h3>
                     <div className="mt-4 space-y-3 border-l-2 border-blue/25 pl-4">
-                      <p className={`text-sm leading-relaxed ${light ? "text-g600" : "text-g400"}`}>
+                      <p className={`text-sm leading-relaxed ${light ? "text-g600" : "text-g500"}`}>
                         <span className={`mb-1 block font-semibold text-[0.6rem] uppercase tracking-[0.08em] ${light ? "text-blue" : "text-blue-text"}`}>
                           Uitdaging
                         </span>
                         {c.challenge}
                       </p>
-                      <p className={`text-sm leading-relaxed ${light ? "text-g600" : "text-g400"}`}>
+                      <p className={`text-sm leading-relaxed ${light ? "text-g600" : "text-g500"}`}>
                         <span className={`mb-1 block font-semibold text-[0.6rem] uppercase tracking-[0.08em] ${light ? "text-blue" : "text-blue-text"}`}>
                           Richting
                         </span>

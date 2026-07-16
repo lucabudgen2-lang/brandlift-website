@@ -4,6 +4,7 @@ import { site } from "@/lib/site";
 import { siteSchema } from "@/lib/schema";
 import { MegaNav } from "@/components/layout/MegaNav";
 import { Footer } from "@/components/layout/Footer";
+import { GroeigesprekModal } from "@/components/groeigesprek/GroeigesprekModal";
 import "./globals.css";
 
 const saira = Saira({
@@ -78,6 +79,7 @@ export default function RootLayout({
         <MegaNav />
         {children}
         <Footer />
+        <GroeigesprekModal />
       </body>
     </html>
   );

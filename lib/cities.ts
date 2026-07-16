@@ -194,7 +194,7 @@ export const cities: Record<string, CityData> = {
       },
       {
         q: "Wat kost een website laten maken in Rotterdam?",
-        a: "Een website begint bij ons vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent. In een gratis groeigesprek geven we een eerlijke indicatie.",
+        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent. In een gratis groeigesprek geven we een eerlijke indicatie.",
         link: costGuideLink,
       },
       {
@@ -334,7 +334,7 @@ export const cities: Record<string, CityData> = {
       },
       {
         q: "Wat kost een website laten maken in Eindhoven?",
-        a: "Een website begint bij ons vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
         link: costGuideLink,
       },
       {
@@ -477,7 +477,7 @@ export const cities: Record<string, CityData> = {
       },
       {
         q: "Wat kost een website laten maken in Utrecht?",
-        a: "Een website begint bij ons vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
         link: costGuideLink,
       },
       {
@@ -609,7 +609,7 @@ export const cities: Record<string, CityData> = {
       },
       {
         q: "Wat kost een website laten maken in Amsterdam?",
-        a: "Een website begint bij ons vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
         link: costGuideLink,
       },
       {
@@ -750,7 +750,7 @@ export const cities: Record<string, CityData> = {
       },
       {
         q: "Wat kost een website laten maken in Delft?",
-        a: "Een website begint bij ons vanaf 2.000 euro. De uiteindelijke prijs hangt af van je doel, de omvang en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
         link: costGuideLink,
       },
       {
