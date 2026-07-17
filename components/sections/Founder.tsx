@@ -124,8 +124,8 @@ export function Founder() {
           <div className="relative border-t border-[var(--color-line)]">
             <div className="relative aspect-[4/5] sm:aspect-[16/9] lg:aspect-[24/9]">
               <Image
-                src="/images/hero-bg.jpg"
-                alt="Het kantoor en team van Brandlift in Den Haag"
+                src="/images/brandlift-aan-het-werk.jpg"
+                alt="Luca van Brandlift bouwt een strategische website op kantoor in Den Haag"
                 fill
                 sizes="100vw"
                 className="object-cover object-center"

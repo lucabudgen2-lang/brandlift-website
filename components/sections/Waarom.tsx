@@ -121,11 +121,11 @@ export function Waarom() {
               {/* main: the team, cooled into the huisstijl */}
               <div className="relative aspect-[4/3] overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] shadow-[0_40px_90px_-40px_rgba(0,0,0,0.7)]">
                 <Image
-                  src="/images/hero-bg.jpg"
-                  alt="Het team van Brandlift aan het werk op kantoor in Den Haag"
+                  src="/images/luca-aan-het-werk.jpg"
+                  alt="Luca van Brandlift aan het werk aan een website, op kantoor in Den Haag"
                   fill
                   sizes="(max-width: 1024px) 92vw, 46vw"
-                  className="object-cover object-center"
+                  className="object-cover object-[62%_center]"
                 />
                 <div className="absolute inset-0 bg-blue-deep/40 mix-blend-multiply" />
                 <div className="absolute inset-0 bg-gradient-to-t from-s0/75 via-transparent to-transparent" />
