@@ -22,21 +22,26 @@ const marker: Variants = {
 const markerClass =
   "pointer-events-none absolute bottom-[0.24em] left-0 right-0 h-[0.3em] origin-left rounded-[2px] bg-blue";
 
-/* Hero headline: three one-line statements, masked rise, staggered.
-   The final line is italic and carries the electric-blue marker. */
+/* Hero-slogan: korte statements, gemaskeerd omhoog, gestaggerd.
+   De laatste regel is cursief en draagt de elektrisch-blauwe marker.
+   `as` staat standaard op "p": dit is visueel de grote kop, maar de
+   echte <h1> is de SEO-regel erboven. */
 export function HeroHeadline({
   lines,
   className = "",
+  as: Tag = "p",
 }: {
   lines: readonly string[];
   className?: string;
+  as?: "h1" | "p";
 }) {
   const reduce = useReducedMotion();
   const last = lines.length - 1;
+  const MotionTag = Tag === "h1" ? motion.h1 : motion.p;
 
   if (reduce) {
     return (
-      <h1 className={className}>
+      <Tag className={className}>
         {lines.map((t, i) => (
           <span
             key={i}
@@ -46,12 +51,12 @@ export function HeroHeadline({
             <span className="relative">{t}</span>
           </span>
         ))}
-      </h1>
+      </Tag>
     );
   }
 
   return (
-    <motion.h1
+    <MotionTag
       className={className}
       variants={container}
       initial="hidden"
@@ -76,6 +81,6 @@ export function HeroHeadline({
           </span>
         ),
       )}
-    </motion.h1>
+    </MotionTag>
   );
 }

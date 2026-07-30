@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -83,25 +82,21 @@ export function Hero() {
       <Container className="relative grid items-center gap-12 pb-10 pt-20 md:pb-14 md:pt-24 lg:grid-cols-[1.18fr_0.82fr] lg:gap-16 lg:pb-16 lg:pt-28">
         {/* ── left: the promise ── */}
         <div>
+          {/* De H1 zit in de eyebrow-badge: semantisch de kop van de pagina,
+              visueel de kleine regel. De slogan eronder is groot maar een <p>. */}
           <Reveal>
-            <span className="inline-flex flex-wrap items-center gap-x-3 gap-y-1.5 chamf-sm border border-[var(--color-line-strong)] bg-s1/60 px-4 py-2.5 backdrop-blur-sm">
+            <h1 className="inline-flex flex-wrap items-center gap-x-3 gap-y-1.5 chamf-sm border border-[var(--color-line-strong)] bg-s1/60 px-4 py-2.5 text-[0.68rem] font-bold uppercase leading-relaxed tracking-[0.09em] text-g100 backdrop-blur-sm sm:text-[0.78rem]">
               <span aria-hidden className="h-3.5 w-3.5 shrink-0 chamf-sm bg-blue shadow-[0_0_10px_rgba(1,48,253,0.7)]" />
-              {hero.pillars.map((p, i) => (
-                <Fragment key={p}>
-                  {i > 0 && (
-                    <span aria-hidden className="h-3.5 w-[2px] rotate-[24deg] bg-blue/60" />
-                  )}
-                  <span className="text-[0.6rem] font-bold uppercase tracking-[0.09em] text-g100 sm:text-[0.72rem]">
-                    {p}
-                  </span>
-                </Fragment>
-              ))}
-            </span>
+              <span>
+                Webdesignbureau in <span className="text-blue-text">Den Haag</span> dat je meer
+                aanvragen oplevert
+              </span>
+            </h1>
           </Reveal>
 
           <HeroHeadline
-            lines={hero.h1Lines}
-            className="mt-3 text-[clamp(1.85rem,5.2vw,3.7rem)] font-extrabold leading-[1.16]"
+            lines={hero.sloganLines}
+            className="mt-5 font-display text-[clamp(1.85rem,5.2vw,3.7rem)] font-extrabold leading-[1.16]"
           />
 
           <Reveal delay={0.3}>

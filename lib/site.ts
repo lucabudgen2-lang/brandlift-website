@@ -39,13 +39,16 @@ export const cta = {
 export const hero = {
   eyebrow: "Website · Branding · Lokale SEO · Conversie",
   pillars: ["Website", "Branding", "Lokale SEO", "Conversie"],
-  /* De money-terms zitten bewust op de geldpagina's: "website laten maken"
-     op /diensten/website-laten-maken, "website laten maken den haag" op de
-     stadspagina. De homepage is het entiteits-anker: hij moet in één regel
-     zeggen WAT we zijn, WAAR we zitten en WAT het oplevert - dat is wat
-     Google en AI-antwoorden aan het bedrijf koppelen, en het kannibaliseert
-     de geldpagina's niet. */
-  h1Lines: ["Strategische websites", "uit Den Haag.", "Meer aanvragen."],
+  /* De H1 is de kleine regel boven de slogan - bewust, want de H1 moet de
+     zoekopdracht dekken en de slogan het merk. Anti-kannibalisatie: de
+     stadspagina houdt "website laten maken den haag" (de dienst-zoekopdracht),
+     de homepage pakt de bureau-zoekopdracht ("webdesignbureau den haag" /
+     "webdesign den haag") plus de uitkomst. Dat is precies de query waarvoor
+     een homepage hoort te ranken: wie zijn jullie, waar zitten jullie, wat
+     levert het op. */
+  h1: "Webdesignbureau in Den Haag dat je meer aanvragen oplevert",
+  /* De slogan is visueel de grote kop, maar semantisch geen H1. */
+  sloganLines: ["Online net zo sterk", "als in het echt."],
   sub: "Brandlift bouwt strategische websites met branding en lokale SEO. Zo word je beter gevonden, kom je professioneler over en zetten meer bezoekers de stap naar contact.",
   trustLine: "Gevestigd in Den Haag, actief in heel Nederland.",
   ctaMicrocopy: "30 minuten. Geen salespitch. Je weet daarna precies waar je staat.",
