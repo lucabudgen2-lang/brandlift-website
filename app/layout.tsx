@@ -45,7 +45,10 @@ export const metadata: Metadata = {
     "strategische website",
   ],
   authors: [{ name: site.founder }],
-  alternates: { canonical: "/" },
+  /* GEEN `alternates.canonical` hier. Next erft layout-metadata naar elke
+     pagina die het niet overschrijft, dus een canonical op "/" liet elke
+     pagina zonder eigen canonical zichzelf als de homepage aanmerken.
+     De canonical hoort per pagina; de homepage zet hem in app/page.tsx. */
   openGraph: {
     type: "website",
     locale: "nl_NL",

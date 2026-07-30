@@ -13,7 +13,16 @@ export function siteSchema() {
         legalName: site.legalName,
         url: site.url,
         email: site.email,
+        telephone: site.phoneE164,
         logo: `${site.url}/brand/logo-lockup.png`,
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          telephone: site.phoneE164,
+          email: site.email,
+          areaServed: "NL",
+          availableLanguage: ["nl", "en"],
+        },
         founder: { "@type": "Person", name: site.founder },
         description: site.oneLiner,
         identifier: {
@@ -36,6 +45,7 @@ export function siteSchema() {
         name: site.name,
         url: site.url,
         email: site.email,
+        telephone: site.phoneE164,
         image: `${site.url}/brand/logo-lockup.png`,
         priceRange: "€€€",
         address: {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Case: RotorSwing Holland",
   description:
     "Hoe Brandlift RotorSwing Holland online positioneert als premium jachtmerk, met een adviestool die bezoekers naar de juiste stabilisator leidt. Dit traject loopt nog - de website gaat binnenkort live.",
+  alternates: { canonical: "/cases/rotorswing" },
 };
 
 export default function Page() {

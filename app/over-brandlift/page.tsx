@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Over Brandlift - het bureau achter je website | Den Haag",
   description:
     "Geen anoniem bureau, maar Luca die je site zelf ontwerpt en bouwt. Lees wat Brandlift anders maakt en waarom vakbedrijven voor ons kiezen.",
+  alternates: { canonical: "/over-brandlift" },
 };
 
 function aboutFaqSchema() {

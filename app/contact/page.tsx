@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact - plan een gratis groeigesprek",
   description:
     "Plan een gratis groeigesprek van 30 minuten. Geen salespitch - we kijken waar je nu staat en waar aanvragen blijven liggen.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function Page() {

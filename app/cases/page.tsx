@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Cases & portfolio",
   description:
     "Het werk van Brandlift: strategische websites met branding en lokale SEO voor Nederlandse bedrijven. Bekijk de cases.",
+  alternates: { canonical: "/cases" },
 };
 
 export default function Page() {

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Voorbeelden van websites | Ons werk - Brandlift",
   description:
     "Een selectie van strategische websites die we bouwden voor vakbedrijven en servicebedrijven - met lokale SEO en conversie als uitgangspunt.",
+  alternates: { canonical: "/voorbeelden" },
 };
 
 export default function Page() {

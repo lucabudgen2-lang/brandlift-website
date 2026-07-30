@@ -10,6 +10,10 @@ export const site = {
   domain: "brandliftagency.nl",
   url: "https://brandliftagency.nl",
   email: "luca@brandliftagency.nl",
+  /* phone = weergave, phoneE164 = schema/tel:-links (E.164, verplicht formaat
+     voor LocalBusiness telephone en voor click-to-call) */
+  phone: "06 44 14 57 72",
+  phoneE164: "+31644145772",
   street: "Guirlande 118",
   postalCode: "2496 WT",
   city: "Den Haag",

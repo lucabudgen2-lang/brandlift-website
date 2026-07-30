@@ -13,7 +13,12 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { Reviews } from "@/components/sections/Reviews";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
+import type { Metadata } from "next";
 import { faqs } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 function faqSchema() {
   return {

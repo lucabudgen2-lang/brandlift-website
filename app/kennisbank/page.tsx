@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Kennisbank",
   description:
     "Praktische gidsen over websites, lokale SEO en kosten. Eerlijke uitleg zodat je met vertrouwen kiest.",
+  alternates: { canonical: "/kennisbank" },
 };
 
 export default function Page() {

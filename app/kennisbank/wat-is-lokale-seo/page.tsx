@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Wat is lokale SEO?",
   description:
     "Wat is lokale SEO en waarom begint lokale vindbaarheid bij je eigen website? Een heldere uitleg voor lokale bedrijven en dienstverleners.",
+  alternates: { canonical: "/kennisbank/wat-is-lokale-seo" },
 };
 
 export default function Page() {

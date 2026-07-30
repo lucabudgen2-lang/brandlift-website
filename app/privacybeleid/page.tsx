@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Privacybeleid",
   description: "Het privacybeleid van Brandlift.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/privacybeleid" },
 };
 
 export default function Page() {
