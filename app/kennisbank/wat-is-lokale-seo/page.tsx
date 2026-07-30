@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageStub } from "@/components/layout/PageStub";
+import { articleSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Wat is lokale SEO?",
@@ -9,11 +10,25 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const schema = articleSchema({
+    headline: "Wat is lokale SEO?",
+    description: metadata.description as string,
+    path: "/kennisbank/wat-is-lokale-seo",
+    datePublished: "2026-07-13",
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Kennisbank", path: "/kennisbank" },
+      { name: "Wat is lokale SEO?", path: "/kennisbank/wat-is-lokale-seo" },
+    ],
+  });
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <PageStub
       eyebrow="Kennisbank · Lokale SEO"
       title="Wat is lokale SEO?"
       intro="Hoe lokale vindbaarheid werkt, en waarom die begint bij je eigen website in plaats van alleen bij Google Maps."
     />
+    </>
   );
 }

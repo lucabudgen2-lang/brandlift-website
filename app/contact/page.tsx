@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageStub } from "@/components/layout/PageStub";
+import { contactSchema } from "@/lib/schema";
 import { GroeigesprekForm } from "@/components/forms/GroeigesprekForm";
 
 export const metadata: Metadata = {
@@ -10,7 +11,18 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const schema = contactSchema({
+    name: "Contact",
+    description: metadata.description as string,
+    path: "/contact",
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Contact", path: "/contact" },
+    ],
+  });
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <PageStub
       eyebrow="Gratis groeigesprek"
       title="Plan een gratis groeigesprek"
@@ -20,5 +32,6 @@ export default function Page() {
         <GroeigesprekForm />
       </div>
     </PageStub>
+    </>
   );
 }

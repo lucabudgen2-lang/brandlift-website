@@ -8,8 +8,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Byline, FaqBlock, CtaBlock } from "@/components/page/blocks";
 import { Reviews } from "@/components/sections/Reviews";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
-import { site } from "@/lib/site";
-import { breadcrumbSchema, faqSchema } from "@/lib/schema";
+import { articleSchema } from "@/lib/schema";
 
 const UPDATED = "2026-07-13";
 const PATH = "/kennisbank/wat-kost-een-website-laten-maken";
@@ -150,36 +149,19 @@ const faqs = [
   },
 ];
 
-/* Article + FAQPage + BreadcrumbList */
+/* Article + WebPage + FAQPage + BreadcrumbList. De Person-node komt uit de
+   root layout - hier alleen naar verwijzen, niet opnieuw definiëren. */
 function guideSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": `${site.url}${PATH}#article`,
-        headline: "Wat kost een website laten maken? Eerlijke prijzen en keuzes uitgelegd",
-        description:
-          "Een website laten maken kost in Nederland meestal tussen de €1.500 en €8.000. Dit bepaalt de prijs - per type website, eerlijk uitgelegd.",
-        image: `${site.url}/images/hero-macbook.png`,
-        datePublished: UPDATED,
-        dateModified: UPDATED,
-        author: { "@id": `${site.url}/#founder` },
-        publisher: { "@id": `${site.url}/#organization` },
-        mainEntityOfPage: `${site.url}${PATH}`,
-        inLanguage: "nl-NL",
-      },
-      {
-        "@type": "Person",
-        "@id": `${site.url}/#founder`,
-        name: site.founder,
-        jobTitle: "Oprichter",
-        worksFor: { "@id": `${site.url}/#organization` },
-      },
-      breadcrumbSchema(crumbs),
-      faqSchema(faqs),
-    ],
-  };
+  return articleSchema({
+    headline: "Wat kost een website laten maken? Eerlijke prijzen en keuzes uitgelegd",
+    description:
+      "Een website laten maken kost in Nederland meestal tussen de €1.500 en €8.000. Dit bepaalt de prijs - per type website, eerlijk uitgelegd.",
+    path: PATH,
+    image: "/images/hero-macbook.png",
+    datePublished: UPDATED,
+    crumbs,
+    faqs,
+  });
 }
 
 function Check({ size = 14, className = "" }: { size?: number; className?: string }) {

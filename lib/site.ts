@@ -6,7 +6,9 @@
 
 export const site = {
   name: "Brandlift",
-  legalName: "Brandlift",
+  /* Eenmanszaak: KvK-inschrijving staat op de persoon, "Brandlift" is de
+     handelsnaam. legalName hoort dus de juridische naam te zijn. */
+  legalName: "Luca Budgen",
   domain: "brandliftagency.nl",
   url: "https://brandliftagency.nl",
   email: "luca@brandliftagency.nl",
@@ -26,6 +28,15 @@ export const site = {
   socials: {
     instagram: "https://www.instagram.com/brandliftnl/",
     facebook: "https://www.facebook.com/brandliftnl",
+    linkedinCompany: "https://www.linkedin.com/company/brandliftnl/",
+    linkedinFounder: "https://www.linkedin.com/in/luca-budgen-730571106/",
+  },
+  /* Google Bedrijfsprofiel. De cid-URL is de stabiele, canonieke vorm van de
+     plek en is afgeleid uit de hex in de Maps-URL (0xb2cffb70371bb9b8) -
+     geverifieerd tegen de CID uit de GBP-console. */
+  gbp: {
+    share: "https://share.google/Aez7TnNc91jE2omA",
+    map: "https://maps.google.com/?cid=12884793518309751224",
   },
   founder: "Luca Budgen",
   tagline: "Meer zichtbaarheid. Meer vertrouwen. Meer aanvragen.",

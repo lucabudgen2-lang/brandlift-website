@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageStub } from "@/components/layout/PageStub";
+import { caseSchema } from "@/lib/schema";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -11,7 +12,22 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const schema = caseSchema({
+    headline: "RotorSwing Holland",
+    description: metadata.description as string,
+    path: "/cases/rotorswing",
+    image: "/logos/rotorswing.png",
+    datePublished: "2026-07-13",
+    clientName: "RotorSwing Holland",
+    crumbs: [
+      { name: "Home", path: "/" },
+      { name: "Cases", path: "/cases" },
+      { name: "RotorSwing Holland", path: "/cases/rotorswing" },
+    ],
+  });
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
     <PageStub
       eyebrow="Case · Maritiem / jachttechniek"
       title="RotorSwing Holland"
@@ -40,5 +56,6 @@ export default function Page() {
         </div>
       </div>
     </PageStub>
+    </>
   );
 }
