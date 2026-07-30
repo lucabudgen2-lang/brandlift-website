@@ -157,6 +157,12 @@ export function CasesCarousel({
                     <span className="absolute bottom-3 left-3 chamf-sm bg-s0/70 px-2.5 py-1 font-semibold text-[0.58rem] uppercase tracking-[0.08em] text-g100 backdrop-blur-sm">
                       {c.sector}
                     </span>
+                    {"comingSoon" in c && c.comingSoon && (
+                      <span className="absolute right-3 top-3 inline-flex items-center gap-1.5 chamf-sm bg-blue px-2.5 py-1 font-semibold text-[0.58rem] uppercase tracking-[0.08em] text-white shadow-[0_0_18px_-4px_rgba(1,48,253,0.9)]">
+                        <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
+                        In aanbouw
+                      </span>
+                    )}
                   </div>
 
                   {/* body */}
@@ -178,6 +184,21 @@ export function CasesCarousel({
                         {c.direction}
                       </p>
                     </div>
+                    {"comingSoon" in c && c.comingSoon && (
+                      <p
+                        className={`mt-4 flex items-start gap-2 border-t pt-4 text-[0.82rem] leading-snug ${
+                          light ? "border-ink/10 text-g600" : "border-white/10 text-g500"
+                        }`}
+                      >
+                        <span aria-hidden className="mt-1.5 h-1.5 w-1.5 shrink-0 chamf-sm bg-blue" />
+                        <span>
+                          Dit traject loopt nog -{" "}
+                          <span className={`font-semibold ${light ? "text-ink" : "text-paper"}`}>
+                            de website gaat binnenkort live.
+                          </span>
+                        </span>
+                      </p>
+                    )}
                     <span className={`mt-auto flex items-center gap-2 pt-6 text-sm font-semibold ${light ? "text-blue" : "text-blue-text"}`}>
                       Bekijk de case
                       <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>

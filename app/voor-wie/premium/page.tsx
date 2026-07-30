@@ -489,10 +489,18 @@ export default function Page() {
                   { text: "Nu ook zo te zien.", className: "text-blue-text" },
                 ]}
               />
+              <Reveal delay={0.1}>
+                <div className="mt-6 inline-flex w-fit items-center gap-2.5 chamf-sm bg-blue px-4 py-2 shadow-[0_0_24px_-6px_rgba(1,48,253,0.9)]">
+                  <span aria-hidden className="h-2 w-2 rounded-full bg-white" />
+                  <span className="text-[0.82rem] font-semibold text-white">
+                    In aanbouw - website binnenkort live
+                  </span>
+                </div>
+              </Reveal>
               <Reveal delay={0.14}>
-                <p className="mt-6 max-w-lg text-lg leading-relaxed text-g300">
-                  {rotorswing.challenge} We positioneerden {rotorswing.client} als premium jachtmerk en
-                  bouwden een adviestool die bezoekers naar de juiste stabilisator leidt - precies de
+                <p className="mt-5 max-w-lg text-lg leading-relaxed text-g300">
+                  {rotorswing.challenge} We positioneren {rotorswing.client} als premium jachtmerk en
+                  bouwen een adviestool die bezoekers naar de juiste stabilisator leidt - precies de
                   begeleiding die past bij een aankoop van dit kaliber.
                 </p>
               </Reveal>

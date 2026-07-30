@@ -311,6 +311,10 @@ export const cases = [
     href: "/cases/rotorswing",
     logo: "/logos/rotorswing.png",
     url: "rotorswing.nl",
+    /* De site staat nog niet live - toon dat overal waar deze case verschijnt
+       in plaats van een resultaat te suggereren dat er nog niet is. */
+    comingSoon: true,
+    comingSoonLabel: "Website binnenkort live",
   },
   {
     id: "eykelenboom",
