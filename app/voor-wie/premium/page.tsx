@@ -543,7 +543,7 @@ export default function Page() {
                   <div className="absolute inset-0 flex items-center justify-center p-10">
                     <Image
                       src={rotorswing.logo}
-                      alt={rotorswing.client}
+                      alt={`${rotorswing.client} logo`}
                       width={300}
                       height={110}
                       className="logo-white max-h-20 w-auto max-w-[70%] opacity-90 transition-transform duration-500 ease-[var(--ease-brand)] group-hover:scale-[1.04]"

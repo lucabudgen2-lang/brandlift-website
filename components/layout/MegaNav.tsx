@@ -69,10 +69,16 @@ export function MegaNav() {
                 onClick={() => setActive(null)}
                 className="group relative flex shrink-0 items-center pl-4 pr-4 sm:pl-6 lg:pl-7 lg:pr-8"
               >
+                {/* Bewust een <img> en geen next/image: het logo staat in de
+                    sticky balk op elke pagina en moet direct meekomen.
+                    width/height staan er expliciet op zodat de browser de
+                    ruimte kan reserveren - anders springt de balk (CLS). */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/brand/logo-lockup.png"
-                  alt="Brandlift"
+                  alt="Brandlift logo"
+                  width={1672}
+                  height={941}
                   className="h-16 w-auto transition-opacity duration-200 group-hover:opacity-90 md:h-20 lg:h-16 lg:md:h-[4.5rem]"
                 />
               </Link>

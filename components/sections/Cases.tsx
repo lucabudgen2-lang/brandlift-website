@@ -70,7 +70,7 @@ export function Cases() {
                         <div className="absolute inset-0 flex items-center justify-center p-8">
                           <Image
                             src={c.logo}
-                            alt={c.client}
+                            alt={`${c.client} logo`}
                             width={260}
                             height={96}
                             className="logo-white max-h-16 w-auto max-w-[68%] opacity-90 transition-transform duration-300 ease-[var(--ease-brand)] group-hover:scale-[1.04]"

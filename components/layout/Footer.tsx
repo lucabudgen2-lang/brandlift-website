@@ -10,7 +10,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/logo-lockup.png" alt="Brandlift" className="h-14 w-auto md:h-16" />
+            <img
+              src="/brand/logo-lockup.png"
+              alt="Brandlift logo"
+              width={1672}
+              height={941}
+              className="h-14 w-auto md:h-16"
+            />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-g500">
               Strategische websites met branding en lokale SEO voor Nederlandse bedrijven.
               Meer zichtbaarheid, meer vertrouwen, meer aanvragen.

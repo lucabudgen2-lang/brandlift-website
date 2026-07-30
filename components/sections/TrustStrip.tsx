@@ -50,7 +50,7 @@ export function TrustStrip() {
                   <div className="flex h-[68%] w-[78%] items-center justify-center chamf-sm bg-white p-3">
                     <Image
                       src={c.src}
-                      alt={c.name}
+                      alt={`${c.name} logo`}
                       width={200}
                       height={90}
                       className="max-h-full w-auto max-w-full object-contain"
@@ -59,7 +59,7 @@ export function TrustStrip() {
                 ) : (
                   <Image
                     src={c.src}
-                    alt={c.name}
+                    alt={`${c.name} logo`}
                     width={200}
                     height={90}
                     className="relative h-16 w-auto max-w-[78%] object-contain"

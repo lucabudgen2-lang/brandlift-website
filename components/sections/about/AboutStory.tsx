@@ -86,7 +86,7 @@ export function AboutLuca() {
               <div className="relative aspect-[4/3]">
                 <Image
                   src="/images/hero-bg.jpg"
-                  alt="Het kantoor van Brandlift in Den Haag"
+                  alt="Werkplek met het Brandlift-logo aan de muur, ontwerpers achter hun scherm"
                   fill
                   sizes="(max-width: 1024px) 92vw, 44vw"
                   className="object-cover object-center"
