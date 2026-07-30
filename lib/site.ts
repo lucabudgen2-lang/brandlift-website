@@ -39,7 +39,13 @@ export const cta = {
 export const hero = {
   eyebrow: "Website · Branding · Lokale SEO · Conversie",
   pillars: ["Website", "Branding", "Lokale SEO", "Conversie"],
-  h1Lines: ["Meer zichtbaarheid.", "Meer vertrouwen.", "Meer aanvragen."],
+  /* De money-terms zitten bewust op de geldpagina's: "website laten maken"
+     op /diensten/website-laten-maken, "website laten maken den haag" op de
+     stadspagina. De homepage is het entiteits-anker: hij moet in één regel
+     zeggen WAT we zijn, WAAR we zitten en WAT het oplevert - dat is wat
+     Google en AI-antwoorden aan het bedrijf koppelen, en het kannibaliseert
+     de geldpagina's niet. */
+  h1Lines: ["Strategische websites", "uit Den Haag.", "Meer aanvragen."],
   sub: "Brandlift bouwt strategische websites met branding en lokale SEO. Zo word je beter gevonden, kom je professioneler over en zetten meer bezoekers de stap naar contact.",
   trustLine: "Gevestigd in Den Haag, actief in heel Nederland.",
   ctaMicrocopy: "30 minuten. Geen salespitch. Je weet daarna precies waar je staat.",
@@ -153,8 +159,8 @@ export const voorWie = {
       photo: "/images/audience-premium.jpg",
       photoAlt: "Superjacht voor anker aan een groene kustlijn",
       proof: [{ name: "RotorSwing Holland", src: "/logos/rotorswing.png" }],
-      href: "/voor-wie",
-      linkLabel: "Voor wie werkt Brandlift",
+      href: "/voor-wie/premium",
+      linkLabel: "Bekijk de aanpak voor premium merken",
     },
     {
       id: "overig",
@@ -422,9 +428,9 @@ export const articles = [
     tag: "Lokale SEO",
   },
   {
-    title: "Website laten maken: het stappenplan",
+    title: "Onze werkwijze",
     lead: "Van groeigesprek tot livegang - wat er in welke volgorde gebeurt.",
-    href: "/kennisbank/website-laten-maken-stappenplan",
+    href: "/werkwijze",
     tag: "Proces",
   },
 ] as const;

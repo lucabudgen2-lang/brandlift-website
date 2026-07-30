@@ -23,11 +23,16 @@
   --color-s2: #111219;
   --color-s3: #1a1c26;
 
-  /* cool neutrals */
+  /* cool neutrals — full scale; the odd steps are the workhorses,
+     the even steps exist so in-between shades resolve instead of
+     silently falling back to the inherited colour. */
   --color-g100: #edeef2;
+  --color-g200: #dcdee6;
   --color-g300: #c7c9d3;
+  --color-g400: #b1b6c5;
   --color-g500: #9aa0b5; /* muted text on dark (8.07:1) */
   --color-g600: #6e7488;
+  --color-g700: #545a6c; /* muted body text on light (7.4:1) */
   --color-g800: #3a3d4a;
 
   /* hairlines on dark */
@@ -85,6 +90,22 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+}
+
+/* ── nav-overlay ──────────────────────────────────────────────
+   De navigatiebalk zweeft over de pagina (negatieve onder-marge in
+   MegaNav), zodat je de hero eronder ziet in plaats van een zwarte
+   strook. Elke pagina compenseert dat hier op haar eerste sectie,
+   zodat we dat niet in elke page.tsx los hoeven te herhalen. */
+/* Alleen op lg+ zweeft de balk over de pagina (negatieve marge in MegaNav);
+   daar compenseren we dat op de eerste sectie. Onder lg staat de klassieke
+   balk gewoon in de flow en is deze padding dus niet nodig.
+   Let op: niet `main > :first-child` - dat is op veel pagina's het JSON-LD
+   <script> (display:none) en dan landt de padding nergens. */
+@media (min-width: 1024px) {
+  main > section:first-of-type {
+    padding-top: calc(6.5rem + var(--nav-gap, 3.5rem));
+  }
 }
 
 /* @layer base so Tailwind utility classes (margin, etc.) - which live in

@@ -36,9 +36,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema()) }}
       />
       <Hero />
-      <BenefitMarquee />
       <TrustStrip />
       <Problem />
+      <BenefitMarquee />
       <VoorWie />
       <Services />
       <Waarom />

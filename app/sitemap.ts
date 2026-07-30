@@ -24,8 +24,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/diensten", 0.7),
     entry("/diensten/website-laten-maken", 0.9),
     entry("/diensten/lokale-seo", 0.8),
-    entry("/diensten/branding", 0.7),
-    entry("/diensten/conversie-optimalisatie", 0.7),
+    entry("/diensten/branding", 0.8),
+    entry("/diensten/conversie-optimalisatie", 0.8),
     entry("/website-kosten-calculator", 0.7),
     // local commercial — steden
     entry("/website-laten-maken-den-haag", 0.9),
@@ -42,7 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/cases/de-reizende-kwast", 0.6),
     entry("/voorbeelden", 0.7),
     entry("/voor-wie", 0.7),
-    entry("/voor-wie/vakbedrijven", 0.7),
+    entry("/voor-wie/vakbedrijven", 0.8),
+    entry("/voor-wie/premium", 0.8),
     // trust + method
     entry("/werkwijze", 0.7),
     entry("/over-brandlift", 0.7),
@@ -51,7 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/kennisbank", 0.6),
     entry("/kennisbank/wat-kost-een-website-laten-maken", 0.8),
     entry("/kennisbank/wat-is-lokale-seo", 0.6),
-    entry("/kennisbank/website-laten-maken-stappenplan", 0.6),
     // legal
     entry("/privacybeleid", 0.2, "yearly"),
     entry("/algemene-voorwaarden", 0.2, "yearly"),

@@ -49,12 +49,12 @@ export function Hero() {
       {/* photographic backdrop — office scene, cooled into the brand duotone */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <Image
-          src="/images/hero-bg.jpg"
+          src="/images/hero-luca.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[65%_35%]"
+          className="object-cover object-[68%_28%]"
         />
         {/* blue duotone tint (huisstijl §06: blauwe duotoon voor niet-projectbeeld) */}
         <div className="absolute inset-0 bg-blue-deep/30 mix-blend-multiply" />

@@ -129,7 +129,7 @@ const voorWieLinks = [
 ];
 const kennisLinks = [
   { label: "Wat kost een website laten maken?", href: "/kennisbank/wat-kost-een-website-laten-maken" },
-  { label: "Website laten maken: stappenplan", href: "/kennisbank/website-laten-maken-stappenplan" },
+  { label: "Onze werkwijze", href: "/werkwijze" },
   { label: "Wat is lokale SEO?", href: "/kennisbank/wat-is-lokale-seo" },
 ];
 

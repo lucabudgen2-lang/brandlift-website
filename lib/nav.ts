@@ -68,7 +68,7 @@ export const megaNav: NavItem[] = [
     overview: "Bekijk voor wie",
     pages: [
       { label: "Vakbedrijven & servicebedrijven", href: "/voor-wie/vakbedrijven", desc: "Hoveniers, schilders, aannemers, installateurs" },
-      { label: "Premium & visuele bedrijven", href: "/voor-wie#premium", desc: "Vastgoed, maritiem & jacht, interieurdesign, klinieken" },
+      { label: "Premium & visuele bedrijven", href: "/voor-wie/premium", desc: "Vastgoed, maritiem & jacht, interieurdesign, klinieken" },
       { label: "Overige bedrijven", href: "/voor-wie#overig", desc: "Webshops, horeca, retail, praktijken, B2B" },
     ],
   },
@@ -92,7 +92,7 @@ export const megaNav: NavItem[] = [
     pages: [
       { label: "Wat kost een website laten maken?", href: "/kennisbank/wat-kost-een-website-laten-maken", desc: "Prijzen en keuzes uitgelegd" },
       { label: "Wat is lokale SEO?", href: "/kennisbank/wat-is-lokale-seo", desc: "Hoe lokale vindbaarheid werkt" },
-      { label: "Website laten maken: stappenplan", href: "/kennisbank/website-laten-maken-stappenplan", desc: "Van start tot livegang" },
+      { label: "Onze werkwijze", href: "/werkwijze", desc: "Van start tot livegang" },
     ],
   },
   {
@@ -139,6 +139,7 @@ export const footerNav: MegaColumn[] = [
       { label: "Voorbeelden", href: "/voorbeelden" },
       { label: "Voor wie", href: "/voor-wie" },
       { label: "Vakbedrijven", href: "/voor-wie/vakbedrijven" },
+      { label: "Premium & visuele bedrijven", href: "/voor-wie/premium" },
     ],
   },
   {
