@@ -69,9 +69,9 @@ export const cities: Record<string, CityData> = {
     slug: "website-laten-maken-rotterdam",
     city: "Rotterdam",
     updated: "2026-07-13",
-    metaTitle: "Website laten maken Rotterdam | Strategisch + lokale SEO - Brandlift",
+    metaTitle: "Website laten maken Rotterdam - meer aanvragen",
     metaDescription:
-      "Website laten maken in Rotterdam? Brandlift bouwt strategische websites met lokale SEO en conversie voor Rotterdamse bedrijven die bovenaan willen staan en meer aanvragen willen.",
+      "Website laten maken in Rotterdam? Strategische sites met lokale SEO en conversie voor Rotterdamse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
     heroEyebrow: "Rotterdam · heel Nederland",
     h1: "Website laten maken in Rotterdam",
     intro:
@@ -221,9 +221,9 @@ export const cities: Record<string, CityData> = {
     slug: "website-laten-maken-eindhoven",
     city: "Eindhoven",
     updated: "2026-07-13",
-    metaTitle: "Website laten maken Eindhoven | Strategisch + lokale SEO - Brandlift",
+    metaTitle: "Website laten maken Eindhoven - meer aanvragen",
     metaDescription:
-      "Website laten maken in Eindhoven? Brandlift bouwt strategische websites met lokale SEO en conversie voor Eindhovense bedrijven in de Brainport-regio die willen groeien.",
+      "Website laten maken in Eindhoven? Strategische sites met lokale SEO en conversie voor Brabantse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
     heroEyebrow: "Eindhoven · heel Nederland",
     h1: "Website laten maken in Eindhoven",
     intro:
@@ -361,9 +361,9 @@ export const cities: Record<string, CityData> = {
     slug: "website-laten-maken-utrecht",
     city: "Utrecht",
     updated: "2026-07-13",
-    metaTitle: "Website laten maken Utrecht | Strategisch + lokale SEO - Brandlift",
+    metaTitle: "Website laten maken Utrecht - meer aanvragen",
     metaDescription:
-      "Website laten maken in Utrecht? Brandlift bouwt strategische websites met lokale SEO en conversie voor Utrechtse bedrijven die willen opvallen in een competitieve markt.",
+      "Website laten maken in Utrecht? Strategische sites met lokale SEO en conversie voor Utrechtse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
     heroEyebrow: "Utrecht · heel Nederland",
     h1: "Website laten maken in Utrecht",
     intro:
@@ -504,9 +504,9 @@ export const cities: Record<string, CityData> = {
     slug: "website-laten-maken-amsterdam",
     city: "Amsterdam",
     updated: "2026-07-13",
-    metaTitle: "Website laten maken Amsterdam | Strategisch + lokale SEO - Brandlift",
+    metaTitle: "Website laten maken Amsterdam - meer aanvragen",
     metaDescription:
-      "Website laten maken in Amsterdam? Brandlift bouwt strategische websites met lokale SEO en conversie waarmee Amsterdamse bedrijven opvallen in de drukste markt van Nederland.",
+      "Website laten maken in Amsterdam? Strategische sites met lokale SEO en conversie voor Amsterdamse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
     heroEyebrow: "Amsterdam · heel Nederland",
     h1: "Website laten maken in Amsterdam",
     intro:
@@ -636,9 +636,9 @@ export const cities: Record<string, CityData> = {
     slug: "website-laten-maken-delft",
     city: "Delft",
     updated: "2026-07-13",
-    metaTitle: "Website laten maken Delft | Strategisch + lokale SEO - Brandlift",
+    metaTitle: "Website laten maken Delft - meer aanvragen",
     metaDescription:
-      "Website laten maken in Delft? Brandlift zit om de hoek in Den Haag en bouwt strategische websites met lokale SEO en conversie voor Delftse bedrijven die serieus gevonden willen worden.",
+      "Website laten maken in Delft? Strategische sites met lokale SEO en conversie voor Delftse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
     heroEyebrow: "Delft · heel Nederland",
     h1: "Website laten maken in Delft",
     intro:

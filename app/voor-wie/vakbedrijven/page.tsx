@@ -20,9 +20,9 @@ const PATH = "/voor-wie/vakbedrijven";
 const UPDATED = "2026-07-17";
 
 export const metadata: Metadata = {
-  title: "Websites voor vakbedrijven en servicebedrijven - Brandlift",
+  title: "Websites voor vakbedrijven en servicebedrijven",
   description:
-    "Website laten maken voor je vakbedrijf? Voor hoveniers, schilders, aannemers, installateurs en dakdekkers bouwen we sites die aanvragen opleveren. Vanaf €1.500.",
+    "Websites voor hoveniers, schilders, aannemers en installateurs. Gevonden worden per dienst en werkgebied, met een route naar contact die werkt.",
   alternates: { canonical: PATH },
 };
 

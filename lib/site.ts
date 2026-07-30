@@ -723,9 +723,9 @@ export const cityPages = {
     city: "Den Haag",
     slug: "website-laten-maken-den-haag",
     updated: "2026-07-13",
-    metaTitle: "Website laten maken Den Haag | Strategisch + lokale SEO - Brandlift",
+    metaTitle: "Website laten maken Den Haag - meer aanvragen",
     metaDescription:
-      "Website laten maken in Den Haag? Brandlift bouwt strategische websites met lokale SEO en conversie voor Haagse bedrijven die meer aanvragen willen. Plan een gratis groeigesprek.",
+      "Website laten maken in Den Haag? Strategische sites met lokale SEO en conversie voor Haagse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
     h1: "Website laten maken in Den Haag",
     intro:
       "Een website die Haagse klanten vindt, overtuigt en omzet in aanvragen. Wij zitten zelf in Den Haag en bouwen strategische websites met lokale SEO en conversie - voor bedrijven in de hele stad en ver daarbuiten.",
@@ -845,9 +845,9 @@ export const caseEykelenboom = {
   location: "Den Haag",
   url: "hoveniereykelenboom.nl",
   updated: "2026-07-10",
-  metaTitle: "Case: Hovenier Eykelenboom - van 2 naar 24 aanvragen per maand | Brandlift",
+  metaTitle: "Case: Hovenier Eykelenboom - 2 naar 24 aanvragen",
   metaDescription:
-    "Hoe Brandlift Hovenier Eykelenboom uit Den Haag lokaal beter vindbaar maakte met een complete website en lokale SEO-structuur - van 2 naar 24 aanvragen per maand.",
+    "Hoe Hovenier Eykelenboom uit Den Haag van 2 naar 24 aanvragen per maand ging met een complete website en lokale SEO-structuur per dienst en werkgebied.",
   h1: "Hovenier Eykelenboom: van 2 naar 24 aanvragen per maand",
   intro:
     "Vakwerk dat lokaal te weinig werd gevonden - opnieuw opgebouwd tot een website die per dienst en werkgebied vindbaar is, en het vakmanschap eindelijk laat zien.",

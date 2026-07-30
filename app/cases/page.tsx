@@ -5,7 +5,7 @@ import { collectionSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Cases & portfolio",
   description:
-    "Het werk van Brandlift: strategische websites met branding en lokale SEO voor Nederlandse bedrijven. Bekijk de cases.",
+    "Bekijk het werk van Brandlift: strategische websites met branding en lokale SEO voor Nederlandse vakbedrijven, premium merken en dienstverleners.",
   alternates: { canonical: "/cases" },
 };
 

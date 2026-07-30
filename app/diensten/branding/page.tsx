@@ -20,9 +20,9 @@ const PATH = "/diensten/branding";
 const UPDATED = "2026-07-17";
 
 export const metadata: Metadata = {
-  title: "Branding en huisstijl laten maken | Merk dat vertrouwen wekt - Brandlift",
+  title: "Branding en huisstijl die vertrouwen wekken",
   description:
-    "Branding die je bedrijf herkenbaar maakt: merkstrategie, logo, huisstijl en merkgids - doorvertaald naar een website die klanten oplevert. Sinds 2021, 5,0 op Google.",
+    "Branding en huisstijl die passen bij de kwaliteit die je levert. Positionering, logo, kleur en beeldtaal, doorgevoerd tot in je website.",
   alternates: { canonical: PATH },
 };
 

@@ -20,9 +20,9 @@ const PATH = "/werkwijze";
 const UPDATED = "2026-07-17";
 
 export const metadata: Metadata = {
-  title: "Onze werkwijze: van eerste gesprek tot livegang - Brandlift",
+  title: "Onze werkwijze: van gesprek tot livegang",
   description:
-    "Zo verloopt een project bij Brandlift: vijf fases, meestal drie tot vier weken, en weinig werk voor jou. Bekijk stap voor stap wat wij doen en wat er van jou wordt gevraagd.",
+    "Zo verloopt een project bij Brandlift: vijf fases, meestal drie tot vier weken, en weinig werk voor jou. Bekijk stap voor stap wat we doen.",
   alternates: { canonical: PATH },
 };
 

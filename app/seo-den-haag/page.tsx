@@ -21,9 +21,9 @@ const UPDATED = "2026-07-17";
 const dh = cityPages["den-haag"];
 
 export const metadata: Metadata = {
-  title: "SEO Den Haag | Lokale SEO die klanten oplevert - Brandlift",
+  title: "SEO Den Haag - lokale SEO die klanten oplevert",
   description:
-    "SEO in Den Haag voor bedrijven die al een website hebben maar niet gevonden worden. Vindbaarheid per dienst en per wijk, Google Bedrijfsprofiel en reviews. Plan een gratis groeigesprek.",
+    "SEO in Den Haag voor bedrijven die al een site hebben maar niet gevonden worden. Vindbaar per dienst en per wijk, met Bedrijfsprofiel en reviews.",
   alternates: { canonical: PATH },
 };
 

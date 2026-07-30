@@ -3,9 +3,9 @@ import { PageStub } from "@/components/layout/PageStub";
 import { collectionSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Kennisbank",
+  title: "Kennisbank - gidsen over websites en SEO",
   description:
-    "Praktische gidsen over websites, lokale SEO en kosten. Eerlijke uitleg zodat je met vertrouwen kiest.",
+    "Praktische gidsen over websites, lokale SEO en kosten. Eerlijke uitleg zonder salespraat, zodat je met vertrouwen kiest wat je bedrijf nodig heeft.",
   alternates: { canonical: "/kennisbank" },
 };
 

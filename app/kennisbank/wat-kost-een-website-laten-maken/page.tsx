@@ -14,9 +14,9 @@ const UPDATED = "2026-07-13";
 const PATH = "/kennisbank/wat-kost-een-website-laten-maken";
 
 export const metadata: Metadata = {
-  title: "Wat kost een website laten maken? Eerlijke prijzen uitgelegd - Brandlift",
+  title: "Wat kost een website laten maken?",
   description:
-    "Wat kost een website laten maken? In Nederland meestal €1.500 tot €8.000. Bekijk de prijzen per type website, wat de prijs bepaalt en bereken direct je eigen indicatie.",
+    "Wat kost een website laten maken? In Nederland meestal 1.500 tot 8.000 euro. Bekijk de prijs per type website en bereken direct je eigen indicatie.",
   alternates: { canonical: PATH },
 };
 

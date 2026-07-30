@@ -20,9 +20,9 @@ const PATH = "/diensten/lokale-seo";
 const UPDATED = "2026-07-16";
 
 export const metadata: Metadata = {
-  title: "Lokale SEO | Beter gevonden in je regio, meer aanvragen - Brandlift",
+  title: "Lokale SEO - beter gevonden in je regio",
   description:
-    "Lokale SEO die aanvragen oplevert. Website-structuur, Google Bedrijfsprofiel, schema en lokale vermeldingen - het complete pakket, altijd inbegrepen bij een website van Brandlift.",
+    "Lokale SEO waarmee je gevonden wordt op de klus die je wilt, in de regio waar je werkt. Dienstpagina's, Google Bedrijfsprofiel, schema en reviews.",
   alternates: { canonical: PATH },
 };
 

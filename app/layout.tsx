@@ -31,7 +31,11 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Brandlift | Strategische websites met lokale SEO en conversie",
+    /* <= 60 tekens inclusief het achtervoegsel, anders kapt Google hem af.
+       Pagina-titels zetten daarom zelf GEEN "- Brandlift" meer: de template
+       plakt " | Brandlift" er al achter (dat gaf eerder "... - Brandlift |
+       Brandlift" in de zoekresultaten). */
+    default: "Webdesignbureau Den Haag - meer aanvragen | Brandlift",
     template: "%s | Brandlift",
   },
   description:
@@ -58,7 +62,17 @@ export const metadata: Metadata = {
     description:
       "Websites, branding en lokale SEO die zorgen voor meer zichtbaarheid, meer vertrouwen en meer aanvragen. Gevestigd in Den Haag, actief in heel Nederland.",
   },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webdesignbureau Den Haag - meer aanvragen | Brandlift",
+    description:
+      "Strategische websites met branding en lokale SEO voor Nederlandse bedrijven die meer aanvragen willen.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+  },
   icons: { icon: "/brand/favicon.png" },
 };
 

@@ -4,7 +4,8 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Privacybeleid",
-  description: "Het privacybeleid van Brandlift.",
+  description:
+    "Het privacybeleid van Brandlift: welke gegevens we verzamelen via deze website, waarom we dat doen en welke rechten je daarbij hebt volgens de AVG.",
   robots: { index: false, follow: true },
   alternates: { canonical: "/privacybeleid" },
 };

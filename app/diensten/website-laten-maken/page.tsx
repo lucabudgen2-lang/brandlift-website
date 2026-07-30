@@ -21,9 +21,9 @@ const PATH = "/diensten/website-laten-maken";
 const UPDATED = "2026-07-13";
 
 export const metadata: Metadata = {
-  title: "Website laten maken | Strategisch, met lokale SEO en conversie - Brandlift",
+  title: "Website laten maken - strategisch en vindbaar",
   description:
-    "Website laten maken die klanten oplevert. Brandlift bouwt strategische websites met lokale SEO en conversie voor Nederlandse bedrijven. Vanaf €1.500, sinds 2021.",
+    "Website laten maken die klanten oplevert. Strategie, ontwerp, lokale SEO en conversie in een. Vanaf 1.500 euro, live in 3 tot 4 weken.",
   alternates: { canonical: PATH },
 };
 

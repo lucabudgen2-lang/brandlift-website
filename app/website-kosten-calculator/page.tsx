@@ -12,7 +12,7 @@ import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Website kosten berekenen | Bereken je prijs in 1 minuut - Brandlift",
+  title: "Website kosten berekenen in 1 minuut",
   description:
     "Bereken in 1 minuut wat jouw website kost. Stel je website samen en zie direct een eerlijke prijsindicatie vanaf €1.500 - vrijblijvend, zonder verplichtingen.",
   alternates: { canonical: "/website-kosten-calculator" },

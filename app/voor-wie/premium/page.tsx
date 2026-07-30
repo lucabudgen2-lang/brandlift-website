@@ -23,9 +23,9 @@ const premiumPanel = voorWie.panels[1];
 const rotorswing = cases[0];
 
 export const metadata: Metadata = {
-  title: "Websites voor premium en visuele bedrijven - Brandlift",
+  title: "Websites voor premium en visuele bedrijven",
   description:
-    "Website laten maken voor een premium merk? Voor vastgoed, maritiem, interieurdesign en klinieken bouwen we sites waarin beeld, rust en merk het werk doen. NL en Engels.",
+    "Website laten maken voor een premium merk. Voor vastgoed, maritiem, interieurdesign en klinieken: beeld, rust en merk doen het werk. NL en Engels.",
   alternates: { canonical: PATH },
 };
 

@@ -19,9 +19,9 @@ const PATH = "/voor-wie";
 const UPDATED = "2026-07-17";
 
 export const metadata: Metadata = {
-  title: "Voor wie werkt Brandlift? - Vakbedrijven, premium merken en meer",
+  title: "Voor wie - vakbedrijven en premium merken",
   description:
-    "Brandlift bouwt websites voor Nederlandse vakbedrijven en servicebedrijven, voor premium en visuele merken, en voor iedereen daartussenin. Bekijk welke aanpak bij jou past.",
+    "Brandlift bouwt voor vakbedrijven, premium merken en alles daartussenin. Bekijk welke aanpak past bij jouw markt en hoe die per branche verschilt.",
   alternates: { canonical: PATH },
 };
 

@@ -20,9 +20,9 @@ const PATH = "/diensten/conversie-optimalisatie";
 const UPDATED = "2026-07-17";
 
 export const metadata: Metadata = {
-  title: "Conversie-optimalisatie | Meer aanvragen uit dezelfde bezoekers - Brandlift",
+  title: "Conversie-optimalisatie - meer aanvragen",
   description:
-    "Conversie-optimalisatie voor Nederlandse bedrijven: heldere boodschap, bewijs en een duidelijke route naar contact. Meer aanvragen uit de bezoekers die je al hebt.",
+    "Conversie-optimalisatie die van bezoekers aanvragen maakt. We halen de twijfel uit je pagina's en maken de route naar contact vanzelfsprekend.",
   alternates: { canonical: PATH },
 };
 
