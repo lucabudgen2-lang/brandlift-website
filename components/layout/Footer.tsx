@@ -1,3 +1,4 @@
+import { PhoneLink } from "@/components/ui/PhoneLink";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { footerNav, footerLegal } from "@/lib/nav";
@@ -30,9 +31,12 @@ export function Footer() {
               </p>
               <p className="font-semibold text-xs">KvK {site.kvk}</p>
             </div>
-            <a href={`mailto:${site.email}`} className="mt-3 inline-block text-sm text-blue-text hover:underline">
-              {site.email}
-            </a>
+            <div className="mt-3 flex flex-col gap-1.5">
+              <PhoneLink className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-text hover:underline" />
+              <a href={`mailto:${site.email}`} className="inline-block text-sm text-blue-text hover:underline">
+                {site.email}
+              </a>
+            </div>
             <div className="mt-4 flex gap-4">
               <a
                 href={site.socials.instagram}

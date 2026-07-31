@@ -1,3 +1,4 @@
+import { PhoneLink } from "@/components/ui/PhoneLink";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -225,13 +226,16 @@ export function CtaBlock({
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/85 md:text-lg">{body}</p>
               <div className="mt-8 flex flex-col items-center gap-3">
-                <Link
-                  href="/contact"
-                  className="group inline-flex items-center gap-2.5 chamf-sm bg-paper px-7 py-4 font-semibold text-ink transition-colors duration-150 hover:bg-white"
-                >
-                  {cta}
-                  <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
-                </Link>
+                <div className="flex flex-col items-center gap-3 sm:flex-row">
+                  <Link
+                    href="/contact"
+                    className="group inline-flex items-center gap-2.5 chamf-sm bg-paper px-7 py-4 font-semibold text-ink transition-colors duration-150 hover:bg-white"
+                  >
+                    {cta}
+                    <span className="transition-transform duration-150 group-hover:translate-x-1">→</span>
+                  </Link>
+                  <PhoneLink className="inline-flex items-center gap-2.5 chamf-sm border border-white/40 px-7 py-4 font-semibold text-white transition-colors duration-150 hover:bg-white/10" />
+                </div>
                 <span className="text-sm text-white/75">30 minuten. Geen salespitch.</span>
               </div>
             </div>

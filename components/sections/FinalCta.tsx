@@ -1,3 +1,4 @@
+import { PhoneLink } from "@/components/ui/PhoneLink";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -59,9 +60,11 @@ export function FinalCta() {
                 <p className="mt-2 text-sm leading-relaxed text-g100">
                   {site.hours.days} · {site.hours.open} - {site.hours.close}
                 </p>
+                <PhoneLink className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-blue-text hover:underline" />
                 <a href={`mailto:${site.email}`} className="mt-1 block text-sm text-blue-text hover:underline">
                   {site.email}
                 </a>
+                <p className="mt-2 text-xs text-g600">Liever direct bellen? Dat kan ook.</p>
               </div>
               <div className="bg-s1 p-5 sm:col-span-2">
                 <div className="flex flex-wrap items-center justify-between gap-3">

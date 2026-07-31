@@ -1,5 +1,6 @@
 "use client";
 
+import { PhoneLink, PhoneIconLink } from "@/components/ui/PhoneLink";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -142,7 +143,8 @@ export function MegaNav() {
               {/* ── cel 3 · CTA ── */}
               {/* shrink-0: zonder dit duwt de flex-1 nav de knop voorbij de
                   (overflow-hidden) rand van de balk op brede schermen */}
-              <div className="hidden shrink-0 items-center pl-5 pr-6 lg:flex">
+              <div className="hidden shrink-0 items-center gap-3 pl-5 pr-6 lg:flex">
+                <PhoneLink className="inline-flex items-center gap-2 whitespace-nowrap text-[0.82rem] font-semibold text-g100 transition-colors hover:text-blue-text" />
                 <Button
                   href="/contact"
                   variant="primary"
@@ -153,10 +155,13 @@ export function MegaNav() {
                 </Button>
               </div>
 
-              {/* mobile toggle */}
+              {/* Bellen moet op mobiel bereikbaar zijn zónder eerst het menu
+                  te openen - dit is een site voor bedrijven die gebeld worden. */}
+              <PhoneIconLink className="ml-auto flex h-10 w-10 items-center justify-center self-center text-paper transition-colors hover:text-blue-text lg:hidden" />
+
               {/* mobile toggle — zoals de oorspronkelijke balk */}
               <button
-                className="ml-auto flex h-10 w-10 items-center justify-center self-center text-paper lg:hidden"
+                className="flex h-10 w-10 items-center justify-center self-center text-paper lg:hidden"
                 onClick={() => setMobileOpen((v) => !v)}
                 aria-label="Menu"
                 aria-expanded={mobileOpen}
