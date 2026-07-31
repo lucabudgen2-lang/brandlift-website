@@ -11,6 +11,7 @@ import { Byline, CtaBlock } from "@/components/page/blocks";
 import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { Core30Boom } from "@/components/cases/Core30Boom";
 import { FormuleDrieluik } from "@/components/cases/FormuleDrieluik";
+import { FotoGalerij } from "@/components/cases/FotoGalerij";
 import { caseEykelenboom } from "@/lib/site";
 import { caseSchema } from "@/lib/schema";
 
@@ -75,16 +76,11 @@ const devPunten = [
 const slotfase = [
   {
     nr: "01",
-    title: "Fotografie op locatie",
-    body: "Echte projecten, echt werk en de hovenier zelf - vastgelegd op locatie in Den Haag. Stockfoto's overtuigen niemand die op het punt staat een vreemde zijn tuin binnen te laten.",
-  },
-  {
-    nr: "02",
     title: "Oplevering en uitleg",
     body: "Bij de livegang is alles overgedragen: hoe de site werkt, hoe projecten erbij komen en waar de aanvragen binnenkomen. Geen afhankelijkheid, wel een aanspreekpunt.",
   },
   {
-    nr: "03",
+    nr: "02",
     title: "Meetbaar vanaf dag één",
     body: "Aanvragen zijn herleidbaar, dus het effect is geen gevoel maar een getal. Daardoor weten we dat de teller van 2 naar 24 per maand ging - en blijven we zien wat er werkt.",
   },
@@ -543,12 +539,15 @@ export default function Page() {
         </Container>
       </section>
 
-      {/* ═══════════ 9 · FASE 5 · FOTOGRAFIE, OPLEVERING & METEN ═══════════ */}
+      {/* ═══════════ 9 · FASE 5 · FOTOGRAFIE ═══════════ */}
+      <FotoGalerij />
+
+      {/* ═══════════ 10 · FASE 6 · OPLEVERING & METEN ═══════════ */}
       <section className="on-light relative border-t border-ink/5 py-20 md:py-28">
         <Container>
           <div className="max-w-2xl">
             <Reveal>
-              <Eyebrow>Fase 5 · Fotografie, oplevering en meten</Eyebrow>
+              <Eyebrow>Fase 6 · Oplevering en meten</Eyebrow>
             </Reveal>
             <LineReveal
               as="h2"
