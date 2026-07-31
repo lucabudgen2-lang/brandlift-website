@@ -25,6 +25,14 @@ const focusOptions = [
 
 const errCls = "mt-1 text-xs text-err";
 
+/* Koppelt een veld aan zijn foutmelding. Zonder aria-describedby leest een
+   schermlezer de melding niet voor bij het veld, en zonder aria-invalid
+   weet hij niet dát er iets mis is. */
+const a11y = (id: string, invalid: unknown) => ({
+  "aria-invalid": invalid ? true : undefined,
+  "aria-describedby": invalid ? `${id}-error` : undefined,
+});
+
 export function GroeigesprekForm({
   variant = "panel",
   tone = "dark",
@@ -35,8 +43,8 @@ export function GroeigesprekForm({
   const bare = variant === "bare";
   const light = tone === "light";
   const field = light
-    ? "w-full chamf-sm border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-g500 outline-none transition-colors focus:border-blue"
-    : "w-full chamf-sm border border-[var(--color-line-strong)] bg-s2 px-4 py-3 text-paper placeholder:text-g600 outline-none transition-colors focus:border-blue-text";
+    ? "w-full chamf-sm border border-ink/15 bg-white px-4 py-3 text-ink placeholder:text-g500 transition-colors focus:border-blue focus:outline-none focus-visible:ring-2 focus-visible:ring-blue focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+    : "w-full chamf-sm border border-[var(--color-line-strong)] bg-s2 px-4 py-3 text-paper placeholder:text-g600 transition-colors focus:border-blue-text focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-text focus-visible:ring-offset-2 focus-visible:ring-offset-s1";
   const label = light
     ? "mb-1.5 block text-sm font-medium text-g700"
     : "mb-1.5 block text-sm font-medium text-g300";
@@ -91,29 +99,45 @@ export function GroeigesprekForm({
           <label className={label} htmlFor="name">
             Naam
           </label>
-          <input id="name" className={field} placeholder="Voor- en achternaam" {...register("name")} />
-          {errors.name && <p className={errCls}>{errors.name.message}</p>}
+          <input id="name" className={field} placeholder="Voor- en achternaam" autoComplete="name" {...a11y("name", errors.name)} {...register("name")} />
+          {errors.name && (
+            <p id="name-error" role="alert" className={errCls}>
+              {errors.name.message}
+            </p>
+          )}
         </div>
         <div>
           <label className={label} htmlFor="company">
             Bedrijf
           </label>
-          <input id="company" className={field} placeholder="Bedrijfsnaam" {...register("company")} />
-          {errors.company && <p className={errCls}>{errors.company.message}</p>}
+          <input id="company" className={field} placeholder="Bedrijfsnaam" autoComplete="organization" {...a11y("company", errors.company)} {...register("company")} />
+          {errors.company && (
+            <p id="company-error" role="alert" className={errCls}>
+              {errors.company.message}
+            </p>
+          )}
         </div>
         <div>
           <label className={label} htmlFor="email">
             E-mail
           </label>
-          <input id="email" type="email" className={field} placeholder="jij@bedrijf.nl" {...register("email")} />
-          {errors.email && <p className={errCls}>{errors.email.message}</p>}
+          <input id="email" type="email" className={field} placeholder="jij@bedrijf.nl" autoComplete="email" {...a11y("email", errors.email)} {...register("email")} />
+          {errors.email && (
+            <p id="email-error" role="alert" className={errCls}>
+              {errors.email.message}
+            </p>
+          )}
         </div>
         <div>
           <label className={label} htmlFor="phone">
             Telefoon
           </label>
-          <input id="phone" type="tel" className={field} placeholder="06 - " {...register("phone")} />
-          {errors.phone && <p className={errCls}>{errors.phone.message}</p>}
+          <input id="phone" type="tel" className={field} placeholder="06 - " autoComplete="tel" {...a11y("phone", errors.phone)} {...register("phone")} />
+          {errors.phone && (
+            <p id="phone-error" role="alert" className={errCls}>
+              {errors.phone.message}
+            </p>
+          )}
         </div>
       </div>
 
@@ -121,7 +145,7 @@ export function GroeigesprekForm({
         <label className={label} htmlFor="focus">
           Waar wil je het over hebben?
         </label>
-        <select id="focus" className={field} defaultValue="" {...register("focus")}>
+        <select id="focus" className={field} defaultValue="" {...a11y("focus", errors.focus)} {...register("focus")}>
           <option value="" disabled>
             Kies een focus
           </option>
@@ -131,7 +155,11 @@ export function GroeigesprekForm({
             </option>
           ))}
         </select>
-        {errors.focus && <p className={errCls}>{errors.focus.message}</p>}
+        {errors.focus && (
+          <p id="focus-error" role="alert" className={errCls}>
+            {errors.focus.message}
+          </p>
+        )}
       </div>
 
       <div className="mt-4">
@@ -147,7 +175,11 @@ export function GroeigesprekForm({
         />
       </div>
 
-      {errors.root && <p className="mt-4 text-sm text-err">{errors.root.message}</p>}
+      {errors.root && (
+        <p role="alert" className="mt-4 text-sm text-err">
+          {errors.root.message}
+        </p>
+      )}
 
       <button
         type="submit"
