@@ -91,7 +91,7 @@ export default function Page() {
     headline: c.h1,
     description: metadata.description as string,
     path: PATH,
-    image: `${IMG}/sebastiaan.jpg`,
+    image: `${IMG}/sebastiaan-portret.jpg`,
     datePublished: c.updated,
     crumbs,
     clientName: c.client,
@@ -150,7 +150,7 @@ export default function Page() {
                 <div className="relative overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] shadow-[0_44px_100px_-45px_rgba(0,0,0,0.8)]">
                   <div className="relative aspect-[4/5]">
                     <Image
-                      src={`${IMG}/sebastiaan.jpg`}
+                      src={`${IMG}/sebastiaan-portret.jpg`}
                       alt="Sebastiaan Eykelenboom, eigenaar van Hovenier Eykelenboom in Den Haag"
                       fill
                       priority
@@ -625,7 +625,7 @@ export default function Page() {
               <div className="grid md:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[220px] bg-s0">
                   <Image
-                    src={`${IMG}/sebastiaan.jpg`}
+                    src={`${IMG}/sebastiaan-portret.jpg`}
                     alt="Sebastiaan Eykelenboom"
                     fill
                     sizes="(max-width: 768px) 92vw, 40vw"

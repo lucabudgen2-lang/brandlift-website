@@ -35,10 +35,10 @@ const fotos: Foto[] = [
   {
     id: "f1",
     src: "/images/cases/eykelenboom/foto/portret-sebastiaan.jpg",
-    alt: "Sebastiaan Eykelenboom in bedrijfspolo voor een woning in Den Haag",
+    alt: "Sebastiaan Eykelenboom in bedrijfspolo bij een project in Den Haag",
     caption: "De hovenier zelf",
     w: 1600,
-    h: 2400,
+    h: 2399,
     groot: true,
   },
   {
