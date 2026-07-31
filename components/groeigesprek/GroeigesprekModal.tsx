@@ -73,6 +73,10 @@ export function GroeigesprekModal() {
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       const anchor = (e.target as HTMLElement)?.closest?.("a");
       if (!anchor || anchor.target === "_blank") return;
+      /* data-no-modal: link mag echt naar /contact navigeren i.p.v. de
+         modal te openen - de nav-knop is bewust de vaste weg naar de
+         volledige contactpagina, niet nog een groeigesprek-CTA. */
+      if (anchor.hasAttribute("data-no-modal")) return;
       const href = anchor.getAttribute("href");
       if (href !== "/contact" && href !== "#contact") return;
       if (!/groeigesprek/i.test(anchor.textContent ?? "")) return;

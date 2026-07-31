@@ -241,6 +241,12 @@ export function MegaNav() {
                           href={p.href}
                           onClick={() => setActive(null)}
                           className="group -mx-3 block rounded-lg px-3 py-3 transition-colors hover:bg-white/[0.03]"
+                          /* data-no-modal: het "Contact"-item onder "Over" heeft
+                             als beschrijving "Plan een gratis groeigesprek",
+                             wat de globale modal-interceptor matcht op tekst.
+                             Dit item moet naar de echte contactpagina gaan,
+                             niet de pop-up openen. */
+                          data-no-modal
                         >
                           <span className="flex items-center gap-1.5 text-[0.98rem] font-semibold text-g100 transition-colors group-hover:text-blue-text">
                             {p.label}
