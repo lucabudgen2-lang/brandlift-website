@@ -1,3 +1,4 @@
+import { OokActiefIn } from "@/components/sections/OokActiefIn";
 import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,9 +24,11 @@ export const metadata = buildPageMetadata({
   path: `/${city.slug}`,
 });
 
+/* /diensten is nog een stub en staat op noindex; daar linken we niet
+   naartoe vanaf een commerciele stadspagina. De pijler blijft wel in het
+   kruimelpad, want die pagina bestaat echt. */
 const crumbs = [
   { name: "Home", path: "/" },
-  { name: "Diensten", path: "/diensten" },
   { name: "Website laten maken", path: "/diensten/website-laten-maken" },
   { name: `Website laten maken ${city.city}`, path: `/${city.slug}` },
 ];
@@ -501,6 +504,20 @@ export default function Page() {
               </p>
             </Reveal>
 
+            {/* Contextuele brug naar /seo-den-haag. Andere intentie: die
+                pagina is voor wie al een site heeft en alleen niet gevonden
+                wordt - deze is voor wie een nieuwe site wil. */}
+            <Reveal delay={0.17}>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-g500">
+                Heb je al een website die technisch prima is, en wil je alleen beter gevonden worden in de stad?
+                Dan is een nieuwe site vaak niet nodig.{" "}
+                <Link href="/seo-den-haag" className="font-semibold text-blue-text hover:underline">
+                  Bekijk dan wat SEO in Den Haag voor je kan doen
+                </Link>
+                .
+              </p>
+            </Reveal>
+
             {/* de garantie */}
             <Reveal delay={0.2}>
               <div className="mt-8 flex items-start gap-4 chamf chamf-lg border border-blue/30 bg-blue/[0.07] p-5">
@@ -727,6 +744,8 @@ export default function Page() {
       </section>
 
       {/* ═══════════ REVIEWS · FAQ · SLOT ═══════════ */}
+      <OokActiefIn currentCity="Den Haag" />
+
       <Reviews tone="dark" heading={["Klanten uit de regio", "aan het woord."]} startAt={4} />
 
       <FaqBlock faqs={city.faqs} tone="light" heading="Wat Haagse ondernemers ons vragen." />

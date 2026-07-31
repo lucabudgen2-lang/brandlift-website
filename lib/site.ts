@@ -392,7 +392,17 @@ export const denHaag = {
   points: ["Dienstpagina's", "Locatiesignalen", "Google Bedrijfsprofiel", "Reviews en vertrouwen"],
   links: [
     { label: "Website laten maken in Den Haag", href: "/website-laten-maken-den-haag" },
+    { label: "SEO in Den Haag", href: "/seo-den-haag" },
     { label: "Meer over lokale SEO", href: "/diensten/lokale-seo" },
+  ],
+  /* Alle stadspagina's, zodat de homepage niet alleen naar Den Haag linkt. */
+  steden: [
+    { city: "Den Haag", slug: "website-laten-maken-den-haag" },
+    { city: "Rotterdam", slug: "website-laten-maken-rotterdam" },
+    { city: "Delft", slug: "website-laten-maken-delft" },
+    { city: "Utrecht", slug: "website-laten-maken-utrecht" },
+    { city: "Amsterdam", slug: "website-laten-maken-amsterdam" },
+    { city: "Eindhoven", slug: "website-laten-maken-eindhoven" },
   ],
 } as const;
 

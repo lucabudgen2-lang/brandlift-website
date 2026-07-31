@@ -64,6 +64,29 @@ export function LocalDenHaag() {
               ))}
             </div>
           </Reveal>
+
+          {/* De stadspagina's zijn zes commerciele URL's; vanaf de homepage
+              linkte alleen Den Haag. De rest stond daardoor los in de
+              structuur. Volledige zoekterm als ankertekst. */}
+          <Reveal delay={0.26}>
+            <div className="mt-8 border-t border-[var(--color-line)] pt-6">
+              <p className="text-[0.62rem] font-bold uppercase tracking-[0.12em] text-g600">
+                Website laten maken in
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {denHaag.steden.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/${s.slug}`}
+                    className="group inline-flex items-center gap-2 chamf-sm border border-[var(--color-line-strong)] bg-s1/70 px-3.5 py-2 text-sm font-medium text-g100 transition-colors hover:border-blue/50 hover:text-paper"
+                  >
+                    <span className="h-1.5 w-1.5 chamf-sm bg-blue" />
+                    {s.city}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
 
         {/* Google-profiel kaart */}

@@ -73,7 +73,9 @@ export type CityData = {
   faqHeading: string;
 };
 
-const lokaleSeoLink = { label: "Meer over lokale SEO", href: "/diensten/lokale-seo" };
+/* Ankertekst met de stad erin, zodat de link beschrijft waar hij heen
+   gaat in plaats van "meer over ...". Per stad anders geformuleerd. */
+const seoLink = (label: string) => ({ label, href: "/diensten/lokale-seo" });
 const costGuideLink = { label: "Lees wat een website kost", href: "/kennisbank/wat-kost-een-website-laten-maken" };
 
 
@@ -153,7 +155,7 @@ export const cities: Record<string, CityData> = {
           icon: "search",
           title: "Vindbaar per dienst en per deelgemeente",
           body: "Een pagina voor elke dienst en voor de gebieden waar je echt komt. Zo koppelt Google je aan de klus én aan de buurt.",
-          link: lokaleSeoLink,
+          link: seoLink("Hoe lokale SEO in Rotterdam werkt"),
         },
       ],
     },
@@ -310,7 +312,7 @@ export const cities: Record<string, CityData> = {
           icon: "search",
           title: "Ook in het Engels vindbaar",
           body: "Waar het loont, zetten we een Engelse versie op die net zo goed is opgebouwd als de Nederlandse. Geen machinevertaling, maar echte teksten.",
-          link: lokaleSeoLink,
+          link: seoLink("Zo pakken we lokale SEO in Eindhoven aan"),
         },
         {
           icon: "shield",
@@ -442,7 +444,7 @@ export const cities: Record<string, CityData> = {
           icon: "search",
           title: "Per wijk, niet per stad",
           body: "Wittevrouwen, Lombok, Leidsche Rijn en Overvecht zoeken anders en vragen ander werk. We bouwen die verschillen in plaats van ze weg te middelen.",
-          link: lokaleSeoLink,
+          link: seoLink("Lokale SEO voor Utrechtse bedrijven"),
         },
         {
           icon: "target",
@@ -605,7 +607,7 @@ export const cities: Record<string, CityData> = {
           icon: "search",
           title: "Per stadsdeel gevonden worden",
           body: "De Pijp, IJburg en Noord zijn losse markten met eigen prijzen en eigen concurrentie. Die dek je niet af met één pagina over Amsterdam.",
-          link: lokaleSeoLink,
+          link: seoLink("Lokale vindbaarheid per Amsterdams stadsdeel"),
         },
         {
           icon: "shield",
@@ -737,7 +739,7 @@ export const cities: Record<string, CityData> = {
           icon: "search",
           title: "De basis compleet, niet half",
           body: "Bedrijfsprofiel, vermeldingen, schema en een pagina per dienst. In een kleine markt is de complete basis vaak al genoeg om bovenaan te staan.",
-          link: lokaleSeoLink,
+          link: seoLink("Wat lokale SEO in Delft inhoudt"),
         },
         {
           icon: "target",

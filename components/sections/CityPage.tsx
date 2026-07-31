@@ -10,6 +10,7 @@ import { Byline, FaqBlock, CtaBlock } from "@/components/page/blocks";
 import { Reviews } from "@/components/sections/Reviews";
 import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
+import { OokActiefIn } from "@/components/sections/OokActiefIn";
 import { caseEykelenboom, reviews } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 import type { CityData } from "@/lib/cities";
@@ -575,11 +576,12 @@ const DEFAULT_ORDER: CitySection[] = [
 
 /* Data-driven location page. One template, unique content per city. */
 export function CityPage({ city }: { city: CityData }) {
-  /* Kruimelpad blijft bewust twee niveaus: /diensten is nog een stub en
-     staat op noindex, dus daar willen we niet vanaf zes commerciele
-     stadspagina's naartoe linken. */
+  /* De hub /diensten is nog een stub op noindex, dus die slaan we over.
+     De pijler /diensten/website-laten-maken bestaat wel echt en is de
+     logische ouder van elke stadspagina - die houden we juist wel. */
   const crumbs = [
     { name: "Home", path: "/" },
+    { name: "Website laten maken", path: "/diensten/website-laten-maken" },
     { name: `Website laten maken ${city.city}`, path: `/${city.slug}` },
   ];
 
@@ -653,6 +655,8 @@ export function CityPage({ city }: { city: CityData }) {
         const Section = SECTION_MAP[key];
         return <Section key={key} city={city} mapSrc={mapSrc} />;
       })}
+
+      <OokActiefIn currentCity={city.city} />
 
       {/* ═══════════ REVIEWS · FAQ · SLOT ═══════════ */}
       <Reviews tone="dark" heading={city.reviewsHeading} startAt={city.reviewsStartAt ?? 0} />

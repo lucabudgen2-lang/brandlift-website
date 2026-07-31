@@ -1,4 +1,5 @@
-import { site, reviews as siteReviews } from "@/lib/site";
+import { site } from "@/lib/site";
+import { absoluteUrl } from "@/lib/metadata";
 
 /* ============================================================
    BRANDLIFT · gestructureerde data
@@ -264,7 +265,10 @@ function breadcrumbNode(crumbs: Crumb[], path: string) {
       "@type": "ListItem",
       position: i + 1,
       name: c.name,
-      item: `${site.url}${c.path}`,
+      /* absoluteUrl i.p.v. string-concat: bij path "/" gaf dat
+         "https://brandliftagency.nl/" terwijl de canonical van de homepage
+         zonder slash staat. Twee URL's voor dezelfde pagina. */
+      item: absoluteUrl(c.path),
     })),
   };
 }

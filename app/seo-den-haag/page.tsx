@@ -303,11 +303,13 @@ export default function Page() {
             </Reveal>
             <Reveal delay={0.18}>
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-g600">
-                Wij zitten zelf in Den Haag en werken hier sinds 2021.{" "}
-                <Link href="/kennisbank/wat-is-lokale-seo" className="font-semibold text-blue hover:underline">
-                  Nog niet bekend met lokale SEO?
-                </Link>{" "}
-                Dan lees je daar eerst de basis.
+                Wij zitten zelf in Den Haag en werken hier sinds 2021. Deze pagina gaat over vindbaarheid
+                voor bedrijven die al een website hebben. Is die site verouderd of technisch zwak, dan
+                gaat elke euro aan SEO verloren -{" "}
+                <Link href="/website-laten-maken-den-haag" className="font-semibold text-blue hover:underline">
+                  begin dan liever bij een nieuwe Haagse website
+                </Link>
+                .
               </p>
             </Reveal>
           </div>
