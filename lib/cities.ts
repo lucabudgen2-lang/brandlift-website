@@ -7,6 +7,8 @@
    (Den Haag keeps its own bespoke page - this covers the rest.)
    ============================================================ */
 
+import type { CitySection } from "@/components/sections/CityPage";
+
 export type CityFaq = { q: string; a: string; link?: { label: string; href: string } };
 export type CityPillar = {
   icon: string;
@@ -58,98 +60,123 @@ export type CityData = {
   };
   faqs: CityFaq[];
   finalCta: { h2: string; body: string };
+  /* Volgorde van de middensecties. Elke stad krijgt een eigen volgorde:
+     zes pagina's met dezelfde blokken in dezelfde volgorde lezen als een
+     sjabloon. Weglaten = de standaardvolgorde uit CityPage. */
+  sectionOrder?: CitySection[];
+  /* Deze drie koppen stonden hard in de gedeelde componenten en waren dus
+     op alle zes de stadspagina's byte-identiek. Nu per stad. */
+  carouselHeading: [string, string];
+  reviewsHeading: [string, string];
+  /* Startindex in de reviewlijst, zodat elke stad met andere reviews opent. */
+  reviewsStartAt?: number;
+  faqHeading: string;
 };
 
 const lokaleSeoLink = { label: "Meer over lokale SEO", href: "/diensten/lokale-seo" };
 const costGuideLink = { label: "Lees wat een website kost", href: "/kennisbank/wat-kost-een-website-laten-maken" };
 
+
+/* Elke stad heeft een eigen sectionOrder, eigen koppen en eigen FAQ's.
+   Reden: de zes stadspagina's deelden hetzelfde skelet met alleen een
+   andere stadsnaam. Vier H2's waren zelfs byte-identiek. Dat leest voor
+   een zoekmachine als één sjabloon dat zes keer is uitgerold.
+
+   TODO LUCA - lokaal bewijs. Eykelenboom is onze enige benoemde case en
+   dat is een Haagse klant. Op de andere vijf steden is dat dus wel echt
+   bewijs, maar geen LOKAAL bewijs. Zodra er een klant in Rotterdam,
+   Eindhoven, Utrecht, Amsterdam of Delft is, hoort die hier in het
+   bewijsblok van die stad. Tot die tijd benoemen we eerlijk dat het om
+   een Haagse case gaat - nooit doen alsof hij uit die stad komt. */
 export const cities: Record<string, CityData> = {
   /* ═══════════════════════ ROTTERDAM ═══════════════════════ */
   rotterdam: {
     slug: "website-laten-maken-rotterdam",
     city: "Rotterdam",
-    updated: "2026-07-13",
+    updated: "2026-07-31",
     metaTitle: "Website laten maken Rotterdam - meer aanvragen",
     metaDescription:
       "Website laten maken in Rotterdam? Strategische sites met lokale SEO en conversie voor Rotterdamse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
-    heroEyebrow: "Rotterdam · heel Nederland",
+    heroEyebrow: "Rotterdam · Rijnmond",
     h1: "Website laten maken in Rotterdam",
     intro:
-      "Rotterdam is een stad van aanpakken - en van keuze. In elke branche strijden tientallen bedrijven om dezelfde klant. Wij bouwen strategische websites met lokale SEO en conversie waarmee Rotterdamse ondernemers bovenaan komen en de aanvraag ook echt binnenhalen.",
+      "Rotterdam beoordeelt je op wat je oplevert, niet op wat je belooft. Online werkt dat niet anders: de klant kijkt kort, vergelijkt drie partijen en belt er één. Wij bouwen websites die in dat korte moment de doorslag geven - vindbaar per dienst en per deelgemeente, en duidelijk over wat je doet.",
     heroChips: [
-      "Sinds 2021, vanuit Den Haag",
+      "Vanuit Den Haag, 25 minuten van de Coolsingel",
       "Lokale SEO inbegrepen",
       "Reactie binnen 1 werkdag",
-      "5,0 op Google",
+      "Vanaf 1.500 euro",
     ],
+    sectionOrder: ["waarom", "aanpak", "bewijs", "werkgebied", "meerwerk", "kosten", "lokaal"],
     waarom: {
-      heading: ["Rotterdammers Googelen lokaal.", "Wie bovenaan staat, wint de klus."],
+      heading: ["De klant vergelijkt drie partijen.", "Jij moet er een van zijn."],
       intro:
-        "Van Kralingen tot Charlois, van de Kop van Zuid tot Hillegersberg: de Rotterdamse markt is groot en druk. Wie online niet opvalt, raakt de klant kwijt aan de concurrent die net iets beter vindbaar is.",
+        "In Rijnmond zit in elk vak een lange lijst aanbieders. Niet de beste wint automatisch - de best vindbare komt op de lijst, en de rest komt er niet eens op voor.",
       serpQuery: "jouw vak + Rotterdam",
       cards: [
         {
-          title: "Ze zoeken lokaal - en jij staat er niet",
-          body: "Rotterdamse klanten typen hun vak plus hun wijk in Google en bellen wie bovenaan staat. Sta jij op pagina drie, dan kom je niet eens in de overweging.",
+          title: "Je staat niet in het kaartje bovenaan",
+          body: "Zoekt iemand in Kralingen of op Zuid, dan verschijnen er drie bedrijven met een kaartje erbij. Wie daar niet tussen staat, wordt zelden aangeklikt - hoe goed het werk daaronder ook is.",
         },
         {
-          title: "Volle site, lege mailbox",
-          body: "Bezoek zonder richting levert niets op. Een site die niet meteen duidelijk maakt wat je doet en waarom juist jij, verliest de Rotterdammer die geen tijd heeft om te zoeken.",
+          title: "Drie offertes, en jij bent de duurste",
+          body: "Zonder verhaal over hoe je werkt en wat je oplevert, blijft alleen de prijs over om op te vergelijken. Dan verlies je van wie het goedkoopst is in plaats van te winnen op wat je levert.",
         },
         {
-          title: "Sterk in het werk, zwak op het scherm",
-          body: "Je levert degelijk werk, maar een gedateerde site straalt dat niet uit. In een stad die op daden afgaat, kost dat gat je vertrouwen - en dus opdrachten.",
+          title: "Groot werk, kleine indruk",
+          body: "Je draait projecten waar opdrachtgevers jaren op teren. Staat daar een site tegenover uit 2016, dan gaat de aanvraag naar de partij die online groter oogt dan hij is.",
         },
       ],
-      outro: "Een website die op Rotterdam is gebouwd, draait dat om.",
+      outro: "Op een site die op Rotterdam is gebouwd, valt dat verschil weg.",
     },
     aanpak: {
-      heading: ["Verder dan mooi.", "Gebouwd om Rotterdamse klanten te winnen."],
+      heading: ["Geen mooie praatjes.", "Een site die werk binnenhaalt."],
       intro:
-        "Vier dingen bepalen of je website in Rotterdam klanten oplevert. Wij regelen ze alle vier, in de juiste volgorde.",
+        "Vier dingen bepalen of een Rotterdamse bezoeker belt of wegklikt. We pakken ze in deze volgorde aan.",
       pillars: [
         {
           icon: "target",
-          title: "Strategie vóór ontwerp",
-          body: "Voordat er ook maar een pixel staat, bepalen we waarom een Rotterdamse klant voor jou kiest en niet voor de tien anderen. Die keuze stuurt je structuur, je boodschap en de hele route naar de aanvraag.",
+          title: "Eerst de vraag, dan het ontwerp",
+          body: "We beginnen bij wat je klant intikt en waar hij op afhaakt. Die twee dingen bepalen de opbouw van je site - niet andersom.",
         },
         {
           icon: "gem",
-          title: "Design en merk dat vertrouwen wekt",
-          body: "Rotterdam houdt van duidelijkheid en no-nonsense. We geven je een uitstraling die klopt met je vak en je markt: strak, eerlijk en herkenbaar, zodat je online net zo solide overkomt als op de werkvloer.",
+          title: "Een uitstraling die past bij de schaal van je werk",
+          body: "Rotterdam wantrouwt opsmuk en herkent degelijkheid. Je site wordt strak en direct, zodat hij hetzelfde signaal afgeeft als je opgeleverde werk.",
         },
         {
           icon: "shield",
-          title: "Techniek: snel, veilig en schaalbaar",
-          body: "De meeste Rotterdammers vinden je op hun telefoon, onderweg. We bouwen snel, veilig en mobiel-eerst, met een fundering die meegroeit als je uitbreidt naar nieuwe diensten of nieuwe wijken.",
+          title: "Snel op een telefoon met slecht bereik",
+          body: "Je klant kijkt vanaf de bouwplaats of onderweg. Alles wordt mobiel-eerst en licht gebouwd, zodat je site het ook doet als de verbinding tegenzit.",
         },
         {
           icon: "search",
-          title: "Lokale SEO die Rotterdamse klanten vindt",
-          body: "We regelen het complete lokale pakket: aparte dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo word je gevonden van 'website laten maken Rotterdam' tot je specifieke dienst in Kralingen of Charlois.",
+          title: "Vindbaar per dienst en per deelgemeente",
+          body: "Een pagina voor elke dienst en voor de gebieden waar je echt komt. Zo koppelt Google je aan de klus én aan de buurt.",
           link: lokaleSeoLink,
         },
       ],
     },
     bewijs: {
-      heading: ["Bewijs uit de praktijk.", "Van 2 naar 24 aanvragen."],
-      body: "Voor Hovenier Eykelenboom - een vakbedrijf hier vlakbij in Den Haag - bouwden we een complete website met een lokale SEO-structuur per dienst en werkgebied. Vakwerk dat eerst nauwelijks werd gevonden, levert nu structureel aanvragen op. Dezelfde aanpak werkt net zo goed voor een Rotterdams bedrijf.",
+      heading: ["Wat dit oplevert", "voor een vakbedrijf als het jouwe."],
+      body:
+        "Ons duidelijkste voorbeeld is een hovenier uit Den Haag, niet uit Rotterdam - dat zeggen we er eerlijk bij. Wat overdraagbaar is, is de aanpak: een pagina per dienst, een pagina per werkgebied en een route naar contact die geen drempels opwerpt. In een markt als Rijnmond, waar de concurrentie per postcode dieper is dan in Den Haag, telt die structuur alleen maar zwaarder.",
     },
     kostenHeading: ["Wat kost een website", "laten maken in Rotterdam?"],
     kostenBody:
-      "Wat het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een compacte, scherpe site tot een uitgebreid platform met veel dienst- en wijkpagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen apart via een voordelig maandbedrag.",
+      "Wat jij betaalt hangt af van hoeveel diensten en gebieden je wilt afdekken. Een vakbedrijf met vier diensten en drie deelgemeenten heeft meer pagina's nodig dan een specialist met één dienst. Je krijgt een vaste prijs voordat we beginnen.",
     local: {
       eyebrow: "Dichtbij",
-      heading: ["Een Haags bureau,", "thuis in Rotterdam."],
+      heading: ["Een Haags bureau,", "thuis in Rijnmond."],
       body: [
-        "Brandlift zit in Den Haag - op een klein half uur van de Coolsingel. We kennen de regio Rijnmond en de manier waarop Rotterdamse klanten online zoeken en beslissen: snel, concreet en zonder omhaal.",
-        "Je werkt met een vast team en korte lijnen, direct met de mensen die je site ontwerpen en bouwen. In het Nederlands en Engels - en via professionele vertalers ook in andere talen, handig voor de internationale bedrijven in de stad.",
+        "We zitten in Den Haag, op een klein half uur van de Coolsingel. Dichtbij genoeg om langs te komen, en vertrouwd genoeg met de regio om te weten hoe hier wordt gezocht en besloten: snel, concreet, zonder omhaal.",
+        "Je hebt één vast aanspreekpunt en praat met de mensen die je site ook echt ontwerpen en bouwen. Geen accountmanager ertussen die je project van horen zeggen kent.",
       ],
       points: [
-        "Sinds 2021, vanuit Den Haag",
-        "Vast team, korte lijnen",
-        "Nederlands, Engels en meer talen",
-        "Direct plek, geen wachtlijst",
+        "25 minuten van de Coolsingel",
+        "Eén vast aanspreekpunt",
+        "Nederlands en Engels",
+        "Geen wachtlijst",
       ],
       portraitChip: "Den Haag · nabij Rotterdam",
       portraitAlt: "Luca Budgen, oprichter van Brandlift, dat websites bouwt voor bedrijven in Rotterdam",
@@ -187,32 +214,40 @@ export const cities: Record<string, CityData> = {
       mapTitle: "Werkgebied: Rotterdam",
       mapSubtitle: "Websites vanuit Den Haag, voor heel Rijnmond",
     },
+    carouselHeading: ["Werk voor bedrijven", "die op uitvoering worden afgerekend."],
+    reviewsHeading: ["Wat opdrachtgevers", "achteraf zeggen."],
+    reviewsStartAt: 0,
+    faqHeading: "Rechttoe rechtaan beantwoord.",
     faqs: [
       {
-        q: "Werken jullie ook echt voor bedrijven in Rotterdam?",
-        a: "Zeker. Ons team zit in Den Haag, op een klein half uur van Rotterdam, en we bouwen websites voor bedrijven door de hele stad en de regio Rijnmond - van Kralingen tot Charlois en de randgemeenten. De samenwerking verloopt grotendeels online, dus afstand speelt geen rol.",
+        q: "Rotterdam zit vol bureaus. Waarom een bureau uit Den Haag?",
+        a: "Omdat je geen bureau om de hoek nodig hebt, maar een dat je markt begrijpt. We zitten 25 minuten van de Coolsingel, werken al sinds 2021 in Rijnmond en komen langs wanneer dat zin heeft. De rest gaat online, wat sneller werkt dan een agenda vol reistijd.",
       },
       {
-        q: "Wat kost een website laten maken in Rotterdam?",
-        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent. In een gratis groeigesprek geven we een eerlijke indicatie.",
+        q: "In mijn vak zijn er in Rotterdam tientallen concurrenten. Helpt een site dan echt?",
+        a: "Juist dan. Waar veel aanbieders zijn, is de vergelijking oppervlakkig: mensen kijken kort en kiezen uit wie ze zien. Verschijnen op de juiste zoekopdracht en meteen duidelijk maken wat je doet, is precies waar dat gevecht wordt beslist.",
+      },
+      {
+        q: "Ik werk in de haven en voor zakelijke opdrachtgevers. Is lokale SEO dan zinvol?",
+        a: "Deels. Voor zakelijke opdrachtgevers telt vooral hoe geloofwaardig en compleet je site is - die kijken langer en vergelijken grondiger. Lokale vindbaarheid is dan ondersteunend in plaats van leidend, en dat zeggen we ook als dat betekent dat je minder nodig hebt.",
+      },
+      {
+        q: "Werken jullie ook in Schiedam, Capelle of Barendrecht?",
+        a: "Ja. Veel Rotterdamse bedrijven werken toch al door heel Rijnmond, en die randgemeenten nemen we mee in je vindbaarheid als je er ook echt komt. Pagina's maken voor gebieden waar je nooit werkt, doen we niet - dat levert alleen bezoekers op die je moet teleurstellen.",
+      },
+      {
+        q: "Hoe snel staat mijn site live?",
+        a: "Meestal binnen drie tot vier weken na het eerste gesprek. Het bouwen is zelden de vertragende factor; wachten op foto's en feedback wel. Wat we van je nodig hebben, hoor je meteen in het begin.",
         link: costGuideLink,
       },
       {
-        q: "Wat valt er onder lokale SEO in Rotterdam?",
-        a: "Zo goed als alles wat nodig is om in Rotterdam gevonden te worden: een sterke website met dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen (citaties) en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo verschijn je op het moment dat een Rotterdamse klant naar jouw dienst zoekt.",
-      },
-      {
-        q: "Hoe lang duurt het om een website te laten maken?",
-        a: "Een website staat er meestal binnen 3 tot 4 weken, afhankelijk van de omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een concrete planning aan jouw project.",
-      },
-      {
-        q: "Werken jullie ook voor Engelstalige bedrijven in Rotterdam?",
-        a: "Ja. We werken in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in - handig in een internationale havenstad als Rotterdam. Je website kan meertalig, met dezelfde lokale SEO-basis per taal.",
+        q: "Kan ik daarna zelf dingen aanpassen?",
+        a: "Ja. Waar dat zinvol is bouwen we een CMS zodat je teksten, foto's en projecten zelf kunt bijwerken, en bij de oplevering laten we zien hoe dat werkt. Liever uitbesteden kan ook, via onderhoud.",
       },
     ],
     finalCta: {
-      h2: "Klaar voor een website die Rotterdamse klanten oplevert?",
-      body: "Plan een gratis, vrijblijvend groeigesprek van 30 minuten. Je weet daarna precies waar je staat - met of zonder samenwerking.",
+      h2: "Klaar om in Rotterdam op de lijst te komen?",
+      body: "Plan een gratis groeigesprek van 30 minuten. We kijken naar je vindbaarheid in Rijnmond en zeggen eerlijk wat er te winnen valt.",
     },
   },
 
@@ -220,88 +255,90 @@ export const cities: Record<string, CityData> = {
   eindhoven: {
     slug: "website-laten-maken-eindhoven",
     city: "Eindhoven",
-    updated: "2026-07-13",
+    updated: "2026-07-31",
     metaTitle: "Website laten maken Eindhoven - meer aanvragen",
     metaDescription:
-      "Website laten maken in Eindhoven? Strategische sites met lokale SEO en conversie voor Brabantse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
-    heroEyebrow: "Eindhoven · heel Nederland",
+      "Website laten maken in Eindhoven? Strategische sites met lokale SEO en conversie voor Eindhovense bedrijven in de Brainport-regio. Vanaf 1.500 euro.",
+    heroEyebrow: "Eindhoven · Brainport",
     h1: "Website laten maken in Eindhoven",
     intro:
-      "Eindhoven draait op techniek, design en ondernemerschap - van Strijp-S tot de High Tech Campus. In die veeleisende markt val je alleen op met een website die klopt. Wij bouwen strategische sites met lokale SEO en conversie voor Eindhovense bedrijven die willen groeien.",
+      "Eindhoven bouwt sneller dan de meeste bedrijven hun vindbaarheid bijhouden. Nieuwe wijken, nieuwe bewoners, nieuwe bedrijven - allemaal mensen die jou nog niet kennen en je dus moeten kunnen vinden. Wij bouwen sites die dat opvangen, in het Nederlands en waar nodig in het Engels.",
     heroChips: [
-      "Sinds 2021, vanuit Den Haag",
+      "Actief in de Brainport-regio",
+      "Ook in het Engels",
       "Lokale SEO inbegrepen",
-      "Reactie binnen 1 werkdag",
-      "5,0 op Google",
+      "Vanaf 1.500 euro",
     ],
+    sectionOrder: ["waarom", "bewijs", "aanpak", "lokaal", "meerwerk", "werkgebied", "kosten"],
     waarom: {
-      heading: ["Eindhovenaren zoeken online.", "Wie ze niet vindt, mist de opdracht."],
+      heading: ["De stad groeit hard.", "Je vindbaarheid groeit zelden mee."],
       intro:
-        "Brainport trekt bedrijvigheid aan - en dus concurrentie. Van Woensel tot Gestel strijden aanbieders om dezelfde klant. Wie online niet scherp staat, verdwijnt naar de achtergrond.",
+        "Meerhoven, Strijp-S, Blixembosch: hele wijken vol mensen die geen idee hebben welke vakbedrijven er in de buurt zitten. Ze zoeken het op. Wat ze dan vinden, bepaalt wie ze bellen.",
       serpQuery: "jouw vak + Eindhoven",
       cards: [
         {
-          title: "Ze zoeken lokaal - en vinden je niet",
-          body: "Eindhovense klanten typen hun vraag plus hun buurt in Google en kiezen uit wie bovenaan staat. Onvindbaar betekent hier simpelweg: niet in beeld.",
+          title: "Nieuwe buren die je naam nog nooit hoorden",
+          body: "Mond-tot-mondreclame werkt pas als mensen elkaar kennen. In een wijk die net is opgeleverd, bestaat dat netwerk nog niet - daar wint wie online het makkelijkst te vinden is.",
         },
         {
-          title: "Bezoek zat, aanvragen niet",
-          body: "In een regio die op oplossingen draait, haakt een bezoeker af zodra je site niet meteen duidelijk maakt wat je levert en waarom jij. Verkeer zonder richting kost je gewoon geld.",
+          title: "Je legt techniek uit aan wie geen techneut is",
+          body: "Warmtepompen, laadpalen, domotica: je klant weet wat hij wil bereiken, niet welk product dat doet. Een site die in zijn woorden uitlegt wat je oplost, wint van een site vol specificaties.",
         },
         {
-          title: "Goed werk, gedateerde site",
-          body: "Eindhoven legt de lat hoog op vormgeving en techniek. Een verouderde website ondermijnt precies de professionaliteit waar je klanten hier op letten.",
+          title: "De helft van je markt leest Engels",
+          body: "Rond de campussen en kennisinstellingen wonen tienduizenden internationale werknemers met koopkracht en een woning die onderhoud vraagt. Alleen Nederlands sluit dat deel stilzwijgend uit.",
         },
       ],
-      outro: "Een website die op Eindhoven is gebouwd, draait dat om.",
+      outro: "Groei in de stad wordt pas jouw groei als je gevonden wordt.",
     },
     aanpak: {
-      heading: ["Verder dan mooi.", "Gebouwd om Eindhovense klanten te winnen."],
+      heading: ["Techniek begrijpelijk maken.", "Daar begint de aanvraag."],
       intro:
-        "Vier dingen bepalen of je website in Eindhoven klanten oplevert. Wij regelen ze alle vier, in de juiste volgorde.",
+        "In deze regio is vakinhoud zelden het probleem. De vertaalslag naar de klant wel. Zo pakken we dat aan.",
       pillars: [
         {
           icon: "target",
-          title: "Strategie vóór ontwerp",
-          body: "We beginnen bij de vraag waarom een klant in Eindhoven voor jou kiest. In een regio vol techneuten en makers telt onderscheidend vermogen; die positionering bepaalt je structuur, je boodschap en de route naar contact.",
+          title: "Beginnen bij wat je klant intikt",
+          body: "We zoeken uit met welke woorden mensen jouw oplossing zoeken - meestal het probleem, niet de productnaam. Daar bouwen we de structuur omheen.",
         },
         {
           icon: "gem",
-          title: "Design en merk dat vertrouwen wekt",
-          body: "Eindhoven is designstad - hier valt slordig ontwerp meteen op. We geven je een merk en uitstraling die passen bij je vak en de kwaliteitsverwachting van de regio, zodat je online net zo sterk staat als in het echt.",
-        },
-        {
-          icon: "shield",
-          title: "Techniek: snel, veilig en schaalbaar",
-          body: "In Brainport weet men wat goede techniek is. We bouwen snel, veilig en mobiel-eerst, op een schaalbare basis die meegroeit met je bedrijf - van eenmanszaak tot scale-up.",
+          title: "Vakwerk zonder jargon",
+          body: "Je site legt uit wat iets oplevert voordat hij uitlegt hoe het werkt. Wie de techniek wél wil, kan doorlezen - wie alleen een prijs zoekt, hoeft dat niet.",
         },
         {
           icon: "search",
-          title: "Lokale SEO die Eindhovense klanten vindt",
-          body: "We regelen het volledige lokale pakket: dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo word je gevonden van 'website laten maken Eindhoven' tot je specifieke dienst in Strijp of Woensel.",
+          title: "Ook in het Engels vindbaar",
+          body: "Waar het loont, zetten we een Engelse versie op die net zo goed is opgebouwd als de Nederlandse. Geen machinevertaling, maar echte teksten.",
           link: lokaleSeoLink,
+        },
+        {
+          icon: "shield",
+          title: "Gebouwd om mee te groeien",
+          body: "Kom je er over een jaar een dienst of een werkgebied bij, dan schuif je die erin zonder dat de site opnieuw op de schop moet.",
         },
       ],
     },
     bewijs: {
-      heading: ["Bewijs uit de praktijk.", "Van 2 naar 24 aanvragen."],
-      body: "Voor Hovenier Eykelenboom in Den Haag bouwden we een complete website met een lokale SEO-structuur per dienst en werkgebied. Vakwerk dat eerst nauwelijks werd gevonden, levert nu structureel aanvragen op. Al is dit een Haagse case, de aanpak werkt net zo goed voor een Eindhovens bedrijf.",
+      heading: ["Bewijs uit Den Haag,", "principe geldt ook hier."],
+      body:
+        "Onze enige benoemde case is een Haagse hovenier, en we doen niet alsof hij uit Eindhoven komt. Waar het om gaat is wat de aanpak deed: van een site die niets opleverde naar een structuur die per dienst en per gebied gevonden wordt. In Eindhoven speelt dat in een andere markt - meer techniek, meer nieuwbouw, meer Engels - maar het mechanisme erachter is hetzelfde.",
     },
     kostenHeading: ["Wat kost een website", "laten maken in Eindhoven?"],
     kostenBody:
-      "Wat het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een strakke, compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen apart via een voordelig maandbedrag.",
+      "De grootste kostenpost is zelden het ontwerp, maar het aantal pagina's dat je nodig hebt. Wil je ook een Engelse versie, dan komt daar vertaalwerk bij. Je hoort vooraf wat het wordt, inclusief wat je later nog kunt toevoegen.",
     local: {
       eyebrow: "Op afstand, toch dichtbij",
-      heading: ["Een Haags bureau", "dat de Brainport-markt kent."],
+      heading: ["Ver weg op de kaart.", "Dichtbij in de praktijk."],
       body: [
-        "Brandlift zit in Den Haag, maar afstand is online geen belemmering - onze samenwerkingen lopen door heel Nederland. We kennen de Eindhovense markt: een regio waar techniek, design en ondernemerschap samenkomen en waar kwaliteit vanzelfsprekend is.",
-        "Je werkt met een vast team en korte lijnen, direct met de mensen die je site bouwen. In het Nederlands en Engels - en via professionele vertalers ook in andere talen, handig voor de vele kenniswerkers en internationale bedrijven in en rond Eindhoven.",
+        "We zitten in Den Haag en dat is geen belemmering gebleken: het meeste werk gaat online en dat gaat sneller dan heen en weer rijden. Wat wel telt, is dat we snappen hoe deze regio in elkaar zit - techniek, design en ondernemerschap door elkaar heen.",
+        "Voor de internationale kant van de markt werken we in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Geen machinevertaling waar je later op afgerekend wordt.",
       ],
       points: [
-        "Sinds 2021, vanuit Den Haag",
-        "Vast team, korte lijnen",
-        "Nederlands, Engels en meer talen",
-        "Direct plek, geen wachtlijst",
+        "Volledig online samenwerken",
+        "Nederlands en Engels",
+        "Vertalers voor andere talen",
+        "Geen wachtlijst",
       ],
       portraitChip: "Den Haag · actief in Eindhoven",
       portraitAlt: "Luca Budgen, oprichter van Brandlift, dat websites bouwt voor bedrijven in Eindhoven",
@@ -311,15 +348,7 @@ export const cities: Record<string, CityData> = {
       intro:
         "We werken voor bedrijven in de hele stad en de Brainport-regio - van het centrum en de campussen tot de buitenwijken en de omliggende gemeenten.",
       primaryLabel: "Stadsdelen",
-      primary: [
-        "Centrum",
-        "Strijp",
-        "Woensel-Noord",
-        "Woensel-Zuid",
-        "Tongelre",
-        "Stratum",
-        "Gestel",
-      ],
+      primary: ["Centrum", "Strijp", "Woensel-Noord", "Woensel-Zuid", "Tongelre", "Stratum", "Gestel"],
       secondaryLabel: "En onder meer in de wijken",
       secondary: ["Strijp-S", "Meerhoven", "Blixembosch", "Vaartbroek", "Lakerlopen", "Tivoli", "Genderdal"],
       nearby: ["Veldhoven", "Best", "Geldrop", "Nuenen", "Son en Breugel", "Waalre", "Helmond"],
@@ -327,32 +356,40 @@ export const cities: Record<string, CityData> = {
       mapTitle: "Werkgebied: Eindhoven",
       mapSubtitle: "Websites vanuit Den Haag, voor heel Brainport",
     },
+    carouselHeading: ["Eerder werk voor bedrijven", "die iets uit te leggen hadden."],
+    reviewsHeading: ["Acht klanten,", "acht keer vijf sterren."],
+    reviewsStartAt: 3,
+    faqHeading: "Kort, concreet, zonder omhaal.",
     faqs: [
       {
-        q: "Werken jullie ook voor bedrijven in Eindhoven?",
-        a: "Ja. Ons team zit in Den Haag, maar we bouwen websites voor bedrijven door heel Nederland - Eindhoven en de Brainport-regio inbegrepen. Vrijwel alles verloopt online en snel, dus de afstand tussen Den Haag en Eindhoven speelt geen rol in de samenwerking.",
+        q: "Hebben jullie een Engelstalige website voor ons?",
+        a: "Ja. We schrijven zelf in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Elke taalversie krijgt een eigen, kloppende structuur - niet één site met een vertaalknop erop.",
       },
       {
-        q: "Wat kost een website laten maken in Eindhoven?",
-        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        q: "Wij zitten in een technische niche. Snappen jullie waar we het over hebben?",
+        a: "Genoeg om de juiste vragen te stellen, en we vragen door tot het klopt. Het echte werk is niet dat wij techneut worden, maar dat jouw klant snapt wat je voor hem oplost. Jij controleert de teksten voordat er iets live gaat.",
+      },
+      {
+        q: "Onze markt is de hele Brainport-regio, niet alleen Eindhoven. Kan dat?",
+        a: "Ja, en dat is vaak verstandig. Veldhoven, Best, Geldrop en Helmond zijn aparte zoekmarkten met eigen concurrentie. Werk je daar echt, dan bouwen we ze mee op in je vindbaarheid.",
+      },
+      {
+        q: "Werken jullie op afstand, of komen jullie langs?",
+        a: "Grotendeels op afstand, en dat bevalt beide kanten goed: geen reistijd, sneller schakelen. Is er een goede reden om langs te komen, dan doen we dat - maar we rekenen het niet als vanzelfsprekend in.",
+      },
+      {
+        q: "Wat kost het en waar hangt dat vanaf?",
+        a: "Een website begint bij 1.500 euro. Wat jij betaalt hangt vooral af van het aantal diensten en gebieden dat je wilt afdekken en of er een Engelse versie bij komt. Je krijgt een vaste prijs voordat we starten.",
         link: costGuideLink,
       },
       {
-        q: "Wat valt er onder lokale SEO in Eindhoven?",
-        a: "Zo goed als alles wat nodig is om lokaal gevonden te worden: een sterke website met dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo verschijn je precies wanneer een Eindhovense klant naar jouw dienst zoekt.",
-      },
-      {
-        q: "Hoe lang duurt het om een website te laten maken?",
-        a: "Een website staat er meestal binnen 3 tot 4 weken, afhankelijk van de omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een concrete planning aan jouw project.",
-      },
-      {
-        q: "Werken jullie ook voor internationale bedrijven in Eindhoven?",
-        a: "Ja. Eindhoven trekt veel internationaal talent en bedrijven aan. We werken in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Je website kan meertalig, met dezelfde sterke lokale SEO-basis per taal.",
+        q: "Kunnen jullie ook onze bestaande site verbeteren?",
+        a: "Soms. Staat de basis technisch redelijk, dan bouwen we daarin verder. Is hij zo verouderd dat elke euro die je erin stopt verloren gaat, dan zeggen we dat eerlijk en beginnen we liever opnieuw.",
       },
     ],
     finalCta: {
-      h2: "Klaar voor een website die Eindhovense klanten oplevert?",
-      body: "Plan een gratis, vrijblijvend groeigesprek van 30 minuten. Je weet daarna precies waar je staat - met of zonder samenwerking.",
+      h2: "Klaar om mee te groeien met Eindhoven?",
+      body: "Plan een gratis groeigesprek van 30 minuten. We kijken hoe je nu gevonden wordt en wat er in deze regio te halen valt.",
     },
   },
 
@@ -360,88 +397,90 @@ export const cities: Record<string, CityData> = {
   utrecht: {
     slug: "website-laten-maken-utrecht",
     city: "Utrecht",
-    updated: "2026-07-13",
+    updated: "2026-07-31",
     metaTitle: "Website laten maken Utrecht - meer aanvragen",
     metaDescription:
       "Website laten maken in Utrecht? Strategische sites met lokale SEO en conversie voor Utrechtse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
-    heroEyebrow: "Utrecht · heel Nederland",
+    heroEyebrow: "Utrecht · Midden-Nederland",
     h1: "Website laten maken in Utrecht",
     intro:
-      "Utrecht ligt in het hart van Nederland - centraal, dynamisch en competitief. Van de binnenstad tot Leidsche Rijn dingen bedrijven naar dezelfde klant. Wij bouwen strategische websites met lokale SEO en conversie waarmee Utrechtse ondernemers opvallen en aanvragen binnenhalen.",
+      "Utrecht ligt centraal, en dat is precies het probleem: iedereen kan hier werken, dus iedereen doet het. Van zzp'ers tot landelijke ketens die de stad als uitvalsbasis gebruiken. Wij bouwen sites die duidelijk maken dat jij hier echt zit en dit gebied echt kent.",
     heroChips: [
-      "Sinds 2021, vanuit Den Haag",
+      "Actief in Midden-Nederland",
       "Lokale SEO inbegrepen",
       "Reactie binnen 1 werkdag",
-      "5,0 op Google",
+      "Vanaf 1.500 euro",
     ],
+    sectionOrder: ["waarom", "aanpak", "lokaal", "bewijs", "werkgebied", "meerwerk", "kosten"],
     waarom: {
-      heading: ["Utrechters zoeken lokaal.", "Onvindbaar is onverkocht."],
+      heading: ["Centraal in het land.", "Niet vanzelf in beeld."],
       intro:
-        "Utrecht is een van de snelst groeiende steden van het land, en de concurrentie groeit mee. Van Wittevrouwen tot Overvecht: wie online niet opvalt, verliest de klant aan wie net beter vindbaar is.",
+        "De ligging die je klanten oplevert, levert ook je concurrentie op. In Utrecht strijd je niet alleen met de buurman, maar met partijen uit Amersfoort, Nieuwegein en Amsterdam die hier net zo makkelijk komen.",
       serpQuery: "jouw vak + Utrecht",
       cards: [
         {
-          title: "Ze zoeken lokaal - en jij mist het",
-          body: "Utrechtse klanten typen hun vak plus hun wijk in Google en kiezen uit de eerste resultaten. Sta jij daar niet tussen, dan bestaat je bedrijf voor hen niet.",
+          title: "Landelijke partijen bieden mee op jouw klus",
+          body: "Doordat alles vanuit Utrecht bereikbaar is, verschijnen er in de zoekresultaten bedrijven van ver buiten de stad. Wie niet laat zien dat hij hier zit, verliest zijn thuisvoordeel.",
         },
         {
-          title: "Bezoekers komen, aanvragen blijven weg",
-          body: "Verkeer zonder richting levert niets op. Zonder een heldere boodschap en een duidelijke route naar contact klikt de Utrechter net zo makkelijk door naar de volgende aanbieder.",
+          title: "Binnenstad en Leidsche Rijn zijn twee markten",
+          body: "Een pand uit 1650 aan de gracht vraagt iets heel anders dan nieuwbouw in Vleuten. Eén pagina die beide wil bedienen, overtuigt in geen van beide gevallen.",
         },
         {
-          title: "Goed werk, zwakke uitstraling",
-          body: "Je werk is in orde, maar een gedateerde site laat dat niet zien. In een stad vol scherpe bedrijven kost dat verschil je vertrouwen, en dus opdrachten.",
+          title: "Je klant vergelijkt langer dan je denkt",
+          body: "Utrechtse opdrachtgevers oriënteren zich grondig en komen terug voordat ze bellen. Je site moet die tweede en derde blik doorstaan, niet alleen de eerste.",
         },
       ],
-      outro: "Een website die op Utrecht is gebouwd, draait dat om.",
+      outro: "Wie laat zien dat hij hier hoort, wint van wie hier toevallig ook komt.",
     },
     aanpak: {
-      heading: ["Verder dan mooi.", "Gebouwd om Utrechtse klanten te winnen."],
+      heading: ["Laten zien dat je", "hier daadwerkelijk thuis bent."],
       intro:
-        "Vier dingen bepalen of je website in Utrecht klanten oplevert. Wij regelen ze alle vier, in de juiste volgorde.",
+        "Vier keuzes maken in Utrecht het verschil tussen een site die meedoet en een die opvalt.",
       pillars: [
         {
+          icon: "search",
+          title: "Per wijk, niet per stad",
+          body: "Wittevrouwen, Lombok, Leidsche Rijn en Overvecht zoeken anders en vragen ander werk. We bouwen die verschillen in plaats van ze weg te middelen.",
+          link: lokaleSeoLink,
+        },
+        {
           icon: "target",
-          title: "Strategie vóór ontwerp",
-          body: "We beginnen bij de vraag waarom een Utrechtse klant voor jou kiest in een markt vol alternatieven. Die positionering bepaalt de structuur van je site, je boodschap en de route naar de aanvraag - nog voor we iets ontwerpen.",
+          title: "Kiezen wat je níet doet",
+          body: "In een drukke markt win je door specifiek te zijn. We scherpen aan waar je in uitblinkt en laten de rest bewust weg - dat levert betere aanvragen op.",
         },
         {
           icon: "gem",
-          title: "Design en merk dat vertrouwen wekt",
-          body: "Utrecht combineert historie met een frisse, professionele ondernemersgeest. We geven je een merk en uitstraling die daarbij passen, zodat je online net zo overtuigend bent als in een gesprek aan tafel.",
+          title: "Gebouwd voor de tweede blik",
+          body: "Omdat mensen hier terugkomen voordat ze beslissen, zetten we het bewijs vooraan: projecten, reviews en duidelijke uitleg over hoe je werkt.",
         },
         {
           icon: "shield",
-          title: "Techniek: snel, veilig en schaalbaar",
-          body: "Je klanten vinden je meestal mobiel, tussen twee afspraken door. We bouwen snel, veilig en mobiel-eerst, met een schaalbare basis die meegroeit met je bedrijf en je werkgebied.",
-        },
-        {
-          icon: "search",
-          title: "Lokale SEO die Utrechtse klanten vindt",
-          body: "We regelen het complete lokale pakket: dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo word je gevonden van 'website laten maken Utrecht' tot je specifieke dienst in Leidsche Rijn of Oost.",
-          link: lokaleSeoLink,
+          title: "Techniek die niet in de weg zit",
+          body: "Snel, veilig en mobiel-eerst. Onzichtbaar als het goed is, en meteen merkbaar als het dat niet is.",
         },
       ],
     },
     bewijs: {
-      heading: ["Bewijs uit de praktijk.", "Van 2 naar 24 aanvragen."],
-      body: "Voor Hovenier Eykelenboom in Den Haag bouwden we een complete website met een lokale SEO-structuur per dienst en werkgebied. Vakwerk dat eerst nauwelijks werd gevonden, levert nu structureel aanvragen op. Dezelfde aanpak zetten we net zo goed in voor een Utrechts bedrijf.",
+      heading: ["Eén case,", "en wat je eruit mee kunt nemen."],
+      body:
+        "De case hieronder komt uit Den Haag, niet uit Utrecht - dat vermelden we liever dan het weg te laten. Wat er wél overdraagbaar aan is: het probleem was niet de kwaliteit van het werk, maar dat niemand het vond. Die diagnose stellen we in Utrecht net zo vaak, alleen is de concurrentie hier breder omdat partijen van buiten de stad meedingen.",
     },
     kostenHeading: ["Wat kost een website", "laten maken in Utrecht?"],
     kostenBody:
-      "Wat het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een compacte, sterke site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen apart via een voordelig maandbedrag.",
+      "Utrechtse bedrijven kiezen vaker voor meer diepgang: aparte pagina's per wijk of per type pand, omdat de markt zo verschillend is. Dat kost meer pagina's en dus meer werk. Wat het bij jou wordt, hoor je voordat we beginnen.",
     local: {
-      eyebrow: "Centraal in beeld",
-      heading: ["Een Haags bureau,", "actief in het hart van het land."],
+      eyebrow: "Midden in het land",
+      heading: ["Vanuit Den Haag,", "met Utrecht op een uur."],
       body: [
-        "Brandlift zit in Den Haag en werkt door heel Nederland - Utrecht ligt daarbij letterlijk centraal. We kennen de Utrechtse markt: een stad die hard groeit, met een sterke, competitieve ondernemersgemeenschap waarin je online echt moet opvallen.",
-        "Je werkt met een vast team en korte lijnen, direct met de mensen die je site ontwerpen en bouwen. In het Nederlands en Engels - en via professionele vertalers ook in andere talen, handig in een stad met veel internationale bedrijvigheid.",
+        "We werken door heel Nederland en Utrecht ligt daarbij letterlijk in het midden. De stad groeit hard en de ondernemers zijn scherp - dat merk je aan hoe goed de concurrentie het hier online al doet.",
+        "Bij ons praat je met de mensen die het werk doen. Eén aanspreekpunt, geen tussenlagen, en eerlijk advies als blijkt dat je minder nodig hebt dan je dacht.",
       ],
       points: [
-        "Sinds 2021, vanuit Den Haag",
-        "Vast team, korte lijnen",
-        "Nederlands, Engels en meer talen",
-        "Direct plek, geen wachtlijst",
+        "Werkzaam in heel Midden-Nederland",
+        "Eén aanspreekpunt",
+        "Eerlijk advies, ook als het nee is",
+        "Geen wachtlijst",
       ],
       portraitChip: "Den Haag · actief in Utrecht",
       portraitAlt: "Luca Budgen, oprichter van Brandlift, dat websites bouwt voor bedrijven in Utrecht",
@@ -470,32 +509,40 @@ export const cities: Record<string, CityData> = {
       mapTitle: "Werkgebied: Utrecht",
       mapSubtitle: "Websites vanuit Den Haag, voor heel Midden-Nederland",
     },
+    carouselHeading: ["Projecten voor ondernemers", "die zich wilden onderscheiden."],
+    reviewsHeading: ["Woord voor woord", "overgenomen van Google."],
+    reviewsStartAt: 5,
+    faqHeading: "Helder antwoord, geen kleine lettertjes.",
     faqs: [
       {
-        q: "Werken jullie ook voor bedrijven in Utrecht?",
-        a: "Ja. Ons team zit in Den Haag, maar we bouwen websites voor bedrijven door heel Nederland - en Utrecht ligt centraal en goed bereikbaar. De samenwerking verloopt grotendeels online, dus afstand speelt geen rol.",
+        q: "Ik concurreer in Utrecht met landelijke partijen. Kan ik daar tegenop?",
+        a: "Vaak beter dan je denkt. Landelijke aanbieders scoren zelden goed op wijkniveau, omdat ze één algemene pagina hebben voor het hele land. Daar ligt je opening: laten zien dat je hier zit, hier werkt en deze panden kent.",
       },
       {
-        q: "Wat kost een website laten maken in Utrecht?",
-        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        q: "Werken jullie ook in Leidsche Rijn en Vleuten, of alleen de oude stad?",
+        a: "Allebei, en we behandelen ze bewust apart. Nieuwbouw in het westen trekt ander werk aan dan de binnenstad, en mensen zoeken er ook anders. Eén pagina voor heel Utrecht laat dat verschil liggen.",
+      },
+      {
+        q: "Mijn klanten zijn zakelijk, geen particulieren. Verandert dat de aanpak?",
+        a: "Ja. Zakelijke opdrachtgevers vergelijken langer en willen zien hoe je werkt, wie er achter het bedrijf zit en wat je eerder hebt opgeleverd. De nadruk verschuift dan van snel contact naar geloofwaardigheid opbouwen.",
+      },
+      {
+        q: "Hoe lang duurt het en wat moet ik zelf doen?",
+        a: "Meestal drie tot vier weken. Van jou vragen we één gesprek, beeldmateriaal, één feedbackronde en een akkoord voor de livegang. Het schrijven en bouwen nemen wij volledig over.",
+      },
+      {
+        q: "Wat kost het?",
+        a: "Vanaf 1.500 euro voor een eenvoudige site. Wil je per wijk of per type klus aparte pagina's, dan loopt dat op omdat er meer geschreven en gebouwd moet worden. Je krijgt vooraf een vaste prijs.",
         link: costGuideLink,
       },
       {
-        q: "Hoe val ik op tussen de vele Utrechtse aanbieders?",
-        a: "Precies daar begint onze aanpak. We bepalen eerst waarom een klant voor jou kiest en niet voor de rest, en vertalen dat naar een scherpe positionering, sterke content en een lokale SEO-structuur. Zo verschijn je niet alleen in Google, maar overtuig je de bezoeker ook echt.",
-      },
-      {
-        q: "Hoe lang duurt het om een website te laten maken?",
-        a: "Een website staat er meestal binnen 3 tot 4 weken, afhankelijk van de omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een concrete planning aan jouw project.",
-      },
-      {
-        q: "Werken jullie ook voor Engelstalige bedrijven in Utrecht?",
-        a: "Ja. We werken in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Je website kan meertalig, met dezelfde sterke lokale SEO-basis per taal.",
+        q: "Zit ik na de livegang ergens aan vast?",
+        a: "Nee. De site is van jou en er is geen verplichte doorloop. Hosting, onderhoud en doorlopende SEO zijn losse keuzes die je maakt als je ze wilt.",
       },
     ],
     finalCta: {
-      h2: "Klaar voor een website die Utrechtse klanten oplevert?",
-      body: "Plan een gratis, vrijblijvend groeigesprek van 30 minuten. Je weet daarna precies waar je staat - met of zonder samenwerking.",
+      h2: "Klaar om in Utrecht op te vallen?",
+      body: "Plan een gratis groeigesprek van 30 minuten. We kijken wie er nu boven je staat en wat daaraan te doen is.",
     },
   },
 
@@ -503,88 +550,90 @@ export const cities: Record<string, CityData> = {
   amsterdam: {
     slug: "website-laten-maken-amsterdam",
     city: "Amsterdam",
-    updated: "2026-07-13",
+    updated: "2026-07-31",
     metaTitle: "Website laten maken Amsterdam - meer aanvragen",
     metaDescription:
       "Website laten maken in Amsterdam? Strategische sites met lokale SEO en conversie voor Amsterdamse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
-    heroEyebrow: "Amsterdam · heel Nederland",
+    heroEyebrow: "Amsterdam · Noord-Holland",
     h1: "Website laten maken in Amsterdam",
     intro:
-      "Amsterdam is de drukste markt van Nederland - internationaal, snel en meedogenloos competitief. Opvallen vraagt meer dan een mooie site. Wij bouwen strategische websites met lokale SEO en conversie waarmee Amsterdamse bedrijven boven het lawaai uitkomen en klanten binnenhalen.",
+      "In Amsterdam is bijna elk vak overbezet en is elke klant al een keer teleurgesteld. Dat maakt vertrouwen het schaarse goed, niet zichtbaarheid alleen. Wij bouwen sites die binnen een paar seconden laten zien dat je weet wat je doet - en die daarna het bewijs leveren.",
     heroChips: [
-      "Sinds 2021, vanuit Den Haag",
+      "Actief in de hoofdstad",
+      "Ook in het Engels",
       "Lokale SEO inbegrepen",
-      "Reactie binnen 1 werkdag",
-      "5,0 op Google",
+      "Vanaf 1.500 euro",
     ],
+    sectionOrder: ["waarom", "lokaal", "aanpak", "bewijs", "meerwerk", "kosten", "werkgebied"],
     waarom: {
-      heading: ["In Amsterdam is iedereen online.", "Alleen wie opvalt, wint."],
+      heading: ["Zichtbaar zijn is stap een.", "Geloofwaardig zijn wint de klus."],
       intro:
-        "In de hoofdstad strijden in elke branche honderden bedrijven om dezelfde klant, van De Pijp tot Noord. Een gemiddelde website verdwijnt hier meteen in de massa.",
+        "Amsterdammers hebben keuze in overvloed en weinig geduld. Ze scannen, twijfelen en kiezen wie het meest betrouwbaar oogt - vaak binnen een minuut.",
       serpQuery: "jouw vak + Amsterdam",
       cards: [
         {
-          title: "Onvindbaar tussen honderden anderen",
-          body: "Amsterdamse klanten scrollen niet ver. Ze typen hun vraag in Google en kiezen uit de bovenste resultaten. Sta jij daar niet, dan zien ze je simpelweg niet.",
+          title: "Iedereen belooft hetzelfde",
+          body: "Snel, betrouwbaar, vakkundig: dat zegt elke concurrent ook. Zonder concreet bewijs verdwijn je in een rij pagina's die niet van elkaar te onderscheiden zijn.",
         },
         {
-          title: "Bezoek genoeg, aanvragen te weinig",
-          body: "In een stad die haast heeft, beslist een bezoeker in seconden. Maakt je site niet meteen duidelijk wat je doet en waarom jij, dan is hij weg voor je het weet.",
+          title: "Je klant is al eens teleurgesteld",
+          body: "In een stad met veel aanbieders is de kans op een slechte ervaring groot. Nieuwe klanten zoeken daarom eerst naar redenen om je níet te vertrouwen. Die moet je wegnemen.",
         },
         {
-          title: "Sterk bedrijf, gemiddelde site",
-          body: "Amsterdam zit vol scherpe, goed ogende merken. Een gedateerde of vage website laat je kleiner lijken dan je bent - en dat kost je juist hier de klant.",
+          title: "Een kwart van je markt spreekt geen Nederlands",
+          body: "Amsterdam is internationaal en dat deel van de markt betaalt vaak het beste. Een site die alleen Nederlands spreekt, sluit ze zonder het te merken buiten.",
         },
       ],
-      outro: "Een website die op Amsterdam is gebouwd, draait dat om.",
+      outro: "Vertrouwen is hier je snelste manier om op te vallen.",
     },
     aanpak: {
-      heading: ["Verder dan mooi.", "Gebouwd om op te vallen in Amsterdam."],
+      heading: ["Bewijs vooraan.", "Beloftes achteraan."],
       intro:
-        "Vier dingen bepalen of je website in Amsterdam klanten oplevert. Wij regelen ze alle vier, in de juiste volgorde.",
+        "In de drukste markt van het land werkt terughoudendheid beter dan grote woorden. Zo bouwen we dat op.",
       pillars: [
         {
-          icon: "target",
-          title: "Strategie vóór ontwerp",
-          body: "In een markt met honderden concurrenten is positionering alles. We bepalen scherp waarom een Amsterdamse klant voor jou kiest, en bouwen je hele site - structuur, boodschap, route naar contact - rond dat antwoord.",
-        },
-        {
           icon: "gem",
-          title: "Design en merk dat vertrouwen wekt",
-          body: "Amsterdam is verwend op het gebied van design. We geven je een merk en uitstraling die opvallen tussen de rest en meteen kwaliteit uitstralen, zodat je niet wegvalt in het lawaai maar eruit springt.",
+          title: "Laten zien in plaats van beweren",
+          body: "Echte foto's van echt werk, echte reviews en duidelijke uitleg over je proces. Alles wat een bezoeker zelf kan controleren, weegt zwaarder dan wat je over jezelf zegt.",
         },
         {
-          icon: "shield",
-          title: "Techniek: snel, veilig en schaalbaar",
-          body: "De hoofdstad zoekt mobiel en ongeduldig. We bouwen razendsnel, veilig en mobiel-eerst, op een basis die meegroeit - of je nu een buurtzaak bent of opschaalt naar meerdere vestigingen.",
+          icon: "target",
+          title: "Scherp kiezen voor wie je er bent",
+          body: "In Amsterdam is de generalist kansloos tegen de specialist. We bepalen welk werk je het liefst doet en bouwen de site daar volledig omheen.",
         },
         {
           icon: "search",
-          title: "Lokale SEO die Amsterdamse klanten vindt",
-          body: "We regelen het volledige lokale pakket: dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo word je gevonden van 'website laten maken Amsterdam' tot je specifieke dienst in De Pijp of Oost.",
+          title: "Per stadsdeel gevonden worden",
+          body: "De Pijp, IJburg en Noord zijn losse markten met eigen prijzen en eigen concurrentie. Die dek je niet af met één pagina over Amsterdam.",
           link: lokaleSeoLink,
+        },
+        {
+          icon: "shield",
+          title: "Tweetalig waar het loont",
+          body: "Een Engelse versie die net zo goed is opgebouwd als de Nederlandse, zodat internationale klanten je serieus nemen in plaats van afhaken.",
         },
       ],
     },
     bewijs: {
-      heading: ["Bewijs uit de praktijk.", "Van 2 naar 24 aanvragen."],
-      body: "Voor Hovenier Eykelenboom in Den Haag bouwden we een complete website met een lokale SEO-structuur per dienst en werkgebied. Vakwerk dat eerst nauwelijks werd gevonden, levert nu structureel aanvragen op. Precies dezelfde aanpak zetten we in om een Amsterdams bedrijf boven de concurrentie te tillen.",
+      heading: ["Onze case komt", "niet uit Amsterdam."],
+      body:
+        "Dat zeggen we er liever bij dan dat we het verzwijgen: het voorbeeld hieronder is een hovenier uit Den Haag. Wat het laat zien, is wat er gebeurt als goed werk eindelijk vindbaar en geloofwaardig wordt gepresenteerd. In Amsterdam is dat moeilijker - meer aanbieders, kritischer klanten - maar het is precies daarom dat de basis op orde brengen hier het meeste oplevert.",
     },
     kostenHeading: ["Wat kost een website", "laten maken in Amsterdam?"],
     kostenBody:
-      "Wat het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een scherpe, compacte site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen apart via een voordelig maandbedrag.",
+      "Wij rekenen geen Amsterdamse tarieven: onze prijs hangt af van wat er gebouwd moet worden, niet van je postcode. Wil je een Engelse versie of aparte pagina's per stadsdeel, dan zit daar het verschil.",
     local: {
       eyebrow: "Boven het lawaai uit",
-      heading: ["Een Haags bureau", "dat opvalt in Amsterdam."],
+      heading: ["Geen Amsterdams bureau.", "Wel Amsterdamse tarieven vermeden."],
       body: [
-        "Brandlift zit in Den Haag en werkt door heel Nederland, de hoofdstad inbegrepen. We kennen de Amsterdamse markt: druk, internationaal en veeleisend, waar een gemiddelde website niet volstaat en onderscheidend vermogen het verschil maakt.",
-        "Je werkt met een vast team en korte lijnen, direct met de mensen die je site ontwerpen en bouwen. In het Nederlands en Engels - en via professionele vertalers ook in andere talen, wat in het internationale Amsterdam vaak precies is wat je nodig hebt.",
+        "We zitten in Den Haag en dat scheelt je geld: je betaalt voor het werk, niet voor een grachtenpand. De markt kennen we goed genoeg om te weten dat een gemiddelde site hier niet volstaat.",
+        "Je werkt met één vast aanspreekpunt en korte lijnen. In het Nederlands en Engels, en via professionele vertalers ook in andere talen - in deze stad vaak geen luxe maar noodzaak.",
       ],
       points: [
-        "Sinds 2021, vanuit Den Haag",
-        "Vast team, korte lijnen",
-        "Nederlands, Engels en meer talen",
-        "Direct plek, geen wachtlijst",
+        "Geen grote-stad-toeslag",
+        "Eén vast aanspreekpunt",
+        "Nederlands en Engels",
+        "Geen wachtlijst",
       ],
       portraitChip: "Den Haag · actief in Amsterdam",
       portraitAlt: "Luca Budgen, oprichter van Brandlift, dat websites bouwt voor bedrijven in Amsterdam",
@@ -602,32 +651,40 @@ export const cities: Record<string, CityData> = {
       mapTitle: "Werkgebied: Amsterdam",
       mapSubtitle: "Websites vanuit Den Haag, voor heel de hoofdstad",
     },
+    carouselHeading: ["Eerder werk voor bedrijven", "die vertrouwen moesten winnen."],
+    reviewsHeading: ["Niet door ons geschreven.", "Wel door ons verdiend."],
+    reviewsStartAt: 2,
+    faqHeading: "Zonder omweg beantwoord.",
     faqs: [
       {
-        q: "Werken jullie ook voor bedrijven in Amsterdam?",
-        a: "Ja. Ons team zit in Den Haag, maar we bouwen websites voor bedrijven door heel Nederland - de hoofdstad inbegrepen. Vrijwel alles verloopt online en snel, dus de afstand tot Amsterdam speelt in de praktijk geen rol.",
+        q: "Waarom zou ik een bureau buiten Amsterdam nemen?",
+        a: "Omdat je voor hetzelfde werk in de stad vaak meer betaalt zonder dat je er iets voor terugkrijgt. Wij zitten in Den Haag, werken online en komen langs als het zin heeft. Wat je bespaart, kun je in meer pagina's of betere foto's steken.",
       },
       {
-        q: "Wat kost een website laten maken in Amsterdam?",
-        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        q: "Mijn concurrenten hebben honderden reviews. Hoe kom ik daar ooit tussen?",
+        a: "Niet door te doen alsof je die ook hebt. Wel door te winnen op specifieke zoekopdrachten waar zij te algemeen voor zijn, en door bij de reviews die je wél hebt te laten zien dat ze echt zijn. Reviews verzamelen is daarnaast iets wat we je leren structureel te doen.",
+      },
+      {
+        q: "Hebben we een Engelstalige site nodig?",
+        a: "Als een deel van je klanten internationaal is, bijna zeker. Amsterdam heeft een grote groep bewoners die geen Nederlands leest en wel goed betaalt. We bouwen die versie volwaardig op, niet als vertaalknop.",
+      },
+      {
+        q: "Werken jullie ook in Amstelveen, Diemen of Haarlem?",
+        a: "Ja. Veel Amsterdamse bedrijven werken toch al in de hele regio. Die gemeenten nemen we mee als je er daadwerkelijk komt - anders trek je bezoekers die je moet afwijzen.",
+      },
+      {
+        q: "Wat kost het, en rekenen jullie meer voor Amsterdam?",
+        a: "Nee. Een website begint bij 1.500 euro, ongeacht waar je zit. Wat de prijs bepaalt is de omvang: aantal diensten, aantal gebieden en of er een tweede taal bij komt.",
         link: costGuideLink,
       },
       {
-        q: "Amsterdam is enorm competitief - hoe kom ik dan bovenaan?",
-        a: "Bovenaan komen in Amsterdam is een spel van sterke on-page SEO, een scherpe positionering en autoriteit die je opbouwt met reviews en vermeldingen. Wij leggen die volledige basis en zijn eerlijk over wat realistisch is: op sommige zoekwoorden ben je snel zichtbaar, op de zwaarste is het een kwestie van consequent doorbouwen.",
-      },
-      {
-        q: "Werken jullie ook voor Engelstalige of internationale bedrijven in Amsterdam?",
-        a: "Ja, en in Amsterdam is dat vaak juist de vraag. We werken in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Je website kan meertalig, met dezelfde sterke lokale SEO-basis per taal.",
-      },
-      {
-        q: "Hoe lang duurt het om een website te laten maken?",
-        a: "Een website staat er meestal binnen 3 tot 4 weken, afhankelijk van de omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een concrete planning aan jouw project.",
+        q: "Hoe snel kunnen jullie beginnen?",
+        a: "Er is geen wachtlijst, dus meestal op korte termijn. In het groeigesprek hoor je meteen wanneer we kunnen starten en hoe lang het gaat duren.",
       },
     ],
     finalCta: {
-      h2: "Klaar voor een website die opvalt in Amsterdam?",
-      body: "Plan een gratis, vrijblijvend groeigesprek van 30 minuten. Je weet daarna precies waar je staat - met of zonder samenwerking.",
+      h2: "Klaar om in Amsterdam vertrouwd over te komen?",
+      body: "Plan een gratis groeigesprek van 30 minuten. We kijken waar je nu staat tegenover je concurrenten en wat er te winnen valt.",
     },
   },
 
@@ -635,91 +692,94 @@ export const cities: Record<string, CityData> = {
   delft: {
     slug: "website-laten-maken-delft",
     city: "Delft",
-    updated: "2026-07-13",
+    updated: "2026-07-31",
     metaTitle: "Website laten maken Delft - meer aanvragen",
     metaDescription:
       "Website laten maken in Delft? Strategische sites met lokale SEO en conversie voor Delftse bedrijven die meer aanvragen willen. Vanaf 1.500 euro.",
-    heroEyebrow: "Delft · heel Nederland",
+    heroEyebrow: "Delft · om de hoek",
     h1: "Website laten maken in Delft",
     intro:
-      "Delft is compact, historisch en verrassend innovatief - van de grachten tot de TU-campus. In zo'n stad ken je elkaar, en telt je online reputatie dubbel. Wij zitten om de hoek in Den Haag en bouwen strategische websites met lokale SEO en conversie voor Delftse bedrijven die serieus gevonden willen worden.",
+      "Delft is klein genoeg dat iedereen elkaar kent en groot genoeg dat je alsnog gemist wordt. Wie hier zoekt, krijgt een korte lijst te zien - en op een korte lijst staan of niet staan is het hele verschil. Wij zitten tien minuten verderop en bouwen sites die je op die lijst zetten.",
     heroChips: [
-      "Om de hoek, vanuit Den Haag",
+      "10 minuten van de binnenstad",
       "Lokale SEO inbegrepen",
       "Reactie binnen 1 werkdag",
-      "5,0 op Google",
+      "Vanaf 1.500 euro",
     ],
+    sectionOrder: ["waarom", "aanpak", "werkgebied", "bewijs", "lokaal", "meerwerk", "kosten"],
     waarom: {
-      heading: ["Delftenaren zoeken lokaal.", "Wie ze niet vindt, mist de klant."],
+      heading: ["Kleine stad.", "Juist daarom telt elke vermelding."],
       intro:
-        "Delft is klein maar drukbezet: van de Binnenstad tot Tanthof zitten er in elke branche meerdere aanbieders. Wie online niet opvalt, verliest de klant aan de buurman die net beter vindbaar is.",
+        "In een stad van deze omvang zijn er per vak maar een handvol serieuze aanbieders. Dat is goed nieuws: je hoeft niet honderden partijen te verslaan, alleen zichtbaar te zijn naast de vijf die er al staan.",
       serpQuery: "jouw vak + Delft",
       cards: [
         {
-          title: "Ze zoeken lokaal - en vinden je niet",
-          body: "Delftse klanten typen hun vak plus hun buurt in Google en kiezen wie bovenaan staat. In een compacte stad valt het extra op als jij daar niet tussen staat.",
+          title: "De lijst is kort - sta erop of niet",
+          body: "Zoekt iemand hier naar jouw vak, dan ziet hij een handvol bedrijven. Er niet tussen staan betekent niet dat je tweede keus bent, maar dat je helemaal niet meedoet.",
         },
         {
-          title: "Bezoekers komen, aanvragen blijven uit",
-          body: "Verkeer zonder richting levert niets op. Zonder een heldere boodschap en een duidelijke route naar contact haakt ook de Delftenaar af en gaat verder bij de volgende.",
+          title: "Monumenten vragen een ander verhaal",
+          body: "De binnenstad zit vol panden met beperkingen en eisen. Kun je laten zien dat je daar ervaring mee hebt, dan hoef je nauwelijks meer te concurreren op prijs.",
         },
         {
-          title: "Goed werk, zwakke uitstraling",
-          body: "In een stad waar mond-tot-mondreclame telt, versterkt of ondermijnt je site je reputatie. Vakwerk op een verouderde website oogt zwakker dan het is - en dat kost klussen.",
+          title: "Studenten, starters en spin-offs",
+          body: "Rond de TU zit een stroom internationale bewoners en jonge bedrijven met een eigen ritme, eigen budget en vaak een voorkeur voor Engels. Een markt die makkelijk over het hoofd wordt gezien.",
         },
       ],
-      outro: "Een website die op Delft is gebouwd, draait dat om.",
+      outro: "Zichtbaar zijn is hier haalbaarder dan waar dan ook - als je het doet.",
     },
     aanpak: {
-      heading: ["Verder dan mooi.", "Gebouwd om Delftse klanten te winnen."],
+      heading: ["Zichtbaar worden", "in een overzichtelijke markt."],
       intro:
-        "Vier dingen bepalen of je website in Delft klanten oplevert. Wij regelen ze alle vier, in de juiste volgorde.",
+        "Delft vraagt geen zwaar geschut. Het vraagt dat de basis klopt en dat je specifiek bent.",
       pillars: [
         {
+          icon: "search",
+          title: "De basis compleet, niet half",
+          body: "Bedrijfsprofiel, vermeldingen, schema en een pagina per dienst. In een kleine markt is de complete basis vaak al genoeg om bovenaan te staan.",
+          link: lokaleSeoLink,
+        },
+        {
           icon: "target",
-          title: "Strategie vóór ontwerp",
-          body: "We beginnen bij de vraag waarom een Delftse klant voor jou kiest in plaats van voor de aanbieder in de volgende straat. Die positionering bepaalt de structuur, de boodschap en de route naar de aanvraag - nog voor we iets ontwerpen.",
+          title: "Uitblinken in wat hier speelt",
+          body: "Monumentaal werk, verduurzaming, verhuurpanden: benoem waar je in thuis bent. Specifiek zijn levert hier sneller een klus op dan breed zijn.",
         },
         {
           icon: "gem",
-          title: "Design en merk dat vertrouwen wekt",
-          body: "Delft ademt historie en tegelijk techniek en innovatie. We geven je een uitstraling die past bij je vak en je stad, zodat je online net zo betrouwbaar overkomt als in een gesprek op de zaak.",
+          title: "Een uitstraling die past bij de stad",
+          body: "Delft is precies en een tikje eigenwijs. Je site wordt verzorgd en rustig, zonder de opsmuk die hier eerder wantrouwen wekt dan indruk maakt.",
         },
         {
           icon: "shield",
-          title: "Techniek: snel, veilig en schaalbaar",
-          body: "Je klanten vinden je vooral op hun telefoon. We bouwen snel, veilig en mobiel-eerst, op een schaalbare basis die meegroeit met je bedrijf - van eenmanszaak tot groeiend Delfts bedrijf.",
-        },
-        {
-          icon: "search",
-          title: "Lokale SEO die Delftse klanten vindt",
-          body: "We regelen het complete lokale pakket: dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo word je gevonden van 'website laten maken Delft' tot je specifieke dienst in de Binnenstad of Tanthof.",
-          link: lokaleSeoLink,
+          title: "Klaar voor de regio eromheen",
+          body: "Rijswijk, Pijnacker, Nootdorp en Den Haag liggen om de hoek. De site wordt zo opgezet dat je die gebieden erbij kunt pakken wanneer je wilt.",
         },
       ],
     },
     bewijs: {
-      heading: ["Bewijs uit de buurt.", "Van 2 naar 24 aanvragen."],
-      body: "Voor Hovenier Eykelenboom - een vakbedrijf hier vlakbij in Den Haag - bouwden we een complete website met een lokale SEO-structuur per dienst en werkgebied. Vakwerk dat eerst nauwelijks werd gevonden, levert nu structureel aanvragen op. Dezelfde aanpak werkt net zo goed voor een Delfts bedrijf, letterlijk om de hoek.",
+      heading: ["Een buurstad verderop,", "dezelfde aanpak."],
+      body:
+        "De case hieronder is een hovenier uit Den Haag - tien minuten van Delft, maar het blijft een andere stad en dat vermelden we. Interessanter is de gelijkenis: ook daar was het werk goed en de vindbaarheid niet. In Delft is die stap kleiner te zetten, simpelweg omdat er per vak minder partijen om dezelfde plek strijden.",
     },
     kostenHeading: ["Wat kost een website", "laten maken in Delft?"],
     kostenBody:
-      "Wat het precies wordt hangt af van je doel, de omvang en de mate van maatwerk - van een compacte, sterke site tot een uitgebreid platform met veel dienst- en locatiepagina's. In elke website zit een lokale SEO-basis, strategie en een ontwerp dat vertrouwen wekt. Hosting en onderhoud lopen apart via een voordelig maandbedrag.",
+      "Delftse bedrijven hebben vaak genoeg aan een compacte site: een paar diensten, een helder verhaal en een goede lokale basis. Dat houdt de investering laag. Wil je later de regio erbij, dan bouwen we dat erop.",
     local: {
       eyebrow: "Om de hoek",
-      heading: ["Vanuit Den Haag,", "zo bij je in Delft."],
+      heading: ["Tien minuten verderop.", "Geen ver bureau."],
       body: [
-        "Brandlift zit in Den Haag - op zo'n tien minuten van de Delftse binnenstad. Delft is voor ons geen verre markt maar de buurstad: we kennen de wijken, de ondernemers en de manier waarop Delftse klanten online zoeken. Nodig is het zelden, maar even langskomen kan gewoon.",
-        "Je werkt met een vast team en korte lijnen, direct met de mensen die je site ontwerpen en bouwen. In het Nederlands en Engels - en via professionele vertalers ook in andere talen, handig met de internationale studenten en spin-offs rond de TU Delft.",
+        "Vanuit Den Haag ben je bij ons zo in de Delftse binnenstad. Delft is voor ons geen afzetgebied op een kaart maar de buurstad: we kennen de wijken, de panden en de ondernemers die er zitten. Langskomen kan gewoon, ook al is het zelden nodig.",
+        "Rond de TU is Engels eerder regel dan uitzondering. We werken in het Nederlands en Engels, en schakelen professionele vertalers in als er meer nodig is.",
       ],
       points: [
-        "Om de hoek, sinds 2021",
-        "Vast team, korte lijnen",
-        "Nederlands, Engels en meer talen",
-        "Direct plek, geen wachtlijst",
+        "Tien minuten rijden",
+        "Bekend met de binnenstad",
+        "Nederlands en Engels",
+        "Geen wachtlijst",
       ],
       portraitChip: "Den Haag · om de hoek van Delft",
-      portraitAlt: "Luca Budgen, oprichter van Brandlift, dat vlakbij in Den Haag zit en websites bouwt voor bedrijven in Delft",
+      portraitAlt:
+        "Luca Budgen, oprichter van Brandlift, dat vlakbij in Den Haag zit en websites bouwt voor bedrijven in Delft",
     },
     coverage: {
       heading: ["Actief in heel Delft.", "Van de binnenstad tot Tanthof."],
@@ -743,32 +803,40 @@ export const cities: Record<string, CityData> = {
       mapTitle: "Werkgebied: Delft",
       mapSubtitle: "Websites vanuit Den Haag - om de hoek",
     },
+    carouselHeading: ["Werk voor bedrijven", "met een vak en een verhaal."],
+    reviewsHeading: ["Echte klanten,", "eigen woorden."],
+    reviewsStartAt: 6,
+    faqHeading: "Direct antwoord op wat je wilt weten.",
     faqs: [
       {
-        q: "Zitten jullie echt vlakbij Delft?",
-        a: "Ja. Ons team zit in Den Haag, op ongeveer tien minuten van de Delftse binnenstad. Delft is voor ons de buurstad. De meeste samenwerking verloopt online en snel, maar even fysiek afspreken is zo geregeld.",
+        q: "Delft is een kleine markt. Is een goede website dan wel de moeite?",
+        a: "Juist wel, en het is er goedkoper dan in een grote stad. Omdat er per vak maar een handvol aanbieders is, hoef je niet honderden partijen te verslaan. Een complete basis brengt je hier vaak al bovenaan, terwijl datzelfde in Rotterdam veel meer werk kost.",
       },
       {
-        q: "Wat kost een website laten maken in Delft?",
-        a: "Een website begint bij ons vanaf 1.500 euro. De uiteindelijke prijs hangt af van je doel en de mate van maatwerk. In elke website zit een lokale SEO-basis, strategie en een sterk ontwerp; hosting en onderhoud lopen apart via een voordelig maandbedrag. En we werken door totdat je tevreden bent.",
+        q: "Ik werk vooral aan monumentale panden in de binnenstad. Kunnen jullie dat laten zien?",
+        a: "Ja, en dat is precies het soort specialisme dat je moet uitlichten. Ervaring met beperkingen, vergunningen en oude constructies is een reden om jou te bellen in plaats van de goedkoopste. We bouwen daar een eigen pagina voor.",
+      },
+      {
+        q: "Veel van mijn klanten zijn studenten of internationaal. Moet mijn site Engels zijn?",
+        a: "Als dat een serieus deel van je omzet is, loont het zeker. Rond de TU wordt veel in het Engels gezocht. We kunnen een volwaardige Engelse versie opzetten, of alleen de pagina's waar het echt om gaat.",
+      },
+      {
+        q: "Werken jullie ook in Rijswijk, Pijnacker of Den Hoorn?",
+        a: "Ja. Voor de meeste Delftse bedrijven ligt daar een flink deel van het werk. We nemen die plaatsen mee in je vindbaarheid zodra je er ook echt komt.",
+      },
+      {
+        q: "Komen jullie langs?",
+        a: "Dat kan gemakkelijk, we zitten tien minuten verderop. In de praktijk is één gesprek meestal genoeg en gaat de rest online, omdat dat voor allebei sneller werkt.",
+      },
+      {
+        q: "Wat kost het?",
+        a: "Vanaf 1.500 euro. Voor veel Delftse bedrijven is een compacte site met een sterke lokale basis genoeg, wat de investering beperkt houdt. Je krijgt vooraf een vaste prijs.",
         link: costGuideLink,
-      },
-      {
-        q: "Wat valt er onder lokale SEO in Delft?",
-        a: "Zo goed als alles wat nodig is om lokaal gevonden te worden: een sterke website met dienst- en wijkpagina's, gestructureerde data (schema), lokale vermeldingen en een geoptimaliseerd en beheerd Google Bedrijfsprofiel. Zo verschijn je precies wanneer een Delftse klant naar jouw dienst zoekt.",
-      },
-      {
-        q: "Hoe lang duurt het om een website te laten maken?",
-        a: "Een website staat er meestal binnen 3 tot 4 weken, afhankelijk van de omvang en hoe snel content en feedback rond zijn. In het groeigesprek koppelen we een concrete planning aan jouw project.",
-      },
-      {
-        q: "Werken jullie ook voor Engelstalige bedrijven en TU-spin-offs in Delft?",
-        a: "Ja. Rond de TU Delft zit veel internationaal talent. We werken in het Nederlands en Engels, en voor andere talen schakelen we professionele vertalers in. Je website kan meertalig, met dezelfde sterke lokale SEO-basis per taal.",
       },
     ],
     finalCta: {
-      h2: "Klaar voor een website die Delftse klanten oplevert?",
-      body: "Plan een gratis, vrijblijvend groeigesprek van 30 minuten. Je weet daarna precies waar je staat - met of zonder samenwerking.",
+      h2: "Klaar om in Delft op de lijst te staan?",
+      body: "Plan een gratis groeigesprek van 30 minuten. We kijken wie er nu bovenaan staat en wat er nodig is om daar te komen.",
     },
   },
 };

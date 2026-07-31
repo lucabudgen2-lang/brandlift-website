@@ -476,7 +476,7 @@ export default function Page() {
       </section>
 
       {/* ═══════════ MEER WERK — projecten-carousel (Cases design) ═══════════ */}
-      <CasesCarousel tone="light" heading={["Meer werk voor", "vakbedrijven zoals dat van jou."]} />
+      <CasesCarousel tone="light" heading={["Haagse bedrijven", "die we eerder op de kaart zetten."]} />
 
       {/* ═══════════ KOSTEN — honest price framing → calculator (dark) ═══════════ */}
       <section className="relative overflow-hidden bg-s0 py-20 md:py-28">
@@ -727,9 +727,9 @@ export default function Page() {
       </section>
 
       {/* ═══════════ REVIEWS · FAQ · SLOT ═══════════ */}
-      <Reviews tone="dark" />
+      <Reviews tone="dark" heading={["Klanten uit de regio", "aan het woord."]} startAt={4} />
 
-      <FaqBlock faqs={city.faqs} tone="light" />
+      <FaqBlock faqs={city.faqs} tone="light" heading="Wat Haagse ondernemers ons vragen." />
 
       <CtaBlock
         h2="Klaar voor een website die Haagse klanten oplevert?"

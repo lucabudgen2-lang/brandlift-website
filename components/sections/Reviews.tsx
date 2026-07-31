@@ -97,19 +97,26 @@ export function Reviews({
   eyebrow = "Wat klanten zeggen",
   heading = ["Elke review is echt.", "Elke ster verdiend."],
   intro = "Woord voor woord overgenomen van ons Google Bedrijfsprofiel - we schrijven ze niet zelf en we kopen ze niet in.",
+  startAt = 0,
 }: {
   tone?: "light" | "dark";
   eyebrow?: string;
   heading?: [string, string];
   intro?: string;
+  /* Roteert welke reviews vooraan staan. Alle acht blijven zichtbaar; op
+     stadspagina's leidt elke stad met andere reviews, zodat zes pagina's
+     niet met exact hetzelfde blok tekst openen. */
+  startAt?: number;
 }) {
   const light = tone === "light";
   const reduce = useReducedMotion();
   const [expanded, setExpanded] = useState(false);
   const rating = reviews.rating.toFixed(1).replace(".", ",");
 
-  const first = reviews.items.slice(0, INITIAL);
-  const rest = reviews.items.slice(INITIAL);
+  const n = reviews.items.length;
+  const ordered = Array.from({ length: n }, (_, i) => reviews.items[(i + startAt) % n]);
+  const first = ordered.slice(0, INITIAL);
+  const rest = ordered.slice(INITIAL);
   const hasMore = rest.length > 0;
 
   return (

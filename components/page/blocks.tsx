@@ -140,9 +140,13 @@ export function ProseSections({ sections }: { sections: readonly Section[] }) {
 export function FaqBlock({
   faqs,
   tone = "light",
+  heading = "Kort en eerlijk beantwoord.",
 }: {
   faqs: readonly { q: string; a: string; link?: { label: string; href: string } }[];
   tone?: "light" | "dark";
+  /* Overschrijfbaar, omdat zes stadspagina's met exact dezelfde FAQ-kop
+     bijdragen aan de sjabloon-indruk. */
+  heading?: string;
 }) {
   const light = tone === "light";
   return (
@@ -158,7 +162,7 @@ export function FaqBlock({
               light ? "text-ink" : "text-paper"
             }`}
           >
-            Kort en eerlijk beantwoord.
+            {heading}
           </h2>
         </div>
         <div className={`border-t ${light ? "border-black/10" : "border-[var(--color-line)]"}`}>
