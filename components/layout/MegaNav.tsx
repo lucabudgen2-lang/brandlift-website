@@ -93,7 +93,7 @@ export function MegaNav() {
                   isMega(item) ? (
                     <button
                       key={item.key}
-                      className={`group/nav relative flex items-center gap-1.5 whitespace-nowrap px-3 text-sm font-medium transition-colors xl:px-5 ${
+                      className={`group/nav relative flex items-center gap-1.5 whitespace-nowrap px-2.5 text-sm font-medium transition-colors xl:px-3 ${
                         active === item.key ? "text-paper" : "text-g300 hover:text-paper"
                       }`}
                       onMouseEnter={() => setActive(item.key)}
@@ -113,7 +113,7 @@ export function MegaNav() {
                       {/* voltage-strip onderin */}
                       <span
                         aria-hidden
-                        className={`absolute inset-x-3 bottom-0 h-[2px] bg-blue shadow-[0_0_10px_rgba(1,48,253,0.9)] transition-all duration-200 ${
+                        className={`absolute inset-x-2.5 bottom-0 h-[2px] bg-blue xl:inset-x-3 shadow-[0_0_10px_rgba(1,48,253,0.9)] transition-all duration-200 ${
                           active === item.key
                             ? "scale-x-100 opacity-100"
                             : "scale-x-0 opacity-0 group-hover/nav:scale-x-100 group-hover/nav:opacity-60"
@@ -124,13 +124,13 @@ export function MegaNav() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="group/nav relative flex items-center whitespace-nowrap px-3 text-sm font-medium text-g300 transition-colors hover:text-paper xl:px-5"
+                      className="group/nav relative flex items-center whitespace-nowrap px-2.5 text-sm font-medium text-g300 transition-colors hover:text-paper xl:px-3"
                       onMouseEnter={() => setActive(null)}
                     >
                       {item.label}
                       <span
                         aria-hidden
-                        className="absolute inset-x-3 bottom-0 h-[2px] scale-x-0 bg-blue opacity-0 shadow-[0_0_10px_rgba(1,48,253,0.9)] transition-all duration-200 group-hover/nav:scale-x-100 group-hover/nav:opacity-60"
+                        className="absolute inset-x-2.5 bottom-0 h-[2px] scale-x-0 bg-blue xl:inset-x-3 opacity-0 shadow-[0_0_10px_rgba(1,48,253,0.9)] transition-all duration-200 group-hover/nav:scale-x-100 group-hover/nav:opacity-60"
                       />
                     </Link>
                   ),
@@ -143,8 +143,14 @@ export function MegaNav() {
               {/* ── cel 3 · CTA ── */}
               {/* shrink-0: zonder dit duwt de flex-1 nav de knop voorbij de
                   (overflow-hidden) rand van de balk op brede schermen */}
-              <div className="hidden shrink-0 items-center gap-3 pl-5 pr-6 lg:flex">
-                <PhoneLink className="inline-flex items-center gap-2 whitespace-nowrap text-[0.82rem] font-semibold text-g100 transition-colors hover:text-blue-text" />
+              <div className="hidden shrink-0 items-center gap-2 pl-4 pr-6 lg:flex">
+                {/* Icoon, geen uitgeschreven nummer: de balk is vastgezet op
+                    --container-site (1140px) en wordt dus nooit breder, ook
+                    niet op een 4K-scherm. Het nummer kost ~110px die er
+                    simpelweg niet zijn. Het staat wel voluit in de footer, op
+                    de contactpagina, op de homepage en in de CTA van elke
+                    stadspagina - hier is bellen met één tik genoeg. */}
+                <PhoneIconLink className="flex h-9 w-9 shrink-0 items-center justify-center text-g100 transition-colors hover:text-blue-text" />
                 <Button
                   href="/contact"
                   variant="primary"
