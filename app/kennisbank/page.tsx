@@ -1,6 +1,6 @@
 import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
-import { collectionSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = buildPageMetadata({
   title: "Kennisbank - gidsen over websites en SEO",
@@ -11,20 +11,17 @@ export const metadata = buildPageMetadata({
 });
 
 export default function Page() {
-  const schema = collectionSchema({
-    name: "Kennisbank",
-    description: metadata.description as string,
-    path: "/kennisbank",
-    crumbs: [
+/* TODO: schema + indexering terugzetten zodra deze pagina echt is
+   gebouwd. Zolang er alleen een stub staat, beschreef de CollectionPage/
+   Article-markup inhoud die niet op de pagina stond - dat is precies wat
+   een handmatige maatregel voor gestructureerde data uitlokt. */
+  const schema = breadcrumbSchema(
+    [
       { name: "Home", path: "/" },
       { name: "Kennisbank", path: "/kennisbank" },
     ],
-    items: [
-      { name: "Wat kost een website laten maken?", path: "/kennisbank/wat-kost-een-website-laten-maken", description: "Prijzen en keuzes uitgelegd" },
-      { name: "Wat is lokale SEO?", path: "/kennisbank/wat-is-lokale-seo", description: "Hoe lokale vindbaarheid werkt" },
-      { name: "Onze werkwijze", path: "/werkwijze", description: "Van eerste gesprek tot livegang" },
-    ],
-  });
+    "/kennisbank",
+  );
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

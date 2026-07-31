@@ -244,7 +244,6 @@ function pageSchema() {
     path: PATH,
     faqs,
     crumbs,
-    withReviews: reviews,
   });
   s["@graph"].push({
     "@type": "HowTo",

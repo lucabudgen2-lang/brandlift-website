@@ -187,7 +187,6 @@ export default function Page() {
     areaServed: "Den Haag",
     faqs,
     crumbs,
-    withReviews: reviews,
   });
 
   return (

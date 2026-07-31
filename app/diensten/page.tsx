@@ -1,6 +1,6 @@
 import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
-import { collectionSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = buildPageMetadata({
   title: "Diensten - website, lokale SEO en branding",
@@ -11,22 +11,17 @@ export const metadata = buildPageMetadata({
 });
 
 export default function Page() {
-  const schema = collectionSchema({
-    name: "Diensten van Brandlift",
-    description: metadata.description as string,
-    path: "/diensten",
-    crumbs: [
+/* TODO: schema + indexering terugzetten zodra deze pagina echt is
+   gebouwd. Zolang er alleen een stub staat, beschreef de CollectionPage/
+   Article-markup inhoud die niet op de pagina stond - dat is precies wat
+   een handmatige maatregel voor gestructureerde data uitlokt. */
+  const schema = breadcrumbSchema(
+    [
       { name: "Home", path: "/" },
       { name: "Diensten", path: "/diensten" },
     ],
-    items: [
-      { name: "Website laten maken", path: "/diensten/website-laten-maken", description: "Strategische websites die aanvragen opleveren" },
-      { name: "Lokale SEO", path: "/diensten/lokale-seo", description: "Beter gevonden worden in je regio" },
-      { name: "Branding", path: "/diensten/branding", description: "Een uitstraling die vertrouwen wekt" },
-      { name: "Conversie-optimalisatie", path: "/diensten/conversie-optimalisatie", description: "Meer halen uit je bezoekers" },
-      { name: "Website kosten berekenen", path: "/website-kosten-calculator", description: "Bereken direct een prijsindicatie" },
-    ],
-  });
+    "/diensten",
+  );
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

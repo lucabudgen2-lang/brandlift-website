@@ -35,6 +35,8 @@ export const site = {
      plek en is afgeleid uit de hex in de Maps-URL (0xb2cffb70371bb9b8) -
      geverifieerd tegen de CID uit de GBP-console. */
   gbp: {
+    /* De share.google-verkorter staat bewust NIET in sameAs: hij redirect
+       en is geen stabiele entiteit-URL. De cid-vorm is de canonieke plek. */
     share: "https://share.google/Aez7TnNc91jE2omA",
     map: "https://maps.google.com/?cid=12884793518309751224",
   },

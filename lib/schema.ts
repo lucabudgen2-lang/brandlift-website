@@ -36,11 +36,15 @@ const areaServedNodes = [
   { "@type": "Country", name: "Nederland" },
 ];
 
+/* sameAs hoort stabiele, canonieke profiel-URL's te bevatten. De
+   share.google-link is een verkorter die redirect, dus die zou hier een
+   onbetrouwbaar entiteitssignaal zijn - we gebruiken de cid-vorm van het
+   Google Bedrijfsprofiel, dezelfde die ook in hasMap staat. */
 const socialProfiles = [
   site.socials.instagram,
   site.socials.facebook,
   site.socials.linkedinCompany,
-  site.gbp.share,
+  site.gbp.map,
 ];
 
 const postalAddress = {
@@ -131,7 +135,14 @@ function localBusinessNode() {
     parentOrganization: { "@id": ORG },
     currenciesAccepted: "EUR",
     hasOfferCatalog: offerCatalogNode(),
-    aggregateRating: aggregateRatingNode(),
+    /* BEWUST GEEN aggregateRating/review. De reviews zijn op Google
+       verzameld, niet op onze eigen site. Google's richtlijn: neem geen
+       beoordelingen van een ander platform over in je eigen markup, en
+       zelf-geplaatste reviews over je eigen bedrijf komen sowieso niet in
+       aanmerking voor review-rich-results. Deze node zit in de root layout,
+       dus stond de rating eerder letterlijk op elke URL van de site.
+       De reviews blijven gewoon zichtbaar op de pagina - alleen de markup
+       gaat eruit. Niet terugzetten, ook niet op Organization. */
   };
 }
 
@@ -185,17 +196,6 @@ function offerCatalogNode() {
         "/diensten/conversie-optimalisatie",
       ),
     ],
-  };
-}
-
-/* Alleen de echte Google-reviews. Nooit ophogen. */
-function aggregateRatingNode() {
-  return {
-    "@type": "AggregateRating",
-    ratingValue: siteReviews.rating,
-    reviewCount: siteReviews.count,
-    bestRating: 5,
-    worstRating: 1,
   };
 }
 
@@ -315,38 +315,11 @@ export function faqSchema(faqs: readonly { q: string; a: string }[], path = "") 
   return { "@context": "https://schema.org", ...faqNode(faqs, path) };
 }
 
-/* AggregateRating + losse Review-nodes - UITSLUITEND echte reviews. */
-export function reviewsAggregate(
-  reviews: {
-    rating: number;
-    count: number;
-    source: string;
-    items: readonly { name: string; text: string; stars: number }[];
-  },
-  itemReviewed: Record<string, unknown> = { "@id": ORG },
-) {
-  return {
-    ...itemReviewed,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: reviews.rating,
-      reviewCount: reviews.count,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    review: reviews.items.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: r.stars,
-        bestRating: 5,
-      },
-      reviewBody: r.text,
-      publisher: { "@type": "Organization", name: reviews.source },
-    })),
-  };
-}
+/* reviewsAggregate() is bewust verwijderd. Zie de toelichting bij
+   localBusinessNode(): reviews van Google horen niet in onze eigen markup,
+   en dezelfde acht reviews op zes-plus URL's herhalen vergroot alleen het
+   risico op een handmatige maatregel. De reviews staan gewoon zichtbaar op
+   de pagina's; daar doen ze hun werk. */
 
 /* Dienst-/stadspagina: Service + WebPage + FAQ + kruimelpad. */
 export function serviceSchema(opts: {
@@ -356,7 +329,6 @@ export function serviceSchema(opts: {
   areaServed?: string;
   faqs?: readonly { q: string; a: string }[];
   crumbs: Crumb[];
-  withReviews?: Parameters<typeof reviewsAggregate>[0];
   dateModified?: string;
 }) {
   const service: Record<string, unknown> = {
@@ -371,11 +343,6 @@ export function serviceSchema(opts: {
       : areaServedNodes,
     mainEntityOfPage: { "@id": `${site.url}${opts.path}#webpage` },
   };
-  if (opts.withReviews) {
-    const agg = reviewsAggregate(opts.withReviews, {});
-    service.aggregateRating = agg.aggregateRating;
-    service.review = agg.review;
-  }
 
   const graph: Record<string, unknown>[] = [
     webPageNode({

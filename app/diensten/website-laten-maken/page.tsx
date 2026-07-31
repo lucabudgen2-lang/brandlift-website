@@ -178,7 +178,6 @@ function pillarSchema() {
     path: PATH,
     faqs,
     crumbs,
-    withReviews: reviews,
   });
   s["@graph"].push({
     "@type": "HowTo",

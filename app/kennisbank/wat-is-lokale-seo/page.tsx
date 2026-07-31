@@ -1,6 +1,6 @@
 import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
-import { articleSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = buildPageMetadata({
   title: "Wat is lokale SEO?",
@@ -11,17 +11,18 @@ export const metadata = buildPageMetadata({
 });
 
 export default function Page() {
-  const schema = articleSchema({
-    headline: "Wat is lokale SEO?",
-    description: metadata.description as string,
-    path: "/kennisbank/wat-is-lokale-seo",
-    datePublished: "2026-07-13",
-    crumbs: [
+/* TODO: schema + indexering terugzetten zodra deze pagina echt is
+   gebouwd. Zolang er alleen een stub staat, beschreef de CollectionPage/
+   Article-markup inhoud die niet op de pagina stond - dat is precies wat
+   een handmatige maatregel voor gestructureerde data uitlokt. */
+  const schema = breadcrumbSchema(
+    [
       { name: "Home", path: "/" },
       { name: "Kennisbank", path: "/kennisbank" },
       { name: "Wat is lokale SEO?", path: "/kennisbank/wat-is-lokale-seo" },
     ],
-  });
+    "/kennisbank/wat-is-lokale-seo",
+  );
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

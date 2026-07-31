@@ -155,7 +155,6 @@ export function CityPage({ city }: { city: CityData }) {
     areaServed: city.city,
     faqs: city.faqs,
     crumbs,
-    withReviews: reviews,
   });
 
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(city.coverage.mapQuery)}&z=12&hl=nl&output=embed`;

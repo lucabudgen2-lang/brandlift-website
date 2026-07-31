@@ -121,7 +121,6 @@ export default function Page() {
     areaServed: city.city,
     faqs: city.faqs,
     crumbs,
-    withReviews: reviews,
   });
 
   return (

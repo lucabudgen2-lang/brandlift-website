@@ -1,6 +1,6 @@
 import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
-import { collectionSchema } from "@/lib/schema";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export const metadata = buildPageMetadata({
   title: "Voorbeelden van websites die we bouwden",
@@ -11,20 +11,17 @@ export const metadata = buildPageMetadata({
 });
 
 export default function Page() {
-  const schema = collectionSchema({
-    name: "Voorbeelden van websites",
-    description: metadata.description as string,
-    path: "/voorbeelden",
-    crumbs: [
+/* TODO: schema + indexering terugzetten zodra deze pagina echt is
+   gebouwd. Zolang er alleen een stub staat, beschreef de CollectionPage/
+   Article-markup inhoud die niet op de pagina stond - dat is precies wat
+   een handmatige maatregel voor gestructureerde data uitlokt. */
+  const schema = breadcrumbSchema(
+    [
       { name: "Home", path: "/" },
       { name: "Voorbeelden", path: "/voorbeelden" },
     ],
-    items: [
-      { name: "Hovenier Eykelenboom", path: "/cases/hovenier-eykelenboom" },
-      { name: "RotorSwing Holland", path: "/cases/rotorswing" },
-      { name: "De Reizende Kwast", path: "/cases/de-reizende-kwast" },
-    ],
-  });
+    "/voorbeelden",
+  );
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />

@@ -213,7 +213,6 @@ export default function Page() {
     path: PATH,
     faqs,
     crumbs,
-    withReviews: reviews,
   });
 
   return (

@@ -64,7 +64,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     entry("/", 1.0, "weekly"),
     // dienstenhub + pijlers
-    entry("/diensten", 0.7),
     entry("/diensten/website-laten-maken", 0.9),
     entry("/diensten/lokale-seo", 0.8),
     entry("/diensten/branding", 0.8),
@@ -83,7 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/cases/hovenier-eykelenboom", 0.7),
     entry("/cases/rotorswing", 0.6),
     entry("/cases/de-reizende-kwast", 0.6),
-    entry("/voorbeelden", 0.7),
     entry("/voor-wie", 0.7),
     entry("/voor-wie/vakbedrijven", 0.8),
     entry("/voor-wie/premium", 0.8),
@@ -92,11 +90,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/over-brandlift", 0.7),
     entry("/contact", 0.8),
     // kennisbank
-    entry("/kennisbank", 0.6),
     entry("/kennisbank/wat-kost-een-website-laten-maken", 0.8),
-    entry("/kennisbank/wat-is-lokale-seo", 0.6),
     // juridisch
-    entry("/privacybeleid", 0.2, "yearly"),
-    entry("/algemene-voorwaarden", 0.2, "yearly"),
   ];
 }
