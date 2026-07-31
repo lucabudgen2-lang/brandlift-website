@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -11,12 +11,12 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Website kosten berekenen in 1 minuut",
   description:
     "Bereken in 1 minuut wat jouw website kost. Stel je website samen en zie direct een eerlijke prijsindicatie vanaf €1.500 - vrijblijvend, zonder verplichtingen.",
-  alternates: { canonical: "/website-kosten-calculator" },
-};
+  path: "/website-kosten-calculator",
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

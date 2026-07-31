@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/site";
+import { absoluteUrl } from "@/lib/metadata";
 
 /* Alle indexeerbare routes.
 
@@ -46,14 +46,16 @@ const DATES: Record<string, string> = {
 };
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = site.url;
-
+  /* absoluteUrl() is dezelfde functie die de canonical bouwt, zodat de
+     sitemap-URL en de canonical van een pagina letterlijk gelijk zijn.
+     Dat ging eerder mis op de homepage: canonical zonder slash,
+     sitemap met slash - voor Google twee URL's. */
   const entry = (
     path: string,
     priority: number,
     changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] = "monthly",
   ): MetadataRoute.Sitemap[number] => ({
-    url: `${base}${path}`,
+    url: absoluteUrl(path),
     lastModified: new Date(DATES[path] ?? "2026-07-13"),
     changeFrequency,
     priority,

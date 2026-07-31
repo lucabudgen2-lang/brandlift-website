@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
 import { caseSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Case: De Reizende Kwast",
   description:
     "Hoe Brandlift schildersbedrijf De Reizende Kwast een merkuitstraling en heldere dienstenstructuur gaf die vertrouwen opbouwt en tot aanvragen leidt.",
-  alternates: { canonical: "/cases/de-reizende-kwast" },
-};
+  path: "/cases/de-reizende-kwast",
+  type: "article",
+});
 
 export default function Page() {
   const schema = caseSchema({

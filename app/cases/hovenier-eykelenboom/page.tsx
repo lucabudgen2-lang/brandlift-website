@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -11,11 +11,13 @@ import { caseSchema } from "@/lib/schema";
 
 const c = caseEykelenboom;
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: c.metaTitle,
-  description: c.metaDescription,
-  alternates: { canonical: `/cases/${c.slug}` },
-};
+  description:
+    c.metaDescription,
+  path: `/cases/${c.slug}`,
+  type: "article",
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

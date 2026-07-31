@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -20,12 +20,12 @@ const PATH = "/seo-den-haag";
 const UPDATED = "2026-07-17";
 const dh = cityPages["den-haag"];
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "SEO Den Haag - lokale SEO die klanten oplevert",
   description:
     "SEO in Den Haag voor bedrijven die al een site hebben maar niet gevonden worden. Vindbaar per dienst en per wijk, met Bedrijfsprofiel en reviews.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

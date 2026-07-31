@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -16,11 +16,12 @@ import { serviceSchema } from "@/lib/schema";
 
 const city = cityPages["den-haag"];
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: city.metaTitle,
-  description: city.metaDescription,
-  alternates: { canonical: `/${city.slug}` },
-};
+  description:
+    city.metaDescription,
+  path: `/${city.slug}`,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

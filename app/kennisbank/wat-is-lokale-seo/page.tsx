@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
 import { articleSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Wat is lokale SEO?",
   description:
     "Wat is lokale SEO en waarom begint lokale vindbaarheid bij je eigen website? Een heldere uitleg voor lokale bedrijven en dienstverleners.",
-  alternates: { canonical: "/kennisbank/wat-is-lokale-seo" },
-};
+  path: "/kennisbank/wat-is-lokale-seo",
+  noindex: true,
+});
 
 export default function Page() {
   const schema = articleSchema({

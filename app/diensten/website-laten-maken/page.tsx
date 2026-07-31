@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -20,12 +20,12 @@ import { serviceSchema } from "@/lib/schema";
 const PATH = "/diensten/website-laten-maken";
 const UPDATED = "2026-07-13";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Website laten maken - strategisch en vindbaar",
   description:
     "Website laten maken die klanten oplevert. Strategie, ontwerp, lokale SEO en conversie in een. Vanaf 1.500 euro, live in 3 tot 4 weken.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

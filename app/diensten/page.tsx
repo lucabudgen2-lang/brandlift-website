@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
 import { collectionSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Diensten - website, lokale SEO en branding",
   description:
     "Website laten maken, lokale SEO, branding en conversie-optimalisatie. Eén groeifundament voor Nederlandse bedrijven die meer aanvragen willen.",
-  alternates: { canonical: "/diensten" },
-};
+  path: "/diensten",
+  noindex: true,
+});
 
 export default function Page() {
   const schema = collectionSchema({

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -18,12 +18,12 @@ import { serviceSchema } from "@/lib/schema";
 const PATH = "/voor-wie";
 const UPDATED = "2026-07-17";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Voor wie - vakbedrijven en premium merken",
   description:
     "Brandlift bouwt voor vakbedrijven, premium merken en alles daartussenin. Bekijk welke aanpak past bij jouw markt en hoe die per branche verschilt.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

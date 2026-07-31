@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -22,12 +22,12 @@ const UPDATED = "2026-07-17";
 const premiumPanel = voorWie.panels[1];
 const rotorswing = cases[0];
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Websites voor premium en visuele bedrijven",
   description:
     "Website laten maken voor een premium merk. Voor vastgoed, maritiem, interieurdesign en klinieken: beeld, rust en merk doen het werk. NL en Engels.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

@@ -40,33 +40,25 @@ export const metadata: Metadata = {
   },
   description:
     "Brandlift bouwt strategische websites met branding, lokale SEO en conversie voor Nederlandse bedrijven die meer zichtbaarheid, vertrouwen en aanvragen willen.",
-  keywords: [
-    "website laten maken",
-    "lokale SEO",
-    "branding",
-    "webdesign Den Haag",
-    "website laten maken Den Haag",
-    "strategische website",
-  ],
+  /* GEEN `keywords`. Google negeert de tag sinds 2009 en in de broncode
+     van een SEO-bureau staat hij vooral verkeerd. */
   authors: [{ name: site.founder }],
   /* GEEN `alternates.canonical` hier. Next erft layout-metadata naar elke
      pagina die het niet overschrijft, dus een canonical op "/" liet elke
      pagina zonder eigen canonical zichzelf als de homepage aanmerken.
      De canonical hoort per pagina; de homepage zet hem in app/page.tsx. */
+  /* Hier staan UITSLUITEND de velden die op elke pagina identiek zijn.
+     Titel, description en url horen hier NIET: Next erft layout-metadata
+     naar elke pagina die het niet overschrijft, dus een og:title hier
+     gaf letterlijk elke URL de homepage-titel mee. Pagina's zetten hun
+     eigen OG via buildPageMetadata() in lib/metadata.ts. */
   openGraph: {
     type: "website",
     locale: "nl_NL",
-    url: site.url,
     siteName: site.name,
-    title: "Brandlift | Strategische websites met lokale SEO en conversie",
-    description:
-      "Websites, branding en lokale SEO die zorgen voor meer zichtbaarheid, meer vertrouwen en meer aanvragen. Gevestigd in Den Haag, actief in heel Nederland.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Webdesignbureau Den Haag - meer aanvragen | Brandlift",
-    description:
-      "Strategische websites met branding en lokale SEO voor Nederlandse bedrijven die meer aanvragen willen.",
   },
   robots: {
     index: true,

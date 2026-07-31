@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -19,12 +19,12 @@ import { serviceSchema } from "@/lib/schema";
 const PATH = "/diensten/branding";
 const UPDATED = "2026-07-17";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Branding en huisstijl die vertrouwen wekken",
   description:
     "Branding en huisstijl die passen bij de kwaliteit die je levert. Positionering, logo, kleur en beeldtaal, doorgevoerd tot in je website.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

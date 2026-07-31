@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -19,12 +19,12 @@ import { serviceSchema } from "@/lib/schema";
 const PATH = "/voor-wie/vakbedrijven";
 const UPDATED = "2026-07-17";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Websites voor vakbedrijven en servicebedrijven",
   description:
     "Websites voor hoveniers, schilders, aannemers en installateurs. Gevonden worden per dienst en werkgebied, met een route naar contact die werkt.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

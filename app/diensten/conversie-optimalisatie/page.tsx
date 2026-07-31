@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -19,12 +19,12 @@ import { serviceSchema } from "@/lib/schema";
 const PATH = "/diensten/conversie-optimalisatie";
 const UPDATED = "2026-07-17";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Conversie-optimalisatie - meer aanvragen",
   description:
     "Conversie-optimalisatie die van bezoekers aanvragen maakt. We halen de twijfel uit je pagina's en maken de route naar contact vanzelfsprekend.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

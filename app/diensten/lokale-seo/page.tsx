@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
@@ -19,12 +19,12 @@ import { serviceSchema } from "@/lib/schema";
 const PATH = "/diensten/lokale-seo";
 const UPDATED = "2026-07-16";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Lokale SEO - beter gevonden in je regio",
   description:
     "Lokale SEO waarmee je gevonden wordt op de klus die je wilt, in de regio waar je werkt. Dienstpagina's, Google Bedrijfsprofiel, schema en reviews.",
-  alternates: { canonical: PATH },
-};
+  path: PATH,
+});
 
 const crumbs = [
   { name: "Home", path: "/" },

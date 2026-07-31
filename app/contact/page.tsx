@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
 import { contactSchema } from "@/lib/schema";
 import { GroeigesprekForm } from "@/components/forms/GroeigesprekForm";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact - plan een gratis groeigesprek",
   description:
     "Plan een gratis groeigesprek van 30 minuten. Geen salespitch - we kijken waar je nu staat en waar aanvragen blijven liggen.",
-  alternates: { canonical: "/contact" },
-};
+  path: "/contact",
+});
 
 export default function Page() {
   const schema = contactSchema({

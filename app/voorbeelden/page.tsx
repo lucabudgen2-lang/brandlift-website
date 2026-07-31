@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
 import { collectionSchema } from "@/lib/schema";
 
-export const metadata: Metadata = {
-  title: "Voorbeelden van websites | Ons werk - Brandlift",
+export const metadata = buildPageMetadata({
+  title: "Voorbeelden van websites die we bouwden",
   description:
     "Een selectie van strategische websites die we bouwden voor vakbedrijven en servicebedrijven - met lokale SEO en conversie als uitgangspunt.",
-  alternates: { canonical: "/voorbeelden" },
-};
+  path: "/voorbeelden",
+  noindex: true,
+});
 
 export default function Page() {
   const schema = collectionSchema({

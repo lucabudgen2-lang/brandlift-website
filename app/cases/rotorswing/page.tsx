@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { PageStub } from "@/components/layout/PageStub";
 import { caseSchema } from "@/lib/schema";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Case: RotorSwing Holland",
   description:
     "Hoe Brandlift RotorSwing Holland positioneert als premium jachtmerk, met een adviestool naar de juiste stabilisator. Dit traject loopt nog.",
-  alternates: { canonical: "/cases/rotorswing" },
-};
+  path: "/cases/rotorswing",
+  type: "article",
+});
 
 export default function Page() {
   const schema = caseSchema({

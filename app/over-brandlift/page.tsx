@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/metadata";
 import { AboutHero } from "@/components/sections/about/AboutHero";
 import { AboutOrigin, AboutLuca } from "@/components/sections/about/AboutStory";
 import { AboutPrinciples, AboutContrast } from "@/components/sections/about/AboutDifference";
@@ -7,12 +7,12 @@ import { AboutPractical, AboutFaq, AboutCta } from "@/components/sections/about/
 import { aboutSchema } from "@/lib/schema";
 import { aboutFaqs } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Over Brandlift - het bureau achter je site",
   description:
     "Geen anoniem bureau, maar Luca die je site zelf ontwerpt en bouwt. Lees wat Brandlift anders maakt en waarom vakbedrijven voor ons kiezen.",
-  alternates: { canonical: "/over-brandlift" },
-};
+  path: "/over-brandlift",
+});
 
 function aboutFaqSchema() {
   return {

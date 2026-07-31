@@ -1,3 +1,4 @@
+import { buildPageMetadata } from "@/lib/metadata";
 import { Hero } from "@/components/sections/Hero";
 import { TrustStrip } from "@/components/sections/TrustStrip";
 import { Problem } from "@/components/sections/Problem";
@@ -13,12 +14,18 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { Reviews } from "@/components/sections/Reviews";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
-import type { Metadata } from "next";
 import { faqs } from "@/lib/site";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "/" },
-};
+/* Let op: het title-template ("%s | Brandlift") uit app/layout.tsx geldt
+   alleen voor ONDERLIGGENDE segmenten, niet voor de pagina van het segment
+   waarin het staat. De homepage moet het achtervoegsel dus zelf meenemen.
+   buildPageMetadata plakt hem niet nog een keer aan (endsWith-check). */
+export const metadata = buildPageMetadata({
+  title: "Webdesignbureau Den Haag - meer aanvragen | Brandlift",
+  description:
+    "Brandlift bouwt strategische websites met branding, lokale SEO en conversie voor Nederlandse bedrijven die meer zichtbaarheid, vertrouwen en aanvragen willen.",
+  path: "/",
+});
 
 function faqSchema() {
   return {
