@@ -21,6 +21,7 @@ export function AboutPractical() {
   return (
     <section className="relative overflow-hidden bg-s0 py-20 md:py-28">
       <div className="pointer-events-none absolute inset-0 grid-lines opacity-30" />
+      <div className="animate-glow pointer-events-none absolute -bottom-40 right-[-10%] h-[480px] w-[480px] rounded-full bg-blue/15 blur-[150px]" />
       <Container className="relative grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
         <div>
           <Reveal>
