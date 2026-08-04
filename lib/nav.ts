@@ -47,21 +47,6 @@ export const megaNav: NavItem[] = [
     ],
   },
   {
-    label: "Steden",
-    key: "steden",
-    href: "/diensten/website-laten-maken",
-    overview: "Website laten maken",
-    pages: [
-      { label: "Website laten maken Den Haag", href: "/website-laten-maken-den-haag", desc: "Onze thuisbasis" },
-      { label: "Website laten maken Rotterdam", href: "/website-laten-maken-rotterdam", desc: "Rijnmond en omstreken" },
-      { label: "Website laten maken Eindhoven", href: "/website-laten-maken-eindhoven", desc: "Brabant" },
-      { label: "Website laten maken Utrecht", href: "/website-laten-maken-utrecht", desc: "Midden-Nederland" },
-      { label: "Website laten maken Amsterdam", href: "/website-laten-maken-amsterdam", desc: "Noord-Holland" },
-      { label: "Website laten maken Delft", href: "/website-laten-maken-delft", desc: "Regio Den Haag" },
-      { label: "SEO Den Haag", href: "/seo-den-haag", desc: "Lokale vindbaarheid in Den Haag" },
-    ],
-  },
-  {
     label: "Voor wie",
     key: "voor-wie",
     href: "/voor-wie",
