@@ -47,7 +47,9 @@
   /* type */
   --font-display: var(--font-saira), "Saira", sans-serif;
   --font-body: var(--font-manrope), "Manrope", system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), "JetBrains Mono", monospace;
+  /* JetBrains Mono is verwijderd (nul gebruik); valt terug op de
+     monospace van het systeem mocht er ooit font-mono nodig zijn. */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 
   /* layout */
   --container-site: 1140px;

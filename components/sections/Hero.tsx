@@ -168,12 +168,19 @@ export function Hero() {
           <Reveal delay={0.2} className="w-full">
             <div className="animate-float relative lg:ml-6 lg:scale-[1.18] xl:ml-10 xl:scale-[1.28]">
               <div className="chamf chamf-lg overflow-hidden border border-[var(--color-line-strong)] bg-s2 shadow-[0_44px_100px_-40px_rgba(1,48,253,0.5)]">
+                {/* `loading="eager"` en niet `priority`. Op mobiel staat deze
+                    mockup onder de vouw - gemeten op 375px valt hij buiten
+                    het scherm - terwijl `priority` een preload met hoge
+                    prioriteit afdwingt. Hij vocht daarmee om bandbreedte met
+                    de achtergrondfoto van de hero, die wél het grootste
+                    element boven de vouw is en dus het LCP-element. Eager
+                    houdt hem op desktop direct laden zonder die voorrang. */}
                 <Image
-                  src="/images/hero-eyk.png"
+                  src="/images/hero-eyk.jpg"
                   alt="Rebranding en website door Brandlift voor Hovenier Eykelenboom - laptop en merkgids"
                   width={1254}
                   height={1254}
-                  priority
+                  loading="eager"
                   sizes="(max-width: 1024px) 92vw, 46vw"
                   className="block w-full"
                 />

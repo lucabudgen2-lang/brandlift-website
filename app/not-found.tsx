@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -14,15 +15,22 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <main className="relative flex min-h-[calc(100vh-6rem)] flex-col overflow-hidden bg-s0 md:min-h-[calc(100vh-8rem)]">
-      {/* backdrop — earth from space (self-hosted), settled into the brand */}
+      {/* backdrop — earth from space (self-hosted), settled into the brand.
+          Was een 4K-video van 13 MB die automatisch begon te spelen zodra
+          iemand op een dode link klikte: verreweg het zwaarste bestand op
+          de site, voor decoratie op de pagina waar iemand al gefrustreerd
+          landt. De draaiing was over tien seconden nauwelijks zichtbaar
+          onder de drie overlays hieronder, dus een stilstaand frame uit
+          diezelfde video geeft praktisch hetzelfde beeld. Via next/image
+          gaat er nu enkele tientallen KB's over de lijn in plaats van 13 MB. */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-          src="/videos/earth.mp4"
+        <Image
+          src="/images/earth-poster.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-blue-deep/20 mix-blend-multiply" />
         <div className="absolute inset-0 bg-s0/25" />
