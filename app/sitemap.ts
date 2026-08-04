@@ -82,6 +82,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/cases/hovenier-eykelenboom", 0.7),
     entry("/cases/rotorswing", 0.6),
     entry("/cases/de-reizende-kwast", 0.6),
+    entry("/voorbeelden", 0.7),
     entry("/voor-wie", 0.7),
     entry("/voor-wie/vakbedrijven", 0.8),
     entry("/voor-wie/premium", 0.8),

@@ -378,7 +378,10 @@ export function collectionSchema(opts: {
   name: string;
   description: string;
   path: string;
-  items: readonly { name: string; path: string; description?: string }[];
+  /* `path` is intern; geef `url` mee voor een externe bestemming (bijv.
+     de live site van een klant). Dan wordt die URL letterlijk gebruikt
+     in plaats van hem achter site.url te plakken. */
+  items: readonly { name: string; path?: string; url?: string; description?: string }[];
   crumbs: Crumb[];
 }) {
   return {
@@ -403,7 +406,7 @@ export function collectionSchema(opts: {
           "@type": "ListItem",
           position: i + 1,
           name: it.name,
-          url: `${site.url}${it.path}`,
+          url: it.url ?? `${site.url}${it.path ?? ""}`,
           ...(it.description ? { description: it.description } : {}),
         })),
       },
