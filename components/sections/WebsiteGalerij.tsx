@@ -243,7 +243,7 @@ export function WebsiteGalerij() {
       <AnimatePresence>
         {huidige && (
           <motion.div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-s0/92 p-3 backdrop-blur-md sm:p-6"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-s0/92 p-3 backdrop-blur-md sm:p-5 lg:p-8"
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -290,7 +290,13 @@ export function WebsiteGalerij() {
               initial={reduce ? false : { opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.25, ease }}
-              className="flex h-full w-full max-w-6xl flex-col overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 shadow-[0_50px_120px_-40px_rgba(0,0,0,0.95)]"
+              /* max-w-6xl (1152px) capte de iframe onder de desktop-
+                 breedte van veel sites - de knip zat precies waar hun
+                 eigen mobiele navigatie inschakelt. 1800px is breed
+                 genoeg om de echte desktop-layout te tonen, en blijft
+                 op elk scherm nog ruim binnen de viewport dankzij de
+                 backdrop-padding hierboven. */
+              className="flex h-full w-full max-w-[1800px] flex-col overflow-hidden chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 shadow-[0_50px_120px_-40px_rgba(0,0,0,0.95)]"
               onClick={(e) => e.stopPropagation()}
             >
               {/* kop met echte URL */}
