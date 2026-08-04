@@ -1,5 +1,6 @@
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
 import { footerNav, footerLegal } from "@/lib/nav";
 import { Container } from "@/components/ui/Container";
@@ -10,12 +11,15 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/brand/logo-lockup.png"
+            {/* Zelfde fix als MegaNav, zie de toelichting daar: het bron-
+                bestand zelf staat nu op 480x270 in plaats van 1672x941,
+                anders serveert Next zonder `sizes` nog steeds de volle
+                grootte als 1x-variant. */}
+            <Image
+              src="/brand/logo-lockup-480.png"
               alt="Brandlift logo"
-              width={1672}
-              height={941}
+              width={480}
+              height={270}
               className="h-14 w-auto md:h-16"
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-g500">

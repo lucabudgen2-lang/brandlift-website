@@ -74,12 +74,27 @@ export function MegaNav() {
                     sticky balk op elke pagina en moet direct meekomen.
                     width/height staan er expliciet op zodat de browser de
                     ruimte kan reserveren - anders springt de balk (CLS). */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="/brand/logo-lockup.png"
+                {/* Was een rauwe <img> die de bron van 1672x941 (142 KB) op
+                    volle resolutie leverde voor een logo dat op zijn breedst
+                    80px hoog rendert - op elke pagina, in de nav, buiten de
+                    optimizer om. Gevonden via PageSpeed Insights, niet in de
+                    eigen doorloop hierboven.
+                    Alleen next/image gebruiken loste het niet op: zonder
+                    `sizes` neemt Next het opgegeven width/height-paar als de
+                    echte weergavegrootte en genereert 1x/2x-varianten dáárop
+                    - de CSS-verkleining eronder telt niet mee. Vandaar ook
+                    een bronbestand op 480x270 (3x marge boven de grootste
+                    render van 80px), nieuwe bestandsnaam per de regel dat we
+                    nooit eenzelfde pad overschrijven. logo-lockup.png zelf
+                    blijft ongewijzigd - lib/schema.ts wijst er nog naar voor
+                    de Organization-logo in de structured data, waar Google
+                    juist de volledige resolutie wil zien. */}
+                <Image
+                  src="/brand/logo-lockup-480.png"
                   alt="Brandlift logo"
-                  width={1672}
-                  height={941}
+                  width={480}
+                  height={270}
+                  priority
                   className="h-16 w-auto transition-opacity duration-200 group-hover:opacity-90 md:h-20 lg:h-16 lg:md:h-[4.5rem]"
                 />
               </Link>
