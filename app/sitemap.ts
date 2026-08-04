@@ -91,6 +91,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/contact", 0.8),
     // kennisbank
     entry("/kennisbank/wat-kost-een-website-laten-maken", 0.8),
+    entry("/kennisbank/wat-is-lokale-seo", 0.7),
     // juridisch
   ];
 }
