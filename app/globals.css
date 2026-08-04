@@ -78,10 +78,21 @@
 
 html {
   scroll-behavior: smooth;
+  /* Zie de toelichting bij body: de overloop propageert van html naar
+     de viewport, dus het vangnet moet op allebei staan om een 1-3px
+     zijwaartse schuif echt te voorkomen. */
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
+  /* Vangnet tegen horizontale overloop. Bewust `clip` en niet `hidden`:
+     `hidden` maakt van body een scroll-container, waardoor position:sticky
+     (de navigatiebalk, de kruimel-inhoudsopgave) stilletjes stopt met
+     werken. `clip` knipt wel af maar maakt geen scroll-container.
+     Losse secties horen hun eigen overloop nog steeds zelf op te vangen -
+     dit is de laatste verdedigingslinie, geen excuus. */
+  overflow-x: clip;
   background: var(--color-s0);
   color: var(--color-paper);
   font-family: var(--font-body);
@@ -89,7 +100,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
 }
 
 /* ── nav-overlay ──────────────────────────────────────────────

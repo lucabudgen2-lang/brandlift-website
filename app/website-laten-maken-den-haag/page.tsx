@@ -427,7 +427,7 @@ export default function Page() {
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
-                <div className="mt-7 inline-flex items-baseline gap-2.5 chamf chamf-lg bg-blue px-6 py-4 font-display font-extrabold text-white shadow-[0_24px_60px_-24px_rgba(1,48,253,0.8)]">
+                <div className="mt-7 inline-flex max-w-full flex-wrap items-baseline gap-x-2.5 gap-y-1 chamf chamf-lg bg-blue px-5 py-4 font-display font-extrabold text-white sm:px-6 shadow-[0_24px_60px_-24px_rgba(1,48,253,0.8)]">
                   <span className="text-2xl">{caseEykelenboom.stat.from}</span>
                   <span className="text-white/60">→</span>
                   <span className="text-4xl">{caseEykelenboom.stat.to}</span>

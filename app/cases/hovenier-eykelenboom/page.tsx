@@ -265,9 +265,14 @@ export default function Page() {
               </Reveal>
             </div>
 
-            {/* voor/na op de paginatitel - klein maar hard bewijs */}
-            <Reveal delay={0.12}>
-              <div className="space-y-4">
+            {/* voor/na op de paginatitel - klein maar hard bewijs.
+                min-w-0: de titels hieronder staan op `truncate`, wat
+                white-space:nowrap zet. Een grid-item heeft standaard
+                min-width:auto en krimpt dan niet onder die volledige
+                tekstbreedte - waardoor de kolom op mobiel 416px werd in
+                een viewport van 375px en de tekst werd afgekapt. */}
+            <Reveal delay={0.12} className="min-w-0">
+              <div className="min-w-0 space-y-4">
                 <div className="overflow-hidden chamf chamf-lg border border-white/10 bg-s1/60">
                   <div className="flex items-center gap-2 border-b border-[var(--color-line)] bg-s2/60 px-4 py-2.5">
                     <span className="h-2 w-2 rounded-full bg-white/15" />

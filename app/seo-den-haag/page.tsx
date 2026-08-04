@@ -482,7 +482,11 @@ export default function Page() {
       {/* ═══════════ BEWIJS — Eykelenboom ═══════════ */}
       <section className="on-light relative py-20 md:py-28">
         <Container className="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center lg:gap-16">
-          <div>
+          {/* min-w-0: een grid-item krijgt standaard min-width:auto en
+              krimpt daardoor niet onder de intrinsieke breedte van zijn
+              breedste kind (hier de 2 -> 24 statpil). Op 320px duwde dat
+              de kolom naar 299px in een contentbox van 272px. */}
+          <div className="min-w-0">
             <Reveal>
               <Eyebrow>Bewijs uit Den Haag</Eyebrow>
             </Reveal>
@@ -500,7 +504,7 @@ export default function Page() {
             </Reveal>
             <Reveal delay={0.2}>
               <div className="mt-7 flex flex-wrap items-center gap-4">
-                <div className="inline-flex items-baseline gap-2.5 chamf chamf-lg bg-blue px-6 py-4 font-display font-extrabold text-white shadow-[0_24px_60px_-24px_rgba(1,48,253,0.8)]">
+                <div className="inline-flex max-w-full flex-wrap items-baseline gap-x-2.5 gap-y-1 chamf chamf-lg bg-blue px-5 py-4 font-display font-extrabold text-white sm:px-6 shadow-[0_24px_60px_-24px_rgba(1,48,253,0.8)]">
                   <span className="text-2xl opacity-70">{caseEykelenboom.stat.from}</span>
                   <span className="text-lg opacity-70">→</span>
                   <span className="text-4xl">{caseEykelenboom.stat.to}</span>
