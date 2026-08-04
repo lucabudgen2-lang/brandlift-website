@@ -67,6 +67,14 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   icons: { icon: "/brand/favicon.png" },
+  /* Bewijs van eigendom voor Google Search Console. Was eerder gekoppeld
+     via een HTML-bestand op de oude SiteGround-host - dat bestaat niet
+     meer nu Vercel de site serveert. Deze meta-tag zit nu in de code
+     zelf, dus overleeft elke toekomstige herbouw of hostingwissel zonder
+     dat de GSC-koppeling ooit opnieuw hoeft. */
+  verification: {
+    google: "Q2MGx0V_eUGuJE-RgmexfNH_WRZYjuy7bGKcwdBApXw",
+  },
 };
 
 export default function RootLayout({
