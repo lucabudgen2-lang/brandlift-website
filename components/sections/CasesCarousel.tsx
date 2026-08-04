@@ -206,10 +206,15 @@ export function CasesCarousel({
                         </span>
                       </p>
                     )}
-                    <span className={`mt-auto flex items-center gap-2 pt-6 text-sm font-semibold ${light ? "text-blue" : "text-blue-text"}`}>
-                      Bekijk de case
-                      <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
-                    </span>
+                    {/* Alleen tonen als er ook echt een casepagina achter zit.
+                        Zonder `href` is de kaart een div, en dan is "Bekijk de
+                        case" een belofte die nergens heen gaat. */}
+                    {href && (
+                      <span className={`mt-auto flex items-center gap-2 pt-6 text-sm font-semibold ${light ? "text-blue" : "text-blue-text"}`}>
+                        Bekijk de case
+                        <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
+                      </span>
+                    )}
                   </div>
                 </Card>
               </Reveal>

@@ -29,7 +29,6 @@ const DATES: Record<string, string> = {
   "/seo-den-haag": "2026-07-30",
   "/cases": "2026-07-10",
   "/cases/hovenier-eykelenboom": "2026-07-10",
-  "/cases/de-reizende-kwast": "2026-07-10",
   "/voorbeelden": "2026-07-13",
   "/voor-wie": "2026-07-17",
   "/voor-wie/vakbedrijven": "2026-07-17",
@@ -37,7 +36,7 @@ const DATES: Record<string, string> = {
   "/werkwijze": "2026-07-30",
   "/over-brandlift": "2026-07-13",
   "/contact": "2026-07-13",
-  "/kennisbank": "2026-07-13",
+  "/kennisbank": "2026-08-04",
   "/kennisbank/wat-kost-een-website-laten-maken": "2026-07-13",
   "/kennisbank/wat-is-lokale-seo": "2026-07-13",
   "/privacybeleid": "2026-07-10",
@@ -80,7 +79,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // bewijs + doelgroep
     entry("/cases", 0.7),
     entry("/cases/hovenier-eykelenboom", 0.7),
-    entry("/cases/de-reizende-kwast", 0.6),
     entry("/voorbeelden", 0.7),
     entry("/voor-wie", 0.7),
     entry("/voor-wie/vakbedrijven", 0.8),
@@ -90,6 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/over-brandlift", 0.7),
     entry("/contact", 0.8),
     // kennisbank
+    entry("/kennisbank", 0.6),
     entry("/kennisbank/wat-kost-een-website-laten-maken", 0.8),
     entry("/kennisbank/wat-is-lokale-seo", 0.7),
     // juridisch

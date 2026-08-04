@@ -71,7 +71,6 @@ const sites: Site[] = [
     shot: "/images/voorbeelden/reizende-kwast.jpg",
     alt: "Homepage van de website die Brandlift bouwde voor schildersbedrijf De Reizende Kwast",
     kern: "Een ambachtelijk schildersbedrijf dat online net zo vakkundig moest overkomen als op de steiger.",
-    case: { label: "Bekijk de case", href: "/cases/de-reizende-kwast" },
   },
   {
     id: "acg",

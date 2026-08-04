@@ -20,7 +20,6 @@ export default function Page() {
     ],
     items: [
       { name: "Hovenier Eykelenboom", path: "/cases/hovenier-eykelenboom", description: "Hoveniers / groenvoorziening" },
-      { name: "De Reizende Kwast", path: "/cases/de-reizende-kwast", description: "Schilders / afwerking" },
     ],
   });
   return (

@@ -352,7 +352,9 @@ export const cases = [
     sector: "Schilders / afwerking",
     challenge: "Een ambachtelijk schildersbedrijf zonder website die het vakmanschap overtuigend liet zien.",
     direction: "Merkuitstraling en heldere dienstenstructuur die vertrouwen opbouwt en tot aanvragen leidt.",
-    href: "/cases/de-reizende-kwast",
+    /* Geen `href`: de casepagina is bewust verwijderd en wordt later
+       opnieuw opgebouwd. De site zelf staat wel live en is te bekijken
+       via /voorbeelden. */
     logo: "/logos/reizende-kwast.png",
     url: "dereizendekwast-schilders.nl",
   },
