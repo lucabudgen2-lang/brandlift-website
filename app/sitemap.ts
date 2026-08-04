@@ -63,6 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     entry("/", 1.0, "weekly"),
     // dienstenhub + pijlers
+    entry("/diensten", 0.8),
     entry("/diensten/website-laten-maken", 0.9),
     entry("/diensten/lokale-seo", 0.8),
     entry("/diensten/branding", 0.8),

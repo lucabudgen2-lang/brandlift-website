@@ -576,11 +576,10 @@ const DEFAULT_ORDER: CitySection[] = [
 
 /* Data-driven location page. One template, unique content per city. */
 export function CityPage({ city }: { city: CityData }) {
-  /* De hub /diensten is nog een stub op noindex, dus die slaan we over.
-     De pijler /diensten/website-laten-maken bestaat wel echt en is de
-     logische ouder van elke stadspagina - die houden we juist wel. */
+  /* Volledig pad nu de dienstenhub een echte, indexeerbare pagina is. */
   const crumbs = [
     { name: "Home", path: "/" },
+    { name: "Diensten", path: "/diensten" },
     { name: "Website laten maken", path: "/diensten/website-laten-maken" },
     { name: `Website laten maken ${city.city}`, path: `/${city.slug}` },
   ];

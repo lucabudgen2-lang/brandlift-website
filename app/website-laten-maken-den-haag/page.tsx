@@ -24,11 +24,9 @@ export const metadata = buildPageMetadata({
   path: `/${city.slug}`,
 });
 
-/* /diensten is nog een stub en staat op noindex; daar linken we niet
-   naartoe vanaf een commerciele stadspagina. De pijler blijft wel in het
-   kruimelpad, want die pagina bestaat echt. */
 const crumbs = [
   { name: "Home", path: "/" },
+  { name: "Diensten", path: "/diensten" },
   { name: "Website laten maken", path: "/diensten/website-laten-maken" },
   { name: `Website laten maken ${city.city}`, path: `/${city.slug}` },
 ];

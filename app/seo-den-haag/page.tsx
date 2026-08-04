@@ -29,6 +29,7 @@ export const metadata = buildPageMetadata({
 
 const crumbs = [
   { name: "Home", path: "/" },
+  { name: "Diensten", path: "/diensten" },
   { name: "Lokale SEO", path: "/diensten/lokale-seo" },
   { name: "SEO Den Haag", path: PATH },
 ];

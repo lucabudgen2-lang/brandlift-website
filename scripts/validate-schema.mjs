@@ -18,7 +18,7 @@ const ROUTES = [
   "/website-laten-maken-den-haag", "/website-laten-maken-rotterdam",
   "/website-laten-maken-eindhoven", "/website-laten-maken-utrecht",
   "/website-laten-maken-amsterdam", "/website-laten-maken-delft", "/seo-den-haag",
-  "/cases", "/cases/hovenier-eykelenboom", "/cases/rotorswing", "/cases/de-reizende-kwast",
+  "/cases", "/cases/hovenier-eykelenboom", "/cases/de-reizende-kwast",
   "/voorbeelden", "/voor-wie", "/voor-wie/vakbedrijven", "/voor-wie/premium",
   "/werkwijze", "/over-brandlift", "/contact", "/kennisbank",
   "/kennisbank/wat-kost-een-website-laten-maken", "/kennisbank/wat-is-lokale-seo",
