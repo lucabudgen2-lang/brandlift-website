@@ -20,7 +20,9 @@ const PATH = "/voor-wie/premium";
 const UPDATED = "2026-07-17";
 
 const premiumPanel = voorWie.panels[1];
-const rotorswing = cases[0];
+/* Op id zoeken, niet op index: de volgorde van `cases` mag wijzigen
+   zonder dat deze pagina stilletjes een andere klant gaat tonen. */
+const rotorswing = cases.find((c) => c.id === "rotorswing")!;
 
 export const metadata = buildPageMetadata({
   title: "Websites voor premium en visuele bedrijven",
@@ -258,10 +260,10 @@ export default function Page() {
                     Plan een gratis groeigesprek
                   </Button>
                   <Link
-                    href="/cases/rotorswing"
+                    href="/voorbeelden"
                     className="group inline-flex items-center gap-2 text-sm font-semibold text-blue-text hover:underline"
                   >
-                    Bekijk een premium merk dat we bouwden
+                    Bekijk websites die we bouwden
                     <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
                   </Link>
                 </div>
@@ -515,13 +517,12 @@ export default function Page() {
                 </div>
               </Reveal>
               <Reveal delay={0.26}>
-                <Link
-                  href={rotorswing.href}
-                  className="group mt-7 flex w-fit items-center gap-2 text-sm font-semibold text-blue-text hover:underline"
-                >
-                  Bekijk de case
-                  <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
-                </Link>
+                {/* Geen link naar een casepagina: dit traject loopt nog en
+                    de uitgebreide case volgt zodra de site live is. */}
+                <p className="mt-7 inline-flex items-center gap-2.5 chamf-sm border border-[var(--color-line-strong)] bg-s1 px-4 py-2.5 text-sm text-g300">
+                  <span className="h-1.5 w-1.5 chamf-sm bg-blue" />
+                  {rotorswing.comingSoonLabel} - de uitgebreide case volgt daarna
+                </p>
               </Reveal>
             </div>
 

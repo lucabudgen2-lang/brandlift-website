@@ -325,7 +325,9 @@ export const cases = [
     sector: "Maritiem / jachttechniek",
     challenge: "Een technisch sterk product dat online niet de premium indruk maakte die het verdient.",
     direction: "Positionering als premium jachtmerk, met een adviestool die bezoekers naar de juiste stabilisator leidt.",
-    href: "/cases/rotorswing",
+    /* Geen `href`: de casepagina is bewust verwijderd en wordt later
+       opnieuw opgebouwd. RotorSwing blijft wel een echte klant, dus de
+       kaart blijft staan - alleen niet meer klikbaar. */
     logo: "/logos/rotorswing.png",
     url: "rotorswing.nl",
     /* De site staat nog niet live - toon dat overal waar deze case verschijnt

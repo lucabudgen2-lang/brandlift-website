@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
+import type { ElementType } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -96,10 +97,16 @@ export function CasesCarousel({
         >
           {cases.map((c) => {
             const photo = "photo" in c ? (c.photo as string) : null;
+            /* Niet elke klant heeft een casepagina - RotorSwing bijvoorbeeld
+               niet, want dat traject loopt nog. Dan wordt de kaart een
+               gewone div in plaats van een link naar een 404. */
+            const href = "href" in c ? (c.href as string) : null;
+            const Card: ElementType = href ? Link : "div";
+            const cardHref = href ? { href } : {};
             return (
               <Reveal key={c.id} className="shrink-0 snap-start">
-                <Link
-                  href={c.href}
+                <Card
+                  {...cardHref}
                   data-card
                   className={`group flex h-full w-[82vw] flex-col overflow-hidden chamf chamf-lg border transition-all duration-300 ease-[var(--ease-brand)] hover:-translate-y-1.5 sm:w-[380px] ${
                     light
@@ -204,7 +211,7 @@ export function CasesCarousel({
                       <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
                     </span>
                   </div>
-                </Link>
+                </Card>
               </Reveal>
             );
           })}

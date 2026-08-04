@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ElementType } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -32,10 +33,16 @@ export function Cases() {
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
           {cases.map((c, i) => {
             const photo = "photo" in c ? (c.photo as string) : null;
+            /* Niet elke klant heeft een casepagina - RotorSwing bijvoorbeeld
+               niet, want dat traject loopt nog. Dan wordt de kaart een
+               gewone div in plaats van een link naar een 404. */
+            const href = "href" in c ? (c.href as string) : null;
+            const Card: ElementType = href ? Link : "div";
+            const cardHref = href ? { href } : {};
             return (
               <Reveal key={c.id} delay={(i % 3) * 0.08} className="h-full">
-                <Link
-                  href={c.href}
+                <Card
+                  {...cardHref}
                   className="group flex h-full flex-col overflow-hidden chamf chamf-lg border border-black/10 bg-paper shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)] transition-all duration-300 ease-[var(--ease-brand)] hover:-translate-y-1.5 hover:shadow-[0_34px_70px_-32px_rgba(1,48,253,0.4)]"
                 >
                   {/* browser chrome */}
@@ -123,7 +130,7 @@ export function Cases() {
                       <span className="transition-transform duration-150 group-hover:translate-x-0.5">→</span>
                     </span>
                   </div>
-                </Link>
+                </Card>
               </Reveal>
             );
           })}

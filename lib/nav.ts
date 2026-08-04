@@ -63,7 +63,6 @@ export const megaNav: NavItem[] = [
     href: "/cases",
     overview: "Alle cases",
     pages: [
-      { label: "RotorSwing Holland", href: "/cases/rotorswing", desc: "Maritiem / jachttechniek" },
       { label: "Hovenier Eykelenboom", href: "/cases/hovenier-eykelenboom", desc: "Hoveniers / groenvoorziening" },
       { label: "De Reizende Kwast", href: "/cases/de-reizende-kwast", desc: "Schilders / afwerking" },
       { label: "Voorbeelden", href: "/voorbeelden", desc: "Meer websites die we bouwden" },
