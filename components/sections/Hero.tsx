@@ -85,12 +85,18 @@ export function Hero() {
           {/* De H1 zit in de eyebrow-badge: semantisch de kop van de pagina,
               visueel de kleine regel. De slogan eronder is groot maar een <p>. */}
           <Reveal>
-            <h1 className="inline-flex flex-wrap items-center gap-x-3 gap-y-1.5 chamf-sm border border-[var(--color-line-strong)] bg-s1/60 px-4 py-2.5 text-[0.68rem] font-bold uppercase leading-relaxed tracking-[0.09em] text-g100 backdrop-blur-sm sm:text-[0.78rem]">
-              <span aria-hidden className="h-3.5 w-3.5 shrink-0 chamf-sm bg-blue shadow-[0_0_10px_rgba(1,48,253,0.7)]" />
-              <span>
-                Webdesignbureau in <span className="text-blue-text">Den Haag</span> dat je meer
-                aanvragen oplevert
-              </span>
+            {/* Geen flex: de stip stond als los flex-item op zijn eigen regel
+                zodra de tekst op smalle schermen omsloeg. Nu is de stip een
+                inline-block "eerste woord" dat gewoon meewrapt, en is de h1
+                zelf inline-BLOCK - niet inline, want dan knipt de rand per
+                tekstregel in losse stukjes. */}
+            <h1 className="inline-block chamf-sm border border-[var(--color-line-strong)] bg-s1/60 px-4 py-2.5 text-[0.68rem] font-bold uppercase leading-relaxed tracking-[0.09em] text-g100 backdrop-blur-sm sm:text-[0.78rem]">
+              <span
+                aria-hidden
+                className="mr-2.5 inline-block h-3 w-3 -translate-y-[1px] chamf-sm bg-blue align-middle shadow-[0_0_10px_rgba(1,48,253,0.7)]"
+              />
+              Webdesignbureau in <span className="text-blue-text">Den Haag</span> dat je meer
+              aanvragen oplevert
             </h1>
           </Reveal>
 
