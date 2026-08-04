@@ -58,12 +58,30 @@ export function GroeigesprekForm({
 
   async function onSubmit(values: FormValues) {
     try {
-      const res = await fetch("/api/contact", {
+      /* Web3Forms' gratis tier accepteert alleen verzoeken die echt uit een
+         browser komen - een eigen server-route ertussen zetten wordt
+         geweigerd (server-to-server vraagt een betaald plan). De access key
+         is daarom bewust NEXT_PUBLIC en zichtbaar in de bundle; dat is hoe
+         Web3Forms hem bedoelt, vergelijkbaar met Formspree's form-id. Hij
+         wordt aan hun kant beperkt per domein en per aanvraagfrequentie. */
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: `Nieuw groeigesprek: ${values.name} (${values.company})`,
+          from_name: "Brandlift website - groeigesprek",
+          replyto: values.email,
+          Naam: values.name,
+          Bedrijf: values.company,
+          "E-mail": values.email,
+          Telefoon: values.phone,
+          Focus: values.focus,
+          Bericht: values.message || "-",
+        }),
       });
-      if (!res.ok) throw new Error("failed");
+      const data = await res.json();
+      if (!res.ok || !data?.success) throw new Error("failed");
       setSent(true);
     } catch {
       setError("root", {

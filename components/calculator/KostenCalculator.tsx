@@ -136,17 +136,27 @@ export function KostenCalculator() {
     if (!email.includes("@")) return;
     setSendState("busy");
     try {
-      const res = await fetch("/api/contact", {
+      /* Rechtstreeks naar Web3Forms vanuit de browser - zie de toelichting
+         in GroeigesprekForm.tsx: hun gratis tier weigert verzoeken die via
+         onze eigen server binnenkomen. */
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
-          type: "calculator",
-          email,
-          config: input,
-          indication: { low: result.low, high: result.high },
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          subject: `Kostenindicatie aangevraagd - ${email}`,
+          from_name: "Brandlift website - kostencalculator",
+          replyto: email,
+          "E-mail": email,
+          "Type website": input.type,
+          "Extra's": input.extras.length ? input.extras.join(", ") : "geen",
+          "Lokale SEO": input.seoUitgebreid ? "uitgebreid met groei-retainer" : "basis",
+          "Beeld aanwezig": input.beeldKlaar ? "ja" : "nee, fotografie nodig",
+          Indicatie: `€${result.low} - €${result.high}`,
         }),
       });
-      setSendState(res.ok ? "done" : "error");
+      const data = await res.json();
+      setSendState(res.ok && data?.success ? "done" : "error");
     } catch {
       setSendState("error");
     }
