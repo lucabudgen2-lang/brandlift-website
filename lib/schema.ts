@@ -544,6 +544,18 @@ export function caseSchema(opts: {
   datePublished: string;
   crumbs: Crumb[];
   clientName?: string;
+  /* Alleen invullen als er echt een video op de pagina staat. Google
+     negeert een VideoObject dat niet zichtbaar is - of erger, ziet het
+     als misleiding. Duur in ISO 8601 (PT2M18S), datum als de echte
+     publicatiedatum op YouTube. */
+  video?: {
+    name: string;
+    description: string;
+    thumbnail: string;
+    uploadDate: string;
+    duration: string;
+    embedUrl: string;
+  };
 }) {
   const graph: Record<string, unknown>[] = [
     webPageNode({
@@ -568,8 +580,28 @@ export function caseSchema(opts: {
       ...(opts.clientName
         ? { about: { "@type": "Organization", name: opts.clientName } }
         : {}),
+      ...(opts.video ? { video: { "@id": `${site.url}${opts.path}#video` } } : {}),
     },
     breadcrumbNode(opts.crumbs, opts.path),
   ];
+
+  if (opts.video) {
+    graph.push({
+      "@type": "VideoObject",
+      "@id": `${site.url}${opts.path}#video`,
+      name: opts.video.name,
+      description: opts.video.description,
+      thumbnailUrl: [`${site.url}${opts.video.thumbnail}`],
+      uploadDate: opts.video.uploadDate,
+      duration: opts.video.duration,
+      embedUrl: opts.video.embedUrl,
+      publisher: { "@id": ORG },
+      inLanguage: LANG,
+      ...(opts.clientName
+        ? { about: { "@type": "Organization", name: opts.clientName } }
+        : {}),
+    });
+  }
+
   return { "@context": "https://schema.org", "@graph": graph };
 }

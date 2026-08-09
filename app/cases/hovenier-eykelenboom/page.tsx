@@ -12,6 +12,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { Core30Boom } from "@/components/cases/Core30Boom";
 import { FormuleDrieluik } from "@/components/cases/FormuleDrieluik";
 import { FotoGalerij } from "@/components/cases/FotoGalerij";
+import { VideoTestimonial } from "@/components/cases/VideoTestimonial";
 import { caseEykelenboom } from "@/lib/site";
 import { caseSchema } from "@/lib/schema";
 
@@ -95,6 +96,17 @@ export default function Page() {
     datePublished: c.updated,
     crumbs,
     clientName: c.client,
+    /* Gegevens rechtstreeks van de YouTube-pagina zelf overgenomen:
+       titel, publicatiedatum en lengte (138 seconden = PT2M18S). */
+    video: {
+      name: "Van 2-3 naar 30 aanvragen per maand - Sebastiaan, Hovenier Eykelenboom | Brandlift",
+      description:
+        "Sebastiaan Eykelenboom, hovenier in Den Haag, vertelt hoe zijn bedrijf ervoor stond, waarom hij twijfelde over een bureau en wat er sinds de livegang van de nieuwe website en het Google Bedrijfsprofiel veranderd is.",
+      thumbnail: `${IMG}/video-testimonial-poster.jpg`,
+      uploadDate: "2026-08-05",
+      duration: "PT2M18S",
+      embedUrl: "https://www.youtube-nocookie.com/embed/VXdba5y2toM",
+    },
   });
 
   return (
@@ -619,46 +631,8 @@ export default function Page() {
         </Container>
       </section>
 
-      {/* ═══════════ 11 · VIDEO-TESTIMONIAL (placeholder) ═══════════ */}
-      {/* TODO LUCA: video-testimonial van Sebastiaan + zijn Google-review
-          toevoegen zodra opgenomen. Dit blok is bewust een nette
-          aankondiging, geen nep-player. */}
-      <section className="on-light relative py-16 md:py-24">
-        <Container>
-          <Reveal>
-            <div className="relative overflow-hidden chamf chamf-lg border border-ink/10 bg-white shadow-[0_20px_50px_-30px_rgba(0,0,0,0.25)]">
-              <div className="grid md:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative min-h-[220px] bg-s0">
-                  <Image
-                    src={`${IMG}/sebastiaan-portret.jpg`}
-                    alt="Sebastiaan Eykelenboom"
-                    fill
-                    sizes="(max-width: 768px) 92vw, 40vw"
-                    className="object-cover object-top opacity-80"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-s0/30" />
-                  <span className="absolute left-1/2 top-1/2 grid h-16 w-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border-2 border-white/60 bg-s0/50 backdrop-blur-sm">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" aria-hidden>
-                      <path d="M8 5.5v13l11-6.5-11-6.5z" />
-                    </svg>
-                  </span>
-                </div>
-                <div className="flex flex-col justify-center p-7 md:p-10">
-                  <p className="font-display text-xs font-bold uppercase tracking-[0.1em] text-blue">Binnenkort</p>
-                  <h2 className="mt-3 font-display text-2xl font-extrabold leading-tight tracking-tight text-ink md:text-3xl">
-                    Sebastiaan aan het woord
-                  </h2>
-                  <p className="mt-3 max-w-md text-[0.98rem] leading-relaxed text-g600">
-                    We nemen binnenkort een video-testimonial op waarin Sebastiaan zelf vertelt hoe
-                    het traject was en wat het zijn bedrijf heeft gebracht. Die verschijnt hier -
-                    in zijn woorden, niet de onze.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </Container>
-      </section>
+      {/* ═══════════ 11 · VIDEO-TESTIMONIAL ═══════════ */}
+      <VideoTestimonial />
 
       {/* ═══════════ 12 · MEER WERK · 13 · SLOT ═══════════ */}
       <CasesCarousel tone="light" eyebrow="Meer cases" heading={["Meer werk uit", "de praktijk."]} />
