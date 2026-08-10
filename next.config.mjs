@@ -25,6 +25,36 @@ const nextConfig = {
      de totale JS-omvang van de build was er tot op de kilobyte gelijk mee
      (1462 KB in beide gevallen), dus het levert hier niets op. Een
      experimentele vlag zonder meetbaar voordeel is alleen maar risico. */
+
+  async redirects() {
+    return [
+      /* www -> apex, permanent.
+
+         Aanleiding: www.brandliftagency.nl had wél een CNAME naar Vercel,
+         maar stond niet als domein op het project. Daardoor dekte het
+         certificaat alleen de kale domeinnaam en kreeg iedereen die
+         "www.brandliftagency.nl" intypte een certificaatwaarschuwing -
+         een volledige blokkadepagina van de browser, dus erger dan een 404.
+         Gemeten met:
+           openssl s_client -connect brandliftagency.nl:443 \
+             | openssl x509 -noout -text | grep -A1 "Subject Alternative Name"
+         Dat gaf alleen DNS:brandliftagency.nl.
+
+         Nu staat www als domein op het project (dus wordt er een
+         certificaat voor uitgegeven) en stuurt deze regel het door naar de
+         kale variant. Zonder die redirect zou www dezelfde site serveren
+         en had je duplicate content op twee hostnamen.
+
+         De kale variant is de canonieke: dat is wat in lib/metadata.ts,
+         app/sitemap.ts en site.url staat. */
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.brandliftagency.nl" }],
+        destination: "https://brandliftagency.nl/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

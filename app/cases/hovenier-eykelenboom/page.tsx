@@ -22,8 +22,10 @@ const IMG = "/images/cases/eykelenboom";
 
 export const metadata = buildPageMetadata({
   title: c.metaTitle,
+  /* Onder de 165 tekens: daarboven kapt Google hem af en verlies je het
+     eind van de zin in het zoekresultaat. Stond eerder op 191. */
   description:
-    "Hoe Hovenier Eykelenboom uit Den Haag van 2 naar 24 aanvragen per maand ging: rebrand, Google Bedrijfsprofiel, Core 30-structuur, website en fotografie - het complete traject, stap voor stap.",
+    "Van 2 naar 24 aanvragen per maand: het complete traject van Hovenier Eykelenboom in Den Haag - rebrand, Google Bedrijfsprofiel, Core 30-structuur en website.",
   path: PATH,
   type: "article",
 });
