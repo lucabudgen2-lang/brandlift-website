@@ -10,7 +10,7 @@
    ============================================================ */
 
 const BASE = process.argv[2] ?? "http://localhost:8767";
-const PHONE = "+31644145772";
+const PHONE = "+31680227195";
 
 const ROUTES = [
   "/", "/diensten", "/diensten/website-laten-maken", "/diensten/lokale-seo",

@@ -16,7 +16,7 @@ const PATH = "/contact";
 export const metadata = buildPageMetadata({
   title: "Contact - plan een gratis groeigesprek",
   description:
-    "Plan een gratis groeigesprek van 30 minuten. Geen salespitch - we kijken waar je staat en waar aanvragen blijven liggen. Bellen kan ook: 06 44 14 57 72.",
+    "Plan een gratis groeigesprek van 30 minuten. Geen salespitch - we kijken waar je staat en waar aanvragen blijven liggen. Bellen kan ook: 06 80 22 71 95.",
   path: PATH,
 });
 
@@ -56,7 +56,7 @@ const faqs = [
   },
   {
     q: "Hoe snel krijg ik antwoord?",
-    a: "Binnen één werkdag, meestal sneller. Bel je liever meteen, dan zijn we van maandag tot en met zaterdag bereikbaar tussen 08:00 en 20:00 op 06 44 14 57 72.",
+    a: "Binnen één werkdag, meestal sneller. Bel je liever meteen, dan zijn we van maandag tot en met zaterdag bereikbaar tussen 08:00 en 20:00 op 06 80 22 71 95.",
   },
   {
     q: "Wat moet ik voorbereiden?",

@@ -14,8 +14,8 @@ export const site = {
   email: "luca@brandliftagency.nl",
   /* phone = weergave, phoneE164 = schema/tel:-links (E.164, verplicht formaat
      voor LocalBusiness telephone en voor click-to-call) */
-  phone: "06 44 14 57 72",
-  phoneE164: "+31644145772",
+  phone: "06 80 22 71 95",
+  phoneE164: "+31680227195",
   street: "Guirlande 118",
   postalCode: "2496 WT",
   city: "Den Haag",

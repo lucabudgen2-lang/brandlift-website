@@ -2,8 +2,8 @@ import { site } from "@/lib/site";
 
 /* ============================================================
    TELEFOONLINK — één plek voor het nummer.
-   Weergave is altijd site.phone (06 44 14 57 72), de href altijd
-   site.phoneE164 (+31644145772). Dat laatste is ook exact wat er in
+   Weergave is altijd site.phone (06 80 22 71 95), de href altijd
+   site.phoneE164 (+31680227195). Dat laatste is ook exact wat er in
    de gestructureerde data staat, zodat NAP-gegevens op de site en in
    het Google Bedrijfsprofiel niet uit elkaar kunnen lopen.
 
