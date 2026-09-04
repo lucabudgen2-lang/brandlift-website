@@ -13,6 +13,7 @@ import { Core30Boom } from "@/components/cases/Core30Boom";
 import { FormuleDrieluik } from "@/components/cases/FormuleDrieluik";
 import { FotoGalerij } from "@/components/cases/FotoGalerij";
 import { VideoTestimonial } from "@/components/cases/VideoTestimonial";
+import { GoogleReview } from "@/components/cases/GoogleReview";
 import { caseEykelenboom } from "@/lib/site";
 import { caseSchema } from "@/lib/schema";
 
@@ -635,6 +636,13 @@ export default function Page() {
 
       {/* ═══════════ 11 · VIDEO-TESTIMONIAL ═══════════ */}
       <VideoTestimonial />
+
+      {/* ═══════════ 12 · ZIJN GOOGLE-REVIEW ═══════════
+          Direct na de video: eerst hoort de bezoeker hem het zeggen,
+          daarna leest hij hetzelfde terug op een plek waar wij niets
+          kunnen veranderen. Gesproken en geschreven bewijs achter
+          elkaar is sterker dan allebei los. */}
+      <GoogleReview />
 
       {/* ═══════════ 12 · MEER WERK · 13 · SLOT ═══════════ */}
       <CasesCarousel tone="light" eyebrow="Meer cases" heading={["Meer werk uit", "de praktijk."]} />

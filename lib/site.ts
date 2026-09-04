@@ -613,8 +613,17 @@ export const aboutFaqs = [
 export const reviews = {
   source: "Google",
   rating: 5.0,
-  count: 8,
+  count: 9,
   items: [
+    {
+      /* Van de klant uit de case zelf. Woordelijk overgenomen van het
+         Bedrijfsprofiel, inclusief de kleine letter in "google business
+         profile" - een review corrigeren maakt het geen review meer. */
+      name: "Sebastiaan Eykelenboom",
+      role: "Hovenier Eykelenboom, Den Haag",
+      stars: 5,
+      text: "Wij, van Hovenier Eykelenboom uit Den Haag, hebben enkele fantastische diensten van Brandlift mogen ontvangen. Het google business profile is aangemaakt en geoptimaliseerd. We hebben de branding (logo; brandguide) met Brandlift gedaan en we hebben de gehele site door hen laten maken. We merken gigantisch veel verschil in aanvragen. Door met Brandlift samen te werken konden we groeien van een klein bedrijf, naar nu een bedrijf met personeel en meerdere lopende klussen naast elkaar. Ik kan ze van harte aanbevelen.",
+    },
     {
       name: "iFinq Finn",
       role: "",
