@@ -96,7 +96,7 @@ export function Reviews({
   tone = "light",
   eyebrow = "Wat klanten zeggen",
   heading = ["Elke review is echt.", "Elke ster verdiend."],
-  intro = "Woord voor woord overgenomen van ons Google Bedrijfsprofiel - we schrijven ze niet zelf en we kopen ze niet in.",
+  intro = "Woord voor woord overgenomen van ons Google Bedrijfsprofiel.",
   startAt = 0,
 }: {
   tone?: "light" | "dark";

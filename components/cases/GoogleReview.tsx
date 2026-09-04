@@ -118,7 +118,7 @@ export function GoogleReview() {
         <Reveal delay={0.2}>
           <p className="mx-auto mt-8 max-w-2xl text-center text-sm leading-relaxed text-g500">
             Deze review staat op het Google Bedrijfsprofiel van {site.name} - net als
-            alle andere. We schrijven ze niet zelf en we kopen ze niet in.
+            alle andere.
           </p>
         </Reveal>
       </Container>
