@@ -20,7 +20,14 @@ import { reviews, site } from "@/lib/site";
    er over een half jaar te liegen.
    ============================================================ */
 
-const AUTEUR = "Sebastiaan Eykelenboom";
+/* Standaard de review uit de Eykelenboom-case, zodat die pagina ongewijzigd
+   blijft. Andere cases geven hun eigen auteur, foto en kop mee. */
+const STANDAARD = {
+  auteur: "Sebastiaan Eykelenboom",
+  foto: "/images/cases/eykelenboom/sebastiaan-portret.jpg",
+  eyebrow: "Zijn review op Google",
+  kop: "In zijn eigen woorden,",
+};
 
 function GoogleG({ className = "" }: { className?: string }) {
   return (
@@ -45,8 +52,13 @@ function Sterren() {
   );
 }
 
-export function GoogleReview() {
-  const review = reviews.items.find((r) => r.name === AUTEUR);
+export function GoogleReview({
+  auteur = STANDAARD.auteur,
+  foto = STANDAARD.foto,
+  eyebrow = STANDAARD.eyebrow,
+  kop = STANDAARD.kop,
+}: { auteur?: string; foto?: string; eyebrow?: string; kop?: string } = {}) {
+  const review = reviews.items.find((r) => r.name === auteur);
   /* Staat de review niet meer in lib/site.ts, dan valt deze sectie stil
      weg in plaats van een leeg kader achter te laten. */
   if (!review) return null;
@@ -59,11 +71,11 @@ export function GoogleReview() {
       <Container className="relative">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <Eyebrow>Zijn review op Google</Eyebrow>
+            <Eyebrow>{eyebrow}</Eyebrow>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-5 font-display text-3xl font-extrabold leading-[1.06] tracking-tight text-paper sm:text-4xl">
-              In zijn eigen woorden,{" "}
+              {kop}{" "}
               <span className="text-blue-text">openbaar na te lezen.</span>
             </h2>
           </Reveal>
@@ -91,14 +103,15 @@ export function GoogleReview() {
               <Sterren />
             </div>
 
-            <blockquote className="mt-7 text-[1.05rem] leading-[1.75] text-g700 md:text-[1.12rem]">
+            {/* whitespace-pre-line: sommige reviews zijn in alinea's geschreven */}
+            <blockquote className="mt-7 whitespace-pre-line text-[1.05rem] leading-[1.75] text-g700 md:text-[1.12rem]">
               {review.text}
             </blockquote>
 
             <figcaption className="mt-8 flex items-center gap-4 border-t border-ink/[0.08] pt-6">
               <span className="relative h-12 w-12 shrink-0 overflow-hidden chamf chamf-sm border border-ink/10">
                 <Image
-                  src="/images/cases/eykelenboom/sebastiaan-portret.jpg"
+                  src={foto}
                   alt={review.name}
                   fill
                   sizes="48px"

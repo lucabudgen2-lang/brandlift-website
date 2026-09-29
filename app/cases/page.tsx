@@ -20,6 +20,7 @@ export default function Page() {
     ],
     items: [
       { name: "Hovenier Eykelenboom", path: "/cases/hovenier-eykelenboom", description: "Hoveniers / groenvoorziening" },
+      { name: "Giorgi & The Gents", path: "/cases/giorgi-and-the-gents", description: "Live muziek / bruiloften en bedrijfsfeesten" },
     ],
   });
   return (

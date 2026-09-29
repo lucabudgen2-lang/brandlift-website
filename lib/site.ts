@@ -347,6 +347,17 @@ export const cases = [
     photo: "/images/macbook-only-bigger.jpg",
   },
   {
+    id: "giorgi",
+    client: "Giorgi & The Gents",
+    sector: "Live muziek / bruiloften en bedrijfsfeesten",
+    challenge: "Een nieuwe band zonder website, reviews of naam in Google, voor klanten die in twee seconden beslissen.",
+    direction: "Onderzoek, merkboek en een snelle tweetalige site waarop je de band hoort voordat je boekt.",
+    href: "/cases/giorgi-and-the-gents",
+    logo: "/logos/giorgi.png",
+    url: "giorgiandthegents.nl",
+    photo: "/images/cases/giorgi/site-home.jpg",
+  },
+  {
     id: "de-reizende-kwast",
     client: "De Reizende Kwast",
     sector: "Schilders / afwerking",
@@ -613,7 +624,7 @@ export const aboutFaqs = [
 export const reviews = {
   source: "Google",
   rating: 5.0,
-  count: 9,
+  count: 10,
   items: [
     {
       /* Van de klant uit de case zelf. Woordelijk overgenomen van het
@@ -623,6 +634,16 @@ export const reviews = {
       role: "Hovenier Eykelenboom, Den Haag",
       stars: 5,
       text: "Wij, van Hovenier Eykelenboom uit Den Haag, hebben enkele fantastische diensten van Brandlift mogen ontvangen. Het google business profile is aangemaakt en geoptimaliseerd. We hebben de branding (logo; brandguide) met Brandlift gedaan en we hebben de gehele site door hen laten maken. We merken gigantisch veel verschil in aanvragen. Door met Brandlift samen te werken konden we groeien van een klein bedrijf, naar nu een bedrijf met personeel en meerdere lopende klussen naast elkaar. Ik kan ze van harte aanbevelen.",
+    },
+    {
+      /* Van Max Groenen (JungleBookings), klant uit de Giorgi-case.
+         Woordelijk van het Bedrijfsprofiel, inclusief "website's",
+         "maakte wij" en "3(!!!)". De witregels staan erin omdat Max
+         zijn review in alinea's schreef. */
+      name: "Max Groenen",
+      role: "JungleBookings, voor Giorgi & The Gents",
+      stars: 5,
+      text: "Het verkopen van muziek op een bruiloft of bedrijfsfeest is waar JungleBookings gespecialiseerd in is. Een website die, snel werkt, goed converteert en er geweldig uit ziet is voor het verkopen van een band of act heel erg belangrijk. De klant maakt een beslissing in 2 seconden om verder te kijken.\n\nEerder maakte wij zelf de website's via Wix, een tijdrovende klus met een middelmatige uitkomst. Voor de band Giorgi & the Gents wilden we het anders aanpakken. We namen contact op met Luca en konden dezelfde week nog een online intake met hem inplannen. Op basis van een korte (maar grondige) vragenlijst heeft Luca onderzoek gedaan in onze niche en gekeken wat werkt en wat niet. Het contact was heel prettig en vlot. Binnen 3(!!!) weken hadden wij een website waar we echt heel erg blij mee zijn. In de tussentijd hadden we nog wat extra features gevraagd zoals een Behind the Scenes pagina en dat was ook geen enkel probleem.\n\nLuca werkt snel, secuur en levert echt geweldig resultaat. Voor ons is dit vanaf nu een no brainer, een website die converteert als een malle is voor ons onbetaalbaar.\n\nZeker voor herhaling vatbaar!",
     },
     {
       name: "iFinq Finn",

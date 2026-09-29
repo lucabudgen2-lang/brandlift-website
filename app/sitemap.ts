@@ -29,6 +29,7 @@ const DATES: Record<string, string> = {
   "/seo-den-haag": "2026-07-30",
   "/cases": "2026-07-10",
   "/cases/hovenier-eykelenboom": "2026-07-10",
+  "/cases/giorgi-and-the-gents": "2026-09-29",
   "/voorbeelden": "2026-07-13",
   "/voor-wie": "2026-07-17",
   "/voor-wie/vakbedrijven": "2026-07-17",
@@ -79,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // bewijs + doelgroep
     entry("/cases", 0.7),
     entry("/cases/hovenier-eykelenboom", 0.7),
+    entry("/cases/giorgi-and-the-gents", 0.7),
     entry("/voorbeelden", 0.7),
     entry("/voor-wie", 0.7),
     entry("/voor-wie/vakbedrijven", 0.8),

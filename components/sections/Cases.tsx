@@ -30,7 +30,9 @@ export function Cases() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+        {/* Drie kolommen bij een drievoud, anders twee: met vier cases zou een
+            raster van drie één losse kaart op een eigen rij laten staan. */}
+        <div className={`mt-14 grid gap-6 md:grid-cols-2 lg:gap-7 ${cases.length % 3 === 0 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
           {cases.map((c, i) => {
             const photo = "photo" in c ? (c.photo as string) : null;
             /* Niet elke klant heeft een casepagina - RotorSwing bijvoorbeeld

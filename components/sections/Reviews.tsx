@@ -55,7 +55,7 @@ function ReviewCard({ r, i, light }: { r: Review; i: number; light: boolean }) {
           {"when" in r && r.when && <span className="text-xs font-medium text-g600">{r.when}</span>}
         </div>
 
-        <blockquote className={`mt-4 text-[1.02rem] leading-relaxed ${light ? "text-g700" : "text-g200"}`}>
+        <blockquote className={`mt-4 whitespace-pre-line text-[1.02rem] leading-relaxed ${light ? "text-g700" : "text-g200"}`}>
           {r.text}
         </blockquote>
 
