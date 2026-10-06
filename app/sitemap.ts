@@ -27,7 +27,7 @@ const DATES: Record<string, string> = {
   "/website-laten-maken-amsterdam": "2026-07-13",
   "/website-laten-maken-delft": "2026-07-13",
   "/seo-den-haag": "2026-07-30",
-  "/cases": "2026-07-10",
+  "/cases": "2026-10-06",
   "/cases/hovenier-eykelenboom": "2026-07-10",
   "/cases/giorgi-and-the-gents": "2026-09-29",
   "/voorbeelden": "2026-07-13",

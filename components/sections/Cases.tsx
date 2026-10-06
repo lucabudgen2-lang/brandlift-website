@@ -7,13 +7,27 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LineReveal } from "@/components/ui/LineReveal";
 import { cases, casesHead } from "@/lib/site";
 
-/* BL-08 · CASES — three proof cards side by side, each framed as a browser
+/* BL-08 · CASES - three proof cards side by side, each framed as a browser
    window. Real screenshots where they exist (Eykelenboom); a duotone
-   logo-cover where they don't yet - never fake stock. */
-export function Cases() {
+   logo-cover where they don't yet - never fake stock.
+
+   Twee schakelaars, zodat /cases hetzelfde kaartpatroon gebruikt in plaats
+   van een eigen variant:
+   - showHeader: op /cases draagt de paginakop de H1 en de intro al, dus
+     zou de sectiekop die verdubbelen;
+   - showAllLink: "Bekijk alle cases" wijst naar /cases, dus op die pagina
+     zelf zou de knop naar zichzelf linken. */
+export function Cases({
+  showHeader = true,
+  showAllLink = true,
+}: {
+  showHeader?: boolean;
+  showAllLink?: boolean;
+} = {}) {
   return (
     <section id="cases" className="on-light relative pt-20 pb-12 md:pt-28 md:pb-16">
       <Container>
+        {showHeader && (
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-xl">
             <Reveal>
@@ -29,10 +43,11 @@ export function Cases() {
             <p className="max-w-sm text-base leading-relaxed text-g600">{casesHead.intro}</p>
           </Reveal>
         </div>
+        )}
 
         {/* Drie kolommen bij een drievoud, anders twee: met vier cases zou een
             raster van drie één losse kaart op een eigen rij laten staan. */}
-        <div className={`mt-14 grid gap-6 md:grid-cols-2 lg:gap-7 ${cases.length % 3 === 0 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
+        <div className={`${showHeader ? "mt-14" : ""} grid gap-6 md:grid-cols-2 lg:gap-7 ${cases.length % 3 === 0 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
           {cases.map((c, i) => {
             const photo = "photo" in c ? (c.photo as string) : null;
             /* Niet elke klant heeft een casepagina - RotorSwing bijvoorbeeld
@@ -57,7 +72,7 @@ export function Cases() {
                     </span>
                   </div>
 
-                  {/* cover — real screenshot, or duotone logo-cover */}
+                  {/* cover - real screenshot, or duotone logo-cover */}
                   <div className="relative aspect-[16/10] overflow-hidden bg-s0">
                     {photo ? (
                       <>
@@ -143,6 +158,7 @@ export function Cases() {
           })}
         </div>
 
+        {showAllLink && (
         <Reveal delay={0.1}>
           <div className="mt-14 flex justify-center">
             <Link
@@ -154,6 +170,7 @@ export function Cases() {
             </Link>
           </div>
         </Reveal>
+        )}
       </Container>
     </section>
   );

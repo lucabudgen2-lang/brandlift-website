@@ -64,6 +64,7 @@ export const megaNav: NavItem[] = [
     overview: "Alle cases",
     pages: [
       { label: "Hovenier Eykelenboom", href: "/cases/hovenier-eykelenboom", desc: "Hoveniers / groenvoorziening" },
+      { label: "Giorgi & The Gents", href: "/cases/giorgi-and-the-gents", desc: "Live muziek / bruiloften en bedrijfsfeesten" },
       { label: "Voorbeelden", href: "/voorbeelden", desc: "Meer websites die we bouwden" },
     ],
   },
