@@ -59,10 +59,6 @@ const rodeDraad = [
 
 const faqs = [
   {
-    q: "Waarom staan hier maar een paar cases?",
-    a: "Omdat we alleen laten zien wat we echt gebouwd hebben. Een portfolio vullen met sjablonen of werk van anderen is zo gedaan, maar dan weet je nog niets over wat wij voor jou kunnen doen.",
-  },
-  {
     q: "Van sommige cases is er geen pagina. Hoe kan dat?",
     a: "Die trajecten lopen nog of de casepagina wordt nog gebouwd. De klant en het werk zijn echt - we zetten er alleen pas een pagina bij als we het hele verhaal kunnen laten zien.",
   },
