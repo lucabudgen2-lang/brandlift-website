@@ -4,7 +4,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 const PATH = "/privacybeleid";
-const BIJGEWERKT = "2026-07-31";
+const BIJGEWERKT = "2026-11-14";
 
 export const metadata = buildPageMetadata({
   title: "Privacybeleid",
@@ -102,6 +102,10 @@ const blokken: LegalBlok[] = [
         v: "Zeven jaar, de wettelijke bewaartermijn van de Belastingdienst.",
       },
       {
+        k: "Reservekopie van formulieren",
+        v: "Twaalf maanden in onze formulierdienst, zodat er niets verloren gaat als een mail niet aankomt. Daarna worden je gegevens daar automatisch verwijderd; alleen een telling zonder persoonsgegevens blijft over.",
+      },
+      {
         k: "Serverlogboeken",
         v: "Kortlopend, volgens de standaardtermijn van onze hostingpartij.",
       },
@@ -116,7 +120,11 @@ const blokken: LegalBlok[] = [
     paren: [
       {
         k: "Hosting (Vercel)",
-        v: "Deze website draait bij Vercel. Zij verwerken serverlogboeken en de gegevens die je via het formulier verstuurt op het moment dat die binnenkomen.",
+        v: "Deze website draait bij Vercel. Zij verwerken serverlogboeken.",
+      },
+      {
+        k: "Formulieren (Cloudflare en Resend)",
+        v: "Wat je in het contactformulier of de calculator invult, komt binnen via onze eigen formulierdienst. Die draait bij Cloudflare, met de opslag in de Europese Unie, en mailt je aanvraag via Resend naar ons. Tegen spam gebruiken we Cloudflare Turnstile, een controle die je meestal niet ziet. Cloudflare en Resend zijn Amerikaanse bedrijven, dus een verwerking buiten de Europese Economische Ruimte is niet uitgesloten.",
       },
       {
         k: "Google Maps",

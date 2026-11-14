@@ -5,6 +5,7 @@ import Link from "next/link";
 import { animate, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { bijAanraking, verstuur } from "@/lib/formulierdienst";
 import {
   calcPrice,
   formatEuro,
@@ -131,35 +132,22 @@ export function KostenCalculator() {
       extras: s.extras.includes(id) ? s.extras.filter((e) => e !== id) : [...s.extras, id],
     }));
 
-  async function submit(e: React.FormEvent) {
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!email.includes("@")) return;
+    const form = e.currentTarget;
     setSendState("busy");
-    try {
-      /* Rechtstreeks naar Web3Forms vanuit de browser - zie de toelichting
-         in GroeigesprekForm.tsx: hun gratis tier weigert verzoeken die via
-         onze eigen server binnenkomen. */
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
-          subject: `Kostenindicatie aangevraagd - ${email}`,
-          from_name: "Brandlift website - kostencalculator",
-          replyto: email,
-          "E-mail": email,
-          "Type website": input.type,
-          "Extra's": input.extras.length ? input.extras.join(", ") : "geen",
-          "Lokale SEO": input.seoUitgebreid ? "uitgebreid met groei-retainer" : "basis",
-          "Beeld aanwezig": input.beeldKlaar ? "ja" : "nee, fotografie nodig",
-          Indicatie: `€${result.low} - €${result.high}`,
-        }),
-      });
-      const data = await res.json();
-      setSendState(res.ok && data?.success ? "done" : "error");
-    } catch {
-      setSendState("error");
-    }
+    /* Formulierdienst van Brandlift (14-11-2026, was Web3Forms): zie lib/formulierdienst.ts.
+       Onderwerp in de dienst: "Kostenindicatie aangevraagd: <e-mail>". */
+    const gelukt = await verstuur("brandlift-calculator", {
+      email,
+      "Type website": input.type,
+      "Extra's": input.extras.length ? input.extras.join(", ") : "geen",
+      "Lokale SEO": input.seoUitgebreid ? "uitgebreid met groei-retainer" : "basis",
+      "Beeld aanwezig": input.beeldKlaar ? "ja" : "nee, fotografie nodig",
+      Indicatie: `€${result.low} - €${result.high}`,
+    }, form);
+    setSendState(gelukt ? "done" : "error");
   }
 
   /* spectrum geometry */
@@ -326,7 +314,9 @@ export function KostenCalculator() {
                         </div>
                       </div>
                     ) : (
-                      <form onSubmit={submit}>
+                      <form onSubmit={submit} onFocusCapture={(e) => { bijAanraking(e.currentTarget); }}>
+                        {/* lokveld voor bots: onzichtbaar en buiten de tabvolgorde */}
+                        <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                         <p className="text-sm font-bold text-paper">Ontvang deze berekening per mail</p>
                         <p className="mt-1 text-[0.8rem] leading-snug text-g500">
                           Inclusief een gespecificeerde opzet voor jouw situatie.
@@ -349,6 +339,8 @@ export function KostenCalculator() {
                             {sendState === "busy" ? "..." : "Stuur"}
                           </button>
                         </div>
+                        {/* Turnstile (spamweer): meestal onzichtbaar */}
+                        <div data-turnstile className="mt-3 empty:hidden" />
                         {sendState === "error" && (
                           <p className="mt-2 text-xs text-red-400">
                             Versturen lukte niet - probeer het nog eens of mail ons direct.
