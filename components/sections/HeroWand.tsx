@@ -131,14 +131,14 @@ export function HeroWand() {
       <div
         className="absolute inset-0 bg-s0/50"
         style={{
-          maskImage: "radial-gradient(circle 340px at var(--mx) var(--my), rgba(0,0,0,calc(1 - var(--lamp))) 0%, rgba(0,0,0,calc(1 - var(--lamp) * 0.6)) 45%, #000 100%)",
-          WebkitMaskImage: "radial-gradient(circle 340px at var(--mx) var(--my), rgba(0,0,0,calc(1 - var(--lamp))) 0%, rgba(0,0,0,calc(1 - var(--lamp) * 0.6)) 45%, #000 100%)",
+          maskImage: "radial-gradient(circle 380px at var(--mx) var(--my), rgba(0,0,0,calc(1 - var(--lamp))) 0%, rgba(0,0,0,calc(1 - var(--lamp) * 0.6)) 45%, #000 100%)",
+          WebkitMaskImage: "radial-gradient(circle 380px at var(--mx) var(--my), rgba(0,0,0,calc(1 - var(--lamp))) 0%, rgba(0,0,0,calc(1 - var(--lamp) * 0.6)) 45%, #000 100%)",
         }}
       />
       {/* het licht van de lamp zelf: een zachte, koele gloed op het werk */}
       <div
         className="absolute inset-0 mix-blend-screen"
-        style={{ background: "radial-gradient(circle 320px at var(--mx) var(--my), rgba(140,160,255,calc(var(--lamp) * 0.22)) 0%, rgba(91,120,255,calc(var(--lamp) * 0.08)) 45%, transparent 75%)" }}
+        style={{ background: "radial-gradient(circle 360px at var(--mx) var(--my), rgba(160,178,255,calc(var(--lamp) * 0.4)) 0%, rgba(91,120,255,calc(var(--lamp) * 0.16)) 45%, transparent 78%)" }}
       />
       {/* de donkere kern waar de tekst staat; altijd leesbaar */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_95%_55%_at_50%_48%,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.55)_55%,rgba(0,0,0,0.15)_100%)] md:bg-[radial-gradient(ellipse_52%_50%_at_50%_50%,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.62)_55%,rgba(0,0,0,0)_100%)]" />
