@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
-import { HeroHeadline } from "@/components/sections/HeroHeadline";
 import { HeroWand } from "@/components/sections/HeroWand";
 import { hero, cta, reviews } from "@/lib/site";
 
@@ -32,7 +30,7 @@ export function Hero() {
 
       <Container className="relative flex flex-1 flex-col items-center justify-start pb-12 pt-16 text-center md:pb-14 md:pt-20">
         {/* De H1 is de zoekregel; de slogan eronder is visueel de kop maar een <p>. */}
-        <Reveal>
+        <div className="hero-op" style={{ "--d": "0s" } as React.CSSProperties}>
           <h1 className="mx-auto max-w-[62rem] font-display text-[clamp(0.85rem,1.35vw,1.05rem)] font-extrabold uppercase leading-snug tracking-[0.05em] [text-wrap:balance] text-paper">
             <span>
               Webdesignbureau in{" "}
@@ -40,19 +38,34 @@ export function Hero() {
               dat je meer aanvragen oplevert
             </span>
           </h1>
-        </Reveal>
+        </div>
 
-        <HeroHeadline
-          center
-          lines={hero.sloganLines}
-          className="mt-7 font-display text-[clamp(1.95rem,8.2vw,5.2rem)] font-extrabold leading-[1.08] tracking-tight text-paper"
-        />
+        {/* de slogan: elke regel schuift uit een masker omhoog, de laatste
+            krijgt de blauwe marker - zelfde ontwerp als HeroHeadline, in CSS */}
+        <p className="mt-7 font-display text-[clamp(1.95rem,8.2vw,5.2rem)] font-extrabold leading-[1.08] tracking-tight text-paper">
+          {hero.sloganLines.map((t, i) => {
+            const laatste = i === hero.sloganLines.length - 1;
+            const vertraging = { "--d": `${0.08 + i * 0.09}s` } as React.CSSProperties;
+            return laatste ? (
+              <span key={i} className="relative mx-auto block w-fit whitespace-nowrap italic">
+                <span aria-hidden className="hero-marker pointer-events-none absolute bottom-[0.24em] left-0 right-0 h-[0.3em] origin-left rounded-[2px] bg-blue" />
+                <span className="relative block overflow-hidden pb-[0.14em]">
+                  <span className="hero-regel block" style={vertraging}>{t}</span>
+                </span>
+              </span>
+            ) : (
+              <span key={i} className="block overflow-hidden whitespace-nowrap">
+                <span className="hero-regel block" style={vertraging}>{t}</span>
+              </span>
+            );
+          })}
+        </p>
 
-        <Reveal delay={0.3}>
+        <div className="hero-op" style={{ "--d": "0.3s" } as React.CSSProperties}>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-g200 [text-shadow:0_1px_12px_rgba(0,0,0,0.8)] md:text-xl">{hero.sub}</p>
-        </Reveal>
+        </div>
 
-        <Reveal delay={0.38}>
+        <div className="hero-op" style={{ "--d": "0.38s" } as React.CSSProperties}>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button href={cta.primaryHome.href} variant="primary" className="group">
               {cta.primaryHome.label}
@@ -62,7 +75,7 @@ export function Hero() {
             </Button>
           </div>
           <p className="mt-4 text-sm text-g400">{hero.ctaMicrocopy}</p>
-        </Reveal>
+        </div>
 
       </Container>
 
