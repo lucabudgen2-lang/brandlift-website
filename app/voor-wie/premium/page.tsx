@@ -13,7 +13,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { PremiumDetails } from "@/components/sections/PremiumDetails";
-import { cases, reviews, voorWie } from "@/lib/site";
+import { cases, reviews, voorWie, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/voor-wie/premium";
@@ -37,7 +37,7 @@ const crumbs = [
   { name: "Premium en visuele bedrijven", path: PATH },
 ];
 
-const heroChips = ["Sinds 2021", "Nederlands en Engels", "5,0 op Google", "Geen wachtlijst"];
+const heroChips = ["Sinds 2021", "Nederlands en Engels", `${reviewScore} op Google`, "Geen wachtlijst"];
 
 /* ── het probleem, premium-specifiek ── */
 const problemen = [

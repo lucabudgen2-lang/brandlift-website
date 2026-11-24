@@ -1,208 +1,121 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroHeadline } from "@/components/sections/HeroHeadline";
-import { site, hero, cta } from "@/lib/site";
+import { HeroWand } from "@/components/sections/HeroWand";
+import { hero, cta, reviews } from "@/lib/site";
 
-function BenefitIcon({ name }: { name: string }) {
-  const common = {
-    width: 18,
-    height: 18,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 2,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-  };
-  if (name === "search")
-    return (
-      <svg {...common}>
-        <circle cx="11" cy="11" r="7" />
-        <path d="m21 21-4.3-4.3" />
-      </svg>
-    );
-  if (name === "shield")
-    return (
-      <svg {...common}>
-        <path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z" />
-        <path d="m9 12 2 2 4-4" />
-      </svg>
-    );
+function Sterren() {
   return (
-    <svg {...common}>
-      <path d="M3 17l6-6 4 4 7-7" />
-      <path d="M17 8h4v4" />
-    </svg>
+    <span className="flex gap-0.5 text-[#FBBC05]" aria-hidden>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.8 6.1 20.2l1.2-6.6L2.5 9l6.6-.9L12 2z" />
+        </svg>
+      ))}
+    </span>
   );
 }
 
-/* BL-01 · HERO — wider promise column; one big real-work mockup with the
-   deliverables listed to its right. */
+/* BL-01 · HERO - gecentreerd, op een wand van echt werk.
+   De wand (HeroWand) is de achtergrond: websites, merkboeken, drukwerk en
+   stills van eigen klanten. De tekst staat in een donkere kern in het
+   midden, zodat hij op elk punt van de animatie leesbaar blijft. */
 export function Hero() {
-  const { showcase } = hero;
+  const rating = reviews.rating.toFixed(1).replace(".", ",");
 
   return (
-    <section className="relative overflow-hidden bg-s0">
-      {/* photographic backdrop — office scene, cooled into the brand duotone */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
-        <Image
-          src="/images/hero-luca.jpg"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[68%_28%]"
+    <section className="relative isolate flex min-h-[min(100svh,1000px)] flex-col overflow-hidden bg-s0">
+      <HeroWand />
+
+      <Container className="relative flex flex-1 flex-col items-center justify-start pb-12 pt-16 text-center md:pb-14 md:pt-20">
+        {/* De H1 is de zoekregel; de slogan eronder is visueel de kop maar een <p>. */}
+        <Reveal>
+          <h1 className="mx-auto max-w-[62rem] font-display text-[clamp(0.85rem,1.35vw,1.05rem)] font-extrabold uppercase leading-snug tracking-[0.05em] [text-wrap:balance] text-paper">
+            <span>
+              Webdesignbureau in{" "}
+              <span className="inline-block chamf-sm bg-blue px-2 py-0.5 text-white shadow-[0_8px_24px_-8px_rgba(1,48,253,0.9)]">Den Haag</span>{" "}
+              dat je meer aanvragen oplevert
+            </span>
+          </h1>
+        </Reveal>
+
+        <HeroHeadline
+          center
+          lines={hero.sloganLines}
+          className="mt-7 font-display text-[clamp(1.95rem,8.2vw,5.2rem)] font-extrabold leading-[1.08] tracking-tight text-paper"
         />
-        {/* blue duotone tint (huisstijl §06: blauwe duotoon voor niet-projectbeeld) */}
-        <div className="absolute inset-0 bg-blue-deep/30 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-s0/15" />
-        {/* readability: heavy left, open right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-s0 via-s0/70 to-s0/10" />
-        {/* ground into the page: fade to black at base + settle under nav */}
-        <div className="absolute inset-0 bg-gradient-to-t from-s0 via-transparent to-s0/55" />
-      </div>
 
-      {/* "de lift" — diagonal voltage beams rising at the chamfer angle */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -bottom-[35%] left-[2%] h-[170%] w-56 rotate-[24deg]">
-          <div className="animate-beam-slow h-full w-full bg-gradient-to-r from-transparent via-blue/[0.13] to-transparent blur-2xl" />
-        </div>
-        <div className="absolute -bottom-[35%] left-[30%] h-[170%] w-10 rotate-[24deg]">
-          <div className="animate-beam h-full w-full bg-gradient-to-r from-transparent via-blue-text/[0.16] to-transparent" />
-        </div>
-        <div className="absolute -bottom-[35%] left-[31.5%] h-[170%] w-px rotate-[24deg] bg-gradient-to-b from-transparent via-blue-text/25 to-transparent" />
-        <div className="absolute -bottom-[35%] right-[6%] h-[170%] w-80 rotate-[24deg]">
-          <div className="animate-beam-slow h-full w-full bg-gradient-to-r from-transparent via-blue/[0.09] to-transparent blur-3xl" />
-        </div>
-      </div>
-      <div className="animate-glow pointer-events-none absolute -top-44 right-[-12%] h-[560px] w-[560px] rounded-full bg-blue/25 blur-[150px]" />
+        <Reveal delay={0.3}>
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-g200 [text-shadow:0_1px_12px_rgba(0,0,0,0.8)] md:text-xl">{hero.sub}</p>
+        </Reveal>
 
-      <Container className="relative grid items-center gap-12 pb-10 pt-20 md:pb-14 md:pt-24 lg:grid-cols-[1.18fr_0.82fr] lg:gap-16 lg:pb-16 lg:pt-28">
-        {/* ── left: the promise ── */}
-        <div>
-          {/* De H1 zit in de eyebrow-badge: semantisch de kop van de pagina,
-              visueel de kleine regel. De slogan eronder is groot maar een <p>. */}
-          <Reveal>
-            {/* Geen flex: de stip stond als los flex-item op zijn eigen regel
-                zodra de tekst op smalle schermen omsloeg. Nu is de stip een
-                inline-block "eerste woord" dat gewoon meewrapt, en is de h1
-                zelf inline-BLOCK - niet inline, want dan knipt de rand per
-                tekstregel in losse stukjes. */}
-            <h1 className="inline-block chamf-sm border border-[var(--color-line-strong)] bg-s1/60 px-4 py-2.5 text-[0.68rem] font-bold uppercase leading-relaxed tracking-[0.09em] text-g100 backdrop-blur-sm sm:text-[0.78rem]">
-              <span
-                aria-hidden
-                className="mr-2.5 inline-block h-3 w-3 -translate-y-[1px] chamf-sm bg-blue align-middle shadow-[0_0_10px_rgba(1,48,253,0.7)]"
-              />
-              Webdesignbureau in <span className="text-blue-text">Den Haag</span> dat je meer
-              aanvragen oplevert
-            </h1>
-          </Reveal>
+        <Reveal delay={0.38}>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Button href={cta.primaryHome.href} variant="primary" className="group">
+              {cta.primaryHome.label}
+            </Button>
+            <Button href={cta.secondary.href} variant="secondary" className="group">
+              {cta.secondary.label}
+            </Button>
+          </div>
+          <p className="mt-4 text-sm text-g400">{hero.ctaMicrocopy}</p>
+        </Reveal>
 
-          <HeroHeadline
-            lines={hero.sloganLines}
-            className="mt-5 font-display text-[clamp(1.85rem,5.2vw,3.7rem)] font-extrabold leading-[1.16]"
-          />
-
-          <Reveal delay={0.3}>
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-g300">{hero.sub}</p>
-          </Reveal>
-
-          <Reveal delay={0.38}>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href={cta.primaryHome.href} variant="primary" className="group">
-                {cta.primaryHome.label}
-              </Button>
-              <Button href={cta.secondary.href} variant="secondary" className="group">
-                {cta.secondary.label}
-              </Button>
-            </div>
-            <p className="mt-4 text-sm text-g500">
-              {hero.ctaMicrocopy}
-            </p>
-          </Reveal>
-
-          {/* 3 benefits with icons - one line */}
-          <Reveal delay={0.46}>
-            <ul className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-[var(--color-line)] pt-6 sm:flex-nowrap">
-              {hero.benefits.map((b) => (
-                <li key={b.label} className="flex items-center gap-2.5">
-                  <span className="grid h-8 w-8 shrink-0 place-items-center chamf-sm border border-[var(--color-line-strong)] bg-s1 text-blue-text">
-                    <BenefitIcon name={b.icon} />
-                  </span>
-                  <span className="whitespace-nowrap text-sm font-medium text-g300">{b.label}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          {/* founder — direct-contact trust chip */}
-          <Reveal delay={0.52}>
-            <a href="#over" className="group mt-6 inline-flex items-center gap-3">
-              <span className="block h-24 w-24 shrink-0 overflow-hidden chamf-sm border border-blue/50 bg-gradient-to-b from-s2 to-s0 shadow-[0_6px_20px_-6px_rgba(1,48,253,0.6)]">
-                <Image
-                  src="/images/portrait-luca-chip.jpg"
-                  alt="Luca Budgen, oprichter van Brandlift"
-                  width={200}
-                  height={200}
-                  className="h-full w-full object-cover object-center"
-                />
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-sm text-g300 transition-colors group-hover:text-paper">
-                <span>
-                  Direct contact met <span className="font-semibold text-paper">Luca</span>, oprichter
-                </span>
-                <span className="-translate-x-1 text-blue-text opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100">
-                  →
-                </span>
-              </span>
-            </a>
-          </Reveal>
-        </div>
-
-        {/* ── right: the project + its result, given all the room ── */}
-        <div className="relative flex items-center justify-center">
-          <div className="animate-glow pointer-events-none absolute right-0 top-1/3 h-[480px] w-[480px] rounded-full bg-blue/25 blur-[130px]" />
-
-          <Reveal delay={0.2} className="w-full">
-            <div className="animate-float relative lg:ml-6 lg:scale-[1.18] xl:ml-10 xl:scale-[1.28]">
-              <div className="chamf chamf-lg overflow-hidden border border-[var(--color-line-strong)] bg-s2 shadow-[0_44px_100px_-40px_rgba(1,48,253,0.5)]">
-                {/* `loading="eager"` en niet `priority`. Op mobiel staat deze
-                    mockup onder de vouw - gemeten op 375px valt hij buiten
-                    het scherm - terwijl `priority` een preload met hoge
-                    prioriteit afdwingt. Hij vocht daarmee om bandbreedte met
-                    de achtergrondfoto van de hero, die wél het grootste
-                    element boven de vouw is en dus het LCP-element. Eager
-                    houdt hem op desktop direct laden zonder die voorrang. */}
-                <Image
-                  src="/images/hero-eyk.jpg"
-                  alt="Rebranding en website door Brandlift voor Hovenier Eykelenboom - laptop en merkgids"
-                  width={1254}
-                  height={1254}
-                  loading="eager"
-                  sizes="(max-width: 1024px) 92vw, 46vw"
-                  className="block w-full"
-                />
-              </div>
-              <span className="absolute left-4 top-4 chamf-sm bg-s0/80 px-3 py-1.5 font-semibold text-[0.58rem] uppercase tracking-[0.08em] text-g300 backdrop-blur-sm">
-                {showcase.label}
-              </span>
-              <div className="absolute -bottom-5 left-3 chamf-sm bg-blue px-5 py-3 shadow-[0_16px_40px_-12px_rgba(1,48,253,0.7)]">
-                <div className="font-semibold text-[0.55rem] uppercase tracking-[0.08em] text-white/70">
-                  Resultaat
-                </div>
-                <div className="mt-0.5 flex items-baseline gap-2 font-display font-extrabold text-white">
-                  <span className="text-xl">{showcase.stat.from}</span>
-                  <span className="text-white/60">→</span>
-                  <span className="text-3xl">{showcase.stat.to}</span>
-                  <span className="text-[0.7rem] font-semibold text-white/85">{showcase.stat.unit}</span>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
       </Container>
+
+      {/* onderbalk: wie je spreekt, wiens werk je ziet, wat klanten zeggen */}
+      <div className="relative border-t border-[var(--color-line)] bg-s0/75 backdrop-blur-md">
+        <Container className="grid items-center gap-4 py-3.5 md:grid-cols-[auto_1fr_auto] md:gap-8">
+          <div className="flex items-center justify-between gap-6 md:contents">
+            <div className="md:order-1">
+              <a href="#over" className="group flex items-center gap-3">
+                <span className="block h-11 w-11 shrink-0 overflow-hidden chamf-sm border border-blue/50">
+                  <Image
+                    src="/images/portrait-luca-chip.jpg"
+                    alt="Luca Budgen, oprichter van Brandlift"
+                    width={88}
+                    height={88}
+                    className="h-full w-full object-cover"
+                  />
+                </span>
+                <span className="text-left text-sm leading-snug text-g300 transition-colors group-hover:text-paper">
+                  Direct contact met
+                  <span className="block whitespace-nowrap font-semibold text-paper">Luca, oprichter</span>
+                </span>
+              </a>
+            </div>
+            <div className="md:order-3">
+              <a href="#reviews" className="group flex items-center gap-3">
+                <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden>
+                  <path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-1.9 3.3-4.8 3.3-8z" />
+                  <path fill="#34A853" d="M12 23c3 0 5.5-1 7.3-2.7l-3.6-2.7c-1 .7-2.2 1-3.7 1-2.9 0-5.3-1.9-6.2-4.5H2.1v2.8A11 11 0 0 0 12 23z" />
+                  <path fill="#FBBC05" d="M5.8 14.1a6.6 6.6 0 0 1 0-4.2V7.1H2.1a11 11 0 0 0 0 9.8l3.7-2.8z" />
+                  <path fill="#EA4335" d="M12 5.4c1.6 0 3.1.6 4.2 1.6l3.2-3.2A11 11 0 0 0 2.1 7.1l3.7 2.8C6.7 7.3 9.1 5.4 12 5.4z" />
+                </svg>
+                <span className="text-left text-sm leading-snug">
+                  <span className="flex items-center gap-2 font-semibold text-paper">
+                    {rating} <Sterren />
+                  </span>
+                  <span className="block whitespace-nowrap text-g400 transition-colors group-hover:text-paper">
+                    {reviews.count} reviews op {reviews.source}
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <p className="text-center text-[0.8rem] text-g400 md:order-2">
+            <span className="font-mono text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-g500">Op de achtergrond</span>
+            <span className="mx-2.5 inline-block h-1 w-1 -translate-y-[2px] chamf-sm bg-blue-text/60" aria-hidden />
+            websites die we bouwden, live en in de maak.{" "}
+            <Link href="/cases" className="whitespace-nowrap font-semibold text-blue-text hover:underline">
+              Bekijk de cases →
+            </Link>
+          </p>
+        </Container>
+      </div>
     </section>
   );
 }

@@ -13,7 +13,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { LokaleSeoScope } from "@/components/sections/LokaleSeoScope";
-import { caseEykelenboom, reviews } from "@/lib/site";
+import { caseEykelenboom, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/diensten/lokale-seo";
@@ -32,7 +32,7 @@ const crumbs = [
   { name: "Lokale SEO", path: PATH },
 ];
 
-const heroChips = ["Sinds 2021", "Basis altijd inbegrepen", "5,0 op Google", "Geen wachtlijst"];
+const heroChips = ["Sinds 2021", "Basis altijd inbegrepen", `${reviewScore} op Google`, "Geen wachtlijst"];
 
 /* ── de vier lekken: probleem + het gevolg ── */
 const problemen = [
@@ -485,7 +485,7 @@ export default function Page() {
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-g700">
                   <span className="flex gap-0.5">{Array.from({ length: 5 }).map((_, s) => <MiniStar key={s} />)}</span>
-                  Beoordeeld met 5,0 op Google
+                  Beoordeeld met {reviewScore} op Google
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-g700">
                   <span className="h-1.5 w-1.5 chamf-sm bg-blue" /> Founder-led sinds 2021

@@ -359,7 +359,7 @@ export const cities: Record<string, CityData> = {
       mapSubtitle: "Websites vanuit Den Haag, voor heel Brainport",
     },
     carouselHeading: ["Eerder werk voor bedrijven", "die iets uit te leggen hadden."],
-    reviewsHeading: ["Acht klanten,", "acht keer vijf sterren."],
+    reviewsHeading: ["Wat klanten", "achteraf over ons zeggen."],
     reviewsStartAt: 3,
     faqHeading: "Kort, concreet, zonder omhaal.",
     faqs: [

@@ -8,7 +8,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { PhoneLink } from "@/components/ui/PhoneLink";
 import { FaqBlock } from "@/components/page/blocks";
 import { GroeigesprekForm } from "@/components/forms/GroeigesprekForm";
-import { site } from "@/lib/site";
+import { site, reviewScore } from "@/lib/site";
 import { contactSchema, faqSchema } from "@/lib/schema";
 
 const PATH = "/contact";
@@ -134,7 +134,7 @@ export default function Page() {
             </Reveal>
             <Reveal delay={0.2}>
               <ul className="mt-7 flex flex-wrap gap-2.5">
-                {["Reactie binnen 1 werkdag", "Geen wachtlijst", "5,0 op Google", "Sinds 2021"].map((c) => (
+                {["Reactie binnen 1 werkdag", "Geen wachtlijst", `${reviewScore} op Google`, "Sinds 2021"].map((c) => (
                   <li
                     key={c}
                     className="inline-flex items-center gap-2 chamf-sm border border-[var(--color-line-strong)] bg-s1/70 px-3.5 py-2 text-sm font-medium text-g100 backdrop-blur-sm"

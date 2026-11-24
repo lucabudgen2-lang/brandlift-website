@@ -14,7 +14,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { Methode } from "@/components/sections/Methode";
 import { Founder } from "@/components/sections/Founder";
 import { FinalCta } from "@/components/sections/FinalCta";
-import { caseEykelenboom, reviews, methode } from "@/lib/site";
+import { caseEykelenboom, reviews, methode, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/diensten/website-laten-maken";
@@ -33,7 +33,7 @@ const crumbs = [
   { name: "Website laten maken", path: PATH },
 ];
 
-const heroChips = ["Sinds 2021", "Lokale SEO inbegrepen", "Vanaf €1.500", "5,0 op Google"];
+const heroChips = ["Sinds 2021", "Lokale SEO inbegrepen", "Vanaf €1.500", `${reviewScore} op Google`];
 
 const inbegrepen = [
   "Strategie en positionering - eerst het doel, dan het ontwerp",

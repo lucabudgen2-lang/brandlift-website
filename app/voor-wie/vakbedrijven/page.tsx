@@ -13,7 +13,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { VakSelector } from "@/components/sections/VakSelector";
-import { caseEykelenboom, reviews, voorWie } from "@/lib/site";
+import { caseEykelenboom, reviews, voorWie, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/voor-wie/vakbedrijven";
@@ -32,7 +32,7 @@ const crumbs = [
   { name: "Vakbedrijven", path: PATH },
 ];
 
-const heroChips = ["Sinds 2021", "Gebouwd voor vakbedrijven", "5,0 op Google", "Geen wachtlijst"];
+const heroChips = ["Sinds 2021", "Gebouwd voor vakbedrijven", `${reviewScore} op Google`, "Geen wachtlijst"];
 
 /* de echte doelgroeplijst uit lib/site.ts */
 const vakLijst = voorWie.panels[0].items;

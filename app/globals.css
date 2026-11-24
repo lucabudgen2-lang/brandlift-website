@@ -266,6 +266,25 @@ body {
   animation: marquee var(--marquee-speed, 40s) linear infinite;
 }
 
+/* hero-wand: kolommen echt werk die eindeloos omhoog of omlaag schuiven.
+   Elke kolom bevat zijn tegels twee keer, dus -50% sluit naadloos aan.
+   Onder prefers-reduced-motion staat de wand stil (algemene regel). */
+@keyframes wand-schuif {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+.wand-kolom {
+  animation: wand-schuif var(--wand-snelheid, 80s) linear infinite;
+  will-change: transform;
+}
+.wand-kolom[data-richting="omlaag"] {
+  animation-direction: reverse;
+}
+
 /* slow vertical float — hero mockup */
 @keyframes float-y {
   0%,
