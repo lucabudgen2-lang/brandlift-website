@@ -98,6 +98,7 @@ export function Reviews({
   heading = ["Elke review is echt.", "Elke ster verdiend."],
   intro = "Woord voor woord overgenomen van ons Google Bedrijfsprofiel.",
   startAt = 0,
+  id,
 }: {
   tone?: "light" | "dark";
   eyebrow?: string;
@@ -107,6 +108,8 @@ export function Reviews({
      stadspagina's leidt elke stad met andere reviews, zodat zes pagina's
      niet met exact hetzelfde blok tekst openen. */
   startAt?: number;
+  /* anker, bv. "reviews" op de homepage (de hero linkt ernaar) */
+  id?: string;
 }) {
   const light = tone === "light";
   const reduce = useReducedMotion();
@@ -120,7 +123,7 @@ export function Reviews({
   const hasMore = rest.length > 0;
 
   return (
-    <section className={`relative overflow-hidden py-20 md:py-28 ${light ? "on-light" : "bg-s0"}`}>
+    <section id={id} className={`relative scroll-mt-24 overflow-hidden py-20 md:py-28 ${light ? "on-light" : "bg-s0"}`}>
       {!light && (
         <>
           <div className="pointer-events-none absolute inset-0 grid-lines opacity-25" />
@@ -184,7 +187,7 @@ export function Reviews({
               </Reveal>
             ))}
 
-            {/* the rest — revealed on demand, staggered */}
+            {/* the rest: revealed on demand, staggered */}
             <AnimatePresence initial={false}>
               {expanded &&
                 rest.map((r, i) => (
