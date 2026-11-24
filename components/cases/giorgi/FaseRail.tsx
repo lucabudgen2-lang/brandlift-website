@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fases } from "@/lib/cases/giorgi";
+import { fases as giorgiFases } from "@/lib/cases/giorgi";
+
+type Fase = { id: string; kort: string };
 
 /* ============================================================
    De voortgangsrail langs de acht fases.
@@ -17,7 +19,9 @@ import { fases } from "@/lib/cases/giorgi";
    hangen en korte worden niet overgeslagen.
    ============================================================ */
 
-export function FaseRail() {
+/* `fases` is optioneel: zonder prop toont hij de Giorgi-fases, zodat
+   die pagina ongewijzigd blijft. Andere cases geven hun eigen lijst. */
+export function FaseRail({ fases = giorgiFases }: { fases?: readonly Fase[] }) {
   const [actief, setActief] = useState<string | null>(null);
   const [zichtbaar, setZichtbaar] = useState(false);
 
@@ -39,7 +43,7 @@ export function FaseRail() {
       window.removeEventListener("scroll", bereken);
       window.removeEventListener("resize", bereken);
     };
-  }, []);
+  }, [fases]);
 
   const index = fases.findIndex((f) => f.id === actief);
 

@@ -23,7 +23,7 @@ export function isMega(item: NavItem): item is MegaItem {
   return "key" in item;
 }
 
-/* founder spotlight — the constant left rail of every mega panel */
+/* founder spotlight: the constant left rail of every mega panel */
 export const megaSpotlight = {
   name: "Luca Budgen",
   role: "Oprichter",
@@ -63,6 +63,7 @@ export const megaNav: NavItem[] = [
     href: "/cases",
     overview: "Alle cases",
     pages: [
+      { label: "Van Esch Gevelrestauratie", href: "/cases/van-esch-gevelrestauratie", desc: "Gevelrestauratie / monumenten" },
       { label: "Hovenier Eykelenboom", href: "/cases/hovenier-eykelenboom", desc: "Hoveniers / groenvoorziening" },
       { label: "Giorgi & The Gents", href: "/cases/giorgi-and-the-gents", desc: "Live muziek / bruiloften en bedrijfsfeesten" },
       { label: "Voorbeelden", href: "/voorbeelden", desc: "Meer websites die we bouwden" },

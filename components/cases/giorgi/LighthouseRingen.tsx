@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { lighthouse } from "@/lib/cases/giorgi";
+import { lighthouse as giorgiLighthouse } from "@/lib/cases/giorgi";
+
+type Meting = { performance: number; accessibility: number; bestPractices: number; seo: number; lcp: string; cls: string; tbt: string };
+type Lighthouse = { gemeten: string; desktop: Meting; mobiel: Meting };
 
 /* ============================================================
    Lighthouse-scores van de live homepage - desktop en mobiel.
@@ -52,7 +55,7 @@ function Ring({ score, label, delay }: { score: number; label: string; delay: nu
   );
 }
 
-export function LighthouseRingen() {
+export function LighthouseRingen({ lighthouse = giorgiLighthouse }: { lighthouse?: Lighthouse }) {
   const [apparaat, setApparaat] = useState<"desktop" | "mobiel">("desktop");
   const d = lighthouse[apparaat];
 

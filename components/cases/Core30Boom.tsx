@@ -4,8 +4,8 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 /* ============================================================
-   CORE 30 · EYKELENBOOM — de sitestructuur als uitklapbare boom.
-   Principe overgenomen van het Hometown Heroes-diagram (verticale
+   CORE 30 · EYKELENBOOM: de sitestructuur als uitklapbare boom.
+   Principe overgenomen van een eerder diagram (verticale
    stam, tiers, chips die in-place uitklappen), vertaald naar het
    Brandlift-blauwdruksysteem: chamfer-chips, voltage-blauw, s-lagen.
 

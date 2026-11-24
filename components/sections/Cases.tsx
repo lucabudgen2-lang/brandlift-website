@@ -47,7 +47,14 @@ export function Cases({
 
         {/* Drie kolommen bij een drievoud, anders twee: met vier cases zou een
             raster van drie één losse kaart op een eigen rij laten staan. */}
-        <div className={`${showHeader ? "mt-14" : ""} grid gap-6 md:grid-cols-2 lg:gap-7 ${cases.length % 3 === 0 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
+        {/* Rasterkeuze naar aantal, zodat er nooit één kaart alleen op een rij
+            staat: 3, 6 → drie kolommen; 5 → twee grote en drie kleine
+            (zes-koloms raster); anders twee kolommen. */}
+        <div
+          className={`${showHeader ? "mt-14" : ""} grid gap-6 md:grid-cols-2 lg:gap-7 ${
+            cases.length === 5 ? "lg:grid-cols-6" : cases.length % 3 === 0 ? "lg:grid-cols-3" : "lg:grid-cols-2"
+          }`}
+        >
           {cases.map((c, i) => {
             const photo = "photo" in c ? (c.photo as string) : null;
             /* Niet elke klant heeft een casepagina - RotorSwing bijvoorbeeld
@@ -57,7 +64,11 @@ export function Cases({
             const Card: ElementType = href ? Link : "div";
             const cardHref = href ? { href } : {};
             return (
-              <Reveal key={c.id} delay={(i % 3) * 0.08} className="h-full">
+              <Reveal
+                key={c.id}
+                delay={(i % 3) * 0.08}
+                className={`h-full ${cases.length === 5 ? (i === 0 ? "md:col-span-2 lg:col-span-3" : i === 1 ? "lg:col-span-3" : "lg:col-span-2") : ""}`}
+              >
                 <Card
                   {...cardHref}
                   className="group flex h-full flex-col overflow-hidden chamf chamf-lg border border-black/10 bg-paper shadow-[0_20px_50px_-30px_rgba(0,0,0,0.35)] transition-all duration-300 ease-[var(--ease-brand)] hover:-translate-y-1.5 hover:shadow-[0_34px_70px_-32px_rgba(1,48,253,0.4)]"

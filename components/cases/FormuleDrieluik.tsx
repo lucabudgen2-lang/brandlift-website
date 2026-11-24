@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 /* ============================================================
-   DE FORMULE — Verkeer · Vertrouwen · Conversie.
+   DE FORMULE: Verkeer · Vertrouwen · Conversie.
    Drie pijlers waar elke oplevering in dit traject onder valt.
    Interactief drieluik: kies een pijler, zie wat die betekent en
    wat er in DIT project concreet voor is gebouwd. Alle punten

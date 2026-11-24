@@ -34,7 +34,7 @@ const ROUTES = [
   "/website-laten-maken-den-haag", "/website-laten-maken-rotterdam",
   "/website-laten-maken-eindhoven", "/website-laten-maken-utrecht",
   "/website-laten-maken-amsterdam", "/website-laten-maken-delft",
-  "/seo-den-haag", "/cases", "/cases/hovenier-eykelenboom", "/cases/giorgi-and-the-gents", "/voorbeelden",
+  "/seo-den-haag", "/cases", "/cases/hovenier-eykelenboom", "/cases/giorgi-and-the-gents", "/cases/van-esch-gevelrestauratie", "/voorbeelden",
   "/voor-wie", "/voor-wie/vakbedrijven", "/voor-wie/premium",
   "/werkwijze", "/over-brandlift", "/contact",
   "/kennisbank", "/kennisbank/wat-kost-een-website-laten-maken",

@@ -9,7 +9,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LineReveal } from "@/components/ui/LineReveal";
 
 /* ============================================================
-   FOTOGRAFIE — de shoot op locatie, met vergrootbare galerij.
+   FOTOGRAFIE: de shoot op locatie, met vergrootbare galerij.
 
    Acht foto's uit de shoot, geselecteerd uit 31 opnamen. Staat er
    ooit een foto bij zonder `src`, dan valt de tegel netjes terug op

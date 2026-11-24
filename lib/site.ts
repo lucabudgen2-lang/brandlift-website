@@ -320,6 +320,28 @@ export const casesHead = {
 
 export const cases = [
   {
+    id: "van-esch",
+    client: "R. van Esch Gevelrestauratie",
+    sector: "Gevelrestauratie / monumenten",
+    challenge: "Marktleider op zijn vak, maar onvindbaar op zijn specialisme: scheurherstel en knipvoeg.",
+    direction: "Onderzoek, merkboek, Google-profiel en twintig pagina's die het vak uitleggen, met zijn eigen foto's.",
+    href: "/cases/van-esch-gevelrestauratie",
+    logo: "/logos/vanesch.png",
+    url: "vaneschgevelrestauratie.nl",
+    photo: "/images/cases/vanesch/site-home.jpg",
+  },
+  {
+    id: "eykelenboom",
+    client: "Hovenier Eykelenboom",
+    sector: "Hoveniers / groenvoorziening",
+    challenge: "Vakwerk dat lokaal te weinig werd gevonden en te weinig aanvragen opleverde.",
+    direction: "Complete website met lokale SEO-structuur per dienst en werkgebied, gebouwd op vindbaarheid.",
+    href: "/cases/hovenier-eykelenboom",
+    logo: "/logos/eykelenboom.png",
+    url: "hoveniereykelenboom.nl",
+    photo: "/images/macbook-only-bigger.jpg",
+  },
+  {
     id: "rotorswing",
     client: "RotorSwing Holland",
     sector: "Maritiem / jachttechniek",
@@ -334,17 +356,6 @@ export const cases = [
        in plaats van een resultaat te suggereren dat er nog niet is. */
     comingSoon: true,
     comingSoonLabel: "Website binnenkort live",
-  },
-  {
-    id: "eykelenboom",
-    client: "Hovenier Eykelenboom",
-    sector: "Hoveniers / groenvoorziening",
-    challenge: "Vakwerk dat lokaal te weinig werd gevonden en te weinig aanvragen opleverde.",
-    direction: "Complete website met lokale SEO-structuur per dienst en werkgebied, gebouwd op vindbaarheid.",
-    href: "/cases/hovenier-eykelenboom",
-    logo: "/logos/eykelenboom.png",
-    url: "hoveniereykelenboom.nl",
-    photo: "/images/macbook-only-bigger.jpg",
   },
   {
     id: "giorgi",

@@ -20,17 +20,20 @@ export function VergelijkSlider({
   rechts,
   labelLinks,
   labelRechts,
+  ratio = "aspect-[5/2]",
 }: {
   links: { src: string; alt: string };
   rechts: { src: string; alt: string };
   labelLinks: string;
   labelRechts: string;
+  /* Tailwind-klasse voor de verhouding; beide beelden moeten hem delen. */
+  ratio?: string;
 }) {
   const [pos, setPos] = useState(50);
 
   return (
     <div className="relative select-none overflow-hidden chamf chamf-lg border border-ink/10 has-[input:focus-visible]:ring-2 has-[input:focus-visible]:ring-blue shadow-[0_40px_90px_-45px_rgba(0,0,0,0.55)]">
-      <div className="relative aspect-[5/2]">
+      <div className={`relative ${ratio}`}>
         <Image src={rechts.src} alt={rechts.alt} fill sizes="(max-width: 1200px) 94vw, 1100px" className="object-cover" />
         <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
           <Image src={links.src} alt={links.alt} fill sizes="(max-width: 1200px) 94vw, 1100px" className="object-cover" />

@@ -3,7 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { merkPaginas } from "@/lib/cases/giorgi";
+import { merkPaginas as giorgiPaginas } from "@/lib/cases/giorgi";
+
+type Pagina = { src: string; alt: string; caption: string };
 
 /* ============================================================
    Het merkboek, pagina voor pagina - met een vergroting.
@@ -14,7 +16,9 @@ import { merkPaginas } from "@/lib/cases/giorgi";
    tegel waarmee je hem opende.
    ============================================================ */
 
-export function MerkboekGalerij() {
+/* `paginas` is optioneel: zonder prop de Giorgi-pagina's. Alle
+   pagina's moeten A4 liggend zijn (1600 x 1131). */
+export function MerkboekGalerij({ paginas: merkPaginas = giorgiPaginas }: { paginas?: readonly Pagina[] } = {}) {
   const [open, setOpen] = useState<number | null>(null);
   const reduce = useReducedMotion();
   const tegels = useRef<(HTMLButtonElement | null)[]>([]);
@@ -27,7 +31,7 @@ export function MerkboekGalerij() {
       return null;
     });
   }, []);
-  const stap = useCallback((d: number) => setOpen((o) => (o === null ? o : (o + d + merkPaginas.length) % merkPaginas.length)), []);
+  const stap = useCallback((d: number) => setOpen((o) => (o === null ? o : (o + d + merkPaginas.length) % merkPaginas.length)), [merkPaginas.length]);
 
   useEffect(() => {
     if (open === null) {
@@ -129,7 +133,7 @@ function Tegel({
   onOpen,
   refFn,
 }: {
-  p: (typeof merkPaginas)[number];
+  p: Pagina;
   index: number;
   groot?: boolean;
   onOpen: (i: number) => void;
