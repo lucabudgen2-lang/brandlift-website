@@ -65,7 +65,7 @@ function VideoVolgt() {
         </span>
         <p className="mt-5 text-[0.66rem] font-bold uppercase tracking-[0.14em] text-[#FF8F87]">Video · volgt binnenkort</p>
         <p className="mt-2 max-w-sm font-display text-xl font-extrabold leading-tight text-white sm:text-2xl">
-          Rudy vertelt zelf hoe het traject ging.
+          Rudy over het traject, in zijn eigen woorden.
         </p>
       </div>
     </div>

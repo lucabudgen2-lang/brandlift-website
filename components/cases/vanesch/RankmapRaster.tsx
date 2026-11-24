@@ -63,7 +63,7 @@ export function RankmapRaster() {
                   className={`relative grid aspect-square place-items-center chamf-sm border font-display text-[0.8rem] font-extrabold tabular-nums sm:text-sm ${c.fg} ${c.rand} ${midden ? "ring-2 ring-[#EF4036] ring-offset-2 ring-offset-s1" : ""}`}
                   style={{ background: c.bg }}
                 >
-                  {p === 0 ? "·" : p === 15 ? "10+" : p}
+                  {p === 0 ? "·" : p === 15 ? "11+" : p}
                 </motion.div>
               );
             })}
@@ -95,7 +95,7 @@ export function RankmapRaster() {
             {[
               { p: 2, l: "Top 3: in het kaartje bovenaan" },
               { p: 6, l: "Plek 4 tot 10" },
-              { p: 15, l: "Plek 10 tot 20" },
+              { p: 15, l: "Plek 11 tot 20" },
               { p: 0, l: "Niet in de top 20" },
             ].map((x) => (
               <li key={x.l} className="flex items-center gap-2.5">

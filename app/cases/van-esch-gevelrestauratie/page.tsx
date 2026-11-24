@@ -168,8 +168,9 @@ export default function Page() {
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-g600">
                   Rudy stond als jongen al in de vakanties op de bouw, in het voegbedrijf van zijn vader. Sinds 2005
                   heeft hij zijn eigen bedrijf. Hij werkt aan oude, vaak monumentale gevels: scheurherstel, knip- en
-                  snijvoegwerk, patineren en bijkleuren, en complete restauraties. Van de Sint-Jan in Den Bosch en de
-                  Domkerk in Utrecht tot kastelen en langgevelboerderijen in Brabant.
+                  snijvoegwerk, patineren en bijkleuren, en complete restauraties. Hij werkte aan de Sint-Jan in Den
+                  Bosch en de Domkerk in Utrecht; tegenwoordig kiest hij het liefst voor oude woonhuizen en
+                  boerderijen in Brabant.
                 </p>
               </Reveal>
               <Reveal delay={0.18}>
@@ -230,13 +231,13 @@ export default function Page() {
               </Reveal>
               <Reveal delay={0.08}>
                 <h3 className="mt-5 font-display text-2xl font-extrabold leading-tight tracking-tight text-ink sm:text-3xl">
-                  Elk gebouw in zijn logo is ook een klus van hem.
+                  Elk gebouwtype in zijn logo is ook een klus van hem.
                 </h3>
               </Reveal>
               <Reveal delay={0.12}>
                 <p className="mt-4 text-[1.02rem] leading-relaxed text-g600">
                   Bij het ontleden van Rudy&apos;s logo uit 2016 viel ons iets op. De toren, de molen, de kerktoren en
-                  de gevels in het rode silhouet zijn precies de gebouwen waar hij aan werkt. Voor elk type vonden we
+                  de gevels in het rode silhouet zijn precies de soorten gebouwen waar hij aan werkt. Voor elk type vonden we
                   een eigen klus. Beweeg over het silhouet of tik op een gebouw.
                 </p>
               </Reveal>
@@ -263,13 +264,13 @@ export default function Page() {
               <LineReveal
                 as="h2"
                 className="mt-5 text-3xl leading-[1.06] sm:text-4xl lg:text-[2.8rem]"
-                lines={[{ text: "Op zijn vak de sterkste." }, { text: "Op zijn specialisme onvindbaar.", className: "text-blue-text" }]}
+                lines={[{ text: "Gevonden op zijn vak." }, { text: "Niet op zijn specialisme.", className: "text-blue-text" }]}
               />
               <Reveal delay={0.14}>
                 <p className="mt-6 max-w-lg text-lg leading-relaxed text-g300">
                   Rudy&apos;s oude site was in de loop der jaren gegroeid tot 52 pagina&apos;s, maar Google liet er maar
                   een stuk of tien van zien. Veel pagina&apos;s hadden een paar zinnen tekst, vier gingen over hetzelfde
-                  onderwerp, en op een telefoon was de site lastig te lezen. Zijn Google-profiel noemde geen enkele
+                  onderwerp, en de titels waren lijsten met zoekwoorden. Zijn Google-profiel noemde geen enkele
                   dienst.
                 </p>
               </Reveal>
@@ -409,13 +410,13 @@ export default function Page() {
             <LineReveal
               as="h2"
               className="mt-5 text-3xl leading-[1.06] sm:text-4xl lg:text-[2.7rem]"
-              lines={[{ text: "Eén keer vertellen," }, { text: "daarna niet meer.", className: "text-g600" }]}
+              lines={[{ text: "Eén formulier," }, { text: "al half ingevuld.", className: "text-g600" }]}
             />
             <Reveal delay={0.12}>
               <p className="mt-6 text-lg leading-relaxed text-g600">
                 Na het akkoord kreeg Rudy één formulier in negentien delen: zijn verhaal, zijn vakkennis, zijn
-                klanten, zijn werkwijze en zijn projecten. Wat we al uit de gesprekken wisten, stond er al in; hij
-                hoefde alleen te bevestigen of aan te vullen. Zijn foto&apos;s zette hij in een gedeelde map, met een
+                klanten, zijn werkwijze en zijn projecten. Wat we al uit de gesprekken wisten, stond er al in, zodat
+                hij dat niet opnieuw hoefde te typen. Zijn foto&apos;s zette hij in een gedeelde map, met een
                 eigen map per project.
               </p>
             </Reveal>
@@ -464,7 +465,7 @@ export default function Page() {
             <LineReveal
               as="h2"
               className="mt-5 text-3xl leading-[1.06] sm:text-4xl lg:text-[2.8rem]"
-              lines={[{ text: "Bovenaan op zijn vak." }, { text: "Nergens op zijn specialisme.", className: "text-blue-text" }]}
+              lines={[{ text: "Top 3 op zijn vak." }, { text: "Nergens op zijn specialisme.", className: "text-blue-text" }]}
             />
             <Reveal delay={0.12}>
               <p className="mt-6 text-lg leading-relaxed text-g300">
@@ -516,8 +517,8 @@ export default function Page() {
                 <p className="mt-4 text-[1.02rem] leading-relaxed text-g300">
                   Op &ldquo;voegbedrijf&rdquo; wordt bijna vijf keer zo vaak gezocht als op
                   &ldquo;gevelrestauratie&rdquo;. Een bureau dat alleen naar volume kijkt, had Rudy daarop gezet. Maar
-                  Rudy wil juist niet gevonden worden als voegbedrijf, en de data gaf hem gelijk: wie zo zoekt, heeft
-                  meestal een huis dat niet oud genoeg is.
+                  Rudy wil juist niet gevonden worden als voegbedrijf, en de zoekresultaten gaven hem gelijk: daar
+                  staan vooral voegers voor nieuwbouw en renovatie.
                 </p>
               </Reveal>
             </div>
@@ -610,8 +611,8 @@ export default function Page() {
               <p className="mt-6 text-lg leading-relaxed text-g300">
                 Rudy&apos;s logo uit 2016 bleef, zo hadden we afgesproken. Maar een logo is nog geen huisstijl. We
                 hebben het originele vectorbestand ontleed en gemeten, en daaruit een merkboek van 28 pagina&apos;s
-                gemaakt: kleur, letter, vormen, beeld, toon en toepassingen. Pas toen dat vaststond, begon het
-                ontwerp van de site.
+                gemaakt: kleur, letter, vormen, beeld, toon en toepassingen. Het ontwerp van de site is erop
+                gebouwd.
               </p>
             </Reveal>
           </div>
@@ -666,7 +667,7 @@ export default function Page() {
 
           <Reveal delay={0.1}>
             <p className="mt-10 max-w-2xl text-[1rem] leading-relaxed text-g400">
-              Het merkboek is van Rudy. Hij gebruikt het voor alles wat nog komt: drukwerk, kleding, de bus.{" "}
+              Het merkboek hoort bij de oplevering en is van Rudy, met het logo, de kleuren en de letters op één plek.{" "}
               <Link href="/diensten/branding" className="font-semibold text-blue-text hover:underline">
                 Meer over branding bij Brandlift
               </Link>
@@ -722,11 +723,11 @@ export default function Page() {
           <div className="mt-20">
             <div className="max-w-2xl">
               <Reveal>
-                <Eyebrow>Alleen voor Rudy ontworpen</Eyebrow>
+                <Eyebrow>Gemaakt op zijn werk</Eyebrow>
               </Reveal>
               <Reveal delay={0.08}>
                 <h3 className="mt-5 font-display text-2xl font-extrabold leading-tight tracking-tight text-ink sm:text-3xl">
-                  Vier onderdelen die je op geen andere site tegenkomt.
+                  Vier onderdelen die uit zijn vak komen.
                 </h3>
               </Reveal>
             </div>
@@ -767,16 +768,16 @@ export default function Page() {
               />
               <Reveal delay={0.12}>
                 <p className="mt-6 text-lg leading-relaxed text-g300">
-                  Elke dienst kreeg een eigen pagina, met een tekst die het vak uitlegt zoals Rudy het aan een klant
+                  Elke hoofddienst kreeg een eigen pagina, met een tekst die het vak uitlegt zoals Rudy het aan een klant
                   uitlegt: waarom kalk en geen cement, hoe een scheur met spiraalankers wordt hersteld, wanneer je een
                   vergunning nodig hebt. Rudy leest mee; schrijven doen wij.
                 </p>
               </Reveal>
               <Reveal delay={0.18}>
                 <p className="mt-4 text-lg leading-relaxed text-g300">
-                  Elke pagina is beoordeeld door een verse lezer die er niet aan had meegewerkt, op een vaste
-                  scorekaart. Pas bij een 9 of een 10 was een pagina klaar. Daarna de techniek: snelle pagina&apos;s,
-                  gestructureerde data, en een doorverwijzing voor elk van de 52 oude adressen.
+                  Elke pagina ging door een aparte controleronde met een vaste scorekaart. Pas bij een 9 of een 10
+                  was een pagina klaar. Daarna de techniek: snelle pagina&apos;s, gestructureerde data, en een
+                  doorverwijzing voor elk van de 52 adressen uit de oude sitemap.
                 </p>
               </Reveal>
             </div>
@@ -841,9 +842,9 @@ export default function Page() {
               <Reveal delay={0.12}>
                 <p className="text-lg leading-relaxed text-g600">
                   De overstap regelden we samen met zijn provider: zijn domein en e-mail bleven waar ze waren, alleen
-                  de site verhuisde. Op 18 november ging hij live. Oude links sturen door naar de nieuwe pagina&apos;s,
-                  en nieuwe Google-reviews komen voortaan vanzelf op de site. In de eerste week kwamen de eerste
-                  aanvragen via het nieuwe formulier binnen.
+                  de site verhuisde. Op 18 november ging hij live, en de adressen uit de oude sitemap sturen door naar
+                  de nieuwe pagina&apos;s. Aanvragen komen binnen via een formulier dat ook foto&apos;s van de gevel
+                  meestuurt.
                 </p>
               </Reveal>
               <Reveal delay={0.18}>
@@ -910,7 +911,7 @@ export default function Page() {
             {[
               {
                 kop: "Google kent je naam, niet je specialisme",
-                tekst: "Rudy stond bovenaan op zijn vak en nergens op zijn specialisme. Dat zien we vaker: het profiel en de site vertellen niet wat je precies doet.",
+                tekst: "Rudy werd gevonden op gevelrestauratie, maar niet op zijn specialisme. Dat zien we vaker: het profiel en de site vertellen niet wat je precies doet.",
               },
               {
                 kop: "Je wilt de juiste klussen",

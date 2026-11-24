@@ -93,7 +93,7 @@ export function ProfielSpiegel() {
                 >
                   <div className="border-t border-ink/[0.06] px-5 pb-6 pt-5 md:px-6">
                     <p className="text-[0.66rem] font-bold uppercase tracking-[0.12em] text-g600">
-                      Dienst in het profiel = eigen pagina op de site
+                      Diensten met een eigen pagina onder deze categorie
                     </p>
                     <ul className="mt-3 flex flex-wrap gap-2">
                       {s.diensten.map((d, k) => (

@@ -33,7 +33,7 @@ export const caseVanEsch = {
   metaTitle: "Case Van Esch Gevelrestauratie: website, merk en SEO",
   metaDescription:
     "Onderzoek, merkboek, Google-profiel en een website van 20 pagina's voor gevelrestaurateur Rudy van Esch uit Liempde. Het hele traject, stap voor stap.",
-  h1: "R. van Esch Gevelrestauratie: onzichtbaar restaureren, eindelijk zichtbaar online",
+  h1: "R. van Esch Gevelrestauratie: een website voor onzichtbaar vakwerk",
 } as const;
 
 export const kort = [
@@ -65,8 +65,8 @@ export const fases = [
   { id: "profiel", nr: "04", kort: "Google-profiel", titel: "Google-profiel en site", lijn: "Drie categorieën, drie pagina's: profiel en site spiegelen." },
   { id: "merkboek", nr: "05", kort: "Merkboek", titel: "Het merkboek", lijn: "Het logo uit 2016 ontleed, gemeten en vastgelegd." },
   { id: "ontwerp", nr: "06", kort: "Ontwerp", titel: "Website-ontwerp", lijn: "Zijn foto's doen het werk, de rest maakt ruimte." },
-  { id: "bouw", nr: "07", kort: "Teksten + bouw", titel: "Teksten en bouw", lijn: "Twintig pagina's, snel, en elke oude link komt aan." },
-  { id: "livegang", nr: "08", kort: "Livegang", titel: "Samenwerking en livegang", lijn: "Twee calls, één testversie, live op 18 november." },
+  { id: "bouw", nr: "07", kort: "Teksten + bouw", titel: "Teksten en bouw", lijn: "Twintig pagina's, snel en gebouwd om gevonden te worden." },
+  { id: "livegang", nr: "08", kort: "Livegang", titel: "Samenwerking en livegang", lijn: "Twee calls, een testversie, live op 18 november." },
 ] as const;
 
 /* ── Wie: de skyline uit het logo bestaat echt (merkboek spread 01) ──
@@ -89,22 +89,22 @@ export const oudeSite = [
 /* ── Stap 01 · analyse vóór het akkoord ── */
 export const analysePunten = [
   "Hoe zijn Google-profiel ervoor stond, met zijn eigen reviews erbij",
-  "Wat de oude site op een telefoon liet zien: geen aangepaste weergave en geen belknop",
+  "Hoe de oude site in elkaar zat: tientallen dunne pagina's en titels vol zoekwoorden",
   "Een homepageconcept in zijn eigen logo en kleuren, met zijn echte projecten",
 ] as const;
 
 /* ── Stap 02 · onboarding ── */
 export const onboardingStats = [
-  { n: "19", label: "delen, van bedrijfsgegevens tot beheeromgeving" },
+  { n: "19", label: "delen, van zijn verhaal tot zijn werkwijze" },
   { n: "31", label: "antwoorden vooraf ingevuld uit onze gesprekken" },
   { n: "16+", label: "projectmappen met foto's in een gedeelde map" },
-  { n: "1", label: "keer alles vertellen, daarna niet meer" },
+  { n: "4", label: "diensten op volgorde van belang, door Rudy zelf gekozen" },
 ] as const;
 
 /* Echte antwoorden uit het formulier en wat er op de site mee gebeurde. */
 export const onboardingKoppelingen = [
   { vraag: "Toon", antwoord: "“Mijn foto's moeten het meeste werk doen.”", landt: "Grote eigen projectfoto's op elke pagina, tekst in korte blokken eromheen" },
-  { vraag: "Wat liever niet", antwoord: "Alles van na de Tweede Wereldoorlog, behalve scheurherstel.", landt: "Teksten en formulier richten zich op gevels van vóór 1940; scheurherstel staat open voor elk bouwjaar" },
+  { vraag: "Wat liever niet", antwoord: "Alles van na de Tweede Wereldoorlog, behalve scheurherstel.", landt: "De teksten richten zich op gevels van vóór 1940; scheurherstel staat open voor elk bouwjaar" },
   { vraag: "Nooit", antwoord: "“Ik wil niet gevonden worden als voegbedrijf.”", landt: "Dat woord staat nergens op de site of in het profiel, ook al wordt er veel op gezocht" },
   { vraag: "Doel", antwoord: "“Onzichtbaar restaureren, dat is eigenlijk altijd mijn doel.”", landt: "De slogan in het merkboek en de grote kop van de homepage" },
 ] as const;
@@ -114,7 +114,7 @@ export const onderzoekStats = [
   { n: "49", label: "meetpunten in een raster van 30 bij 30 km rond Liempde" },
   { n: "661", label: "zoektermen met een maandvolume" },
   { n: "189", label: "bedrijven in de kaartresultaten vergeleken" },
-  { n: "700", label: "metingen, waarvan de belangrijkste twee keer" },
+  { n: "700", label: "opvragingen van zoek- en kaartdata" },
 ] as const;
 
 /* Rankmap 7×7 (N boven, W links, midden = Rudy's vestiging). Positie
@@ -127,7 +127,7 @@ export const rasters: Raster[] = [
     term: "gevelrestauratie",
     volume: 210,
     top3: "34,7%",
-    tekst: "Op zijn vak was Rudy al de sterkste van de regio: op 17 van de 49 punten in de top 3, en op elk punt zichtbaar. De nummer twee kwam niet verder dan 18,4%.",
+    tekst: "Op gevelrestauratie stond Rudy in de meting van oktober op 17 van de 49 punten in de top 3, en op elk punt in de top 20. De nummer twee kwam op 18,4%.",
     grid: [
       [P, P, P, P, P, P, 8],
       [P, 9, P, 6, 3, 6, 9],
@@ -142,7 +142,7 @@ export const rasters: Raster[] = [
     term: "voegwerk",
     volume: 590,
     top3: "6,1%",
-    tekst: "Op voegwerk alleen zichtbaar vlak rond Liempde zelf. Een paar kilometer verder verdween hij uit beeld.",
+    tekst: "Op voegwerk alleen in de top 3 vlak rond Liempde zelf. Verder weg zakte hij snel, en op bijna de helft van de punten stond hij niet in de top 20.",
     grid: [
       [0, 0, 0, 0, 0, 0, 0],
       [0, P, P, P, P, 0, 0],
@@ -243,20 +243,18 @@ export const merkPaginas = [
   { src: `${IMG}/merkboek-01.jpg`, alt: "Omslag van het merkboek van R. van Esch Gevelrestauratie met het logo en een boerderij met steiger", caption: "De omslag" },
   { src: `${IMG}/merkboek-05.jpg`, alt: "Merkboekpagina: elk gebouwtype uit het logo is ook een klus van Rudy, met vier projectfoto's", caption: "De skyline bestaat echt" },
   { src: `${IMG}/merkboek-07.jpg`, alt: "Merkboekpagina met het logo, ontleed in zeven genummerde vormen", caption: "Het logo, ontleed" },
-  { src: `${IMG}/merkboek-08.jpg`, alt: "Merkboekpagina met het bestaande drukwerk: visitekaartje, briefpapier en envelop", caption: "Wat er al was" },
   { src: `${IMG}/merkboek-12.jpg`, alt: "Merkboekpagina met negen kleuren, uit het logo en uit de muur", caption: "Kleur" },
   { src: `${IMG}/merkboek-15.jpg`, alt: "Merkboekpagina over de letters: Cormorant Garamond, Cinzel en Source Sans 3", caption: "Letter" },
   { src: `${IMG}/merkboek-17.jpg`, alt: "Merkboekpagina met zeven vormen uit het logo, elk met een vaste plek", caption: "Zeven vormen" },
   { src: `${IMG}/merkboek-20.jpg`, alt: "Merkboekpagina over beeld: eigen projectfoto's van dichtbij en van ver", caption: "Beeld" },
   { src: `${IMG}/merkboek-23.jpg`, alt: "Merkboekpagina met de vijf waarden die Rudy koos", caption: "Vijf waarden" },
-  { src: `${IMG}/merkboek-25.jpg`, alt: "Merkboekpagina met toepassingen: website, bus, kleding en drukwerk", caption: "Toepassingen" },
 ] as const;
 
 /* ── Stap 06 · ontwerp: elementen die alleen bij Rudy passen ── */
 export const eigenElementen = [
-  { kop: "De voor/na-schuif", tekst: "Op de scheurherstelpagina schuift u zelf tussen de scheur en het herstel. Het bewijs bij “nagenoeg onzichtbaar”, met zijn eigen foto's.", src: `${IMG}/site-voorna.jpg`, alt: "De voor/na-schuif op de scheurherstelpagina: links de gevel met scheur, rechts na het herstel" },
+  { kop: "De voor/na-schuif", tekst: "Op de scheurherstelpagina schuif je zelf tussen de scheur en het herstel. Het bewijs bij “nagenoeg onzichtbaar”, met zijn eigen foto's.", src: `${IMG}/site-voorna.jpg`, alt: "De voor/na-schuif op de scheurherstelpagina: links de gevel met scheur, rechts na het herstel" },
   { kop: "De kaart van zijn werk", tekst: "Op de projectenpagina staat elk project als stip op een kaart, van Liempde tot de Domkerk. Tik op een stip en je ziet wat hij daar deed. Een klant ziet zo of Rudy al eens in de buurt werkte.", src: `${IMG}/site-kaart.jpg`, alt: "De kaart op de projectenpagina met een stip voor elke plaats waar Rudy een project deed" },
-  { kop: "Projecten als bewijs", tekst: "Van de Domkerk tot een langgevelboerderij: elk project met foto's, plaats, jaar en de techniek. Grote klussen als bewijs van wat hij kan.", src: `${IMG}/site-projecten.jpg`, alt: "De projectenpagina met de Sint-Jan in Den Bosch" },
+  { kop: "Projecten als bewijs", tekst: "Van de Domkerk tot een langgevelboerderij: projecten met foto's, plaats, jaar en de techniek. Grote klussen als bewijs van wat hij kan.", src: `${IMG}/site-projecten.jpg`, alt: "De projectenpagina met de Sint-Jan in Den Bosch" },
   { kop: "Hier ontbreekt een steen", tekst: "Zelfs de foutpagina praat zijn taal: een muur met één lege plek. Wie via een oude link binnenkomt, vindt direct de weg terug.", src: `${IMG}/site-404.jpg`, alt: "De foutpagina 'Hier ontbreekt een steen' met een getekende muur" },
 ] as const;
 
@@ -274,7 +272,7 @@ export const pijlers = [
       "Elke pagina in zijn stem: “ik”, en de lezer met “u”",
       "Echte vragen van huiseigenaren als kop, het antwoord eerst",
       "Zijn eigen kennis erin: kalkmortel per pand, de restauratieladder",
-      "Elke pagina gelezen door een verse lezer, met fouten die wij er bewust in stopten om te zien of hij ze vond",
+      "Elke pagina door een aparte controleronde, met fouten die we er bewust in stopten om te testen of de controle ze vond",
     ],
   },
   {
@@ -283,7 +281,7 @@ export const pijlers = [
       "Twintig pagina's, elk met één onderwerp en één zoekterm",
       "Links alleen omhoog en omlaag in de boom, zoals het profiel",
       "Gestructureerde data die Google vertelt wie Rudy is en wat hij doet",
-      "Elke oude link stuurt door naar de juiste nieuwe pagina",
+      "Elk adres uit de oude sitemap stuurt door naar een nieuwe pagina",
     ],
   },
   {
@@ -305,7 +303,7 @@ export const tijdlijn = [
   { d: "29 sep", kop: "Akkoord", tekst: "Rudy gaat door. Dezelfde dag staan het formulier en de gedeelde map klaar.", rudy: true },
   { d: "3 okt", kop: "Formulier ingevuld", tekst: "Alle 19 delen, plus ruim zestien projectmappen met foto's.", rudy: true },
   { d: "4 okt", kop: "SEO-onderzoek", tekst: "Rankmap, zoekvolumes, concurrenten en de oude site. Daarna twee onafhankelijke controles.", rudy: false },
-  { d: "7 okt", kop: "Merkboek", tekst: "Het logo ontleed en de huisstijl vastgelegd, voordat er één pixel website is.", rudy: false },
+  { d: "7 okt", kop: "Merkboek", tekst: "Het logo ontleed en de huisstijl op papier, nog vóór de eerste pagina.", rudy: false },
   { d: "10 okt", kop: "Homepage", tekst: "De eerste pagina gebouwd, op het merkboek en het paginaplan.", rudy: false },
   { d: "12 okt", kop: "Twintig pagina's", tekst: "Alle pagina's staan, elk beoordeeld met een vaste scorekaart.", rudy: false },
   { d: "15 okt", kop: "Teksten opnieuw", tekst: "Alle teksten herschreven: meer vertellen, minder opsommen.", rudy: false },

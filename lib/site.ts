@@ -323,7 +323,7 @@ export const cases = [
     id: "van-esch",
     client: "R. van Esch Gevelrestauratie",
     sector: "Gevelrestauratie / monumenten",
-    challenge: "Marktleider op zijn vak, maar onvindbaar op zijn specialisme: scheurherstel en knipvoeg.",
+    challenge: "Goed te vinden op gevelrestauratie, maar onvindbaar op zijn specialisme: scheurherstel en knipvoeg.",
     direction: "Onderzoek, merkboek, Google-profiel en twintig pagina's die het vak uitleggen, met zijn eigen foto's.",
     href: "/cases/van-esch-gevelrestauratie",
     logo: "/logos/vanesch.png",
