@@ -7,7 +7,7 @@ import Image from "next/image";
    De wand: de achtergrond van de homepage-hero.
 
    Een schuin gekantelde muur van echt werk van Brandlift: de hero's van
-   websites die we bouwden, op desktop en op de telefoon. Zes kolommen schuiven
+   websites die we bouwden. Zes kolommen schuiven
    eindeloos, om en om omhoog en omlaag, elk in een eigen tempo.
 
    Op een scherm met muis:
@@ -21,34 +21,23 @@ import Image from "next/image";
    ============================================================ */
 
 /* Alleen herosecties van websites die Brandlift bouwde, live of nog in
-   de maak: per klant de desktop- en de mobiele versie, vers vastgelegd
-   op 24 nov 2026. */
+   de maak, op desktop; vers vastgelegd op 24 nov 2026. */
 const SITES = ["vanesch", "wurms", "koevoets", "merkelbag", "eykelenboom", "rotorswing", "partytrick", "giorgi", "kwast"] as const;
 type Site = (typeof SITES)[number];
-type Tegel = { site: Site; soort: "desktop" | "mobiel" };
-const d = (site: Site): Tegel => ({ site, soort: "desktop" });
-const m = (site: Site): Tegel => ({ site, soort: "mobiel" });
 
-/* Zes kolommen; elke site staat in meerdere kolommen, steeds naast andere
-   buren, en desktop en telefoon wisselen elkaar af. */
-const KOLOMMEN: { tegels: Tegel[]; snelheid: number; richting: "omhoog" | "omlaag" }[] = [
-  { tegels: [d("eykelenboom"), m("koevoets"), d("partytrick"), d("vanesch"), m("giorgi"), d("wurms")], snelheid: 95, richting: "omhoog" },
-  { tegels: [m("merkelbag"), d("giorgi"), d("kwast"), m("rotorswing"), d("koevoets")], snelheid: 120, richting: "omlaag" },
-  { tegels: [d("rotorswing"), d("merkelbag"), m("vanesch"), d("eykelenboom"), m("partytrick"), d("kwast")], snelheid: 88, richting: "omhoog" },
-  { tegels: [m("wurms"), d("koevoets"), d("giorgi"), m("kwast"), d("partytrick")], snelheid: 112, richting: "omlaag" },
-  { tegels: [d("vanesch"), m("eykelenboom"), d("wurms"), d("rotorswing"), m("merkelbag"), d("giorgi")], snelheid: 100, richting: "omhoog" },
-  { tegels: [d("kwast"), m("partytrick"), d("merkelbag"), m("koevoets"), d("eykelenboom")], snelheid: 128, richting: "omlaag" },
+/* Zes kolommen van zes; elke site komt vier keer voor, steeds naast andere
+   buren. Alle tegels hebben dezelfde maat, dus de ruimte ertussen is overal
+   gelijk. */
+const KOLOMMEN: { tegels: Site[]; snelheid: number; richting: "omhoog" | "omlaag" }[] = [
+  { tegels: ["eykelenboom", "koevoets", "partytrick", "vanesch", "giorgi", "wurms"], snelheid: 95, richting: "omhoog" },
+  { tegels: ["merkelbag", "giorgi", "kwast", "rotorswing", "koevoets", "vanesch"], snelheid: 120, richting: "omlaag" },
+  { tegels: ["rotorswing", "wurms", "vanesch", "eykelenboom", "partytrick", "kwast"], snelheid: 88, richting: "omhoog" },
+  { tegels: ["wurms", "koevoets", "giorgi", "kwast", "merkelbag", "partytrick"], snelheid: 112, richting: "omlaag" },
+  { tegels: ["vanesch", "eykelenboom", "merkelbag", "rotorswing", "kwast", "giorgi"], snelheid: 100, richting: "omhoog" },
+  { tegels: ["kwast", "partytrick", "rotorswing", "koevoets", "eykelenboom", "merkelbag"], snelheid: 128, richting: "omlaag" },
 ];
 
-function Tegel({ t }: { t: Tegel }) {
-  const src = `/images/hero-wand/${t.site}-${t.soort}.jpg`;
-  if (t.soort === "mobiel") {
-    return (
-      <div className="mx-auto w-[64%] overflow-hidden rounded-[22px] border-[5px] border-[#16181d] bg-s1 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)]">
-        <Image src={src} alt="" width={360} height={779} sizes="220px" quality={60} loading="eager" fetchPriority="low" className="block h-auto w-full" />
-      </div>
-    );
-  }
+function Tegel({ site }: { site: Site }) {
   return (
     <div className="overflow-hidden chamf chamf-sm border border-white/[0.08] bg-s1 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.9)]">
       <div className="flex items-center gap-1 border-b border-white/[0.06] bg-[#16181d] px-2.5 py-1.5">
@@ -56,7 +45,19 @@ function Tegel({ t }: { t: Tegel }) {
         <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
         <span className="h-1.5 w-1.5 rounded-full bg-white/20" />
       </div>
-      <Image src={src} alt="" width={640} height={400} sizes="340px" quality={60} loading="eager" fetchPriority="low" className="block h-auto w-full" />
+      {/* ruim bemeten (tot 1152 px), want de wand is gekanteld en vergroot:
+          een kleine bron wordt dan zichtbaar onscherp */}
+      <Image
+        src={`/images/hero-wand/${site}.jpg`}
+        alt=""
+        width={1152}
+        height={720}
+        sizes="(min-width: 1024px) 560px, 420px"
+        quality={85}
+        loading="eager"
+        fetchPriority="low"
+        className="block aspect-[16/10] h-auto w-full"
+      />
     </div>
   );
 }
@@ -106,7 +107,7 @@ export function HeroWand() {
       {/* de wand zelf, gekanteld in de ruimte */}
       <div className="absolute inset-0 [perspective:1600px]">
         <div
-          className="absolute left-1/2 top-1/2 grid w-[175%] grid-cols-4 gap-4 opacity-[0.85] transition-transform duration-700 ease-out sm:w-[150%] sm:grid-cols-5 md:gap-5 lg:w-[135%] lg:grid-cols-6"
+          className="absolute left-1/2 top-1/2 grid w-[175%] grid-cols-4 gap-5 opacity-[0.85] transition-transform duration-700 ease-out sm:w-[150%] sm:grid-cols-5 lg:w-[135%] lg:grid-cols-6"
           style={{
             transform:
               "translate(-50%, -50%) rotateX(calc(22deg + var(--py) * -4deg)) rotateZ(calc(-11deg + var(--px) * 2deg)) translate3d(calc(var(--px) * -28px), calc(var(--py) * -20px), 0) scale(1.18)",
@@ -116,9 +117,9 @@ export function HeroWand() {
         >
           {KOLOMMEN.map((k, i) => (
             <div key={i} className={`relative overflow-visible ${i >= 5 ? "hidden lg:block" : i >= 4 ? "hidden sm:block" : ""}`}>
-              <div className="wand-kolom flex flex-col gap-4 md:gap-5" data-richting={k.richting} style={{ "--wand-snelheid": `${k.snelheid}s` } as React.CSSProperties}>
+              <div className="wand-kolom flex flex-col gap-5" data-richting={k.richting} style={{ "--wand-snelheid": `${k.snelheid}s` } as React.CSSProperties}>
                 {[...k.tegels, ...k.tegels].map((t, j) => (
-                  <Tegel key={`${t.site}-${t.soort}-${j}`} t={t} />
+                  <Tegel key={`${t}-${j}`} site={t} />
                 ))}
               </div>
             </div>

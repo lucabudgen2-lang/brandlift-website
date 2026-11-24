@@ -30,13 +30,13 @@ export function Hero() {
     <section className="relative isolate flex min-h-[min(100svh,1000px)] flex-col overflow-hidden bg-s0">
       <HeroWand />
 
-      <Container className="relative flex flex-1 flex-col items-center justify-start pb-12 pt-10 text-center md:pb-14 md:pt-12">
+      <Container className="relative flex flex-1 flex-col items-center justify-start pb-12 pt-16 text-center md:pb-14 md:pt-20">
         {/* De H1 is de zoekregel; de slogan eronder is visueel de kop maar een <p>. */}
         <Reveal>
-          <h1 className="mx-auto max-w-[62rem] font-display text-[clamp(1rem,1.85vw,1.32rem)] font-extrabold uppercase leading-snug tracking-[0.05em] [text-wrap:balance] text-paper">
+          <h1 className="mx-auto max-w-[62rem] font-display text-[clamp(0.85rem,1.35vw,1.05rem)] font-extrabold uppercase leading-snug tracking-[0.05em] [text-wrap:balance] text-paper">
             <span>
               Webdesignbureau in{" "}
-              <span className="inline-block chamf-sm bg-blue px-2.5 py-0.5 text-white shadow-[0_8px_24px_-8px_rgba(1,48,253,0.9)]">Den Haag</span>{" "}
+              <span className="inline-block chamf-sm bg-blue px-2 py-0.5 text-white shadow-[0_8px_24px_-8px_rgba(1,48,253,0.9)]">Den Haag</span>{" "}
               dat je meer aanvragen oplevert
             </span>
           </h1>
