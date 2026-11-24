@@ -13,7 +13,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { ConversieVergelijking } from "@/components/sections/ConversieVergelijking";
-import { caseEykelenboom, reviews } from "@/lib/site";
+import { caseEykelenboom, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/diensten/conversie-optimalisatie";
@@ -32,7 +32,7 @@ const crumbs = [
   { name: "Conversie-optimalisatie", path: PATH },
 ];
 
-const heroChips = ["Sinds 2021", "Conversie vanaf de fundering", "5,0 op Google", "Geen wachtlijst"];
+const heroChips = ["Sinds 2021", "Conversie vanaf de fundering", `${reviewScore} op Google`, "Geen wachtlijst"];
 
 /* ── het probleem: verspild verkeer ── */
 const problemen = [

@@ -1,4 +1,5 @@
 import { Marquee } from "@/components/ui/Marquee";
+import { reviewScore } from "@/lib/site";
 
 /* ============================================================
    BENEFIT MARQUEE — Brandlift's moving trust strip.
@@ -12,7 +13,7 @@ type Benefit = { icon: string; label: string };
 const DEFAULT_BENEFITS: Benefit[] = [
   { icon: "calendar", label: "Founder-led sinds 2021" },
   { icon: "user", label: "Direct met de bouwer" },
-  { icon: "star", label: "Beoordeeld met 5,0 op Google" },
+  { icon: "star", label: `Beoordeeld met ${reviewScore} op Google` },
   { icon: "search", label: "Lokale SEO inbegrepen" },
   { icon: "bolt", label: "Reactie binnen 1 werkdag" },
   { icon: "tools", label: "Gebouwd voor vakbedrijven" },

@@ -57,7 +57,7 @@ export default function Home() {
       <Reviews
         id="reviews"
         tone="dark"
-        heading={["Klanten aan het woord.", "Stuk voor stuk vijf sterren."]}
+        heading={["Klanten aan het woord.", "Woord voor woord van Google."]}
         intro="Van bedrijven die hetzelfde zochten als jij: een website die opvalt, gevonden wordt en klanten oplevert."
       />
       <Methode />

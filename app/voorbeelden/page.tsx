@@ -12,6 +12,7 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { Reviews } from "@/components/sections/Reviews";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { collectionSchema, faqSchema } from "@/lib/schema";
+import { reviewScore } from "@/lib/site";
 
 const PATH = "/voorbeelden";
 
@@ -27,7 +28,7 @@ const crumbs = [
   { name: "Voorbeelden", path: PATH },
 ];
 
-const heroChips = ["Echte, live sites", "Zelf te openen", "Sinds 2021", "5,0 op Google"];
+const heroChips = ["Echte, live sites", "Zelf te openen", "Sinds 2021", `${reviewScore} op Google`];
 
 /* ── wat je op deze sites terugziet ── */
 const kenmerken = [

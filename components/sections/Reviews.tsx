@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LineReveal } from "@/components/ui/LineReveal";
-import { reviews } from "@/lib/site";
+import { reviews, reviewsVijfSterren } from "@/lib/site";
 
 const ease = [0.22, 0.61, 0.36, 1] as const;
 const INITIAL = 3;
@@ -52,7 +52,9 @@ function ReviewCard({ r, i, light }: { r: Review; i: number; light: boolean }) {
 
         <div className="flex items-center justify-between pt-8">
           <Stars n={r.stars} className={light ? "text-blue" : "text-blue-text"} />
-          {"when" in r && r.when && <span className="text-xs font-medium text-g600">{r.when}</span>}
+          {"when" in r && typeof r.when === "string" && r.when && (
+            <span className="text-xs font-medium text-g600">{r.when}</span>
+          )}
         </div>
 
         <blockquote className={`mt-4 whitespace-pre-line text-[1.02rem] leading-relaxed ${light ? "text-g700" : "text-g200"}`}>
@@ -89,7 +91,7 @@ function ReviewCard({ r, i, light }: { r: Review; i: number; light: boolean }) {
   );
 }
 
-/* Real Google reviews (5,0 · 8). Never fabricated, verbatim. Design: editorial
+/* Real Google reviews, verbatim, never fabricated; score and count come from lib/site.ts. Design: editorial
    spread - sticky rating monument left, quotes on a voltage spine right. Shows
    3 by default; the rest reveal on demand. Reused on commercial pages. */
 export function Reviews({
@@ -104,7 +106,7 @@ export function Reviews({
   eyebrow?: string;
   heading?: [string, string];
   intro?: string;
-  /* Roteert welke reviews vooraan staan. Alle acht blijven zichtbaar; op
+  /* Roteert welke reviews vooraan staan. Alle reviews blijven zichtbaar; op
      stadspagina's leidt elke stad met andere reviews, zodat zes pagina's
      niet met exact hetzelfde blok tekst openen. */
   startAt?: number;
@@ -167,7 +169,7 @@ export function Reviews({
               </div>
               <div className="relative mt-6 flex items-center gap-2.5 border-t border-white/20 pt-4">
                 <span className="h-1.5 w-1.5 chamf-sm bg-white" />
-                <p className="text-[0.82rem] font-medium text-white/80">Alle reviews: vijf sterren</p>
+                <p className="text-[0.82rem] font-medium text-white/80">{reviewsVijfSterren} van de {reviews.count} reviews: vijf sterren</p>
               </div>
             </div>
           </Reveal>
@@ -219,7 +221,7 @@ export function Reviews({
                       : "border-white/15 bg-s1/60 text-paper hover:border-blue hover:bg-blue hover:text-white"
                   }`}
                 >
-                  {expanded ? "Toon minder" : `Toon alle ${reviews.count} reviews`}
+                  {expanded ? "Toon minder" : `Toon alle ${reviews.items.length} reviews`}
                   <svg
                     width="15"
                     height="15"

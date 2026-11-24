@@ -13,7 +13,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { MerkSysteem } from "@/components/sections/MerkSysteem";
-import { caseEykelenboom, reviews } from "@/lib/site";
+import { caseEykelenboom, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/diensten/branding";
@@ -32,7 +32,7 @@ const crumbs = [
   { name: "Branding", path: PATH },
 ];
 
-const heroChips = ["Sinds 2021", "Merkgids inbegrepen", "5,0 op Google", "Geen wachtlijst"];
+const heroChips = ["Sinds 2021", "Merkgids inbegrepen", `${reviewScore} op Google`, "Geen wachtlijst"];
 
 /* ── waarom sterke bedrijven online klein lijken ── */
 const problemen = [
