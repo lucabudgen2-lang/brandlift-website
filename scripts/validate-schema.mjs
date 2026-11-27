@@ -25,6 +25,18 @@ const ROUTES = [
   "/privacybeleid", "/algemene-voorwaarden",
 ];
 
+/* Plus alles wat in de sitemap staat (o.a. nieuwe kennisbankartikelen),
+   zodat een nieuw artikel vanzelf mee gecontroleerd wordt. */
+try {
+  const xml = await (await fetch(`${BASE}/sitemap.xml`)).text();
+  for (const [, loc] of xml.matchAll(/<loc>([^<]+)<\/loc>/g)) {
+    const pad = new URL(loc).pathname.replace(/\/$/, "") || "/";
+    if (!ROUTES.includes(pad)) ROUTES.push(pad);
+  }
+} catch (e) {
+  console.warn(`sitemap niet op te halen: ${e.message}`);
+}
+
 const errors = [];
 const stats = { routes: 0, blocks: 0, nodes: 0, ids: 0, refs: 0 };
 

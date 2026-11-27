@@ -10,6 +10,7 @@ import { FaqBlock } from "@/components/page/blocks";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { collectionSchema, faqSchema } from "@/lib/schema";
+import { artikelen } from "@/content/kennisbank";
 
 const PATH = "/kennisbank";
 
@@ -30,7 +31,7 @@ const heroChips = ["Zelf geschreven", "Geen verzonnen cijfers", "Gratis te lezen
 /* De gidsen die er echt staan. `bijgewerkt` hoort gelijk te lopen met de
    datumconstante bovenaan de betreffende pagina - loopt die daar op, dan
    loopt hij hier mee op. */
-const gidsen = [
+const vasteGidsen = [
   {
     tag: "Kosten",
     title: "Wat kost een website laten maken?",
@@ -64,6 +65,26 @@ const gidsen = [
     linkLabel: "Begrijp hoe lokale vindbaarheid werkt",
   },
 ] as const;
+
+/* Artikelen in het nieuwe formaat (content/kennisbank), nieuwste eerst.
+   In productie alleen gepubliceerde; lokaal en op previews ook concepten. */
+const datumNl = (iso: string) => new Date(iso).toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
+const gidsen = [
+  ...[...artikelen]
+    .sort((x, y) => y.gepubliceerd.localeCompare(x.gepubliceerd))
+    .map((x) => ({
+      tag: x.tag as string,
+      title: x.titel,
+      href: `/kennisbank/${x.slug}`,
+      bijgewerkt: datumNl(x.bijgewerkt),
+      bijgewerktIso: x.bijgewerkt,
+      lead: x.lead,
+      /* "wat je te weten komt" = de eerste vier H2's van het artikel */
+      punten: x.blokken.flatMap((b) => (b.type === "kop" ? [b.tekst] : [])).slice(0, 4) as readonly string[],
+      linkLabel: "Lees de gids",
+    })),
+  ...vasteGidsen,
+];
 
 /* Geen gidsen, wel de plekken waar mensen vanuit de kennisbank meestal
    naartoe willen. De ankerteksten staan bewust in de lopende zin en niet
@@ -112,7 +133,7 @@ const nietVindbaar = [
 
 const faqs = [
   {
-    q: "Waarom staan hier maar twee gidsen?",
+    q: "Waarom groeit deze kennisbank niet sneller?",
     a: "Omdat we er pas een schrijven als we iets te zeggen hebben dat je elders niet krijgt. Een kennisbank volzetten met dertig oppervlakkige stukken is makkelijk; twee stukken schrijven waar je echt iets aan hebt kost meer tijd. Er komen er bij, maar alleen in dat tempo.",
   },
   {

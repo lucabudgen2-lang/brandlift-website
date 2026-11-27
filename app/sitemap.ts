@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/metadata";
+import { liveArtikelen } from "@/content/kennisbank";
 
 /* Alle indexeerbare routes.
 
@@ -41,7 +42,7 @@ const DATES: Record<string, string> = {
   "/kennisbank": "2026-08-04",
   "/kennisbank/wat-kost-een-website-laten-maken": "2026-07-13",
   "/kennisbank/wat-is-lokale-seo": "2026-07-13",
-  "/privacybeleid": "2026-07-10",
+  "/privacybeleid": "2026-11-27",
   "/algemene-voorwaarden": "2026-07-10",
 };
 
@@ -95,6 +96,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/kennisbank", 0.6),
     entry("/kennisbank/wat-kost-een-website-laten-maken", 0.8),
     entry("/kennisbank/wat-is-lokale-seo", 0.7),
+    // kennisbank, nieuw formaat (content/kennisbank): datum = "bijgewerkt" uit het artikel
+    ...liveArtikelen.map((x) => ({
+      url: absoluteUrl(`/kennisbank/${x.slug}`),
+      lastModified: new Date(x.bijgewerkt),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     // juridisch
   ];
 }
