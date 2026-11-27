@@ -15,6 +15,7 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { LokaleSeoScope } from "@/components/sections/LokaleSeoScope";
 import { caseEykelenboom, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 const PATH = "/diensten/lokale-seo";
 const UPDATED = "2026-07-16";
@@ -749,6 +750,7 @@ export default function Page() {
 
       {/* ═══════════ FAQ · SLOT ═══════════ */}
       <FaqBlock faqs={faqs} tone="light" />
+      <GidsenOverOnderwerp tags={["Lokale SEO", "Google-profiel"]} />
 
       <FinalCta />
     </main>

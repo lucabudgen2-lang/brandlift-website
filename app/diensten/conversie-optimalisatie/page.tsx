@@ -15,6 +15,7 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { ConversieVergelijking } from "@/components/sections/ConversieVergelijking";
 import { caseEykelenboom, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 const PATH = "/diensten/conversie-optimalisatie";
 const UPDATED = "2026-07-17";
@@ -772,6 +773,7 @@ export default function Page() {
 
       {/* ═══════════ FAQ · SLOT ═══════════ */}
       <FaqBlock faqs={faqs} tone="light" />
+      <GidsenOverOnderwerp tags={["Conversie"]} />
 
       <FinalCta />
     </main>

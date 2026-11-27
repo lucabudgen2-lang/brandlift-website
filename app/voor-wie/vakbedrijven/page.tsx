@@ -15,6 +15,7 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { VakSelector } from "@/components/sections/VakSelector";
 import { caseEykelenboom, reviews, voorWie, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 const PATH = "/voor-wie/vakbedrijven";
 const UPDATED = "2026-07-17";
@@ -714,6 +715,7 @@ export default function Page() {
 
       {/* ═══════════ FAQ · SLOT ═══════════ */}
       <FaqBlock faqs={faqs} tone="light" />
+      <GidsenOverOnderwerp tags={["Per vak", "Google-profiel", "Lokale SEO"]} />
 
       <FinalCta />
     </main>

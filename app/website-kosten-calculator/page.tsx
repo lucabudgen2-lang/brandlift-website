@@ -10,6 +10,7 @@ import { KostenCalculator } from "@/components/calculator/KostenCalculator";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { site } from "@/lib/site";
 import { breadcrumbSchema } from "@/lib/schema";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 export const metadata = buildPageMetadata({
   title: "Website kosten berekenen in 1 minuut",
@@ -166,6 +167,7 @@ export default function Page() {
         </Container>
       </section>
 
+      <GidsenOverOnderwerp tags={["Kosten"]} />
       <CtaBlock
         h2="Liever direct een exacte prijs?"
         body="Plan een gratis, vrijblijvend groeigesprek van 30 minuten. Je krijgt een eerlijke prijs die past bij jouw situatie - zonder salespitch."
