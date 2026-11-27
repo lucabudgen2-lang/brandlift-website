@@ -9,6 +9,8 @@ import type { Artikel } from "@/lib/kennisbank/types";
    - prijsbanden en meerprijzen: lib/calculator.ts (TYPE_OPTIONS,
      EXTRA_OPTIONS, BEELD_NODIG), zodat gids en calculator hetzelfde zeggen
    - wat altijd inbegrepen is: calcPrice().included in lib/calculator.ts;
+     teksten inbegrepen: besluit Luca 27 nov ("Ja"), ook in de calculator gezet;
+     prijsstaffel vanaf €1.500: besluit Luca 27 nov ("niet afschrikken");
      3-4 weken: geheugen brandlift-company-facts
    - eerste 19 Google-resultaten: vault systeem/blog/data/serp-kosten-2026-11-27.json
      (DataForSEO, vanuit Den Haag, 27 nov 2026); concurrenten bewust zonder naam
@@ -21,7 +23,6 @@ import type { Artikel } from "@/lib/kennisbank/types";
    - zoekvragen voor de FAQ: 'Mensen vragen ook' bij "website laten maken
      kosten" (kansen-2026-11-27.json) en Search Console-zoekopdrachten
    Bewust niet: een eigen maandbedrag voor hosting (geen vaste bron, besluit Luca),
-   of teksten standaard in de bouwprijs zitten (geen bron, besluit Luca),
    een oprichtingsjaar (klopt niet in oudere teksten), aantallen projecten.
    ============================================================ */
 
@@ -37,7 +38,7 @@ export const kostengids: Artikel = {
   zoekterm: "website laten maken kosten",
   gepubliceerd: "2026-07-13",
   bijgewerkt: "2026-11-27",
-  concept: true,
+  concept: false,
   blokken: [
     {
       type: "antwoord",
@@ -100,7 +101,7 @@ export const kostengids: Artikel = {
     {
       type: "alinea",
       tekst:
-        "Vergelijk offertes daarom niet op het eindbedrag, maar op drie vragen. **Wie schrijft de teksten?** **Zit vindbaarheid erin, of komt dat later?** En **wat betaal je na de oplevering per maand?** Dat zijn de posten waar de grootste verschillen zitten. Vraag het ook bij ons na: wat in de offerte staat, zit in de vaste prijs. We rekenen niet achteraf bij.",
+        "Vergelijk offertes daarom niet op het eindbedrag, maar op drie vragen. **Wie schrijft de teksten?** **Zit vindbaarheid erin, of komt dat later?** En **wat betaal je na de oplevering per maand?** Dat zijn de posten waar de grootste verschillen zitten. Bij ons schrijven we de teksten zelf, zit de lokale SEO-basis erin, en is hosting een losse keuze. Wat in de offerte staat, zit in de vaste prijs: we rekenen niet achteraf bij.",
     },
 
     { type: "kop", id: "waar-hangt-het-van-af", tekst: "Waar hangt de prijs van af?" },
@@ -112,7 +113,7 @@ export const kostengids: Artikel = {
     {
       type: "alinea",
       tekst:
-        "Daarna komen **maatwerk of template** en **content**. Een template staat er snel, maar beperkt je in opbouw en snelheid. Heb je al sterke teksten en goede foto's, dan scheelt dat; moeten ze nog gemaakt worden, dan komt dat erbij. Juist die content bepaalt of een bezoeker belt of doorklikt naar de volgende.",
+        "Daarna komen **maatwerk of template** en **content**. Een template staat er snel, maar beperkt je in opbouw en snelheid. Bij ons zitten de teksten in de prijs: die schrijven wij. Foto's komen erbij als er geen bruikbaar eigen beeld is. Juist die content bepaalt of een bezoeker belt of doorklikt naar de volgende.",
     },
     {
       type: "subkop",
@@ -141,6 +142,7 @@ export const kostengids: Artikel = {
       type: "lijst",
       items: [
         "**Strategie en positionering**: waarom een klant voor jou kiest en niet voor de buurman",
+        "**Alle teksten**: wij schrijven ze, jij leest mee",
         "**De [lokale SEO](/diensten/lokale-seo)-basis**: gestructureerde data, lokale vermeldingen en een ingericht Google-bedrijfsprofiel",
         "**Een ontwerp dat past bij je vak** en vertrouwen wekt, op telefoon en computer",
         "**Snelle, veilige techniek**",
@@ -172,6 +174,7 @@ export const kostengids: Artikel = {
       rijen: [
         ["Prijs", "een abonnement op een sitebouwer", "vanaf ongeveer €500 tot €600", "vanaf €1.500"],
         ["Jouw tijd", "veel: elke pagina en elke wijziging zelf", "beperkt", "beperkt: het werk ligt bij ons"],
+        ["Teksten", "zelf schrijven", "verschilt per aanbieder: vraag ernaar", "wij schrijven ze"],
         ["Lokale vindbaarheid", "zelf uitzoeken", "verschilt per aanbieder: vraag ernaar", "de basis zit erin"],
         ["Ontwerp", "een template", "meestal een template", "afgestemd op je bedrijf"],
       ],
