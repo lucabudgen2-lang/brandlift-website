@@ -55,9 +55,13 @@ async function token(form: HTMLFormElement): Promise<string> {
   return "";
 }
 
-/* bron van het bezoek (utm/gclid/verwijzer), alleen in deze sessie */
+/* bron van het bezoek (utm/gclid/verwijzer), alleen in deze sessie.
+   Wordt vastgelegd bij de EERSTE paginaweergave (BronOnthouden in de layout):
+   eerder gebeurde dat pas bij het aanraken van een formulier, en dan was de
+   externe verwijzer na één klik binnen de site al weg. */
 const BRON = "bl-bron";
-function onthoudBron() {
+const LANDING = "bl-landing";
+export function onthoudBron() {
   try {
     if (sessionStorage.getItem(BRON)) return;
     const q = new URLSearchParams(window.location.search);
@@ -66,6 +70,20 @@ function onthoudBron() {
     if (document.referrer && !document.referrer.startsWith(window.location.origin)) b._referrer = document.referrer.slice(0, 300);
     if (Object.keys(b).length) sessionStorage.setItem(BRON, JSON.stringify(b));
   } catch { /* geen opslag: dan zonder bron */ }
+}
+/* de eerste pagina van het bezoek, bv. een kennisbankartikel: zo zien we
+   welke artikelen tot een aanvraag leiden (docs/blogstrategie-2026.md) */
+export function onthoudLanding() {
+  try {
+    if (!sessionStorage.getItem(LANDING)) sessionStorage.setItem(LANDING, window.location.pathname.slice(0, 200));
+  } catch { /* geen opslag: dan zonder landingspagina */ }
+}
+function landing(): Record<string, string> {
+  try {
+    const l = sessionStorage.getItem(LANDING);
+    /* zonder underscore: de dienst bewaart dit veld dan mee en zet het in de mail */
+    return l ? { landingspagina: l } : {};
+  } catch { return {}; }
 }
 function bron(): Record<string, string> {
   try { return JSON.parse(sessionStorage.getItem(BRON) || "{}"); } catch { return {}; }
@@ -89,6 +107,7 @@ export async function verstuur(sleutel: "brandlift" | "brandlift-calculator", ve
         _pagina: window.location.origin + window.location.pathname,
         "cf-turnstile-response": tok,
         ...bron(),
+        ...landing(),
       }),
       signal: stop.signal,
     });

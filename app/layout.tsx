@@ -6,6 +6,7 @@ import { MegaNav } from "@/components/layout/MegaNav";
 import { Footer } from "@/components/layout/Footer";
 import { GroeigesprekModal } from "@/components/groeigesprek/GroeigesprekModal";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { BronOnthouden } from "@/components/layout/BronOnthouden";
 import "./globals.css";
 
 /* De gewichten hieronder zijn niet gekozen maar gemeten: op acht pagina's
@@ -104,6 +105,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <BronOnthouden />
         <MegaNav />
         {children}
         <Footer />

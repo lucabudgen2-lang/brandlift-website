@@ -4,7 +4,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/lib/site";
 
 const PATH = "/privacybeleid";
-const BIJGEWERKT = "2026-11-14";
+const BIJGEWERKT = "2026-11-27";
 
 export const metadata = buildPageMetadata({
   title: "Privacybeleid",
@@ -41,7 +41,7 @@ const blokken: LegalBlok[] = [
     paren: [
       {
         k: "Contactformulier",
-        v: "Je naam, bedrijfsnaam, e-mailadres, telefoonnummer, waar je het over wilt hebben en - als je die invult - je bericht.",
+        v: "Je naam, bedrijfsnaam, e-mailadres, telefoonnummer, waar je het over wilt hebben en - als je die invult - je bericht. Bij het formulier en de calculator sturen we ook mee op welke pagina je bezoek begon, vanaf welke pagina je verstuurt en, als die er is, waar je vandaan kwam (bijvoorbeeld een zoekmachine of een advertentielink). Zo zien we welke pagina's mensen echt helpen. Die gegevens staan tot dat moment alleen in je eigen browser en verdwijnen als je het tabblad sluit.",
       },
       {
         k: "Kostencalculator",
