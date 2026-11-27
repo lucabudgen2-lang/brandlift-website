@@ -11,8 +11,9 @@
 import type { Artikel } from "@/lib/kennisbank/types";
 import { artikelTemplateVoorbeeld } from "./artikel-template-voorbeeld";
 import { kostengids } from "./wat-kost-een-website-laten-maken";
+import { wordpressOfMaatwerk } from "./wordpress-of-maatwerk";
 
-export const alleArtikelen: Artikel[] = [kostengids, artikelTemplateVoorbeeld];
+export const alleArtikelen: Artikel[] = [kostengids, wordpressOfMaatwerk, artikelTemplateVoorbeeld];
 
 /* Concepten zijn zichtbaar lokaal (next dev) en op Vercel-previews, nooit
    in productie. VERCEL_ENV is "production" alleen op het echte domein. */
