@@ -17,7 +17,7 @@ export function Inline({ tekst }: { tekst: string }) {
   let k = 0;
   while ((m = re.exec(tekst))) {
     if (m.index > laatste) delen.push(tekst.slice(laatste, m.index));
-    if (m[1]) delen.push(<strong key={k++} className="font-semibold text-ink">{m[1]}</strong>);
+    if (m[1]) delen.push(<strong key={k++} className="font-semibold">{m[1]}</strong>);
     else {
       const href = m[3];
       const extern = /^https?:\/\//.test(href);
@@ -52,7 +52,7 @@ function Figuur({ beeld }: { beeld: Beeld }) {
 
 export function ArtikelBlokken({ blokken }: { blokken: Blok[] }) {
   return (
-    <div className="text-[1.075rem] leading-[1.75] text-g700">
+    <div className="text-[1.075rem] leading-[1.75] text-g700 [&_strong]:text-ink">
       {blokken.map((b, i) => {
         switch (b.type) {
           case "antwoord":
@@ -104,7 +104,7 @@ export function ArtikelBlokken({ blokken }: { blokken: Blok[] }) {
           }
           case "bewijs":
             return (
-              <aside key={i} className="my-10 overflow-hidden chamf chamf-lg bg-s0 text-g200 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.6)]">
+              <aside key={i} className="my-10 overflow-hidden chamf chamf-lg bg-s0 text-g200 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.6)] [&_strong]:!text-paper">
                 {b.beeld && (
                   <Image src={b.beeld.src} alt={b.beeld.alt} width={b.beeld.breed} height={b.beeld.hoog} sizes="(max-width: 768px) 92vw, 720px" className="block h-auto w-full border-b border-white/10" />
                 )}

@@ -89,6 +89,7 @@ export function calcPrice(input: CalcInput): CalcResult {
 
   const included: string[] = [
     "Strategie en positionering",
+    "Alle teksten, door ons geschreven",
     "Lokale SEO-basis (schema, vermeldingen, Google Bedrijfsprofiel)",
     "Ontwerp dat vertrouwen wekt",
     "Snelle, veilige techniek",

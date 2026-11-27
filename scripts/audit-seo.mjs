@@ -37,7 +37,7 @@ const ROUTES = [
   "/seo-den-haag", "/cases", "/cases/hovenier-eykelenboom", "/cases/giorgi-and-the-gents", "/cases/van-esch-gevelrestauratie", "/voorbeelden",
   "/voor-wie", "/voor-wie/vakbedrijven", "/voor-wie/premium",
   "/werkwijze", "/over-brandlift", "/contact",
-  "/kennisbank", "/kennisbank/wat-kost-een-website-laten-maken",
+  "/kennisbank",
   "/kennisbank/wat-is-lokale-seo",
   "/privacybeleid", "/algemene-voorwaarden",
 ];
