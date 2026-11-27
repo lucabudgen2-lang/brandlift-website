@@ -14,6 +14,7 @@ import { OokActiefIn } from "@/components/sections/OokActiefIn";
 import { caseEykelenboom, reviews } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 import type { CityData } from "@/lib/cities";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 type SectionProps = { city: CityData; mapSrc: string };
 
@@ -660,6 +661,7 @@ export function CityPage({ city }: { city: CityData }) {
       {/* ═══════════ REVIEWS · FAQ · SLOT ═══════════ */}
       <Reviews tone="dark" heading={city.reviewsHeading} startAt={city.reviewsStartAt ?? 0} />
       <FaqBlock faqs={city.faqs} tone="light" heading={city.faqHeading} />
+      <GidsenOverOnderwerp tags={["Kosten", "Per vak", "Lokale SEO"]} />
       <CtaBlock h2={city.finalCta.h2} body={city.finalCta.body} />
     </main>
   );

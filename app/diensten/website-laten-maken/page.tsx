@@ -16,6 +16,7 @@ import { Founder } from "@/components/sections/Founder";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { caseEykelenboom, reviews, methode, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 const PATH = "/diensten/website-laten-maken";
 const UPDATED = "2026-07-13";
@@ -637,6 +638,7 @@ export default function Page() {
       <Founder />
 
       <FaqBlock faqs={faqs} tone="light" />
+      <GidsenOverOnderwerp tags={["Kosten", "Proces", "Per vak"]} />
 
       <FinalCta />
     </main>

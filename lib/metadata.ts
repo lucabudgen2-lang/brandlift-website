@@ -46,7 +46,15 @@ export type PageMetaInput = {
   /** Alleen voor artikelen: ISO-datums voor og:article. */
   publishedTime?: string;
   modifiedTime?: string;
+  /** Eigen deelafbeelding (pad vanaf de root, bv. een artikelbeeld). Zonder
+      deze valt hij terug op de standaard-afbeelding van de site. */
+  image?: { src: string; width: number; height: number; alt: string };
 };
+
+/* De standaard deelafbeelding (app/opengraph-image.tsx). Moet expliciet mee:
+   zodra een pagina openGraph zet, erft Next de afbeelding van de root NIET
+   meer, en tot 27 nov 2026 had daardoor alleen de homepage een og:image. */
+const STANDAARD_BEELD = { src: "/opengraph-image", width: 1200, height: 630, alt: "Brandlift - strategische websites met lokale SEO" };
 
 export function buildPageMetadata({
   title,
@@ -56,9 +64,11 @@ export function buildPageMetadata({
   noindex = false,
   publishedTime,
   modifiedTime,
+  image = STANDAARD_BEELD,
 }: PageMetaInput): Metadata {
   const url = absoluteUrl(path);
   const fullTitle = withBrand(title);
+  const beeld = { url: absoluteUrl(image.src), width: image.width, height: image.height, alt: image.alt };
 
   return {
     title,
@@ -72,6 +82,7 @@ export function buildPageMetadata({
       title: fullTitle,
       description,
       url,
+      images: [beeld],
       ...(type === "article" && (publishedTime || modifiedTime)
         ? { publishedTime, modifiedTime }
         : {}),
@@ -80,6 +91,7 @@ export function buildPageMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
+      images: [beeld.url],
     },
   };
 }
