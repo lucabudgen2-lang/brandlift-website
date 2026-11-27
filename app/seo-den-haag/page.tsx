@@ -13,7 +13,7 @@ import { CasesCarousel } from "@/components/sections/CasesCarousel";
 import { FinalCta } from "@/components/sections/FinalCta";
 import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { DenHaagKaart } from "@/components/sections/DenHaagKaart";
-import { caseEykelenboom, cityPages, reviews } from "@/lib/site";
+import { caseEykelenboom, cityPages, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
 
 const PATH = "/seo-den-haag";
@@ -34,7 +34,7 @@ const crumbs = [
   { name: "SEO Den Haag", path: PATH },
 ];
 
-const heroChips = ["Gevestigd in Den Haag", "Sinds 2021", "5,0 op Google", "Werkt ook zonder nieuwe site"];
+const heroChips = ["Gevestigd in Den Haag", "Sinds 2021", `${reviewScore} op Google`, "Werkt ook zonder nieuwe site"];
 
 /* ── waarom Den Haag je niet vindt — Haags, niet generiek ── */
 const oorzaken = [

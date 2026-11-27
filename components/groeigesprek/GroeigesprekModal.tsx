@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { GroeigesprekForm } from "@/components/forms/GroeigesprekForm";
+import { reviewScore } from "@/lib/site";
 
 /* ============================================================
    GROEIGESPREK-MODAL — de pop-up achter elke groeigesprek-CTA.
@@ -52,7 +53,7 @@ const voordelen = [
   },
   {
     icon: "star",
-    title: "Beoordeeld met 5,0 op Google",
+    title: `Beoordeeld met ${reviewScore} op Google`,
     sub: "Door ondernemers die je voorgingen.",
   },
   {

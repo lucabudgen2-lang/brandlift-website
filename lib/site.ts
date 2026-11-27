@@ -633,9 +633,15 @@ export const aboutFaqs = [
 
 /* ── Google-reviews (echt, verbatim overgenomen) ── */
 export const reviews = {
+  /* Stand van het Google-bedrijfsprofiel, opgehaald via DataForSEO op
+     24 nov 2026: 4,7 uit 14 reviews. Hieronder alle 13 reviews met vijf
+     sterren, letterlijk. De ene review met één ster (17 nov, over een
+     ongevraagde e-mail) staat niet op de site (Luca 24 nov), maar telt
+     wel mee in score en aantal: die moeten gelijk zijn aan wat Google laat
+     zien. Sebastiaan, Max en Maud staan vooraan: klanten uit de cases. */
   source: "Google",
-  rating: 5.0,
-  count: 10,
+  rating: 4.7,
+  count: 14,
   items: [
     {
       /* Van de klant uit de case zelf. Woordelijk overgenomen van het
@@ -657,6 +663,30 @@ export const reviews = {
       text: "Het verkopen van muziek op een bruiloft of bedrijfsfeest is waar JungleBookings gespecialiseerd in is. Een website die, snel werkt, goed converteert en er geweldig uit ziet is voor het verkopen van een band of act heel erg belangrijk. De klant maakt een beslissing in 2 seconden om verder te kijken.\n\nEerder maakte wij zelf de website's via Wix, een tijdrovende klus met een middelmatige uitkomst. Voor de band Giorgi & the Gents wilden we het anders aanpakken. We namen contact op met Luca en konden dezelfde week nog een online intake met hem inplannen. Op basis van een korte (maar grondige) vragenlijst heeft Luca onderzoek gedaan in onze niche en gekeken wat werkt en wat niet. Het contact was heel prettig en vlot. Binnen 3(!!!) weken hadden wij een website waar we echt heel erg blij mee zijn. In de tussentijd hadden we nog wat extra features gevraagd zoals een Behind the Scenes pagina en dat was ook geen enkel probleem.\n\nLuca werkt snel, secuur en levert echt geweldig resultaat. Voor ons is dit vanaf nu een no brainer, een website die converteert als een malle is voor ons onbetaalbaar.\n\nZeker voor herhaling vatbaar!",
     },
     {
+      name: "Maud Wachelder",
+      role: "RotorSwing Holland",
+      stars: 5,
+      text: "Wij zijn RotorSwing, een Nederlands bedrijf gespecialiseerd in jachtstabilisatie. In deze specifieke nichemarkt is onze website meer dan een online overzicht: het is hét visitekaartje van ons bedrijf.\n\nVia een simpele vraag over SEO kwamen we in contact met Luca en niet veel later namen we het besluit om samen een volledig nieuwe website te bouwen. En WAUW! Het eindresultaat straalt exact uit wat we voor ogen hadden. Luca heeft de balans weten te vinden tussen de hoogwaardige techniek en het comfort dat onze systemen bieden. Geen standaard pagina’s vol techniek, maar een site die een beleving uitstraalt.\n\nDe samenwerking verliep vanaf het eerste moment super fijn. Heldere communicatie, houdt je continu goed op de hoogte van de voortgang en geeft heel duidelijk aan wat er nog nodig is.\n\nEr staat nu een website waar we ontzettend trots op zijn. Dankjewel Luca! Zeker een aanrader!!",
+    },
+    {
+      name: "Charlotte Schuller",
+      role: "Local Guide",
+      stars: 5,
+      text: "Heel blij met Brandlift! Ze hebben een prachtige website voor ons gebouwd die echt meer leads oplevert. Proces was heel soepel en communicatie was top.",
+    },
+    {
+      name: "Joackim Bovyn",
+      role: "",
+      stars: 5,
+      text: "Brandlift heeft voor ons zowel de website als de volledige rebranding verzorgd. We zijn erg tevreden met het eindresultaat. De nieuwe uitstraling past perfect bij ons bedrijf en de website ziet er professioneel, modern en overzichtelijk uit. De communicatie verliep prettig en er werd goed meegedacht over onze wensen. Zeker een aanrader voor bedrijven die hun merk en online uitstraling naar een hoger niveau willen tillen!",
+    },
+    {
+      name: "Muznah Abrar",
+      role: "",
+      stars: 5,
+      text: "Na jaren nauwelijks iets aan onze website te hebben gedaan, hebben we Brandlift gevraagd om alles opnieuw op te zetten. Het verschil is enorm. De website straalt veel meer vertrouwen uit en klanten geven regelmatig aan dat ze ons online hebben gevonden. Luca denkt goed mee, legt alles helder uit en komt zelf met slimme ideeën. Fijne samenwerking van begin tot eind",
+    },
+    {
       name: "iFinq Finn",
       role: "",
       stars: 5,
@@ -670,7 +700,7 @@ export const reviews = {
     },
     {
       name: "Lo Bo",
-      role: "",
+      role: "Local Guide",
       stars: 5,
       text: "We waren al een tijdje toe aan een nieuwe website en zijn via via bij Brandlift terechtgekomen. Vanaf het begin verliep het contact prettig en werd er goed geluisterd naar wat voor ons als dakdekkersbedrijf belangrijk is. De website is duidelijk, professioneel en vooral makkelijk voor klanten om snel contact op te nemen. Ook onze projecten komen nu veel beter naar voren dan op onze oude site. Het is erg mooi geworden. Fijne samenwerking, korte lijntjes en gewoon goed werk. We zijn erg blij met het resultaat.",
     },
@@ -681,34 +711,31 @@ export const reviews = {
       text: "Ongekend goed. Super blij met de service.",
     },
     {
-      name: "Duncan Schuller",
-      role: "",
-      stars: 5,
-      text: "Brandlift heeft onze nieuwe website en huisstijl neergezet voor ons bedrijf en we zijn erg tevreden. Fijn dat ze snappen hoe de sector werkt en niet met een standaard template komen aanzetten - de site ziet er professioneel uit, laadt snel en we merken dat potentiële klanten ons makkelijker weten te vinden in Den Haag en omgeving. Duidelijke communicatie en ze denken goed mee. Aanrader voor alle bouwbedrijven die serieus werk willen maken van hun online uitstraling. Luca is een topper!",
-    },
-    {
       name: "Alessandro Stinis",
       role: "",
       stars: 5,
-      when: "7 weken geleden",
       text: "Brandlift heeft voor ons een professionele website gemaakt die veel beter laat zien wie we zijn en wat we doen. Luca dacht goed mee over de structuur, uitstraling en teksten, waardoor de website niet alleen mooi is geworden, maar ook duidelijk en overtuigend voor klanten. De communicatie was prettig en alles werd netjes uitgelegd. Zeker een aanrader voor bedrijven die serieus online willen groeien.",
     },
     {
       name: "Marina Kuipers",
       role: "Local Guide",
       stars: 5,
-      when: "8 weken geleden",
       text: "Wat wij sterk vonden aan Brandlift is dat ze niet zomaar een website bouwen, maar echt meedenken over de strategie erachter. Luca keek naar hoe klanten onze diensten beoordelen, welke informatie belangrijk is en hoe de website vertrouwen moet opbouwen. Daardoor voelt de website veel doelgerichter dan wat we hiervoor hadden. Professioneel, duidelijk en prettig samenwerken.",
     },
     {
       name: "Josie Jackson",
       role: "",
       stars: 5,
-      when: "8 weken geleden",
       text: "Wij hebben Brandlift ingeschakeld voor SEO en zijn erg tevreden over de aanpak. Luca keek niet alleen naar zoekwoorden, maar ook naar de volledige structuur van de website, lokale vindbaarheid en hoe klanten online naar ons zoeken. Alles werd helder uitgelegd en praktisch aangepakt. Fijn om met iemand te werken die echt begrijpt hoe je beter zichtbaar wordt in Google.",
     },
   ],
 } as const;
+
+/* De Google-score als tekst ("4,7"), voor chips en lopende tekst. Komt
+   altijd uit `reviews`, zodat er nergens een ander cijfer staat dan op
+   Google. Aantal vijfsterrenreviews erbij voor "13 van de 14". */
+export const reviewScore = reviews.rating.toFixed(1).replace(".", ",");
+export const reviewsVijfSterren = reviews.items.filter((r) => r.stars === 5).length;
 
 /* ── Service-hub: website laten maken (pillar) ── */
 export const websiteHub = {

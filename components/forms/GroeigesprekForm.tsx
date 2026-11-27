@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { bijAanraking, verstuur } from "@/lib/formulierdienst";
 
 const schema = z.object({
   name: z.string().min(2, "Vul je naam in"),
@@ -49,6 +50,7 @@ export function GroeigesprekForm({
     ? "mb-1.5 block text-sm font-medium text-g700"
     : "mb-1.5 block text-sm font-medium text-g300";
   const [sent, setSent] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
   const {
     register,
     handleSubmit,
@@ -58,30 +60,19 @@ export function GroeigesprekForm({
 
   async function onSubmit(values: FormValues) {
     try {
-      /* Web3Forms' gratis tier accepteert alleen verzoeken die echt uit een
-         browser komen - een eigen server-route ertussen zetten wordt
-         geweigerd (server-to-server vraagt een betaald plan). De access key
-         is daarom bewust NEXT_PUBLIC en zichtbaar in de bundle; dat is hoe
-         Web3Forms hem bedoelt, vergelijkbaar met Formspree's form-id. Hij
-         wordt aan hun kant beperkt per domein en per aanvraagfrequentie. */
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
-          subject: `Nieuw groeigesprek: ${values.name} (${values.company})`,
-          from_name: "Brandlift website - groeigesprek",
-          replyto: values.email,
-          Naam: values.name,
-          Bedrijf: values.company,
-          "E-mail": values.email,
-          Telefoon: values.phone,
-          Focus: values.focus,
-          Bericht: values.message || "-",
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok || !data?.success) throw new Error("failed");
+      /* Formulierdienst van Brandlift (14-11-2026, was Web3Forms): zie lib/formulierdienst.ts.
+         Onderwerp in de dienst: "Nieuw groeigesprek: <naam> - <bedrijf>". */
+      const gelukt = formRef.current
+        ? await verstuur("brandlift", {
+            naam: values.name,
+            bedrijf: values.company,
+            email: values.email,
+            telefoon: values.phone,
+            focus: values.focus,
+            bericht: values.message || "-",
+          }, formRef.current)
+        : false;
+      if (!gelukt) throw new Error("failed");
       setSent(true);
     } catch {
       setError("root", {
@@ -108,7 +99,9 @@ export function GroeigesprekForm({
 
   return (
     <form
+      ref={formRef}
       onSubmit={handleSubmit(onSubmit)}
+      onFocusCapture={(e) => { bijAanraking(e.currentTarget); }}
       noValidate
       className={bare ? "" : "chamf chamf-lg border border-[var(--color-line-strong)] bg-s1 p-7 md:p-8"}
     >
@@ -192,6 +185,11 @@ export function GroeigesprekForm({
           {...register("message")}
         />
       </div>
+
+      {/* lokveld voor bots: onzichtbaar en buiten de tabvolgorde; een mens laat het leeg */}
+      <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+      {/* Turnstile (spamweer): meestal onzichtbaar; alleen bij twijfel verschijnt hier een vinkje */}
+      <div data-turnstile className="mt-4 empty:hidden" />
 
       {errors.root && (
         <p role="alert" className="mt-4 text-sm text-err">

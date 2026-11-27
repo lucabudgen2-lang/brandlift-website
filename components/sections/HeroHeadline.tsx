@@ -30,11 +30,15 @@ export function HeroHeadline({
   lines,
   className = "",
   as: Tag = "p",
+  center = false,
 }: {
   lines: readonly string[];
   className?: string;
   as?: "h1" | "p";
+  /* gecentreerde opmaak: de laatste regel (met marker) krijgt dan ook mx-auto */
+  center?: boolean;
 }) {
+  const mid = center ? "mx-auto" : "";
   const reduce = useReducedMotion();
   const last = lines.length - 1;
   const MotionTag = Tag === "h1" ? motion.h1 : motion.p;
@@ -45,7 +49,7 @@ export function HeroHeadline({
         {lines.map((t, i) => (
           <span
             key={i}
-            className={`block whitespace-nowrap ${i === last ? "relative w-fit italic" : ""}`}
+            className={`block whitespace-nowrap ${i === last ? `relative w-fit italic ${mid}` : ""}`}
           >
             {i === last && <span aria-hidden className={markerClass} />}
             <span className="relative">{t}</span>
@@ -65,7 +69,7 @@ export function HeroHeadline({
     >
       {lines.map((t, i) =>
         i === last ? (
-          <span key={i} className="relative block w-fit whitespace-nowrap italic">
+          <span key={i} className={`relative block w-fit whitespace-nowrap italic ${mid}`}>
             <motion.span aria-hidden variants={marker} className={markerClass} />
             <span className="relative block overflow-hidden pb-[0.14em]">
               <motion.span variants={line} className="block">

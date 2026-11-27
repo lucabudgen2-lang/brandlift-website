@@ -266,6 +266,68 @@ body {
   animation: marquee var(--marquee-speed, 40s) linear infinite;
 }
 
+/* hero-intro zonder JavaScript: de hero is het eerste wat je ziet, dus
+   zijn animaties mogen niet op hydratatie wachten (anders schuift de
+   LCP seconden op). Zelfde beweging als Reveal/HeroHeadline, maar in CSS;
+   onder prefers-reduced-motion springt alles direct naar de eindstand. */
+@keyframes hero-op {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes hero-regel {
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: none;
+  }
+}
+@keyframes hero-marker {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.hero-op {
+  animation: hero-op 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+.hero-regel {
+  animation: hero-regel 0.6s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+.hero-marker {
+  animation: hero-marker 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: var(--d, 0.5s);
+}
+
+/* hero-wand: kolommen echt werk die eindeloos omhoog of omlaag schuiven.
+   Elke kolom bevat zijn tegels twee keer, dus -50% sluit naadloos aan.
+   Onder prefers-reduced-motion staat de wand stil (algemene regel). */
+@keyframes wand-schuif {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+.wand-kolom {
+  animation: wand-schuif var(--wand-snelheid, 80s) linear infinite;
+  will-change: transform;
+}
+.wand-kolom[data-richting="omlaag"] {
+  animation-direction: reverse;
+}
+
 /* slow vertical float — hero mockup */
 @keyframes float-y {
   0%,
