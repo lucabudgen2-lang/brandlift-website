@@ -130,6 +130,14 @@ Wat dat betekent:
 3. **Vakgidsen en probleemstukken blijven, maar om een andere reden**: niet voor het zoekvolume, maar voor conversie (de vakman voelt zich begrepen) en voor AI-assistenten, die op lange situatievragen precies zulke pagina's citeren. We meten ze op aanvragen per artikel, niet op bezoekers.
 4. De meting draait voortaan elke maand; de backlog schuift mee.
 
+## 6c. Nulmeting Search Console (29 okt t/m 25 nov 2026)
+- **26 klikken, 4.781 vertoningen** in 28 dagen. De klikken komen bijna allemaal op de merknaam ("brandlift") en de homepage.
+- **De grootste vijver aan vertoningen is "SEO Den Haag"**: ±3.300 vertoningen op /seo-den-haag (seo den haag, seo bureau/specialist/expert/uitbesteden den haag), maar op positie 37-75. Google ziet de pagina, maar vertrouwt hem nog niet.
+- Het dichtst bij pagina 1: *website kosten berekenen* (positie 14, calculator) en *website laten maken delft* (positie 28).
+- De kostengids staat op positie 52-59.
+
+Gevolg voor de backlog: artikelen over lokale SEO en het Google-profiel krijgen voorrang en linken door naar /seo-den-haag en /diensten/lokale-seo (thematische steun voor de pagina met de meeste vertoningen). De kostengids wordt vernieuwd en linkt naar de calculator. De meting draait voortaan wekelijks.
+
 ## 7. Wat het oplevert, en wanneer (eerlijk)
 - **Maand 1-2:** het fundament staat en de eerste 8-10 artikelen staan live. Vertoningen in Search Console beginnen te lopen; klikken nog weinig. Het domein is jong en heeft weinig links.
 - **Maand 3-6:** de kosten- en WordPress-gids kunnen gaan ranken zodra het onderzoek de eerste links oplevert; zonder links blijft ook goede content buiten de top 10 (zie 6b). Vakgidsen en probleemstukken leveren vooral aanvragen en AI-vermeldingen op, weinig zoekverkeer.
