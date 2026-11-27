@@ -33,22 +33,6 @@ const heroChips = ["Zelf geschreven", "Geen verzonnen cijfers", "Gratis te lezen
    loopt hij hier mee op. */
 const vasteGidsen = [
   {
-    tag: "Kosten",
-    title: "Wat kost een website laten maken?",
-    href: "/kennisbank/wat-kost-een-website-laten-maken",
-    bijgewerkt: "13 juli 2026",
-    bijgewerktIso: "2026-07-13",
-    lead:
-      "In Nederland betaal je meestal tussen de 1.500 en 8.000 euro. Wat je binnen die bandbreedte betaalt hangt af van een handvol keuzes - deze gids legt uit welke, en wat ze opleveren.",
-    punten: [
-      "Richtprijzen per type website, van eenvoudig tot maatwerk",
-      "De factoren die de prijs echt bepalen",
-      "Waarom offertes van aanbieders zo ver uit elkaar liggen",
-      "Wat onderhoud en hosting daarna kosten",
-    ],
-    linkLabel: "Lees waar de prijs vandaan komt",
-  },
-  {
     tag: "Lokale SEO",
     title: "Wat is lokale SEO?",
     href: "/kennisbank/wat-is-lokale-seo",

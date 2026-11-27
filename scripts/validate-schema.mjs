@@ -21,7 +21,7 @@ const ROUTES = [
   "/cases", "/cases/hovenier-eykelenboom", "/cases/giorgi-and-the-gents",
   "/voorbeelden", "/voor-wie", "/voor-wie/vakbedrijven", "/voor-wie/premium",
   "/werkwijze", "/over-brandlift", "/contact", "/kennisbank",
-  "/kennisbank/wat-kost-een-website-laten-maken", "/kennisbank/wat-is-lokale-seo",
+  "/kennisbank/wat-is-lokale-seo",
   "/privacybeleid", "/algemene-voorwaarden",
 ];
 
