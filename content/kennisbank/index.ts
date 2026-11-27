@@ -10,9 +10,10 @@
 
 import type { Artikel } from "@/lib/kennisbank/types";
 import { artikelTemplateVoorbeeld } from "./artikel-template-voorbeeld";
+import { googleBedrijfsprofielOptimaliseren } from "./google-bedrijfsprofiel-optimaliseren";
 import { kostengids } from "./wat-kost-een-website-laten-maken";
 
-export const alleArtikelen: Artikel[] = [kostengids, artikelTemplateVoorbeeld];
+export const alleArtikelen: Artikel[] = [kostengids, googleBedrijfsprofielOptimaliseren, artikelTemplateVoorbeeld];
 
 /* Concepten zijn zichtbaar lokaal (next dev) en op Vercel-previews, nooit
    in productie. VERCEL_ENV is "production" alleen op het echte domein. */
