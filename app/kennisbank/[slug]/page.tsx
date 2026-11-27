@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     noindex: a.concept,
     publishedTime: a.gepubliceerd,
     modifiedTime: a.bijgewerkt,
+    ...(a.beeld ? { image: { src: a.beeld.src, width: a.beeld.breed, height: a.beeld.hoog, alt: a.beeld.alt } } : {}),
   });
 }
 

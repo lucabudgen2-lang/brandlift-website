@@ -15,6 +15,7 @@ import { BenefitMarquee } from "@/components/sections/BenefitMarquee";
 import { DenHaagKaart } from "@/components/sections/DenHaagKaart";
 import { caseEykelenboom, cityPages, reviews, reviewScore } from "@/lib/site";
 import { serviceSchema } from "@/lib/schema";
+import { GidsenOverOnderwerp } from "@/components/kennisbank/GidsenOverOnderwerp";
 
 const PATH = "/seo-den-haag";
 const UPDATED = "2026-07-17";
@@ -706,6 +707,7 @@ export default function Page() {
 
       {/* ═══════════ FAQ · SLOT ═══════════ */}
       <FaqBlock faqs={faqs} tone="light" />
+      <GidsenOverOnderwerp tags={["Lokale SEO", "Google-profiel"]} />
 
       <FinalCta />
     </main>
