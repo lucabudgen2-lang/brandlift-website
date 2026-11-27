@@ -7,9 +7,9 @@ import { LineReveal } from "@/components/ui/LineReveal";
 import { aboutPage, clientLogos, methode, reviews } from "@/lib/site";
 
 /* logo's met donkere artwork die een lichte plaat nodig hebben om leesbaar te zijn */
-const whitePlate = new Set(["Corda Solar"]);
+const whitePlate = new Set(["Corda Solar", "R. van Esch Gevelrestauratie"]);
 
-/* OB-06 · BEWIJS — het echte cijfer als een monument, niet als kaart.
+/* OB-06 · BEWIJS: het echte cijfer als een monument, niet als kaart.
    Grote cijfers in de marge geven de sectie diepte; de klantlogo's
    krijgen een subtiele hover zodat het geen stilstaand grid is. */
 export function AboutProof() {
@@ -115,6 +115,8 @@ export function AboutProof() {
                 </Reveal>
               );
             })}
+            {/* alleen als er een gat in de laatste rij van drie is */}
+            {clientLogos.length % 3 !== 0 && (
             <Reveal delay={0.2}>
               <div className="flex h-24 items-center justify-center chamf border border-dashed border-white/15 md:h-28">
                 <span className="px-4 text-center text-xs italic leading-relaxed text-g600">
@@ -122,6 +124,7 @@ export function AboutProof() {
                 </span>
               </div>
             </Reveal>
+            )}
           </div>
         </div>
       </Container>
@@ -129,7 +132,7 @@ export function AboutProof() {
   );
 }
 
-/* OB-07 · ZO WERKEN WE — de methode als doorlopende ketting met een
+/* OB-07 · ZO WERKEN WE: de methode als doorlopende ketting met een
    vloeiende connector-lijn erdoorheen, in plaats van losse pilletjes. */
 export function AboutProcess() {
   const { process } = aboutPage;
@@ -174,7 +177,7 @@ export function AboutProcess() {
   );
 }
 
-/* OB-08 · VOOR WIE — de spiegel: drie werelden, elk als eigen tegel. */
+/* OB-08 · VOOR WIE: de spiegel: drie werelden, elk als eigen tegel. */
 export function AboutAudience() {
   const { audience } = aboutPage;
   return (

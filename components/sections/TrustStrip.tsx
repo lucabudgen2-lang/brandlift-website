@@ -4,10 +4,11 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Marquee } from "@/components/ui/Marquee";
 import { clientLogos, trust } from "@/lib/site";
 
-/* logos whose artwork is dark and needs a light plate to read */
-const whitePlate = new Set(["Corda Solar"]);
+/* logos whose artwork is dark and needs a light plate to read
+   (Van Esch: de navy balk verdwijnt op zwart) */
+const whitePlate = new Set(["Corda Solar", "R. van Esch Gevelrestauratie"]);
 
-/* BL-02 · TRUST-STRIP — "onze helden": full-color client logos in
+/* BL-02 · TRUST-STRIP: "onze helden": full-color client logos in
    chamfered cards, moving. Layout mirrors the approved reference. */
 export function TrustStrip() {
   return (
@@ -36,7 +37,7 @@ export function TrustStrip() {
       <div className="relative mt-10">
         <Marquee speed={40}>
           {/* repeat the set so one sequence overflows even 4K/ultrawide
-              screens (5 logos x ~248px x 4 = ~4960px) — otherwise a gap
+              screens (5 logos x ~248px x 4 = ~4960px): otherwise a gap
               opens before the -50% loop repeats */}
           {[...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos].map((c, i) => {
             const white = whitePlate.has(c.name);

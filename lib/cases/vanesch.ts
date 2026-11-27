@@ -330,9 +330,10 @@ export const samenwerkingStats = [
      lib/site.ts → reviews, dan pakt GoogleReview hem op)
    - video: YouTube-id + echte duur en uploaddatum (voor caseSchema) */
 export const rudy: {
-  review: { naam: string } | null;
+  review: { naam: string; datum: string } | null;
   video: { youtubeId: string; titel: string; duur: string; uploadDate: string } | null;
 } = {
-  review: null,
+  /* geplaatst op Google op 26 nov 2026; de tekst staat in lib/site.ts */
+  review: { naam: "Rudy van Esch", datum: "26 november 2026" },
   video: null,
 };

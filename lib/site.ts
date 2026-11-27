@@ -97,6 +97,7 @@ export const trust = {
 export const clientLogos = [
   { name: "RotorSwing Holland", src: "/logos/rotorswing.png" },
   { name: "Hovenier Eykelenboom", src: "/logos/eykelenboom.png" },
+  { name: "R. van Esch Gevelrestauratie", src: "/logos/vanesch.png" },
   { name: "De Reizende Kwast", src: "/logos/reizende-kwast.png" },
   { name: "Corda Solar", src: "/logos/corda-solar.png" },
   { name: "ACG", src: "/logos/acg.webp" },
@@ -165,6 +166,7 @@ export const voorWie = {
       photoAlt: "Vakmensen aan het werk op een bouwplaats",
       proof: [
         { name: "Hovenier Eykelenboom", src: "/logos/eykelenboom.png" },
+        { name: "R. van Esch Gevelrestauratie", src: "/logos/vanesch.png" },
         { name: "De Reizende Kwast", src: "/logos/reizende-kwast.png" },
       ],
       href: "/voor-wie/vakbedrijven",
@@ -634,14 +636,14 @@ export const aboutFaqs = [
 /* ── Google-reviews (echt, verbatim overgenomen) ── */
 export const reviews = {
   /* Stand van het Google-bedrijfsprofiel, opgehaald via DataForSEO op
-     24 nov 2026: 4,7 uit 14 reviews. Hieronder alle 13 reviews met vijf
+     27 nov 2026: 4,7 uit 15 reviews. Hieronder alle 14 reviews met vijf
      sterren, letterlijk. De ene review met één ster (17 nov, over een
      ongevraagde e-mail) staat niet op de site (Luca 24 nov), maar telt
      wel mee in score en aantal: die moeten gelijk zijn aan wat Google laat
-     zien. Sebastiaan, Max en Maud staan vooraan: klanten uit de cases. */
+     zien. Sebastiaan, Max, Maud en Rudy staan vooraan: klanten uit de cases. */
   source: "Google",
   rating: 4.7,
-  count: 14,
+  count: 15,
   items: [
     {
       /* Van de klant uit de case zelf. Woordelijk overgenomen van het
@@ -667,6 +669,14 @@ export const reviews = {
       role: "RotorSwing Holland",
       stars: 5,
       text: "Wij zijn RotorSwing, een Nederlands bedrijf gespecialiseerd in jachtstabilisatie. In deze specifieke nichemarkt is onze website meer dan een online overzicht: het is hét visitekaartje van ons bedrijf.\n\nVia een simpele vraag over SEO kwamen we in contact met Luca en niet veel later namen we het besluit om samen een volledig nieuwe website te bouwen. En WAUW! Het eindresultaat straalt exact uit wat we voor ogen hadden. Luca heeft de balans weten te vinden tussen de hoogwaardige techniek en het comfort dat onze systemen bieden. Geen standaard pagina’s vol techniek, maar een site die een beleving uitstraalt.\n\nDe samenwerking verliep vanaf het eerste moment super fijn. Heldere communicatie, houdt je continu goed op de hoogte van de voortgang en geeft heel duidelijk aan wat er nog nodig is.\n\nEr staat nu een website waar we ontzettend trots op zijn. Dankjewel Luca! Zeker een aanrader!!",
+    },
+    {
+      /* 26 nov 2026, klant uit de case Van Esch. Letterlijk, met zijn
+         eigen regelafbrekingen en "Kortom...een topbedrijf!". */
+      name: "Rudy van Esch",
+      role: "R. van Esch Gevelrestauratie, Liempde",
+      stars: 5,
+      text: "Brandlift heeft voor mijn bedrijf R. van Esch Gevelrestauratie uit Liempde (Noord-Brabant) een nieuwe website en huisstijl gemaakt. Tevens is mijn Google bedrijfsprofiel helemaal aangepast, zodat alles optimaal samenwerkt.\nHet contact met Luca was meteen vanaf de eerste kennismaking prettig, omdat hij goed luistert wat voor mij belangrijk is en wat ik wil bereiken met de nieuwe website.\nOok nadat de website klaar is, wordt er goed naar de feedback geluisterd zodat je 100% tevreden bent.\nKortom...een topbedrijf!",
     },
     {
       name: "Charlotte Schuller",
